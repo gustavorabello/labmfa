@@ -1,0 +1,45 @@
+ul.social a.sc-stack-overflow {
+  background-color:#f48024
+}
+ul.social a.sc-skype {
+  background-color:#00aff0
+}
+ul.social a.sc-gitlab {
+  background-color:#554488
+}
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px; height: 0; overflow: hidden;
+}
+.video-container iframe, .video-container object, .video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 80%;
+}
+.align-left {
+  float: left;
+  padding: 10px;
+}
+.align-right {
+  float: right;
+  padding: 10px;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+p.caption {
+  font-style: italic;
+  color: #888;
+}
+pre.bibtex {
+  white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
+  white-space: -pre-wrap; /* Opera */
+  white-space: -o-pre-wrap; /* Opera */
+  white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
+  word-wrap: break-word; /* IE 5.5+ */
+}
