@@ -4,20 +4,23 @@ Contacts
 :date: 2022-08-23 17:47
 :modified: 2022-08-23 17:47
 :slug: contacts
-:summary: Some information about the laboratory
 
-This lab is from `Coppe`_, Brazil at `Federal University of Rio de
-Janeiro`_, Rio de Janeiro
-one of the responsibles for the development and maintenance the experiment's
-Trigger and Data-Acquisition system.
+Head of the Laboratory
+______________________
 
-.. image:: {static}/images/coppe.png
-   :width: 32%
+Prof. Gustavo Cesar Rachid Bodstein (gustavo@mecanica.coppe.ufrj.br)
 
-different subjects during all these years ranging from digital filters to
-pattern recognition. Most of my research time during school years was dedicated
-this website.
+Prof. Gustavo Rabello dos Anjos (gustavo.rabello@coppe.ufrj.br)
 
-.. Place your references here
-.. _Coppe: http://www.coppe.ufrj.br
-.. _Federal University of Rio de Janeiro: http://www.ufrj.br
+Adminstrative Staff
+___________________
+
+M.Sc. Jaciara Roberta Barbosa
+
+Technical Staff
+___________________
+
+Eng. Lionel
+
+
+

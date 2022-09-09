@@ -51,10 +51,10 @@ DIRECT_TEMPLATES = [
 ]
 LINKS = (
     ('about the lab', '/about'),
-    ('staff', '/staff'),
-    ('research', '/research'),
-    ('education', '/education'),
-    ('facilities', '/facilities'),
+    #('staff', '/staff'),
+    #('research', '/research'),
+    #('education', '/education'),
+    #('facilities', '/facilities'),
     ('contacts', '/contacts'),
 )
 
