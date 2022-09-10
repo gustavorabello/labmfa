@@ -17,10 +17,12 @@ doctoral students, including post-doctorate researchers.
 
 .. image:: {static}/images/building.jpg
    :width: 52%
+   :align: left
 
 The following image is the localization of the laboratory in view of the
 Technological Center.
 
 .. image:: {static}/images/local_EN.png
    :width: 52%
+   :align: left
 
