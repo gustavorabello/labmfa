@@ -5,9 +5,9 @@ from __future__ import unicode_literals
 AUTHOR = 'Gustavo R. Anjos'
 COPYRIGHT_NAME = AUTHOR
 COPYRIGHT_YEAR = str(__import__("datetime").date.today().year)
-SITENAME = 'Fluid Mechanics and Aerondynamics Laboratory'
+SITENAME = 'Fluid Mechanics and Aerodynamics Laboratory'
 #SITETITLE = "LabMFA"
-SITESUBTITLE = "Fluid Mechanics and Aerondynamics Laboratory"
+SITESUBTITLE = "Fluid Mechanics and Aerodynamics Laboratory"
 SITEDESCRIPTION = "Laboratory Website"
 FAVICON = "/images/favicon.ico"
 SITEURL = "https://labfma.coppe.ufrj.br"
