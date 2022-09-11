@@ -52,10 +52,11 @@ DIRECT_TEMPLATES = [
 LINKS = (
     ('about the lab', '/about'),
     #('staff', '/staff'),
+    ('students', '/students'),
     #('research', '/research'),
     #('education', '/education'),
     #('facilities', '/facilities'),
-    ('contacts', '/contacts'),
+    ('contact us', '/contact'),
 )
 
 # Social widget
