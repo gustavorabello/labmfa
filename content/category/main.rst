@@ -31,7 +31,9 @@ instalations as well as the open area where the wind tunnels are
 located.
 
 .. image:: {static}/images/building.jpg
+   :name: building
    :width: 52%
+   :alt: laboratory building
 
 The situation of the laboratory in view of the Center of Technology
 (**CT**) located at Ilha do Fundao campus of the Federal University of
@@ -43,5 +45,7 @@ occupied the whole area. The route from LabMFA to the Department of
 Mechanical Engineering takes 5 minutes on foot.
 
 .. image:: {static}/images/local_EN.png
+   :name: local_EN
    :width: 52%
+   :alt: laboratory situation
 

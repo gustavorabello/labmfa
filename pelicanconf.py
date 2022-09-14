@@ -54,7 +54,7 @@ LINKS = (
     #('staff', '/staff'),
     ('students', '/students'),
     #('research', '/research'),
-    #('education', '/education'),
+    ('education', '/education'),
     #('facilities', '/facilities'),
     ('contact us', '/contact'),
 )
@@ -63,6 +63,7 @@ LINKS = (
 SOCIAL = (
     #("coppe", "https://www.coppe.ufrj.br"),
     #("github", "https://github.com/anjos"),
+    #("orcid", "https://github.com/anjos"),
     #("orcid", "https://github.com/anjos"),
     # ('skype', 'skype:andrezito?call'),
 )

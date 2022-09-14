@@ -8,19 +8,19 @@ Students
 D.Sc. Students
 ______________
 
- - João Paulo Innocente de Souza --
+ - `João Paulo Innocente de Souza`_  --
    *Flow Simulations Using the Finite Element Method*, 
    2021
 
- - Daniel Barbedo Vasconcelos Santos -- 
+ - `Daniel Barbedo Vasconcelos Santos`_ -- 
    *3D Two-Phase Flow Simulation in Complex Geometries*, 
    2020
 
- - Leandro Marques dos Santos --
+ - `Leandro Marques dos Santos`_ --
    *Non-Newtonian Two-Phase Flow Simulation in Biological Systems*, 
    2020
 
- - Fábio Gaspar Junior --
+ - `Fábio Gaspar Junior`_ --
    *Two-Phase Flow Simulations Using the Finite Element Method*, 
    2021
 
@@ -67,4 +67,10 @@ _______________________
   *Numerical Methods for the Analysis of Biofuel Systems*, 
   2021
 
+
+.. Place your references here
+.. _João Paulo Innocente de Souza: /person/joaoPauloInnocente
+.. _Daniel Barbedo Vasconcelos Santos: /person/danielBarbedo
+.. _Leandro Marques dos Santos: /person/leandroMarques
+.. _Fábio Gaspar Junior: /person/fabioGaspar
 

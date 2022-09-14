@@ -7,7 +7,9 @@ Staff
 Prof. Gustavo Rabello dos Anjos - PhD, Lausanne, 2012.
 
 .. image:: {static}/images/coppe.png
+   :name: coppe-logo
    :width: 32%
+   :alt: Coppe logo
 
 I've started a professorship position at the Federal University of Rio
 de Janeiro (UFRJ). I'm member of the graduate school of Mechanical

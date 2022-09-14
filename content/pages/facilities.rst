@@ -12,7 +12,9 @@ mathematical modeling to tackle serveral different physical problems in
 the industry and in fundamental research.
 
 .. image:: {static}/images/coppe.png
+   :name: coppe-logo
    :width: 32%
+   :alt: Coppe logo
 
 different subjects during all these years ranging from digital filters to
 pattern recognition. Most of my research time during school years was dedicated
