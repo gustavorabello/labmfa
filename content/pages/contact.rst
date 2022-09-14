@@ -10,7 +10,7 @@ ______________________
 
  Prof. Gustavo Cesar Rachid Bodstein (gustavo@mecanica.coppe.ufrj.br)
 
- Prof. Gustavo Rabello dos Anjos (gustavo.rabello@coppe.ufrj.br)
+ `Prof. Gustavo Rabello dos Anjos`_ (gustavo.rabello@coppe.ufrj.br)
 
 Adminstrative Staff
 ___________________
@@ -23,4 +23,6 @@ ___________________
  Eng. Carlos Humberto Lionel de Souza  (lionel@mecanica.coppe.ufrj.br)
 
 
+.. Place your references here
+.. _Prof. Gustavo Rabello dos Anjos: /person/gustavoRabello
 
