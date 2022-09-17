@@ -11,7 +11,9 @@ one of the responsibles for the development and maintenance the experiment's
 Trigger and Data-Acquisition system.
 
 .. image:: {static}/images/coppe.png
-   :width: 32%
+   :name: coppe2 
+   :width: 52%
+   :alt: coppe2
 
 different subjects during all these years ranging from digital filters to
 pattern recognition. Most of my research time during school years was dedicated
