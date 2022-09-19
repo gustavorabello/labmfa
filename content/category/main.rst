@@ -4,6 +4,16 @@ Fluid Mechanics and Aerodynamics Laboratory
 :date: 2022-08-23 17:47
 :modified: 2022-08-23 17:47
 
+|
+
+.. image:: {static}/images/logo.png
+   :name: logo-lab
+   :width: 70%
+   :alt: labmfa logo
+   :align: center
+
+|
+
 With more than 30 years existence, Fluid Mechanics and Aerodynamics
 Laboratory (**LabMFA**) is one of the most consolidated laboratory of
 the Department of Mechanical Engineering with strong research activity
@@ -33,18 +43,4 @@ located.
    :name: building
    :width: 52%
    :alt: laboratory building
-
-The situation of the laboratory in view of the Center of Technology
-(**CT**) located at Ilha do Fundao campus of the Federal University of
-Rio de Janeiro is shown below. As can be seen, the **LabMFA** is behind
-the C building and alongside of I Building where all **Coppe**
-laboratories are located. On the other hand, the Department of
-Mechanical Engineering (**DEM/PEM**) is situated at the G building and
-occupied the whole area. The route from LabMFA to the Department of
-Mechanical Engineering takes 5 minutes on foot.
-
-.. image:: {static}/images/local_EN.png
-   :name: local_EN
-   :width: 52%
-   :alt: laboratory situation
 

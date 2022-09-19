@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = 'Gustavo R. Anjos'
+AUTHOR = 'LabMFA - Fluid Mechanics and Aerodynamics Laboratory'
 COPYRIGHT_NAME = AUTHOR
 COPYRIGHT_YEAR = str(__import__("datetime").date.today().year)
 SITENAME = 'Fluid Mechanics and Aerodynamics Laboratory'
