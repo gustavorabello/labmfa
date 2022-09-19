@@ -50,15 +50,18 @@ Mechanical Engineering takes 5 minutes on foot.
 
 .. image:: {static}/images/local_EN.png
    :name: local_EN
-   :width: 52%
+   :width: 70%
    :alt: laboratory situation
+   :align: center
 
-Please, contact us by phone with you need further assistance.
+Please, contact us by phone for further assistance.
 
 ::
 
  Phone numbers:
- +552139388823 
+ +55 21 3938-8822
+ +55 21 3938-8823 
+ +55 21 3938-8824
 
 
 

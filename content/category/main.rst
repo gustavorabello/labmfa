@@ -4,16 +4,6 @@ Fluid Mechanics and Aerodynamics Laboratory
 :date: 2022-08-23 17:47
 :modified: 2022-08-23 17:47
 
-|
-
-.. image:: {static}/images/logo.png
-   :name: logo-lab
-   :width: 70%
-   :alt: labmfa logo
-   :align: center
-
-|
-
 With more than 30 years existence, Fluid Mechanics and Aerodynamics
 Laboratory (**LabMFA**) is one of the most consolidated laboratory of
 the Department of Mechanical Engineering with strong research activity
@@ -26,6 +16,16 @@ lecture room with projector, 2 student offices with 12 desk total capacity,
 permanent staff room and full equipped atelier/machinery repair shop, in
 addition to 200m2 of open space area comprising 2 **wind tunnels** with
 balance and instrumentation for technical research and education.
+
+|
+
+.. image:: {static}/images/logo-LabMFA.png
+   :name: logo-lab
+   :width: 70%
+   :alt: labmfa logo
+   :align: center
+
+|
 
 **LabMFA** members have been orienting their activities towards the
 training of human resources and the development of new knowledge that
@@ -41,6 +41,6 @@ located.
 
 .. image:: {static}/images/building.jpg
    :name: building
-   :width: 52%
+   :width: 60%
    :alt: laboratory building
 
