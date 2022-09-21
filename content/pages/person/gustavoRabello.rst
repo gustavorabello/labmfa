@@ -50,7 +50,7 @@ Engineering at the State University of Rio de Janeiro (`UERJ`_). In 2019
 I've started a professorship position at the Federal University of Rio
 de Janeiro (`UFRJ`_). I'm member of the graduate school of Mechanical
 Engineering at (`Coppe`_), Young Researcher of the State of Rio de
-Janeiro (_FAPERJ) and currently awarded Royal Society-Newton Advanced
+Janeiro (`FAPERJ`_) and currently awarded Royal Society-Newton Advanced
 Fellowship (`more info`_).
 
 .. Place your references here
