@@ -9,6 +9,10 @@ ______________________
 
 - Professor at Coppe/Federal University of Rio de Janeiro
 - Department of Mechanical Engineering
+- Keywords: computational fluid dynamics, two-phase flows, scientific
+  computing
+- CV: `link here`_ 
+- ORCID: `0000-0003-0687-8466`_
 
 
 .. image:: {static}/images/rabello.jpg
@@ -21,21 +25,33 @@ flows. During my doctoral studies, I'd been working on the
 discretization of the fluid motion equations and the modelling of
 intefacial forces through the Finite Element Method. The developed
 in-house numerical code has been designed by modern and flexible
-object-oriented languages: (C++) and (Python) which allowed easy
+object-oriented languages: (`C++`_) and (`Python`_) which allowed easy
 maintenance and further development. The Ph.D. thesis can be found here,
 which was selected to be among the 5-10% best thesis written at EPFL in
 2012 (more info). From Aug. 2012 to Aug. 2013 I worked as a Post-Doc
-Associated in Nuclear Science & Engineering (NSE) at the Massachusetts
-Institute of Technology (MIT) in Cambridge/Boston area. The goal of the
+Associated in Nuclear Science & Engineering (`NSE`_) at the Massachusetts
+Institute of Technology (`MIT`_) in Cambridge/Boston area. The goal of the
 Post-Doc position was to benchmarking the boiling/condensation
 experimental database using a commercial front-capturing code available
 in the MIT group. In Sep. 2013 I have finally returned to Brazil as
 Post-Doc assistent sponsored by the brazilian agency CAPES/Science
 Without Borders - Young Talent Fellowship. In 2014 I become young
 professor at the Mechanical Engineering at the State University of Rio
-de Janeiro (UERJ). In 2019 I've started a professorship position at the
-Federal University of Rio de Janeiro (UFRJ). I'm member of the graduate
-school of Mechanical Engineering at (COPPE), Young Researcher of the
-State of Rio de Janeiro (FAPERJ) and currently awarded Royal
-Society-Newton Advanced Fellowship (more info).
+de Janeiro (`UERJ`_). In 2019 I've started a professorship position at the
+Federal University of Rio de Janeiro (`UFRJ`_). I'm member of the graduate
+school of Mechanical Engineering at (`Coppe`_), Young Researcher of the
+State of Rio de Janeiro (_FAPERJ) and currently awarded Royal
+Society-Newton Advanced Fellowship (`more info`_).
 
+.. Place your references here
+.. _0000-0003-0687-8466: https://orcid.org/0000-0003-0687-8466
+.. _link here: http://lattes.cnpq.br/2430893976345647
+.. _C++: http://en.wikipedia.org/wiki/C%2B%2B
+.. _Python: http://www.python.org
+.. _NSE: http://web.mit.edu/nse
+.. _MIT: http://www.mit.edu
+.. _UERJ: http://www.uerj.br
+.. _UFRJ: http://www.ufrj.br
+.. _Coppe: http://www.coppe.ufrj.br
+.. _FAPERJ: http://www.faperj.br
+.. _more info: https://gustavorabello.github.io/research/newton-2020.html

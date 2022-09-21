@@ -49,6 +49,7 @@ DIRECT_TEMPLATES = [
     "index",
     #"publications",
 ]
+
 LINKS = (
     ('about the lab', '/about'),
     #('staff', '/staff'),
