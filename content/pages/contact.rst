@@ -29,16 +29,14 @@ ___________________
 
  Address:
 
- PEM/COPPE/UFRJ
- Universidade Federal do Rio de Janeiro
+ LabMFA - Fluid Mechanics and Aerodynamics Laboratory
+ Universidade Federal do Rio de Janeiro/Coppe
  Cidade Universitária - Ilha do Fundão
  Building I, I-102
  Ilha do Fundão
  Rio de Janeiro RJ
  21941-914
  Brazil
-
- map link: https://goo.gl/maps/7K9mzBZ3qJrei61YA
 
 |
 

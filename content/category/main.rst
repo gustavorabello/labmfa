@@ -31,9 +31,9 @@ scientific research programs to graduate programs, with **master's**
 and **doctoral** students, including **post-doctorate** researchers. 
 
 The left image below is a photography of the building showing the
-3-floor installations as well as the open area where the wind tunnels are
-located. The right hand side photo is the inside view of the 12-seated
-meeting room located at the 3rd floor of **labMFA**.
+3-floor installations as well as the open area where the wind tunnels
+are installed. The right hand side photo is the inside view of the
+12-seated meeting room located at the 3rd. floor of **labMFA**.
 
 .. image:: {static}/images/building.jpg
    :name: building
