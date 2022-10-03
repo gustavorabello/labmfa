@@ -1,24 +1,11 @@
 [**EEK-597**] Computational Fluid Mechanics and Heat Transfer 
--------------------------------------------------------------
+_____________________________________________________________
 
-:date: 2022-08-24 17:47
-:modified: 2022-08-24 17:47
-:summary: Undergrad course  
+**B.Sc. Level**: This course brings advanced knowledge of fluid dynamics
+and heat transfer orieanted on numerical modeling of the 1-D and 2-D
+enginering problems.
 
-This lab is from `Coppe`_, Brazil at `Federal University of Rio de
-Janeiro`_, Rio de Janeiro
-one of the responsibles for the development and maintenance the experiment's
-Trigger and Data-Acquisition system.
-
-.. image:: {static}/images/coppe.png
-   :name: coppe-logo
-   :width: 32%
-   :alt: Coppe logo
-
-different subjects during all these years ranging from digital filters to
-pattern recognition. Most of my research time during school years was dedicated
-this website.
-
-.. Place your references here
-.. _Coppe: http://www.coppe.ufrj.br
-.. _Federal University of Rio de Janeiro: http://www.ufrj.br
+.. image:: {static}/images/two-phase_1.jpeg
+   :name: two-phase_36
+   :width: 33%
+   :alt: image of two-phase_1

@@ -25,7 +25,7 @@ mechanics, aerodynamics, wind energy and atmospheric sciences.
 training of **human resources** and the development of **new knowledge**
 that provide scientific and technological advances in the areas of
 **fluid mechanics**, **aerodynamics**, **wind energy** and **atmospheric
-sciences** and **computationa fluid dynamics - CFD**. The training of
+sciences** and **computational fluid dynamics - CFD**. The training of
 human resources has been carried out at all levels, from undergrad
 scientific research programs to graduate programs, with **master's**
 and **doctoral** students, including **post-doctorate** researchers. 
