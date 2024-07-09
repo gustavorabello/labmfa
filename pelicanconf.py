@@ -54,6 +54,7 @@ LINKS = (
     ('about the lab', '/about'),
     #('staff', '/staff'),
     ('students', '/students'),
+    ('publications', '/publications'),
     #('research', '/research'),
     ('education', '/education'),
     #('facilities', '/facilities'),
