@@ -8,9 +8,9 @@ Contact Us
 Head of the Laboratory
 ______________________
 
- `Prof. Gustavo Cesar Rachid Bodstein`_ (gustavo@mecanica.coppe.ufrj.br)
-
  `Prof. Gustavo Rabello dos Anjos`_ (gustavo.rabello@coppe.ufrj.br)
+
+ `Prof. Gustavo Cesar Rachid Bodstein`_ (gustavo@mecanica.coppe.ufrj.br)
 
 Adminstrative Staff
 ___________________
@@ -30,9 +30,9 @@ ___________________
  Address:
 
  LabMFA - Fluid Mechanics and Aerodynamics Laboratory
+ Av. Horácio Macedo, 2030 - Ilha do Fundão
  Universidade Federal do Rio de Janeiro/Coppe
- Cidade Universitária - Ilha do Fundão
- Building I, I-102
+ Cidade Universitária, Building I-102A
  Ilha do Fundão
  Rio de Janeiro RJ
  21941-914
