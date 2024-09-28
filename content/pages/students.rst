@@ -15,23 +15,43 @@ _____________
 D.Sc. Students
 ______________
 
+ `Gabriel Ricardo Güntensperger Sousa`_  --
+  *Coalescense Study in Two-Phase Flows*, 
+  2024
+
  `João Paulo Innocente de Souza`_  --
-  *Flow Simulations Using the Finite Element Method*, 
+  *Flow Induced Vibration Simulations Using the Finite Element Method*, 
+  2022
+
+ `Fábio Gaspar Junior`_ --
+  *Non-Newtonian Fluid-Structure Interaction Simulations Using the Finite Element Method*, 
   2022
 
  `Leandro Marques dos Santos`_ --
   *Non-Newtonian Two-Phase Flow Simulation in Biological Systems*, 
   2020
 
- `Fábio Gaspar Junior`_ --
-  *Non-Newtonian Flow Simulations Using the Finite Element Method*, 
-  2022
-
 M.Sc. Students
 ______________
 
+ `Everton Taveira Baldes Vieira`_ --
+  *Numerical Analisys of Two-Phase Flows in Nuclear Reactors*, 
+  2024
+
+ `Lucas Mendes Miranda`_ --
+  *Study of Cold Plate Fin Geometries to Improve Heat Transfer Capabilities of Eletronics Cooling Solutions Utilizing the Finite Element Method*, 
+  2024
+
+ `Juliana Calazans de Cerqueira`_ --
+  *Numerical Analysis of the Effect of Porosity on the Production of Biofuels in the Streamfunction Vorticity Formulation Using Finite Element Method*, 
+  2024
+
+ `Antonio Emanuel Marques dos Santos`_ --
+  *Numerical Analisys of Two-Phase Flows in Biodiesel Microreactor Production*, 
+  2023
+
  `Gabriel Felipe de Oliveira Antão`_ --
-  *To be defined*, 
+  *Development of Fluid Flow Simulator Based on Characteristic-Based Split Method*, 
   2020
 
  `Afrânio Augusto Gomes Goncalves`_ --
@@ -45,6 +65,9 @@ ______________
 Undergrad Scientific Research - IC
 __________________________________
 
+ `Breno Sarmento`_ --
+  *Finite Element Analysis in Engineering Problems*, 
+  2024
 
 Alumni 
 __________________________________
@@ -76,6 +99,11 @@ __________________________________
 
 
 .. Place your references here
+.. _Everton Taveira Baldes Vieira: /person/evertonVieira
+.. _Lucas Mendes Miranda: /person/LucasMiranda
+.. _Juliana Calazans de Cerqueira: /julianaCerqueira
+.. _Antonio Emanuel Marques dos Santos: /antonioSantos
+.. _Gabriel Ricardo Güntensperger Sousa: /person/gabrielSousa
 .. _João Paulo Innocente de Souza: /person/joaoPauloInnocente
 .. _Daniel Barbedo Vasconcelos Santos: /person/danielBarbedo
 .. _Leandro Marques dos Santos: /person/leandroMarques
@@ -88,3 +116,4 @@ __________________________________
 .. _Anna Barbara Coimbra: /person/annaCoimbra
 .. _João Pedro Rodrigues: /person/joaoPedroRodrigues
 .. _Daniel Moreira Spesani: /person/danielSpesani
+.. _Breno Sarmento: /person/brenoSarmento
