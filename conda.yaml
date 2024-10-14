@@ -1,0 +1,17 @@
+name: pelican
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - paramiko
+  - matplotlib
+  - numpy
+  - scipy
+  - pelican
+  - pip
+  - pip:
+    - pelican-youtube
+
+# Mac M1
+# CONDA_SUBDIR=osx-64 conda create -n web python=2.7 flask matplotlib numpy scipy pip
+# pip install hyde httplib2 google-api-python-client oauth2client

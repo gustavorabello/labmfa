@@ -14,6 +14,7 @@ SITEURL = "https://labfma.coppe.ufrj.br"
 
 # Theme setup
 THEME = "Flex"
+#THEME = "/Users/gustavo/Library/pelican-themes/octopress"
 BROWSER_COLOR = "#333"
 
 # Static directories
@@ -58,6 +59,7 @@ LINKS = (
     #('research', '/research'),
     ('education', '/education'),
     #('facilities', '/facilities'),
+    ('media gallery', '/media'),
     ('contact us', '/contact'),
 )
 
@@ -75,11 +77,12 @@ SOCIAL = (
 PLUGIN_PATHS = [
     "plugins",
 ]
-#PLUGINS = [
+PLUGINS = [
+     "pelican_youtube",
 #    "deadlinks",
 #    "bibtex",
 #    "bibcite",
-#]
+]
 
 DEFAULT_PAGINATION = False
 DISABLE_URL_HASH = True  # don't put hashes by the end of urls
