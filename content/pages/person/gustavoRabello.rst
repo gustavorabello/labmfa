@@ -8,6 +8,13 @@ ______________________
 |
 |
 
+.. image:: {static}/images/rabello.jpg
+   :name: gustavo_face
+   :width: 25%
+   :alt: gustavo 
+
+|
+
  - Professor at `Coppe`_/`Federal University of Rio de Janeiro`_
  - `Department of Mechanical Engineering`_
  - CV: `click to access Lattes`_ 
@@ -23,11 +30,6 @@ ______________________
    dynamics, particle-laden simulations
 
 |
-
-.. image:: {static}/images/rabello.jpg
-   :name: gustavo_face
-   :width: 25%
-   :alt: gustavo 
 
 My research field is numerical simulation on single- and two-phase
 flows. During my doctoral studies, I'd been working on the
