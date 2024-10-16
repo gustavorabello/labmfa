@@ -8,7 +8,7 @@ _________________________________
 |
 |
 
-.. image:: {static}/images/emanuel.jpg
+.. image:: {static}/images/antonioEmanuel.jpg
    :name: emanuel_face
    :width: 25%
    :alt: emanuel 
