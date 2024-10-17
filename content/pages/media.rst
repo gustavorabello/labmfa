@@ -20,4 +20,7 @@ Laboratory - LabMFA**.
     :allowfullscreen: yes
     :seamless: yes
 
+This video shows a rising bubble test case with increasing sinusoidal
+wall effects. As can be seen, when wall is squeezing the bubble, its
+acceleration is much lower when compared to very large domains.
 

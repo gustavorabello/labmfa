@@ -101,8 +101,8 @@ __________________________________
 .. Place your references here
 .. _Everton Taveira Baldes Vieira: /person/evertonVieira
 .. _Lucas Mendes Miranda: /person/LucasMiranda
-.. _Juliana Calazans de Cerqueira: /julianaCerqueira
-.. _Antonio Emanuel Marques dos Santos: /antonioSantos
+.. _Juliana Calazans de Cerqueira: /person/julianaCerqueira
+.. _Antonio Emanuel Marques dos Santos: /person/antonioEmanuel
 .. _Gabriel Ricardo Güntensperger Sousa: /person/gabrielSousa
 .. _João Paulo Innocente de Souza: /person/joaoPauloInnocente
 .. _Daniel Barbedo Vasconcelos Santos: /person/danielBarbedo

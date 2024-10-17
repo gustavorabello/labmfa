@@ -26,6 +26,8 @@ def isdir(path):
 
 def rm(path):
  files = sftp.listdir(path=path)
+ if 'upload' in files:
+  files.remove('upload')
  while files != 0:
 
   if not path.endswith("/"):
@@ -35,7 +37,8 @@ def rm(path):
   if not len(files):
    if path == '/':
     break
-   sftp.rmdir(path)
+   if path != '/upload/':
+    sftp.rmdir(path)
    return
  
   for f in files:
@@ -65,19 +68,19 @@ def upload(localpath,remotepath):
   try:
    #print (walker,remotepath,os.path.join(remotepath,walker[0]))
    if walker[0] == 'output':
-    remotedir = (walker[0]).replace(parent,'')
+    remotedir = 'upload' #(walker[0]).replace(parent,'')
    else:
     remotedir = (walker[0]).replace(parent+'/','')
    sftp.mkdir(os.path.join(remotepath,remotedir))
   except:
    pass
-  for file in walker[2]:
+  for file in walker[2]: # todos os arquivos em / (index.html)
    if walker[0] == 'output':
     remotedir = (walker[0]).replace(parent,'')
     #print (os.path.join(remotepath,remotedir,file))
     sftp.put(os.path.join(walker[0],file),
              os.path.join(remotepath,remotedir,file))
-   else:
+   else: # todos os diretorios
     remotedir = (walker[0]).replace(parent+'/','')
     #print (os.path.join(remotepath,remotedir,file))
     #print (os.path.join(walker[0],file))
@@ -88,11 +91,11 @@ def upload(localpath,remotepath):
 if __name__ == "__main__":
  print ("")
  print ("---> removing server web site...")
- rm('/')
+ rm('/upload/')
  print ("---> generation local web site...")
  genSite()
  print ("---> uploading web site from local to server...")
- upload('./output','./')
+ upload('./output','./upload')
  print ("---> closing sftp connection. Done!")
  sftp.close
  print ("")
