@@ -14,6 +14,7 @@ SITEURL = "https://labfma.coppe.ufrj.br"
 
 # Theme setup
 THEME = "Flex"
+#THEME = "/Users/gustavo/Library/pelican-themes/pelican-simplegrey"
 #THEME = "/Users/gustavo/Library/pelican-themes/octopress"
 BROWSER_COLOR = "#333"
 
@@ -122,3 +123,4 @@ THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
 THEME_COLOR_ENABLE_USER_OVERRIDE = True
 PYGMENTS_STYLE = "solarized-light"
 PYGMENTS_STYLE_DARK = "solarized-dark"
+

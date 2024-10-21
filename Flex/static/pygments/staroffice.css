@@ -23,6 +23,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .cs { color: #696969 } /* Comment.Special */
 .highlight .gd { color: #000080 } /* Generic.Deleted */
 .highlight .ge { color: #000080 } /* Generic.Emph */
+.highlight .ges { color: #000080 } /* Generic.EmphStrong */
 .highlight .gr { color: #000080 } /* Generic.Error */
 .highlight .gh { color: #000080 } /* Generic.Heading */
 .highlight .gi { color: #000080 } /* Generic.Inserted */
@@ -107,6 +108,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .literal-block .cs { color: #696969 } /* Comment.Special */
 .literal-block .gd { color: #000080 } /* Generic.Deleted */
 .literal-block .ge { color: #000080 } /* Generic.Emph */
+.literal-block .ges { color: #000080 } /* Generic.EmphStrong */
 .literal-block .gr { color: #000080 } /* Generic.Error */
 .literal-block .gh { color: #000080 } /* Generic.Heading */
 .literal-block .gi { color: #000080 } /* Generic.Inserted */

@@ -1,5 +1,5 @@
 pre { line-height: 125%; }
-td.linenos .normal { color: #23a1a1; background-color: #eee8d5; padding-left: 5px; padding-right: 5px; }
+td.linenos .normal { color: #93a1a1; background-color: #eee8d5; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: #93a1a1; background-color: #eee8d5; padding-left: 5px; padding-right: 5px; }
 td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
 span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
@@ -23,6 +23,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .cs { color: #93a1a1; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #dc322f } /* Generic.Deleted */
 .highlight .ge { color: #657b83; font-style: italic } /* Generic.Emph */
+.highlight .ges { color: #657b83; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .highlight .gr { color: #dc322f } /* Generic.Error */
 .highlight .gh { color: #657b83; font-weight: bold } /* Generic.Heading */
 .highlight .gi { color: #859900 } /* Generic.Inserted */
@@ -107,6 +108,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .literal-block .cs { color: #93a1a1; font-style: italic } /* Comment.Special */
 .literal-block .gd { color: #dc322f } /* Generic.Deleted */
 .literal-block .ge { color: #657b83; font-style: italic } /* Generic.Emph */
+.literal-block .ges { color: #657b83; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
 .literal-block .gr { color: #dc322f } /* Generic.Error */
 .literal-block .gh { color: #657b83; font-weight: bold } /* Generic.Heading */
 .literal-block .gi { color: #859900 } /* Generic.Inserted */
