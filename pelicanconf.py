@@ -54,7 +54,7 @@ DIRECT_TEMPLATES = [
 
 LINKS = (
     ('about the lab', '/about'),
-    #('staff', '/staff'),
+    ('staff', '/staff'),
     ('students', '/students'),
     ('publications', '/publications'),
     #('research', '/research'),
@@ -119,8 +119,7 @@ DEADLINK_OPTS = {
 # Theme configuration options
 #USE_LESS = True #set to "True" to test theme changes
 THEME_COLOR = "light"
-THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = True
+THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = False
 THEME_COLOR_ENABLE_USER_OVERRIDE = True
 PYGMENTS_STYLE = "solarized-light"
 PYGMENTS_STYLE_DARK = "solarized-dark"
-

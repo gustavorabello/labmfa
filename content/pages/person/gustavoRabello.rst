@@ -6,30 +6,12 @@ ______________________
 :slug: person/gustavoRabello
 
 |
-|
 
 .. image:: {static}/images/rabello.jpg
    :name: gustavo_face
    :width: 25%
    :alt: gustavo 
-
-|
-
- - Professor at `Coppe`_/`Federal University of Rio de Janeiro`_
- - `Department of Mechanical Engineering`_
- - CV: `click to access Lattes`_ 
- - ORCID: `0000-0003-0687-8466`_
- - home page: https://gustavorabello.github.io
- - **e-mail**: gustavo.rabello@coppe.ufrj.br
- - phone: +552139388402
-
-|
-
- - **research interests**: computational fluid dynamics, two-phase
-   flows, scientific computing, finite element method, interface
-   dynamics, particle-laden simulations
-
-|
+   :align: left
 
 My research field is numerical simulation on single- and two-phase
 flows. During my doctoral studies, I'd been working on the
@@ -55,6 +37,40 @@ Engineering at (`Coppe`_), Young Researcher of the State of Rio de
 Janeiro (`FAPERJ`_) and currently awarded Royal Society-Newton Advanced
 Fellowship (`more info`_).
 
+|
+
+**academic info**:
+
+ - Professor at `Coppe`_/`Federal University of Rio de Janeiro`_
+ - `Department of Mechanical Engineering`_
+ - CV: `click to access Lattes`_ 
+ - ORCID: `0000-0003-0687-8466`_
+ - home page: https://gustavorabello.github.io
+ - **e-mail**: gustavo.rabello@coppe.ufrj.br
+ - phone: +552139388402
+
+|
+
+**professional qualification**:
+
+ - Ph.D. at `EPFL`_ in Lausanne, Switzerland
+ - M.Sc. at `Coppe`_ in Rio de Janeiro, Brazil
+ - B.Sc. in Mechanical Engineering at `UERJ`_ in Rio de Janeiro, Brazil
+
+|
+
+**research interests**: 
+
+ - computational fluid dynamics, 
+ - two-phase flows, 
+ - scientific computing, 
+ - finite element method, 
+ - interface dynamics, 
+ - particle-laden simulations
+
+|
+
+
 .. Place your references here
 .. _0000-0003-0687-8466: https://orcid.org/0000-0003-0687-8466
 .. _click to access Lattes: http://lattes.cnpq.br/2430893976345647
@@ -64,6 +80,7 @@ Fellowship (`more info`_).
 .. _MIT: http://www.mit.edu
 .. _UERJ: http://www.uerj.br
 .. _UFRJ: http://www.ufrj.br
+.. _EPFL: http://www.epfl.ch
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
 .. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/ufrj-em/index.php?lang=en
 .. _Coppe: http://www.coppe.ufrj.br

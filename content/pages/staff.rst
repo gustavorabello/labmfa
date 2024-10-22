@@ -1,26 +1,39 @@
 Staff
 #####
 
-:date: 2022-08-23 17:47
+:date: 2024-10-22 13:47
 :slug: staff
 
-Prof. Gustavo Rabello dos Anjos - PhD, Lausanne, 2012.
+Head of the Laboratory
+______________________
 
-.. image:: {static}/images/coppe.png
-   :name: coppe-logo
-   :width: 32%
-   :alt: Coppe logo
+ `Prof. Gustavo Rabello dos Anjos`_ (gustavo.rabello@coppe.ufrj.br)
 
-I've started a professorship position at the Federal University of Rio
-de Janeiro (UFRJ). I'm member of the graduate school of Mechanical
-Engineering at (COPPE), Young Researcher of the State of Rio de Janeiro
-(FAPERJ) and currently awarded Royal Society-Newton Advanced Fellowship.
+ `Prof. Gustavo Cesar Rachid Bodstein`_ (gustavo@mecanica.coppe.ufrj.br)
 
+Adminstrative Staff
+___________________
 
-O que acontece?
+ `M.Sc. Jaciara Roberta Barbosa`_ (jbeta@mecanica.coppe.ufrj.br)
+
+Technical Staff
+_______________
+
+ `Eng. Carlos Humberto Lionel de Souza`_  (lionel@mecanica.coppe.ufrj.br)
+
+Post-Doctoral Researcher
+________________________
+
+ `Daniel Barbedo Vasconcelos Santos`_ -- 
+  *Fluid-Structure Interaction and Dynamics*, 
+  2024
+
 
 
 .. Place your references here
-.. _Coppe: http://www.coppe.ufrj.br
-.. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _cv: http://lattes.cnpq.br/2144099604046702
+.. Place your references here
+.. _Prof. Gustavo Cesar Rachid Bodstein: /person/gustavoBodstein
+.. _Prof. Gustavo Rabello dos Anjos: /person/gustavoRabello
+.. _M.Sc. Jaciara Roberta Barbosa: /person/roberta
+.. _Eng. Carlos Humberto Lionel de Souza: /person/lionel
+.. _Daniel Barbedo Vasconcelos Santos: /person/danielBarbedo

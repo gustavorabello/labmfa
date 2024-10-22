@@ -5,13 +5,6 @@ Students
 :modified: 2024-07-08 22:10
 :slug: students
 
-Post-Doctoral
-_____________
-
- `Daniel Barbedo Vasconcelos Santos`_ -- 
-  *Fluid-Structure Interaction and Dynamics*, 
-  2024
-
 D.Sc. Students
 ______________
 
@@ -105,7 +98,6 @@ __________________________________
 .. _Antonio Emanuel Marques dos Santos: /person/antonioEmanuel
 .. _Gabriel Ricardo Güntensperger Sousa: /person/gabrielSousa
 .. _João Paulo Innocente de Souza: /person/joaoPauloInnocente
-.. _Daniel Barbedo Vasconcelos Santos: /person/danielBarbedo
 .. _Leandro Marques dos Santos: /person/leandroMarques
 .. _Fábio Gaspar Junior: /person/fabioGaspar
 .. _Felipe Feres Ferreira: /person/felipeFeres

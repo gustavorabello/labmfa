@@ -10,4 +10,3 @@ ____________________________________
 - Technical Staff at Coppe/Federal University of Rio de Janeiro
 - Department of Mechanical Engineering
 
-This is the page of Eng. Lionel
