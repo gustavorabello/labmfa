@@ -65,6 +65,16 @@ __________________________________
 Alumni 
 __________________________________
 
+ `Aline Barbosa Figueiredo`_ --
+  *Leak Location in Gas Pipeline with Two-Phase Flow in a Stratified Pattern*,
+  Post-Doc,
+  2024
+
+ `Rodrigo Augusto Camara Patricio`_ --
+  *Numerical Simulation of Two-Phase Flow in Gas Pipelines in Stratified and Slug Patterns in the Presence of a Pig*,
+  Ph.D. Student,
+  2024
+
  `Rafael Araujo Vidal`_ --
   *Coalescence study between spherically sphaped bubbles and drops*,  
   M.Sc.,
@@ -90,6 +100,15 @@ __________________________________
   Undergrad Scientific Research,
   2023
 
+ `Raphael Viggiano Neves de Freitas`_ --
+  *Transient Modeling and Simulation of Piston Devices Moving Through Single-Phase and Two-Phase Flows in Pipes Applied to Pigs And Plungers*,
+  Ph.D. Student,
+  2022
+
+ `Carina Nogueira Sondermann`_ --
+  *Numerical Prediction of Intermittent Two-Phase Flow in Horizontal and Inclined Pipelines and Comparison with Experiments*,
+  Ph.D. Student,
+  2021
 
 .. Place your references here
 .. _Everton Taveira Baldes Vieira: /person/evertonVieira
@@ -109,3 +128,8 @@ __________________________________
 .. _João Pedro Rodrigues: /person/joaoPedroRodrigues
 .. _Daniel Moreira Spesani: /person/danielSpesani
 .. _Breno Sarmento: /person/brenoSarmento
+.. _Raphael Viggiano Neves de Freitas: /person/raphaelViggianoFreitas
+.. _Aline Barbosa Figueiredo: /person/alineBarbosaFigueiredo
+.. _Carina Nogueira Sondermann: /person/carinaNogueiraSondermann
+.. _Rodrigo Augusto Camara Patricio: /person/rodrigoCamaraPatricio
+
