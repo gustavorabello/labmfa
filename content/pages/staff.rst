@@ -24,16 +24,26 @@ _______________
 Post-Doctoral Researcher
 ________________________
 
- `Daniel Barbedo Vasconcelos Santos`_ -- 
+ `Dr. Daniel Barbedo Vasconcelos Santos`_ -- 
   *Fluid-Structure Interaction and Dynamics*, 
   2024
 
+Collaborators
+_____________
+
+ `Prof. Marcelo Amorim Savi`_ -- 
+  *Mecanon, PEM/Coppe - UFRJ*
+
+ `Prof. Felipe Felipe Bastos de Freitas Rachid`_ -- 
+  *PGMEC - Federal Fluminense Univeristy - UFF* 
 
 
 .. Place your references here
 .. Place your references here
+.. _Prof. Marcelo Amorim Savi: http://mecanon.coppe.ufrj.br/2017/08/10/marcelo-amorim-savi/
+.. _Prof. Felipe Felipe Bastos de Freitas Rachid: https://pgmec.uff.br/felipe-bastos-de-freitas-rachid/
 .. _Prof. Gustavo Cesar Rachid Bodstein: /person/gustavoBodstein
 .. _Prof. Gustavo Rabello dos Anjos: /person/gustavoRabello
 .. _M.Sc. Jaciara Roberta Barbosa: /person/roberta
 .. _Eng. Carlos Humberto Lionel de Souza: /person/lionel
-.. _Daniel Barbedo Vasconcelos Santos: /person/danielBarbedo
+.. _Dr. Daniel Barbedo Vasconcelos Santos: /person/danielBarbedo
