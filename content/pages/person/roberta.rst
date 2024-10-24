@@ -7,7 +7,35 @@ _____________________________
 
 |
 
-- Adminstrative Staff at Coppe/Federal University of Rio de Janeiro
-- Department of Mechanical Engineering
+.. image:: {static}/images/roberta.png
+   :name: roberta_face
+   :width: 25%
+   :alt: roberta
+   :align: left
 
-This is the page of M.Sc. Jaciara Roberta
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+|
+
+**professional info**:
+
+ - Adminstrative staff at `Coppe`_/`Federal University of Rio de Janeiro`_
+ - `Department of Mechanical Engineering`_
+
+.. _Federal University of Rio de Janeiro: http://www.ufrj.br
+.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/ufrj-em/index.php?lang=en
+.. _Coppe: http://www.coppe.ufrj.br

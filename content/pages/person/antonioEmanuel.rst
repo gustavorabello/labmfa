@@ -6,12 +6,27 @@ __________________________________
 :slug: person/antonioEmanuel
 
 |
-|
 
 .. image:: {static}/images/antonioEmanuel.jpg
    :name: emanuel_face
    :width: 25%
    :alt: emanuel 
+   :align: left
+
+I am a master's student in Mechanical Engineering from the Mechanical
+Engineering Program of the Alberto Luiz Coimbra Institute of Graduate
+Studies and Research in Engineering, at the Federal University of Rio de
+Janeiro. In 2022, I received my undergraduate degree in Mechanical
+Engineering from the Federal University of Ceará (`UFC`_), with a double
+degree in Mechanical Engineering and Energy, Fluids and Environment
+(`MECA`_), from the Institut National des Sciences Appliquées de Rouen
+(`INSA`_), with a scholarship from the Coordination for the Improvement
+of Higher Education Personnel (`CAPES`_), through the BRAFITEC program
+(BRAsil France Ingénieur TECnologia). I have worked with computational
+fluid dynamics (CFD) and finite difference method, in the thermal area,
+at Technip Energies (France, 2021) and at Carrier Transicold Industries
+(France, 2020). My areas of interest includes multiphase flows, heat and
+mass transfer, and computational fluid dynamics.
 
 |
 
@@ -28,23 +43,6 @@ __________________________________
  - **research interests**: computational fluid dynamics, two-phase
    flows, finite element method, finite volume method, microrreactors
    rocket propulsion, biodiesel production
-
-|
-
-I am a master's student in Mechanical Engineering from the Mechanical
-Engineering Program of the Alberto Luiz Coimbra Institute of Graduate
-Studies and Research in Engineering, at the Federal University of Rio de
-Janeiro. In 2022, I received my undergraduate degree in Mechanical
-Engineering from the Federal University of Ceará (`UFC`_), with a double
-degree in Mechanical Engineering and Energy, Fluids and Environment
-(`MECA`_), from the Institut National des Sciences Appliquées de Rouen
-(`INSA`_), with a scholarship from the Coordination for the Improvement
-of Higher Education Personnel (`CAPES`_), through the BRAFITEC program
-(BRAsil France Ingénieur TECnologia). I have worked with computational
-fluid dynamics (CFD) and finite difference method, in the thermal area,
-at Technip Energies (France, 2021) and at Carrier Transicold Industries
-(France, 2020). My areas of interest includes multiphase flows, heat and
-mass transfer, and computational fluid dynamics.
 
 .. Place your references here
 .. _0009-0009-6428-3381: https://orcid.org/0009-0009-6428-3381

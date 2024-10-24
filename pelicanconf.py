@@ -6,16 +6,18 @@ AUTHOR = 'LabMFA - Fluid Mechanics and Aerodynamics Laboratory'
 COPYRIGHT_NAME = AUTHOR
 COPYRIGHT_YEAR = str(__import__("datetime").date.today().year)
 SITENAME = 'Fluid Mechanics and Aerodynamics Laboratory'
-#SITETITLE = "LabMFA"
+SITETITLE = "LabMFA"
 SITESUBTITLE = "Fluid Mechanics and Aerodynamics Laboratory"
 SITEDESCRIPTION = "Laboratory Website"
 FAVICON = "/images/favicon.ico"
+SITELOGO = "/images/logo_white.png"
 SITEURL = "https://labfma.coppe.ufrj.br"
+SITEUFRJ = "https://www.ufrj.br"
+SITECOPPE = "https://www.coppe.ufrj.br"
+SITEPEM = "https://www.mecanica.coppe.ufrj.br"
 
 # Theme setup
 THEME = "Flex"
-#THEME = "/Users/gustavo/Library/pelican-themes/pelican-simplegrey"
-#THEME = "/Users/gustavo/Library/pelican-themes/octopress"
 BROWSER_COLOR = "#333"
 
 # Static directories
@@ -59,7 +61,7 @@ LINKS = (
     ('publications', '/publications'),
     #('research', '/research'),
     ('education', '/education'),
-    #('facilities', '/facilities'),
+    ('facilities', '/facilities'),
     ('media gallery', '/media'),
     ('contact us', '/contact'),
 )
@@ -117,7 +119,7 @@ DEADLINK_OPTS = {
 #PUBLICATIONS_SRC = "content/data/publications.bib"
 
 # Theme configuration options
-#USE_LESS = True #set to "True" to test theme changes
+USE_LESS = True #set to "True" to test theme changes
 THEME_COLOR = "light"
 THEME_COLOR_AUTO_DETECT_BROWSER_PREFERENCE = False
 THEME_COLOR_ENABLE_USER_OVERRIDE = True

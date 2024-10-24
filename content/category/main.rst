@@ -35,7 +35,7 @@ The left image below is a photography of the building showing the
 are installed. The right hand side photo is the inside view of the
 12-seated meeting room located at the 3rd. floor of **labMFA**.
 
-.. image:: {static}/images/building.jpg
+.. image:: {static}/images/building.png
    :name: building
    :width: 48%
    :alt: laboratory building
