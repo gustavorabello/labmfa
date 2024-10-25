@@ -3,11 +3,11 @@ __________________________
 
 :date: 2024-08-10 22:10
 :modified: 2024-08-10 22:10
-:slug: person/fabiogasparjr
+:slug: person/fabioGasparJr
 
 |
 
-.. image:: {static}/images/fabiogasparjr.jpg
+.. image:: {static}/images/fabioGasparJr.jpg
    :name: fabio_face
    :width: 25%
    :alt: fabio 
