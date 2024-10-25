@@ -116,9 +116,9 @@ __________________________________
 .. _Juliana Calazans de Cerqueira: /person/julianaCerqueira
 .. _Antonio Emanuel Marques dos Santos: /person/antonioEmanuel
 .. _Gabriel Ricardo Güntensperger Sousa: /person/gabrielSousa
-.. _João Paulo Innocente de Souza: /person/joaoPauloInnocente
+.. _João Paulo Innocente de Souza: /person/joaoInnocente
 .. _Leandro Marques dos Santos: /person/leandroMarques
-.. _Fábio Gaspar Junior: /person/fabioGaspar
+.. _Fábio Gaspar Junior: /person/fabioGasparJr
 .. _Felipe Feres Ferreira: /person/felipeFeres
 .. _Gabriel Felipe de Oliveira Antão: /person/gabrielAntao
 .. _Rafael Araujo Vidal: /person/rafaelVidal

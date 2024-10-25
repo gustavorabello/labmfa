@@ -78,6 +78,7 @@ aside {
 
   a {
     color: @sidebar-link-color;
+      font-weight: 400;
   }
 
   a:hover {
@@ -102,16 +103,26 @@ aside {
       font-size: .92em;
     }
   }
+  header{
+    padding-bottom: 0px;
+    padding-top: 20px;
+    margin: 0;
+
+    img {
+      border-radius: 0%;
+      max-width: 80px;
+    }
+  }
   footer {
     position: absolute;
     padding: 20px;
-    bottom: 0;
+    top: 0;
     margin: 10;
 
     img {
       max-width: 80px;
-      float: center;
-    padding: 5px;
+      float: bottom;
+      padding: 5px;
     }
   }
 
