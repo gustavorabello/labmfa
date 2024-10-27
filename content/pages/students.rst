@@ -105,6 +105,11 @@ __________________________________
   Ph.D. Student,
   2022
 
+ `João Victor Barros dos Santos`_ --
+  *Airfoil Optimization for the Improvement of the Performance of Horizontal Axis Wind Turbine*,
+  M.Sc. Student,
+  2022
+
  `Carina Nogueira Sondermann`_ --
   *Numerical Prediction of Intermittent Two-Phase Flow in Horizontal and Inclined Pipelines and Comparison with Experiments*,
   Ph.D. Student,
@@ -130,6 +135,7 @@ __________________________________
 .. _Breno Sarmento: /person/brenoSarmento
 .. _Raphael Viggiano Neves de Freitas: /person/raphaelViggianoFreitas
 .. _Aline Barbosa Figueiredo: /person/alineBarbosaFigueiredo
+.. _João Victor Barros dos Santos: /person/joaoVictorSantos
 .. _Carina Nogueira Sondermann: /person/carinaNogueiraSondermann
 .. _Rodrigo Augusto Camara Patricio: /person/rodrigoCamaraPatricio
 
