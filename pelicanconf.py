@@ -23,6 +23,7 @@ BROWSER_COLOR = "#333"
 # Static directories
 STATIC_PATHS = (
     "images",
+    "documents",
     "css",
 )
 
@@ -58,7 +59,7 @@ LINKS = (
     ('about the lab', '/about'),
     ('staff', '/staff'),
     ('students', '/students'),
-    ('publications', '/publications'),
+    ('thesis & dissertations', '/thesis'),
     #('research', '/research'),
     ('education', '/education'),
     ('facilities', '/facilities'),
