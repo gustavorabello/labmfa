@@ -43,6 +43,11 @@ ______________
   *Numerical Analisys of Two-Phase Flows in Biodiesel Microreactor Production*, 
   2023
 
+ `João Victor Barros dos Santos`_ --
+  *Airfoil Optimization for the Improvement of the Performance of Horizontal Axis Wind Turbine*,
+  M.Sc. Student,
+  2022
+
  `Gabriel Felipe de Oliveira Antão`_ --
   *Development of Fluid Flow Simulator Based on Characteristic-Based Split Method*, 
   2020
@@ -105,18 +110,13 @@ __________________________________
   Ph.D. Student,
   2022
 
- `João Victor Barros dos Santos`_ --
-  *Airfoil Optimization for the Improvement of the Performance of Horizontal Axis Wind Turbine*,
-  M.Sc. Student,
-  2022
-
  `Carina Nogueira Sondermann`_ --
   *Numerical Prediction of Intermittent Two-Phase Flow in Horizontal and Inclined Pipelines and Comparison with Experiments*,
   Ph.D. Student,
   2021
 
 .. Place your references here
-.. _Everton Taveira Baldes Vieira: /person/evertonVieira
+.. _Everton Taveira Baldes Vieira: /person/evertonTaveira
 .. _Lucas Mendes Miranda: /person/LucasMiranda
 .. _Juliana Calazans de Cerqueira: /person/julianaCerqueira
 .. _Antonio Emanuel Marques dos Santos: /person/antonioEmanuel

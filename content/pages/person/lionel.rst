@@ -5,7 +5,7 @@ ____________________________________
 :modified: 2024-10-24 12:10
 :slug: person/lionel
 
-.. image:: {static}/images/lionel.png
+.. image:: {static}/images/person/lionel.png
    :name: lionel_face
    :width: 25%
    :alt: lionel 

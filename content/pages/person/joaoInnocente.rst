@@ -7,7 +7,7 @@ _____________________________
 
 |
 
-.. image:: {static}/images/joaoInnocente.jpg
+.. image:: {static}/images/person/joaoInnocente.jpg
    :name: joaoInnocente
    :width: 25%
    :alt: joaoInnocente

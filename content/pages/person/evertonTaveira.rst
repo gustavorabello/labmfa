@@ -7,7 +7,7 @@ _____________________________
 
 |
 
-.. image:: {static}/images/evertonTaveira.jpg
+.. image:: {static}/images/person/evertonTaveira.jpg
    :name: everton-face
    :width: 25%
    :alt: evertonTaveira

@@ -7,7 +7,7 @@ ___________________________________
 
 |
 
-.. image:: {static}/images/bodstein.jpg
+.. image:: {static}/images/person/bodstein.jpg
    :name: bodstein_face
    :width: 25%
    :alt: bodstein

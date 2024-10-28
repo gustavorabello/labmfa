@@ -7,7 +7,7 @@ ______________________
 
 |
 
-.. image:: {static}/images/rabello.jpg
+.. image:: {static}/images/person/rabello.jpg
    :name: gustavo_face
    :width: 25%
    :alt: gustavo 

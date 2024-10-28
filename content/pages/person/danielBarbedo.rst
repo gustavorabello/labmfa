@@ -7,7 +7,7 @@ _________________________________
 
 |
 
-.. image:: {static}/images/danielBarbedo.jpg
+.. image:: {static}/images/person/danielBarbedo.jpg
    :name: daniel_face
    :width: 25%
    :alt: daniel 

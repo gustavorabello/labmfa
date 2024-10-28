@@ -7,7 +7,7 @@ _____________________________
 
 |
 
-.. image:: {static}/images/roberta.png
+.. image:: {static}/images/person/roberta.png
    :name: roberta_face
    :width: 25%
    :alt: roberta

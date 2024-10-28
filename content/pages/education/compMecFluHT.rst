@@ -5,7 +5,17 @@ _____________________________________________________________
 and heat transfer orieanted on numerical modeling of the 1-D and 2-D
 enginering problems.
 
-.. image:: {static}/images/two-phase_1.jpeg
-   :name: two-phase_36
-   :width: 33%
-   :alt: image of two-phase_1
+.. image:: {static}/images/education/cfd_1.png
+   :name: cfd_1
+   :width: 26%
+   :alt: image of cfd_1
+
+.. image:: {static}/images/education/cfd_2.png
+   :name: cfd_2
+   :width: 36%
+   :alt: image of cfd_2
+
+.. image:: {static}/images/education/cfd_3.png
+   :name: cfd_3
+   :width: 36%
+   :alt: image of cfd_3

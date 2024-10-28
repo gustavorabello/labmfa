@@ -7,7 +7,7 @@ __________________________
 
 |
 
-.. image:: {static}/images/fabioGasparJr.jpg
+.. image:: {static}/images/person/fabioGasparJr.jpg
    :name: fabio_face
    :width: 25%
    :alt: fabio 

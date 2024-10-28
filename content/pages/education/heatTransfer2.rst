@@ -5,8 +5,18 @@ _____________________________
 with focus on numerical modeling of the 1-D and 2-D heat equation and
 1-D approach to compute size and thermal analysis on heat exchangers.
 
-.. image:: {static}/images/two-phase_1.jpeg
-   :name: two-phase_33
+.. image:: {static}/images/education/ht_1.png
+   :name: ht_1
    :width: 33%
-   :alt: image of two-phase_1
+   :alt: image of ht_1
+
+.. image:: {static}/images/education/ht_2.png
+   :name: ht_2
+   :width: 33%
+   :alt: image of ht_2
+
+.. image:: {static}/images/education/ht_3.png
+   :name: ht_3
+   :width: 33%
+   :alt: image of ht_3
 
