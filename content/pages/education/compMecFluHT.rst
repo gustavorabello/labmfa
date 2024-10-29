@@ -7,7 +7,7 @@ enginering problems.
 
 .. image:: {static}/images/education/cfd_1.png
    :name: cfd_1
-   :width: 26%
+   :width: 20%
    :alt: image of cfd_1
 
 .. image:: {static}/images/education/cfd_2.png

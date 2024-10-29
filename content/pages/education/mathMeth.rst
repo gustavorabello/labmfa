@@ -6,11 +6,11 @@ of mathematical tools, thus the student should be able to.
 
 .. image:: {static}/images/education/mat_1.png
    :name: mat_1
-   :width: 33%
+   :width: 40%
    :alt: image of mat_1
 
 .. image:: {static}/images/education/mat_2.png
    :name: mat_2
-   :width: 33%
+   :width: 30%
    :alt: image of mat_2
 

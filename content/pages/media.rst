@@ -24,3 +24,13 @@ This video shows a rising bubble test case with increasing sinusoidal
 wall effects. As can be seen, when wall is squeezing the bubble, its
 acceleration is much lower when compared to very large domains.
 
+.. youtube:: Hd1ihyQ8pww?si=_Mp-4duEZkyYA7nX
+    :class: youtube-16x9
+    :allowfullscreen: yes
+    :seamless: yes
+
+This video shows the difficult modeling of the coalescence process using
+the interface tracking technique in quadrilateral meshes. As can be
+seen, after the initial coalescence of bubbles, the bubble flow speed
+increases dramatically and the bubble interfaces collapses. After this
+point, the numerical simulation is no longer valid.
