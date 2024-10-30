@@ -34,3 +34,15 @@ the interface tracking technique in quadrilateral meshes. As can be
 seen, after the initial coalescence of bubbles, the bubble flow speed
 increases dramatically and the bubble interfaces collapses. After this
 point, the numerical simulation is no longer valid.
+
+.. youtube:: FH49VS83Rjw?si=sZ6VaRFmoiHa3o2F
+    :class: youtube-16x9
+    :allowfullscreen: yes
+    :seamless: yes
+
+The simulation presented above describes the interection between fluid
+flowing between parallel plates and structure represented by a
+rectangular restriction. As can be seen, the fluid flow imposed a force
+to the structure that bounces until its steady shape. The von Mises
+stress is highlighted in colors shown on the top of the figure, while
+the horizontal velicity speed of the fluid flow is shown above.
