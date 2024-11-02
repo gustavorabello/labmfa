@@ -1,8 +1,18 @@
 
-Set left-hand side background color:
+- minify less to min.css and compact the output (one-line no blank space):
+brew install node
+npm install lessc
+npm install less-plugin-clean-css -g
+
+use: 
+lessc -clean-css style.less test.min.css
+
+- Set left-hand side background color:
 
 Flex/static/stylesheet/style.min.css
 
-Set dark-mode left-hand side background color:
+- Set dark-mode left-hand side background color:
 
 Flex/static/stylesheet/dark-theme.min.css
+
+

@@ -9,24 +9,20 @@ Thesis & Dissertations
 D.Sc. Thesis
 ____________
 
- `Daniel Barbedo Vasconcelos Santos`_ -- 
-  `Finite Element Simulation of Three-Dimensional Two-Phase Flows in Complex Geometries`_, 
-  2024
+  2024 - `Finite Element Simulation of Three-Dimensional Two-Phase Flows in Complex Geometries`_, 2024
+   author: `Daniel Barbedo Vasconcelos Santos`_ 
 
 M.Sc. Dissertations
 ___________________
 
- `Felipe Feres Ferreira`_ --  
-  `CFD Analysis of a Diesel Particulate Filter Performance Using Biodiesel`_, 
-  2023
+ 2023 - `CFD Analysis of a Diesel Particulate Filter Performance Using Biodiesel`_, 
+  author: `Felipe Feres Ferreira`_ 
 
- `Rafael Araujo Vidal`_ --
-  `A Semi-Lagrangian Method for Two-Phase Flow Simulation`_,  
-  2023
+ 2023 - `A Semi-Lagrangian Method for Two-Phase Flow Simulation`_,  
+  author:`Rafael Araujo Vidal`_ 
 
- `João Paulo Innocente de Souza`_  --
-  `Particle-Laden Multiphase Flows a Finite Element Analysis on Biofuel Particle Emissions`_, 
-  2021
+ 2021 - `Particle-Laden Multiphase Flows a Finite Element Analysis on Biofuel Particle Emissions`_, 
+  author: `João Paulo Innocente de Souza`_  
 
 
 .. Place your references here
