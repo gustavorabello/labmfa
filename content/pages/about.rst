@@ -27,9 +27,9 @@ Research Focus
 The laboratory has three main research areas are:
 
 1. Two-Phase Flows
+
 Research on two-phase flows is an active area of investigation, with
 several future directions:
-
 **Coupling Between Phases**: Understanding the interactions between 
 phases in complex systems. **Interfacial Dynamics**: Studying the motion
 of interfaces between phases. **Optimization Techniques**: Developing
@@ -123,22 +123,35 @@ Implications and Applications
 LabMFA's research has significant implications for various engineering 
 fields, such as:
 
-1. Two-Phase Flows
+1. Numerical Methods
+
+* Finite Element Method (FEM)
+* Finite Volume Method (FVM)
+* Finite Difference Method (FDM)
+* all of above using **High-Order schemes**
+
+2. Two-Phase Flows
 
 * deformable interfaces
-* front-tracking
+* interface-tracking and interface-capturing
+* surface force dominant flows
 
-2. Aeronautics
+3. Fluid-Structure Interaction (FSI)
+
+* Arbitrary Lagrangian-Eulerian (ALE) methods
+* Immersed Finite Element Method (iFEM)
+
+4. Aeronautics
 
 * Flow around blunt bodies
 * Airfoil design
 * Aircraft performance optimization
 
-3. Naval Engineering
+5. Naval Engineering
 
 * Riser and offshore platform designs
 
-4. Wind Energy
+6. Wind Energy
 
 * Optimizing wind energy production
 * Increasing efficiency and reducing costs

@@ -114,6 +114,8 @@ __________________________________
   *Numerical Prediction of Intermittent Two-Phase Flow in Horizontal and Inclined Pipelines and Comparison with Experiments*,
   Ph.D. Student,
   2021
+  *Simulation of Two Phase Flow in Pipelines Including One Energy Equation for the Mixture Using the FCT Numerical Method*,
+  2016
 
 .. Place your references here
 .. _Everton Taveira Baldes Vieira: /person/evertonTaveira
@@ -136,6 +138,6 @@ __________________________________
 .. _Raphael Viggiano Neves de Freitas: /person/raphaelViggianoFreitas
 .. _Aline Barbosa Figueiredo: /person/alineBarbosaFigueiredo
 .. _João Victor Barros dos Santos: /person/joaoVictorSantos
-.. _Carina Nogueira Sondermann: /person/carinaNogueiraSondermann
+.. _Carina Nogueira Sondermann: /person/carinaSondermann
 .. _Rodrigo Augusto Camara Patricio: /person/rodrigoCamaraPatricio
 
