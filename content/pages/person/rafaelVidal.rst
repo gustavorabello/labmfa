@@ -5,7 +5,7 @@ ___________________
 :modified: 2022-09-16 17:10
 :slug: person/rafaelVidal
 
-Rafael Araujo Vidal was a M.Sc. student at `UFRJ`_/`Coppe` under
+Rafael Araujo Vidal was a M.Sc. student at `UFRJ`_/`Coppe`_ under
 supervision of `Prof. Gustavo R. Anjos`_.
 
 .. Place your references here

@@ -5,7 +5,7 @@ _____________________________
 :modified: 2024-10-22 17:10
 :slug: person/joaoVictorSantos
 
-João Victor Santos is a M.Sc. student at `UFRJ`_/`Coppe` under
+João Victor Santos is a M.Sc. student at `UFRJ`_/`Coppe`_ under
 supervision of `Prof. Gustavo Bodstein`_. The title of his thesis is
 Airfoil Optimization for the Improvement of the Performance of
 Horizontal Axis Wind Turbine.

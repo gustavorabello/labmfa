@@ -6,7 +6,7 @@ ___________________________________
 :slug: person/gabrielSousa
 
 Gabriel Ricardo Güntensperger Sousa is a D.Sc. student at
-`UFRJ`_/`Coppe` under supervision of `Prof. Gustavo R. Anjos`_.
+`UFRJ`_/`Coppe`_ under supervision of `Prof. Gustavo R. Anjos`_.
 
 .. Place your references here
 .. _Prof. Gustavo R. Anjos: /person/gustavoRabello

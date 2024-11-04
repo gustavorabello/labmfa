@@ -5,7 +5,7 @@ __________________________
 :modified: 2022-09-10 22:10
 :slug: person/leandroMarques
 
-Leandro Marques is a Ph.D. student at `UFRJ`_/`Coppe` under
+Leandro Marques is a Ph.D. student at `UFRJ`_/`Coppe`_ under
 supervision of `Prof. Gustavo R. Anjos`_.
 
 .. Place your references here

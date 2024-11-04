@@ -6,7 +6,7 @@ ________________________
 :slug: person/alineBarbosaFigueiredo
 
 Aline Barbosa Figueiredo was a M.Sc./D.Sc student at UFRJ under student
-at `UFRJ`_/`Coppe` under supervision of `Prof. Gustavo Bodstein`_.
+at `UFRJ`_/`Coppe`_ under supervision of `Prof. Gustavo Bodstein`_.
 Additionally, she worked as a Post-Doc Assistant under supervsion of
 `Prof. Gustavo Bodstein`_.
 

@@ -5,7 +5,7 @@ __________________________
 :modified: 2024-11-04 17:10
 :slug: person/julianaCalazans
 
-Juliana Calazans Cerqueira is a M.Sc. student at `UFRJ`_/`Coppe` under
+Juliana Calazans Cerqueira is a M.Sc. student at `UFRJ`_/`Coppe`_ under
 supervision of `Prof. Gustavo R. Anjos`_.
 
 .. Place your references here

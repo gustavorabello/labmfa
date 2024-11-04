@@ -5,7 +5,7 @@ ______________________
 :modified: 2022-09-16 17:10
 :slug: person/higorOdilon
 
-Hígor Odilon Gottgtroy is a M.Sc. student at `UFRJ`_/`Coppe` under
+Hígor Odilon Gottgtroy is a M.Sc. student at `UFRJ`_/`Coppe`_ under
 supervision of `Prof. Gustavo R. Anjos`_.
 
 .. Place your references here

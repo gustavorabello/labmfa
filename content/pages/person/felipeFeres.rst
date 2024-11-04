@@ -5,7 +5,7 @@ _____________________
 :modified: 2022-09-16 17:10
 :slug: person/felipeFeres
 
-Felipe Feres Ferreira was a M.Sc. student at `UFRJ`_/`Coppe` under
+Felipe Feres Ferreira was a M.Sc. student at `UFRJ`_/`Coppe`_ under
 supervision of `Prof. Gustavo R. Anjos`_.
 
 .. Place your references here
