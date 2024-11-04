@@ -5,5 +5,14 @@ ____________________
 :modified: 2022-09-16 12:10
 :slug: person/joaoPedroRodrigues
 
-João Pedro Rodrigues is a undergrad student at UFRJ.
+João Pedro Rodrigues was a undergrad student at `UFRJ`_/`Coppe` under
+supervision of `Prof. Gustavo R. Anjos`_.
+
+.. Place your references here
+.. _Prof. Gustavo R. Anjos: /person/gustavoRabello
+.. _UFRJ: http://www.ufrj.br
+.. _Federal University of Rio de Janeiro: http://www.ufrj.br
+.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/ufrj-em/index.php?lang=en
+.. _Coppe: http://www.coppe.ufrj.br
+
 

@@ -8,3 +8,12 @@ ___________________
 
 Breno Mota Sarmento is an under-grad student at UFRJ.
 
+Breno Mota Sarmento is a undergrad student at `UFRJ`_/`Coppe` under
+supervision of `Prof. Gustavo R. Anjos`_.
+
+.. Place your references here
+.. _UFRJ: http://www.ufrj.br
+.. _Federal University of Rio de Janeiro: http://www.ufrj.br
+.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/ufrj-em/index.php?lang=en
+.. _Coppe: http://www.coppe.ufrj.br
+

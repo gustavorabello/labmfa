@@ -1,11 +1,11 @@
-Anna Bárbara Coimbra
-____________________
+Juliana Calazans Cerqueira
+__________________________
 
-:date: 2022-09-16 12:10
-:modified: 2024-11-04 12:10
-:slug: person/annaCoimbra
+:date: 2022-09-16 17:10
+:modified: 2024-11-04 17:10
+:slug: person/julianaCalazans
 
-Anna Bárbara Coimbra was a undergrad student at `UFRJ`_/`Coppe` under
+Juliana Calazans Cerqueira is a M.Sc. student at `UFRJ`_/`Coppe` under
 supervision of `Prof. Gustavo R. Anjos`_.
 
 .. Place your references here

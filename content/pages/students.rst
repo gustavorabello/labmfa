@@ -120,7 +120,7 @@ __________________________________
 .. Place your references here
 .. _Everton Taveira Baldes Vieira: /person/evertonTaveira
 .. _Lucas Mendes Miranda: /person/LucasMiranda
-.. _Juliana Calazans de Cerqueira: /person/julianaCerqueira
+.. _Juliana Calazans de Cerqueira: /person/julianaCalazans
 .. _Antonio Emanuel Marques dos Santos: /person/antonioEmanuel
 .. _Gabriel Ricardo Güntensperger Sousa: /person/gabrielSousa
 .. _João Paulo Innocente de Souza: /person/joaoInnocente
