@@ -16,7 +16,7 @@ __________________________________
 I am a master's student in Mechanical Engineering from the Mechanical
 Engineering Program of the Alberto Luiz Coimbra Institute of Graduate
 Studies and Research in Engineering, at the Federal University of Rio de
-Janeiro (`Coppe`_`UFRJ`_). In 2022, I received my undergraduate degree
+Janeiro (`Coppe`_/`UFRJ`_). In 2022, I received my undergraduate degree
 in Mechanical Engineering from the Federal University of Ceará (`UFC`_),
 with a double degree in Mechanical Engineering and Energy, Fluids and
 Environment (`MECA`_), from the Institut National des Sciences
