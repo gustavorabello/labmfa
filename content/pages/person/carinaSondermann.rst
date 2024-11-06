@@ -16,7 +16,7 @@ __________________________
 Carina Nogueira Sondermann holds D.Sc. (2021) and M.Sc. (2016) degrees
 in Mechanical Engineering from the Federal University of Rio de Janeiro
 (UFRJ). She also has a degree in Mechanical Engineering (2013) from the
-same institution. Dr. Sondermann is is currently a Research Assistant
+same institution. Dr. Sondermann is currently a Research Assistant
 Professor at the University of Tulsa (Tulsa, Oklahoma, USA) working with
 Tulsa University Fluid Flow Projects (TUFFP) and Tulsa University
 Horizontal Well and Artificial Lift Projects (TUHWALP).
