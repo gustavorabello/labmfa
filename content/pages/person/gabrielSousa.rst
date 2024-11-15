@@ -2,7 +2,7 @@ Gabriel Ricardo Güntensperger Sousa
 ___________________________________
 
 :date: 2024-09-16 17:10
-:modified: 2024-09-16 17:10
+:modified: 2024-11-15 17:10
 :slug: person/gabrielSousa
 
 |
@@ -31,9 +31,9 @@ Fluid Mechanics and Aerodynamics Laboratory (LabMFA).
 
  - D.SC. Student at `Coppe`_/`Federal University of Rio de Janeiro`_
  - `Department of Mechanical Engineering`_
- - CV: ` http://lattes.cnpq.br/5025968815757707`_  
- - ORCID: ` 0009-0006-6013-7107`_
- - home page: www.linkedin.com/in/gabriel-güntensperger-886804196
+ - CV: `http://lattes.cnpq.br/5025968815757707`_  
+ - ORCID: `0009-0006-6013-7107`_
+ - home page: `linkedin`_
  - **e-mail**: gabriel.r.g.sousa@gmail.com
  - phone: +5521993105206
 
@@ -45,6 +45,7 @@ Fluid Mechanics and Aerodynamics Laboratory (LabMFA).
 .. Place your references here
 .. _0009-0009-6428-3381: https://orcid.org/0009-0006-6013-7107
 .. _click to access Lattes: http://lattes.cnpq.br/5025968815757707
+.. _linkedin: www.linkedin.com/in/gabriel-güntensperger-886804196
 .. _UERJ: https://www.uerj.br/
 .. _UFRJ: http://www.ufrj.br
 .. _CAPES: https://www.gov.br/capes/pt-br
