@@ -31,9 +31,9 @@ Fluid Mechanics and Aerodynamics Laboratory (LabMFA).
 
  - D.SC. Student at `Coppe`_/`Federal University of Rio de Janeiro`_
  - `Department of Mechanical Engineering`_
- - CV: `http://lattes.cnpq.br/5025968815757707`_  
+ - CV: `click to access Lattes`_  
  - ORCID: `0009-0006-6013-7107`_
- - home page: `linkedin`_
+ - home page: `click to access linkedin`_
  - **e-mail**: gabriel.r.g.sousa@gmail.com
  - phone: +5521993105206
 
@@ -43,9 +43,9 @@ Fluid Mechanics and Aerodynamics Laboratory (LabMFA).
    flows, finite element method, coalescence in two-phase flows
 
 .. Place your references here
-.. _0009-0009-6428-3381: https://orcid.org/0009-0006-6013-7107
+.. _0009-0006-6013-7107: https://orcid.org/0009-0006-6013-7107
 .. _click to access Lattes: http://lattes.cnpq.br/5025968815757707
-.. _linkedin: www.linkedin.com/in/gabriel-güntensperger-886804196
+.. _click to access linkedin: www.linkedin.com/in/gabriel-güntensperger-886804196
 .. _UERJ: https://www.uerj.br/
 .. _UFRJ: http://www.ufrj.br
 .. _CAPES: https://www.gov.br/capes/pt-br
