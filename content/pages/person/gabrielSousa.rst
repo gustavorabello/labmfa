@@ -45,7 +45,7 @@ Fluid Mechanics and Aerodynamics Laboratory (LabMFA).
 .. Place your references here
 .. _0009-0006-6013-7107: https://orcid.org/0009-0006-6013-7107
 .. _click to access Lattes: http://lattes.cnpq.br/5025968815757707
-.. _click to access linkedin: www.linkedin.com/in/gabriel-güntensperger-886804196
+.. _click to access linkedin: https://www.linkedin.com/in/gabriel-güntensperger-886804196
 .. _UERJ: https://www.uerj.br/
 .. _UFRJ: http://www.ufrj.br
 .. _CAPES: https://www.gov.br/capes/pt-br
