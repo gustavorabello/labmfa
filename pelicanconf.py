@@ -63,6 +63,7 @@ LINKS = (
     #('research', '/research'),
     ('education', '/education'),
     ('facilities', '/facilities'),
+    ('aerodesign', '/aerodesign'),
     ('media gallery', '/media'),
     ('contact us', '/contact'),
 )
