@@ -1,7 +1,7 @@
 
 - minify less to min.css and compact the output (one-line no blank space):
 brew install node
-npm install lessc
+npm install lessc --global
 npm install less-plugin-clean-css -g
 
 use: 
@@ -15,4 +15,9 @@ Flex/static/stylesheet/style.min.css
 
 Flex/static/stylesheet/dark-theme.min.css
 
+
+- pelican_youtube plugin modified (should be moved to above location)
+
+from: plugins
+to: ~/miniforge3/envs/pelican/lib/python3.12/site-packages/pelican_youtube
 
