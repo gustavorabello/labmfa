@@ -29,7 +29,7 @@ inspired by the latest advancements in fluid dynamics in complex flows!
      :allowfullscreen: yes
      :seamless: yes
      :align: left
-     :comment: Flow in a micro-channel with a cylindrical pin at Re=209, delta 1, Mid-interface.
+     :comment: Numerical flow simulation on a micro-channel section passed by a cylindrical pin, at a Reynolds Number equal to 209. The simulation was performed using an in-house code developed in Python language. The code used the Finite Element Method to discretize the streamfunction-vorticity equations to describe the flow. A passive scalar (in yellow) was inserted to assess the effects of the cylinder's wake on the flow's dispersion and mixture..
 
 |
 
