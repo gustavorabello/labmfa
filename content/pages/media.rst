@@ -6,12 +6,32 @@ Media Gallery
 :summary: Graduate course  
 :slug: media
 
-The following selection of videos and images are extracted from all
-research documents produced in the **Fluid Mechanics and Aerodynamics
-Laboratory - LabMFA**. 
+Exploring the Frontiers of **Computational Fluid Dynamics**: A Showcase 
+of In-House Code Developement and Research Excellence.
 
-Videos
-======
+The following selection of videos presents a compelling snapshot 
+of the groundbreaking research conducted within the **Fluid 
+Mechanics and Aerodynamics Laboratory - LabMFA**. This impressive 
+collection of research documents highlights the cutting-edge capabilities 
+of **in-house code development**, showcasing its applications in various 
+industrial-level scenarios.
+
+Witness the power of **single-** and **two-phase flows** with **heat and
+mass transfer**, **fluid-structure interaction**, high **mixing** of
+fluids, and many more intriguing applications that push the boundaries
+of our understanding. These videos offer a unique glimpse into the
+innovative work being done at **LabMFA**, where experts are unlocking
+new solutions for complex engineering challenges. Get ready to be
+inspired by the latest advancements in fluid dynamics in complex flows!
+
+ .. youtube:: cX177boAy-g?si=twKgHjaH55mAqXIq 
+     :class: youtube-16x9
+     :allowfullscreen: yes
+     :seamless: yes
+     :align: left
+     :comment: Flow in a micro-channel with a cylindrical pin at Re=209, delta 1, Mid-interface.
+
+|
 
  .. youtube:: nH6Y9hlqE5I?si=lO91ADUXFPuGFQvd 
      :class: youtube-16x9
@@ -64,12 +84,4 @@ Videos
      :seamless: yes
      :align: left
      :comment: The simulation presented above describes the interection between fluid flowing between parallel plates and structure represented by a rectangular restriction. As can be seen, the fluid flow imposed a force to the structure that bounces until its steady shape. The von Mises stress is highlighted in colors shown on the top of the figure, while the horizontal velicity speed of the fluid flow is shown above.
-
-Images
-======
-
-.. image:: {static}/images/two-phase_1.jpeg
-   :name: two-phase_1
-   :width: 33%
-   :alt: image of two-phase_1
 
