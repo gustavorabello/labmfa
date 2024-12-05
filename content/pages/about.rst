@@ -39,7 +39,7 @@ several challenges, experimental and numerical methods provide valuable
 insights into their behavior and optimization techniques can improve 
 system performance.
 
-2. Fluid-Structure Interactions
+2. Fluid-Structure Interactions (FSI)
 
 **Interaction between fluids and structures**: FSI simulations study 
 the interaction between liquids, gases, and solids, predicting complex 
@@ -74,6 +74,7 @@ LabMFA has established partnerships with top research institutions
 worldwide, including:
 
 * University of Edinburgh (Scotland)
+* École Nationale Supérieure d'Arts et Métiers (France)
 * Imperial College (UK)
 * University of Bristol (UK)
 * Yokohama National University (Japan)
@@ -83,7 +84,7 @@ worldwide, including:
 Methodologies
 =============
 
-LabMFA employs a range of cutting-edge methodologies, including:
+**LabMFA** employs a range of cutting-edge methodologies, including:
 
 1. Semi-Lagrangian Method
 
@@ -113,7 +114,7 @@ In undergraduate research programs, undergraduate students actively
 participate in all activities and usually work closely with a student or
 group of graduate students. Graduate programs, in turn, are always
 associated with scientific and technological research and development
-activities, and the students involved come not only from UFRJ itself,
+activities, and the students involved come not only from **UFRJ** itself,
 but also from other universities in Brazil and other countries in South
 America. South.
 
@@ -141,7 +142,7 @@ fields, such as:
 * Arbitrary Lagrangian-Eulerian (ALE) methods
 * Immersed Finite Element Method (iFEM)
 
-4. Aeronautics
+4. Aerodynamics
 
 * Flow around blunt bodies
 * Airfoil design
@@ -159,25 +160,24 @@ fields, such as:
 Training and Human Resources
 ============================
 
-LabMFA provides training opportunities for researchers and students at
+**LabMFA** provides training opportunities for researchers and students at
 all levels, from undergraduate programs to postgraduate studies. The
 laboratory fosters collaboration with experts from other universities in
 Brazil and abroad, ensuring a diverse and dynamic research environment.
 
-LabMFA also has a tradition of receiving recently graduated doctors and,
-mainly, professors from other universities, including those from abroad.
-In order to develop scientific and technological cooperation projects,
-formal and informal agreements are maintained with renowned institutions
-in the country and abroad. In the last decade, scientific cooperation
-agreements were signed in the areas of fluid mechanics and aerodynamics
-involving LABMFA and two renowned English universities, Imperial College
-and the University of Bristol, in addition to an informal cooperation
-with Yokohama National University, in Japan. In the area of
-Wind Energy, a technological cooperation program between
-LABMFA and the CDG – Carl Duisberg Gesellschaft e.V., a German
+**LabMFA** also has a tradition of receiving recently graduated doctors
+and, mainly, professors from other universities, including those from
+abroad. In order to develop scientific and technological cooperation
+projects, formal and informal agreements are maintained with renowned
+institutions in the country and abroad. In the last decade, scientific
+cooperation agreements were signed in the areas of fluid mechanics and
+aerodynamics involving **LABMFA** and two renowned English universities,
+Imperial College and the University of Bristol, in addition to an
+informal cooperation with Yokohama National University, in Japan. In the
+area of Wind Energy, a technological cooperation program between
+**LABMFA** and the **CDG – Carl Duisberg Gesellschaft e.V.**, a German
 Foundation linked to the German Ministry of Economic Cooperation and
-Development, ended recently. More recently, LAbMFA has established a
+Development, ended recently. More recently, **LAbMFA** has established a
 cooperation with the Petroleum Engineering Laboratory at the University
-of Tulsa, OK, USA, in the area of two-phase flow in
-pipelines.
+of Tulsa, OK, USA, in the area of two-phase flow in pipelines.
 

@@ -28,6 +28,10 @@ ________________________
   *Fluid-Structure Interaction and Dynamics*, 
   2024
 
+ `Dr. Aline Barbosa Figueiredo`_ -- 
+  *Two-Phase Flows in Pipelines*, 
+  2023
+
 Scientific Collaborators
 ________________________
 
@@ -58,6 +62,7 @@ ________________________
 .. _M.Sc. Jaciara Roberta Barbosa: /person/roberta
 .. _Eng. Carlos Humberto Lionel de Souza: /person/lionel
 .. _Dr. Daniel Barbedo Vasconcelos Santos: /person/danielBarbedo
+.. _Dr. Aline Barbosa Figueiredo: /person/alineBarbosaFigueiredo
 .. _Prof. Norberto Mangiavacchi: http://www.gesar.uerj.br/en/staff/professor-norberto-mangiavacchi.html
 .. _Prof. José Pontes: http://www.gesar.uerj.br/en/staff/professor-jose-pontes.html
 .. _Prof. Daniel Chalhub: http://www.gesar.uerj.br/en/staff/professor-daniel-chalhub.html
