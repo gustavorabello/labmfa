@@ -9,11 +9,14 @@ Thesis & Dissertations
 D.Sc. Thesis
 ____________
 
-  2024 - `Finite Element Simulation of Three-Dimensional Two-Phase Flows in Complex Geometries`_
-   author: `Daniel Barbedo Vasconcelos Santos`_ 
+ 2024 - `Finite Element Simulation of Three-Dimensional Two-Phase Flows in Complex Geometries`_
+  author: `Daniel Barbedo Vasconcelos Santos`_ 
 
-  2021 - `Numerical Prediction of Intermittent Two-Phase Flow in Horizontal and Inclined Pipelines and Comparison with Experiments`_
-   author: `Carina Nogueira Sondermann`_ 
+ 2021 - `Numerical Prediction of Intermittent Two-Phase Flow in Horizontal and Inclined Pipelines and Comparison with Experiments`_
+  author: `Carina Nogueira Sondermann`_ 
+
+ 2016 - `Leak Location Algorithm Applied to Biphasic Pipelines and Stratified Flow`_
+  author: `Aline Barbosa Figueiredo`_  
 
 M.Sc. Dissertations
 ___________________
@@ -24,11 +27,15 @@ ___________________
  2023 - `A Semi-Lagrangian Method for Two-Phase Flow Simulation`_
   author:`Rafael Araujo Vidal`_ 
 
- 2021 - `Particle-Laden Multiphase Flows a Finite Element Analysis on Biofuel Particle Emissions`_, 
+ 2021 - `Particle-Laden Multiphase Flows a Finite Element Analysis on Biofuel Particle Emissions`_
   author: `João Paulo Innocente de Souza`_  
 
  2016 - `Simulation of Two Phase Flow in Pipelines Including One Energy Equation for the Mixture Using the FCT Numerical Method`_
   author: `Carina Nogueira Sondermann`_
+
+ 2010 - `Theoretical Validation of a Modeling of Two Phase Flow in Gas Pipelines, with Two Equation of Convervation for each Phase`_ 
+  author: `Aline Barbosa Figueiredo`_  
+
 
 
 .. Place your references here
@@ -37,9 +44,12 @@ ___________________
 .. _Felipe Feres Ferreira: /person/felipeFeres
 .. _Rafael Araujo Vidal: /person/rafaelVidal
 .. _Carina Nogueira Sondermann: /person/carinaSondermann
+.. _Aline Barbosa Figueiredo: /person/alineBarbosaFigueiredo
 .. _Finite Element Simulation of Three-Dimensional Two-Phase Flows in Complex Geometries: /documents/danielBarbedo.pdf
 .. _Numerical Prediction of Intermittent Two-Phase Flow in Horizontal and Inclined Pipelines and Comparison with Experiments: /documents/carinaSondermann-dsc.pdf
 .. _Simulation of Two Phase Flow in Pipelines Including One Energy Equation for the Mixture Using the FCT Numerical Method: /documents/carinaSondermann-msc.pdf
 .. _Particle-Laden Multiphase Flows a Finite Element Analysis on Biofuel Particle Emissions: /documents/joaoInnocente.pdf
 .. _A Semi-Lagrangian Method for Two-Phase Flow Simulation: /documents/rafaelVidal.pdf
 .. _CFD Analysis of a Diesel Particulate Filter Performance Using Biodiesel: /documents/felipeFeres.pdf
+.. _Theoretical Validation of a Modeling of Two Phase Flow in Gas Pipelines, with Two Equation of Convervation for each Phase: /documents/alineFigueiredo-msc.pdf
+.. _Leak Location Algorithm Applied to Biphasic Pipelines and Stratified Flow: /documents/alineFigueiredo-dsc.pdf
