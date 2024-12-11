@@ -16,7 +16,7 @@ aircraft.
 
 |
 
-.. image:: {static}/images/aerodesign.png
+.. image:: {static}/images/aero.png
    :name: aero
    :width: 100%
    :alt: aero
