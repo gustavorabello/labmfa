@@ -94,7 +94,7 @@ Society-Newton Advanced Fellowship (`more info`_).
 .. _UFRJ: http://www.ufrj.br
 .. _EPFL: http://www.epfl.ch
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/ufrj-em/index.php?lang=en
+.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br
 .. _Coppe: http://www.coppe.ufrj.br
 .. _FAPERJ: http://www.faperj.br
 .. _more info: https://gustavorabello.github.io/research/newton-2020.html
