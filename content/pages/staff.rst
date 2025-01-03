@@ -35,23 +35,29 @@ ________________________
 Scientific Collaborators
 ________________________
 
- `Prof. Marcelo Amorim Savi`_ -- Fluid-Structure Interactions
-  *Mecanon, PEM/Coppe - UFRJ*
-
  `Prof. Felipe Felipe Bastos de Freitas Rachid`_ -- Compressible Two-Phase Flows
-  *PGMEC - Federal Fluminense Univeristy - UFF* 
+  *PGMEC - Federal Fluminense Univeristy - UFF, Brazil* 
+
+ `Prof. Gustavo Oliveira`_ -- Numerical Methods in Fluids
+  *TRIL Lab - Federal University of Paraiba - UFPB, Brazil*
+
+ `Dr. Jorge Peixinho`_ -- Two-Phase Flows in Inclined Pipes
+  *PIMM, CNRS - Arts et Métiers, Paris - France*
+
+ `Prof. José Pontes`_ -- Corrosion in Chemical Processes 
+  *GESAR - Rio de Janeiro's State University - UERJ, Brazil*
+
+ `Prof. Marcelo Amorim Savi`_ -- Fluid-Structure Interactions
+  *Mecanon, PEM/Coppe - UFRJ, Brazil*
 
  `Prof. Norberto Mangiavacchi`_ -- Numerical Single- and Two-Phase Flows
-  *GESAR - Rio de Janeiro's State University - UERJ*
+  *GESAR - Rio de Janeiro's State University - UERJ, Brazil*
 
- `Prof. José Pontes`_ -- Corrosion in Chemical Processes
-  *GESAR - Rio de Janeiro's State University - UERJ*
+ `Prof. Prashant Valluri`_ -- Heat and Mass Transfer in Two-Phase Flows
+  *The University of Edinburgh, Scotland - UK*
 
  `Dr. Rachel Lucena`_ -- Carbon Capturing and Storage
-  *GESAR - Rio de Janeiro's State University - UERJ*
-
- `Dr. Jorge Peixinho`_ -- Two-Phase Flows in inclined pipes
-  *PIMM, CNRS - Arts et Métiers, Paris*
+  *GESAR - Rio de Janeiro's State University - UERJ, Brazil*
 
 
 .. Place your references here
@@ -68,3 +74,5 @@ ________________________
 .. _Prof. Daniel Chalhub: http://www.gesar.uerj.br/en/staff/professor-daniel-chalhub.html
 .. _Dr. Rachel Lucena: https://www.researchgate.net/profile/Rachel-Lucena-2
 .. _Dr. Jorge Peixinho: https://pimm.artsetmetiers.fr/en/user/167
+.. _Prof. Prashant Valluri: https://www.eng.ed.ac.uk/about/people/dr-prashant-valluri
+.. _Prof. Gustavo Oliveira: https://sigaa.ufpb.br/sigaa/public/docente/portal.jsf?siape=2344244
