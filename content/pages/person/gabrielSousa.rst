@@ -29,6 +29,8 @@ Fluid Mechanics and Aerodynamics Laboratory (LabMFA).
 
 |
 
+**academic info**:
+
  - D.SC. Student at `Coppe`_/`Federal University of Rio de Janeiro`_
  - `Department of Mechanical Engineering`_
  - CV: `click to access Lattes`_  
@@ -39,8 +41,12 @@ Fluid Mechanics and Aerodynamics Laboratory (LabMFA).
 
 |
 
- - **research interests**: computational fluid dynamics, two-phase
-   flows, finite element method, coalescence in two-phase flows
+**research interests**: 
+
+ - computational fluid dynamics
+ - two-phase flows 
+ - finite element method 
+ - coalescence in two-phase flows
 
 .. Place your references here
 .. _0009-0006-6013-7107: https://orcid.org/0009-0006-6013-7107

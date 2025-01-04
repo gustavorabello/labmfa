@@ -31,6 +31,8 @@ rotating machinery.
 
 |
 
+**academic info**:
+
  - Master's Student at `Coppe`_/`Federal University of Rio de Janeiro`_
  - `Department of Mechanical Engineering`_
  - CV: `click to access Lattes`_  
@@ -39,7 +41,15 @@ rotating machinery.
 
 |
 
- - **research interests**: computational fluid dynamics, finite element method, finite volume method, oil and gas, turbomachinery, rotating machinery, nuclear
+**research interests**: 
+ 
+ - computational fluid dynamics 
+ - finite element method 
+ - finite volume method 
+ - oil and gas 
+ - turbomachinery 
+ - rotating machinery
+ - nuclear
 
 .. Place your references here
 .. _click to access Lattes: http://lattes.cnpq.br/8854783129407040

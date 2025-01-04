@@ -28,9 +28,8 @@ simulation to help design remotely powered intelligent materials.
 |
 |
 |
-|
-|
-|
+
+**academic info**:
 
  - Post-Doctoral Researcher at `Coppe`_/`Federal University of Rio de Janeiro`_
  - `Department of Mechanical Engineering`_
@@ -40,9 +39,15 @@ simulation to help design remotely powered intelligent materials.
 
 |
 
- - **research interests**: computational fluid dynamics, two-phase
-   flows, scientific computing, finite element method, interface
-   dynamics, particle-laden simulations, fluid-structure interactions
+**research interests**: 
+
+ - computational fluid dynamics
+ - two-phase flows  
+ - scientific computing 
+ - finite element method 
+ -  interface dynamics
+ - particle-laden simulations
+ - fluid-structure interactions
 
 
 .. Place your references here

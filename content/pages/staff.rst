@@ -35,6 +35,9 @@ ________________________
 Scientific Collaborators
 ________________________
 
+ `Prof. Alex Pereira Farah`_ -- Mathematical Models in Finite Element Analysis 
+  *DA-IME - Federal Fluminense Univeristy - UFF, Brazil* 
+
  `Prof. Felipe Felipe Bastos de Freitas Rachid`_ -- Compressible Two-Phase Flows
   *PGMEC - Federal Fluminense Univeristy - UFF, Brazil* 
 
@@ -76,3 +79,4 @@ ________________________
 .. _Dr. Jorge Peixinho: https://pimm.artsetmetiers.fr/en/user/167
 .. _Prof. Prashant Valluri: https://www.eng.ed.ac.uk/about/people/dr-prashant-valluri
 .. _Prof. Gustavo Oliveira: https://sigaa.ufpb.br/sigaa/public/docente/portal.jsf?siape=2344244
+.. _Prof. Alex Pereira Farah: https://alexfarah.weebly.com/index.html

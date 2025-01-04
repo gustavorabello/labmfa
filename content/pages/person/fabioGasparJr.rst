@@ -18,6 +18,8 @@ My doctoral research focuses on computational fluid dynamics (CFD) and the finit
 
 |
 
+**academic info**:
+
  - PhD’s Student at `Coppe`_/`Federal University of Rio de Janeiro`_
  - `Department of Mechanical Engineering`_
  - CV: lattes.cnpq.br/1272595196283761/  
@@ -27,7 +29,16 @@ My doctoral research focuses on computational fluid dynamics (CFD) and the finit
 
 |
 
- - **research interests**: computational fluid dynamics, finite element method, finite volume method, two-phase flows, fluid-solid interaction, non-Newtonian fluids, blood flow, Biological Systems 
+**research interests**: 
+
+ - computational fluid dynamics
+ - finite element method 
+ - finite volume method 
+ - two-phase flows
+ - fluid-solid interaction 
+ - non-Newtonian fluids 
+ - blood flow 
+ - Biological Systems 
 
 
 .. Place your references here

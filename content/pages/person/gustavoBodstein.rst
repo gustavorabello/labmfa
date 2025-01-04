@@ -30,6 +30,8 @@ Eulerian numerical methods for hyperbolic equations).
 
 |
 
+**academic info**:
+
  - Professor at `Coppe`_/`Federal University of Rio de Janeiro`_
  - `Department of Mechanical Engineering`_
  - CV: `click to access Lattes`_ 
@@ -39,8 +41,12 @@ Eulerian numerical methods for hyperbolic equations).
 
 |
 
- - **research interests**: two-phase flows in pipes, aerodynamics,
-   lagrangian methods, wind energy analysis
+**research interests**: 
+
+ - two-phase flows in pipes 
+ - aerodynamics 
+ - lagrangian methods 
+ -  wind energy analysis
 
 .. Place your references here
 .. _000-0002-6392-1822: https://orcid.org/0000-0002-6392-1822

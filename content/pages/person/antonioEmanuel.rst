@@ -31,6 +31,8 @@ dynamics.
 
 |
 
+**academic info**:
+
  - Master's Student at `Coppe`_/`Federal University of Rio de Janeiro`_
  - `Department of Mechanical Engineering`_
  - CV: `click to access Lattes`_  
@@ -41,9 +43,15 @@ dynamics.
 
 |
 
- - **research interests**: computational fluid dynamics, two-phase
-   flows, finite element method, finite volume method, microrreactors
-   rocket propulsion, biodiesel production
+**research interests**: 
+
+ - computational fluid dynamics
+ - single- and two-phase flows 
+ - finite element method 
+ - finite volume method 
+ - microrreactors
+ - rocket propulsion 
+ - biodiesel production
 
 .. Place your references here
 .. _0009-0009-6428-3381: https://orcid.org/0009-0009-6428-3381

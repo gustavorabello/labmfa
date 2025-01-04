@@ -27,7 +27,8 @@ to locate pipeline leaks in a **two-phase flow**, and a second to
 
 |
 |
-|
+
+**academic info**:
 
  - Post-Doctoral Researcher at `Coppe`_/`Federal University of Rio de Janeiro`_
  - `Department of Mechanical Engineering`_
@@ -36,7 +37,11 @@ to locate pipeline leaks in a **two-phase flow**, and a second to
 
 |
 
- - **research interests**: two-phase flows in pipes, lagrangian methods.
+**research interests**: 
+
+ - two-phase flows in pipes 
+ - lagrangian methods
+ - numerical modeling
 
 .. Place your references here
 .. _click to access Lattes: http://lattes.cnpq.br/8281596930689761

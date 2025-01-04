@@ -29,6 +29,8 @@ models for fluid dynamics and fluid-structure interaction in LabMFA.
 
 |
 
+**academic info**:
+
  - D.Sc. Student at `Coppe`_/`Federal University of Rio de Janeiro`_
  - `Department of Mechanical Engineering`_
  - CV: `click to access Lattes`_  
@@ -38,8 +40,12 @@ models for fluid dynamics and fluid-structure interaction in LabMFA.
 
 |
 
- - **research interests**: computational fluid dynamics, porous media,
-   fluid-structure interaction (FSI), finite element analysis
+**research interests**: 
+
+ - computational fluid dynamics 
+ -  porous media 
+ - fluid-structure interaction (FSI)  
+ - finite element analysis
 
 .. Place your references here
 .. _0000-0002-6882-3068: https://orcid.org/0009-0009-6428-3381

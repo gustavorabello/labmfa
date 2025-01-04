@@ -26,7 +26,8 @@ network.
 |
 |
 |
-|
+
+**academic info**:
 
  - Master's Student at `Coppe`_/`Federal University of Rio de Janeiro`_
  - `Department of Mechanical Engineering`_
@@ -38,8 +39,12 @@ network.
 
 |
 
- - **research interests**: computational fluid dynamics, two-phase
-   flows, finite element method, heat-transfer
+**research interests**: 
+
+ - computational fluid dynamics 
+ - single- and two-phase flows 
+ - finite element method 
+ - heat-transfer
 
 .. Place your references here
 .. _0009-0009-9282-1626: https://orcid.org/0009-0009-9282-1626

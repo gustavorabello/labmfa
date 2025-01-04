@@ -27,8 +27,6 @@ Participatory Management from `NIDES`_/`UFRJ`_ (advisor: Dr. Flávio Chedid).
 |
 |
 |
-|
-|
 
 **professional info**:
 
