@@ -17,7 +17,7 @@ I have a strong interest in **numerical simulations** of both **fluid**
 and **solid** mechanics. During my master’s studies, I developed a
 mechanical contact formulation for solids using a **B-spline surface**
 as the contact interface within a finite element simulation framework.
-My doctoral research focused on **single-** and **two-phase flows*
+My doctoral research focused on **single-** and **two-phase flows**
 simulations, employing the **finite element method** to model flow
 through complex geometries, using a decoupled mesh approach for accurate
 fluid interface representation. Currently, as a postdoctoral researcher,
@@ -54,5 +54,5 @@ simulation to help design remotely powered intelligent materials.
 .. _0000-0003-3279-7459: https://orcid.org/0000-0003-3279-7459
 .. _click to access Lattes: http://lattes.cnpq.br/0940254419336444
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/ufrj-em/index.php?lang=en
+.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
 .. _Coppe: http://www.coppe.ufrj.br

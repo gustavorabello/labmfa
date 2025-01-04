@@ -66,5 +66,5 @@ dynamics.
 .. _more info: https://gustavorabello.github.io/research/newton-2020.html
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
 .. _UFRJ: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/ufrj-em/index.php?lang=en
+.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
 .. _Coppe: http://www.coppe.ufrj.br

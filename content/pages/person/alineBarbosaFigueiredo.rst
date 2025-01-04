@@ -48,6 +48,6 @@ to locate pipeline leaks in a **two-phase flow**, and a second to
 .. _UFRJ: http://www.ufrj.br
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
 .. _Rio de Janeiro State University: http://www.uerj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/ufrj-em/index.php?lang=en
+.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
 .. _Coppe: http://www.coppe.ufrj.br
 

@@ -58,6 +58,6 @@ rotating machinery.
 .. _UFRJ: http://www.ufrj.br
 .. _CAPES: https://www.gov.br/capes/pt-br
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/ufrj-em/index.php?lang=en
+.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
 .. _Coppe: http://www.coppe.ufrj.br
 .. _Petrobras: https://petrobras.com.br/
