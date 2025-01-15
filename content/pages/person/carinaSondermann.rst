@@ -43,7 +43,6 @@ Horizontal Well and Artificial Lift Projects (TUHWALP).
 
 .. Place your references here
 .. _Department of Petroleum Engineering: https://utulsa.edu/programs/petroleum-engineering/
-.. _0009-0009-6428-3381: https://orcid.org/0000-0002-5119-5376
 .. _linkedin: https://www.linkedin.com/in/carina-nogueira-sondermann-9b592489/
 .. _click to access Lattes: http://lattes.cnpq.br/8305220388179930
 .. _0000-0002-5119-5376: https://orcid.org/0000-0002-5119-5376

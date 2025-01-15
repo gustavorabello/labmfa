@@ -9,6 +9,9 @@ Thesis & Dissertations
 D.Sc. Thesis
 ____________
 
+ 2024 - `Numerical Simulation of PIG Motion in a Pipeline With One-Dimensional Two-Phase Flow`_
+  author: `Rodrigo Augusto Camara Patricio`_
+
  2024 - `Finite Element Simulation of Three-Dimensional Two-Phase Flows in Complex Geometries`_
   author: `Daniel Barbedo Vasconcelos Santos`_ 
 
@@ -33,6 +36,9 @@ ___________________
  2016 - `Simulation of Two Phase Flow in Pipelines Including One Energy Equation for the Mixture Using the FCT Numerical Method`_
   author: `Carina Nogueira Sondermann`_
 
+ 2016 - `Numerical Simulation of PIG Motion in Two-Phase Flow Pipelines Using the Flux-Corrected Transport Method`_
+  author: `Rodrigo Augusto Camara Patricio`_
+
  2010 - `Theoretical Validation of a Modeling of Two Phase Flow in Gas Pipelines, with Two Equation of Convervation for each Phase`_ 
   author: `Aline Barbosa Figueiredo`_  
 
@@ -53,3 +59,7 @@ ___________________
 .. _CFD Analysis of a Diesel Particulate Filter Performance Using Biodiesel: /documents/felipeFeres.pdf
 .. _Theoretical Validation of a Modeling of Two Phase Flow in Gas Pipelines, with Two Equation of Convervation for each Phase: /documents/alineFigueiredo-msc.pdf
 .. _Leak Location Algorithm Applied to Biphasic Pipelines and Stratified Flow: /documents/alineFigueiredo-dsc.pdf
+.. _Rodrigo Augusto Camara Patricio: /person/rodrigoCamaraPatricio
+.. _Numerical Simulation of PIG Motion in Two-Phase Flow Pipelines Using the Flux-Corrected Transport Method: /documents/rodrigoPatricio-msc.pdf
+.. _Numerical Simulation of PIG Motion in a Pipeline With One-Dimensional Two-Phase Flow: /documents/rodrigoPatricio-dsc.pdf
+

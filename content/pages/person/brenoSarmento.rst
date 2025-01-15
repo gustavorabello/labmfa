@@ -6,7 +6,13 @@ ___________________
 :modified: 2024-11-04 12:10
 :slug: person/brenoSarmento
 
-Breno Mota Sarmento is an under-grad student at UFRJ.
+|
+
+.. image:: {static}/images/person/brenoSarmento.jpg
+   :name: breno_face
+   :width: 25%
+   :alt: breno
+   :align: left
 
 Breno Mota Sarmento is a undergrad student at `UFRJ`_/`Poli`_ under
 supervision of `Prof. Gustavo R. Anjos`_ and `Dr. Daniel Barbedo`_.

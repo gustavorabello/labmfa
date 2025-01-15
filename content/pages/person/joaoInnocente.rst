@@ -48,7 +48,7 @@ models for fluid dynamics and fluid-structure interaction in LabMFA.
  - finite element analysis
 
 .. Place your references here
-.. _0000-0002-6882-3068: https://orcid.org/0009-0009-6428-3381
+.. _0000-0002-6882-3068: https://orcid.org/0000-0002-6882-3068
 .. _click to access Lattes: http://lattes.cnpq.br/6683128404798848
 .. _NIDF: https://www.nidf.ufrj.br/
 .. _Berkeley Biomechanics Lab: https://oconnell.berkeley.edu/
