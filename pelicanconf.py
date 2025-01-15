@@ -71,8 +71,8 @@ LINKS = (
 # Social widget
 SOCIAL = (
     #("coppe", "https://www.coppe.ufrj.br"),
-    #("github", "https://github.com/anjos"),
-    #("orcid", "https://github.com/anjos"),
+    ("linkedin", "http://linkedin.com/company/labmfa-coppe-ufrj"),
+    ("github", "https://github.com/labmfa"),
     #("orcid", "https://github.com/anjos"),
     # ('skype', 'skype:andrezito?call'),
 )
