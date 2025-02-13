@@ -24,6 +24,9 @@ ____________
 M.Sc. Dissertations
 ___________________
 
+ 2024 - `Development of Fluid Flow Simulator Based on Characteristic-Based Split Method`_
+  author: `Gabriel Felipe de Oliveira Antão`_
+
  2023 - `CFD Analysis of a Diesel Particulate Filter Performance Using Biodiesel`_ 
   author: `Felipe Feres Ferreira`_ 
 
@@ -51,15 +54,16 @@ ___________________
 .. _Rafael Araujo Vidal: /person/rafaelVidal
 .. _Carina Nogueira Sondermann: /person/carinaSondermann
 .. _Aline Barbosa Figueiredo: /person/alineBarbosaFigueiredo
-.. _Finite Element Simulation of Three-Dimensional Two-Phase Flows in Complex Geometries: /documents/danielBarbedo.pdf
+.. _Finite Element Simulation of Three-Dimensional Two-Phase Flows in Complex Geometries: /documents/danielBarbedo-dsc.pdf
 .. _Numerical Prediction of Intermittent Two-Phase Flow in Horizontal and Inclined Pipelines and Comparison with Experiments: /documents/carinaSondermann-dsc.pdf
 .. _Simulation of Two Phase Flow in Pipelines Including One Energy Equation for the Mixture Using the FCT Numerical Method: /documents/carinaSondermann-msc.pdf
-.. _Particle-Laden Multiphase Flows a Finite Element Analysis on Biofuel Particle Emissions: /documents/joaoInnocente.pdf
-.. _A Semi-Lagrangian Method for Two-Phase Flow Simulation: /documents/rafaelVidal.pdf
-.. _CFD Analysis of a Diesel Particulate Filter Performance Using Biodiesel: /documents/felipeFeres.pdf
+.. _Particle-Laden Multiphase Flows a Finite Element Analysis on Biofuel Particle Emissions: /documents/joaoInnocente-msc.pdf
+.. _A Semi-Lagrangian Method for Two-Phase Flow Simulation: /documents/rafaelVidal-msc.pdf
+.. _CFD Analysis of a Diesel Particulate Filter Performance Using Biodiesel: /documents/felipeFeres-msc.pdf
 .. _Theoretical Validation of a Modeling of Two Phase Flow in Gas Pipelines, with Two Equation of Convervation for each Phase: /documents/alineFigueiredo-msc.pdf
 .. _Leak Location Algorithm Applied to Biphasic Pipelines and Stratified Flow: /documents/alineFigueiredo-dsc.pdf
 .. _Rodrigo Augusto Camara Patricio: /person/rodrigoCamaraPatricio
 .. _Numerical Simulation of PIG Motion in Two-Phase Flow Pipelines Using the Flux-Corrected Transport Method: /documents/rodrigoPatricio-msc.pdf
 .. _Numerical Simulation of PIG Motion in a Pipeline With One-Dimensional Two-Phase Flow: /documents/rodrigoPatricio-dsc.pdf
-
+.. _Development of Fluid Flow Simulator Based on Characteristic-Based Split Method: /documents/gabrielAntao-msc.pdf
+.. _Gabriel Felipe de Oliveira Antão: /person/gabrielAntao

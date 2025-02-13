@@ -9,10 +9,10 @@ import paramiko,os,shutil
 from subprocess import call
 from stat import S_ISDIR
 
-server ='docker-hotel.tic.ufrj.br'
+server ='labmfa.coppe.ufrj.br'
 username = 'labmfa.coppe'
-password = 'HZfs7wRCYB4wUYTYZhMAwtrtaUR40P'
-port = 60321
+password = 'aMoo7aeMaik0soim0Mi4BeiQu3AiT0ii8OhQuokoJeebe3thieceecae1waV'
+port = 60027
 
 transport = paramiko.Transport((server, port))
 transport.connect(username=username, password=password)
@@ -26,8 +26,8 @@ def isdir(path):
 
 def rm(path):
  files = sftp.listdir(path=path)
- if 'upload' in files:
-  files.remove('upload')
+ if 'html' in files:
+  files.remove('html')
  while files != 0:
 
   if not path.endswith("/"):
@@ -37,7 +37,7 @@ def rm(path):
   if not len(files):
    if path == '/':
     break
-   if path != '/upload/':
+   if path != '/html/':
     sftp.rmdir(path)
    return
  
@@ -68,7 +68,7 @@ def upload(localpath,remotepath):
   try:
    #print (walker,remotepath,os.path.join(remotepath,walker[0]))
    if walker[0] == 'output':
-    remotedir = 'upload' #(walker[0]).replace(parent,'')
+    remotedir = 'html' #(walker[0]).replace(parent,'')
    else:
     remotedir = (walker[0]).replace(parent+'/','')
    sftp.mkdir(os.path.join(remotepath,remotedir))
@@ -91,11 +91,11 @@ def upload(localpath,remotepath):
 if __name__ == "__main__":
  print ("")
  print ("---> removing server web site...")
- rm('/upload/')
+ rm('/html/')
  print ("---> generation local web site...")
  genSite()
  print ("---> uploading web site from local to server...")
- upload('./output','./upload')
+ upload('./output','./html')
  print ("---> closing sftp connection. Done!")
  sftp.close
  print ("")

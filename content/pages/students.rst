@@ -8,6 +8,10 @@ Students
 D.Sc. Students
 ______________
 
+ `Jorge Angel Aguilera Liendo`_  --
+  *Optimization Models For Gas Transportation Through Pipelines*, 
+  2024
+
  `Gabriel Ricardo Güntensperger Sousa`_  --
   *Coalescense Study in Two-Phase Flows*, 
   2024
@@ -48,10 +52,6 @@ ______________
   M.Sc. Student,
   2022
 
- `Gabriel Felipe de Oliveira Antão`_ --
-  *Development of Fluid Flow Simulator Based on Characteristic-Based Split Method*, 
-  2020
-
  `Afrânio Augusto Gomes Goncalves`_ --
   *Quadrilateral Elements in FE Analysis*,  
   2020
@@ -69,6 +69,11 @@ __________________________________
 
 Alumni 
 __________________________________
+
+ `Gabriel Felipe de Oliveira Antão`_ --
+  *Development of Fluid Flow Simulator Based on Characteristic-Based Split Method*, 
+  M.Sc.,
+  2024
 
  `Aline Barbosa Figueiredo`_ --
   *Leak Location in Gas Pipeline with Two-Phase Flow in a Stratified Pattern*,
@@ -140,4 +145,5 @@ __________________________________
 .. _João Victor Barros dos Santos: /person/joaoVictorSantos
 .. _Carina Nogueira Sondermann: /person/carinaSondermann
 .. _Rodrigo Augusto Camara Patricio: /person/rodrigoCamaraPatricio
+.. _Jorge Angel Aguilera Liendo: /person/jorgeLiendo
 

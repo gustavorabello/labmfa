@@ -79,4 +79,4 @@ ________________________
 .. _Dr. Jorge Peixinho: https://pimm.artsetmetiers.fr/en/user/167
 .. _Prof. Prashant Valluri: https://www.eng.ed.ac.uk/about/people/dr-prashant-valluri
 .. _Prof. Gustavo Oliveira: https://sigaa.ufpb.br/sigaa/public/docente/portal.jsf?siape=2344244
-.. _Prof. Alex Pereira Farah: https://alexfarah.weebly.com/index.html
+.. _Prof. Alex Pereira Farah: https://www.professores.uff.br/alexpereira/ 
