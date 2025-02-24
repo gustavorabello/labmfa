@@ -11,7 +11,7 @@ from stat import S_ISDIR
 
 server ='labmfa.coppe.ufrj.br'
 username = 'labmfa.coppe'
-password = 'aMoo7aeMaik0soim0Mi4BeiQu3AiT0ii8OhQuokoJeebe3thieceecae1waV'
+password = ''
 port = 60027
 
 transport = paramiko.Transport((server, port))
