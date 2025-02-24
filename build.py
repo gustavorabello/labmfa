@@ -5,14 +5,15 @@
 ## =================================================================== ##
 
 
+import user
 import paramiko,os,shutil
 from subprocess import call
 from stat import S_ISDIR
 
-server ='labmfa.coppe.ufrj.br'
-username = 'labmfa.coppe'
-password = ''
-port = 60027
+server = user.server
+username = user.username
+password = user.password
+port = user.port
 
 transport = paramiko.Transport((server, port))
 transport.connect(username=username, password=password)
