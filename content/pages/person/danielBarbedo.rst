@@ -28,6 +28,8 @@ simulation to help design remotely powered intelligent materials.
 |
 |
 |
+|
+|
 
 **academic info**:
 
@@ -45,7 +47,7 @@ simulation to help design remotely powered intelligent materials.
  - two-phase flows  
  - scientific computing 
  - finite element method 
- -  interface dynamics
+ - interface dynamics
  - particle-laden simulations
  - fluid-structure interactions
 

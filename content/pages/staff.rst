@@ -24,6 +24,10 @@ _______________
 Post-Doctoral Researcher
 ________________________
 
+ `Prof. Eduardo Dias Correa`_ -- 
+  *Non-Linear Convection-Radiation Heat Transfer in Fins*, 
+  2025
+
  `Dr. Daniel Barbedo Vasconcelos Santos`_ -- 
   *Fluid-Structure Interaction and Dynamics*, 
   2024
@@ -71,6 +75,7 @@ ________________________
 .. _M.Sc. Jaciara Roberta Barbosa: /person/roberta
 .. _Eng. Carlos Humberto Lionel de Souza: /person/lionel
 .. _Dr. Daniel Barbedo Vasconcelos Santos: /person/danielBarbedo
+.. _Prof. Eduardo Dias Correa: /person/eduardoCorrea
 .. _Dr. Aline Barbosa Figueiredo: /person/alineBarbosaFigueiredo
 .. _Prof. Norberto Mangiavacchi: http://www.gesar.uerj.br/en/staff/professor-norberto-mangiavacchi.html
 .. _Prof. José Pontes: http://www.gesar.uerj.br/en/staff/professor-jose-pontes.html
