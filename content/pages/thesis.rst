@@ -2,7 +2,7 @@ Thesis & Dissertations
 ----------------------
 
 :date: 2024-07-08 22:10
-:modified: 2024-11-04 11:43
+:modified: 2025-05-11 11:43
 :slug: thesis
 
 
@@ -23,6 +23,9 @@ ____________
 
 M.Sc. Dissertations
 ___________________
+
+ 2025 - `Numerical Simulation of 2D Flow in a Butterfly-Type Control Valve`_
+  author: `Higor Odilon Gottgtroy`_
 
  2024 - `Development of Fluid Flow Simulator Based on Characteristic-Based Split Method`_
   author: `Gabriel Felipe de Oliveira Antão`_
@@ -67,3 +70,5 @@ ___________________
 .. _Numerical Simulation of PIG Motion in a Pipeline With One-Dimensional Two-Phase Flow: /documents/rodrigoPatricio-dsc.pdf
 .. _Development of Fluid Flow Simulator Based on Characteristic-Based Split Method: /documents/gabrielAntao-msc.pdf
 .. _Gabriel Felipe de Oliveira Antão: /person/gabrielAntao
+.. _Higor Odilon Gottgtroy: /person/higorOdilon
+.. _Numerical Simulation of 2D Flow in a Butterfly-Type Control Valve: /documents/higorOdilon-msc.pdf

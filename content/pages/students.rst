@@ -56,10 +56,6 @@ ______________
   *Quadrilateral Elements in FE Analysis*,  
   2020
 
- `Hígor Odilon Gottgtroy`_ --
-  *FEM Analysis for fluid flow*, 
-  2020
-
 Undergrad Scientific Research - IC
 __________________________________
 
@@ -69,6 +65,10 @@ __________________________________
 
 Alumni 
 __________________________________
+
+ `Higor Odilon Gottgtroy`_ --
+  *Numerical Simulation of 2D Flow in a Butterfly-Type Control Valve*, 
+  2025
 
  `Gabriel Felipe de Oliveira Antão`_ --
   *Development of Fluid Flow Simulator Based on Characteristic-Based Split Method*, 
@@ -135,7 +135,7 @@ __________________________________
 .. _Gabriel Felipe de Oliveira Antão: /person/gabrielAntao
 .. _Rafael Araujo Vidal: /person/rafaelVidal
 .. _Afrânio Augusto Gomes Goncalves: /person/afranioGoncalves
-.. _Hígor Odilon Gottgtroy: /person/higorOdilon
+.. _Higor Odilon Gottgtroy: /person/higorOdilon
 .. _Anna Barbara Coimbra: /person/annaCoimbra
 .. _João Pedro Rodrigues: /person/joaoPedroRodrigues
 .. _Daniel Moreira Spesani: /person/danielSpesani

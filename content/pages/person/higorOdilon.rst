@@ -1,12 +1,12 @@
-Hígor Odilon Gottgtroy
+Higor Odilon Gottgtroy
 ______________________
 
 :date: 2022-09-16 17:10
 :modified: 2022-09-16 17:10
 :slug: person/higorOdilon
 
-Hígor Odilon Gottgtroy is a M.Sc. student at `UFRJ`_/`Coppe`_ under
-supervision of `Prof. Gustavo R. Anjos`_.
+Hígor Odilon Gottgtroy was a M.Sc. student at `UFRJ`_/`Coppe`_ under
+supervision of `Prof. Gustavo R. Anjos`_. 
 
 .. Place your references here
 .. _Prof. Gustavo R. Anjos: /person/gustavoRabello
