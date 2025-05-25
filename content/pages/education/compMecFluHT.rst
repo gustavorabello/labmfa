@@ -1,9 +1,16 @@
-[**EEK-597**] Computational Fluid Mechanics and Heat Transfer 
+[**EEK-597**] Computational Fluid Mechanics and Heat Transfer
 _____________________________________________________________
 
-**B.Sc. Level**: This course brings advanced knowledge of fluid dynamics
-and heat transfer orieanted on numerical modeling of the 1-D and 2-D
-enginering problems.
+**B.Sc. Level**: This course introduces the numerical modeling of fluid flow
+and heat transfer phenomena using computational methods. Students learn to
+formulate and discretize the governing equations of fluid dynamics and thermal
+transport—continuity, Navier-Stokes, and energy equations—using techniques such
+as the finite difference and finite element methods. Emphasis is placed on
+algorithm development, stability and convergence analysis, and implementation
+of boundary conditions. Applications include laminar flows, conduction,
+convection, and coupled fluid-thermal systems. The course combines theoretical
+foundations with hands-on programming and simulation practice, preparing
+students to solve engineering problems using computational tools.
 
 .. image:: {static}/images/education/cfd_1.png
    :name: cfd_1
