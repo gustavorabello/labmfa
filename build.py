@@ -33,7 +33,7 @@ def rm(path):
 
   if not path.endswith("/"):
    path = "%s/" % path
- 
+
   # remove dir if files is empty
   if not len(files):
    if path == '/':
@@ -41,7 +41,7 @@ def rm(path):
    if path != '/html/':
     sftp.rmdir(path)
    return
- 
+
   for f in files:
    filepath = "%s/%s" % (path, f)
    if isdir(filepath):

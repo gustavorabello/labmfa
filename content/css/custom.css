@@ -36,6 +36,9 @@ p.caption {
   font-style: italic;
   color: #888;
 }
+p {
+    text-align: justify !important;
+}
 pre.bibtex {
   white-space: -moz-pre-wrap; /* Mozilla, supported since 1999 */
   white-space: -pre-wrap; /* Opera */
