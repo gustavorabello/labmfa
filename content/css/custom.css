@@ -36,7 +36,7 @@ p.caption {
   font-style: italic;
   color: #888;
 }
-p {
+article.single p {
     text-align: justify !important;
 }
 pre.bibtex {
