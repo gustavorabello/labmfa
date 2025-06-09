@@ -9,42 +9,42 @@ D.Sc. Students
 ______________
 
  `Jorge Angel Aguilera Liendo`_  --
-  *Optimization Models For Gas Transportation Through Pipelines*, 
+  *Optimization Models For Gas Transportation Through Pipelines*,
   2024
 
  `Gabriel Ricardo Güntensperger Sousa`_  --
-  *Coalescense Study in Two-Phase Flows*, 
+  *Coalescense Study in Two-Phase Flows*,
   2024
 
  `João Paulo Innocente de Souza`_  --
-  *Flow Induced Vibration Simulations Using the Finite Element Method*, 
+  *Flow Induced Vibration Simulations Using the Finite Element Method*,
   2022
 
  `Fábio Gaspar Junior`_ --
-  *Non-Newtonian Fluid-Structure Interaction Simulations Using the Finite Element Method*, 
+  *Non-Newtonian Fluid-Structure Interaction Simulations Using the Finite Element Method*,
   2022
 
  `Leandro Marques dos Santos`_ --
-  *Non-Newtonian Two-Phase Flow Simulation in Biological Systems*, 
+  *Non-Newtonian Two-Phase Flow Simulation in Biological Systems*,
   2020
 
 M.Sc. Students
 ______________
 
  `Everton Taveira Baldes Vieira`_ --
-  *Numerical Analisys of Two-Phase Flows in Nuclear Reactors*, 
+  *Numerical Analisys of Two-Phase Flows in Nuclear Reactors*,
   2024
 
  `Lucas Mendes Miranda`_ --
-  *Study of Cold Plate Fin Geometries to Improve Heat Transfer Capabilities of Eletronics Cooling Solutions Utilizing the Finite Element Method*, 
+  *Study of Cold Plate Fin Geometries to Improve Heat Transfer Capabilities of Eletronics Cooling Solutions Utilizing the Finite Element Method*,
   2024
 
  `Juliana Calazans de Cerqueira`_ --
-  *Numerical Analysis of the Effect of Porosity on the Production of Biofuels in the Streamfunction Vorticity Formulation Using Finite Element Method*, 
+  *Numerical Analysis of the Effect of Porosity on the Production of Biofuels in the Streamfunction Vorticity Formulation Using Finite Element Method*,
   2024
 
  `Antonio Emanuel Marques dos Santos`_ --
-  *Numerical Analisys of Two-Phase Flows in Biodiesel Microreactor Production*, 
+  *Numerical Analisys of Two-Phase Flows in Biodiesel Microreactor Production*,
   2023
 
  `João Victor Barros dos Santos`_ --
@@ -53,25 +53,25 @@ ______________
   2022
 
  `Afrânio Augusto Gomes Goncalves`_ --
-  *Quadrilateral Elements in FE Analysis*,  
+  *Quadrilateral Elements in FE Analysis*,
   2020
 
 Undergrad Scientific Research - IC
 __________________________________
 
  `Breno Sarmento`_ --
-  *Finite Element Analysis in Engineering Problems*, 
+  *Creation of Local Implicit Surfaces by Quadratic Fitting on Triangular Meshes*,
   2024
 
-Alumni 
+Alumni
 __________________________________
 
  `Higor Odilon Gottgtroy`_ --
-  *Numerical Simulation of 2D Flow in a Butterfly-Type Control Valve*, 
+  *Numerical Simulation of 2D Flow in a Butterfly-Type Control Valve*,
   2025
 
  `Gabriel Felipe de Oliveira Antão`_ --
-  *Development of Fluid Flow Simulator Based on Characteristic-Based Split Method*, 
+  *Development of Fluid Flow Simulator Based on Characteristic-Based Split Method*,
   M.Sc.,
   2024
 
@@ -86,27 +86,27 @@ __________________________________
   2024
 
  `Rafael Araujo Vidal`_ --
-  *Coalescence study between spherically sphaped bubbles and drops*,  
+  *A semi-Lagrangian method for two-phase flow simulation*,
   M.Sc.,
   2023
 
- `Felipe Feres Ferreira`_ --  
-  *CFD Analysis of a Diesel Particulate Filter Performance Using Biodiesel*, 
+ `Felipe Feres Ferreira`_ --
+  *CFD Analysis of a Diesel Particulate Filter Performance Using Biodiesel*,
   M.Sc.,
   2023
 
  `Anna Barbara Coimbra`_ --
-  *Numerical Analysis of Filters in Biofuel Systems*, 
+  *Numerical Analysis of Filters in Biofuel Systems*,
   Undergrad Scientific Research,
   2023
 
  `João Pedro Rodrigues`_ --
-  *Analysis of Biofuel Systems Using the Finite Element Method*, 
+  *Analysis of Biofuel Systems Using the Finite Element Method*,
   Undergrad Scientific Research,
   2023
 
  `Daniel Moreira Spesani`_ --
-  *Numerical Methods for the Analysis of Biofuel Systems*, 
+  *Numerical Methods for the Analysis of Biofuel Systems*,
   Undergrad Scientific Research,
   2023
 
