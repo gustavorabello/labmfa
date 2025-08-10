@@ -96,19 +96,19 @@ reference data.
    :align: center
    :class: borderless
 
-   * - .. image:: {static}/images/tunnel_1.png
+   * - .. image:: {static}/images/tunelAzul-rendered.png
          :width: 100%
-         :alt: Wind tunnel test section
-     - .. image:: {static}/images/tunnel_2.png
+         :alt: Wind tunnel Rendered
+     - .. image:: {static}/images/tunnel_1.png
+         :width: 100%
+         :alt: Detailed view of wind tunnel test section
+
+   * - .. image:: {static}/images/tunnel_2.png
          :width: 100%
          :alt: Front view of the aerodynamic balance
-
-   * - .. image:: {static}/images/balance.png
+     - .. image:: {static}/images/balance.png
          :width: 100%
          :alt: General view of the balance setup
-     - .. image:: {static}/images/data_comparison_1.png
-         :width: 100%
-         :alt: Angle of attack vs Lift coefficient
 
    * - .. image:: {static}/images/data_comparison_1.png
          :width: 100%

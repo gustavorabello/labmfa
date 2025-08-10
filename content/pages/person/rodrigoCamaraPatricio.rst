@@ -7,7 +7,7 @@ _______________________________
 
 |
 
-.. image:: {static}/images/person/unknown-male.jpg
+.. image:: {static}/images/person/rodrigoPatricio.jpg
    :name: patricio_face
    :width: 25%
    :alt: patricio
@@ -31,16 +31,16 @@ Gustavo Bodstein`_.
 **academic info**:
 
  - `Department of Mechanical Engineering`_
- - CV: `click to access Lattes`_ 
+ - CV: `click to access Lattes`_
  - LinkedIn: `rodrigopatricio`_
  - **e-mail**: rac.patricio@mecanica.coppe.ufrj.br
 
 |
 
-**research interests**: 
+**research interests**:
 
- - single-phase flows in pipes 
- - two-phase flows in pipes 
+ - single-phase flows in pipes
+ - two-phase flows in pipes
  - pig
 
 .. Place your references here
@@ -49,6 +49,6 @@ Gustavo Bodstein`_.
 .. _UFRJ: http://www.ufrj.br
 .. _CEPEL: https://www.cepel.br
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/ 
+.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
 .. _Coppe: http://www.coppe.ufrj.br
 .. _click to access Lattes: http://lattes.cnpq.br/0191696602579320
