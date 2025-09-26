@@ -1,8 +1,8 @@
 Antonio Emanuel Marques dos Santos
 __________________________________
 
-:date: 2022-09-10 22:10
-:modified: 2022-09-10 22:10
+:date: 2025-09-18 22:10
+:modified: 2025-09-18 22:10
 :slug: person/antonioEmanuel
 
 |
@@ -10,10 +10,10 @@ __________________________________
 .. image:: {static}/images/person/antonioEmanuel.jpg
    :name: emanuel_face
    :width: 25%
-   :alt: emanuel 
+   :alt: emanuel
    :align: left
 
-I am a master's student in Mechanical Engineering from the Mechanical
+I am a doctor's student in Mechanical Engineering from the Mechanical
 Engineering Program of the Alberto Luiz Coimbra Institute of Graduate
 Studies and Research in Engineering, at the Federal University of Rio de
 Janeiro (`Coppe`_/`UFRJ`_). In 2022, I received my undergraduate degree
@@ -33,9 +33,9 @@ dynamics.
 
 **academic info**:
 
- - Master's Student at `Coppe`_/`Federal University of Rio de Janeiro`_
+ - D.Sc. Student at `Coppe`_/`Federal University of Rio de Janeiro`_
  - `Department of Mechanical Engineering`_
- - CV: `click to access Lattes`_  
+ - CV: `click to access Lattes`_
  - ORCID: `0009-0009-6428-3381`_
  - home page: www.linkedin.com/in/antonio-emanuel-santos
  - **e-mail**: emanuelsantos@mecanica.coppe.ufrj.br
@@ -43,14 +43,14 @@ dynamics.
 
 |
 
-**research interests**: 
+**research interests**:
 
  - computational fluid dynamics
- - single- and two-phase flows 
- - finite element method 
- - finite volume method 
+ - single- and two-phase flows
+ - finite element method
+ - finite volume method
  - microrreactors
- - rocket propulsion 
+ - rocket propulsion
  - biodiesel production
 
 .. Place your references here

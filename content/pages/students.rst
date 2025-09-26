@@ -8,6 +8,10 @@ Students
 D.Sc. Students
 ______________
 
+ `Antonio Emanuel Marques dos Santos`_ --
+  *High Order Finite Element in Unstructured Meshes*,
+  2025
+
  `Jorge Angel Aguilera Liendo`_  --
   *Optimization Models For Gas Transportation Through Pipelines*,
   2024
@@ -31,6 +35,10 @@ ______________
 M.Sc. Students
 ______________
 
+ `Gabriel de Lucas Garden`_ --
+  *Numerical Analisys of FSI with the Finite Element Method*,
+  2025
+
  `Everton Taveira Baldes Vieira`_ --
   *Numerical Analisys of Two-Phase Flows in Nuclear Reactors*,
   2024
@@ -42,10 +50,6 @@ ______________
  `Juliana Calazans de Cerqueira`_ --
   *Numerical Analysis of the Effect of Porosity on the Production of Biofuels in the Streamfunction Vorticity Formulation Using Finite Element Method*,
   2024
-
- `Antonio Emanuel Marques dos Santos`_ --
-  *Numerical Analisys of Two-Phase Flows in Biodiesel Microreactor Production*,
-  2023
 
  `João Victor Barros dos Santos`_ --
   *Airfoil Optimization for the Improvement of the Performance of Horizontal Axis Wind Turbine*,
@@ -123,6 +127,7 @@ __________________________________
   2016
 
 .. Place your references here
+.. _Gabriel de Lucas Garden: /person/gabrielGarden
 .. _Everton Taveira Baldes Vieira: /person/evertonTaveira
 .. _Lucas Mendes Miranda: /person/lucasMiranda
 .. _Juliana Calazans de Cerqueira: /person/julianaCalazans
