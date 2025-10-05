@@ -14,10 +14,51 @@ simulations.
 Numerical Facilities
 ====================
 
-Complementing its experimental tools, LabMFA maintains a strong numerical modeling infrastructure focused on high-fidelity simulation of complex fluid flows:
+Complementing its experimental tools, LabMFA maintains a strong numerical
+modeling infrastructure focused on high-fidelity simulation of complex fluid
+flows:
 
 - **High-Performance Computing**:
-  LabMFA utilizes the computational infrastructure of COPPE/UFRJ, with access to high-performance clusters for parallel computing.
+
+LabMFA operates a modern computing infrastructure that combines powerful
+servers, high-speed networking, and secure data storage, supporting advanced
+numerical simulations in fluid mechanics, aerodynamics, and multiphase flows.
+
+The cluster includes 3-noded Dell servers with complementary configurations:
+
+**a)** The first is a Dell R650xs (hostname abeto), equipped with two Intel
+Xeon Silver 4316 processors running at 2.30 GHz, each with **20 cores (40
+total)**, 50 MB of L2 cache and 60 MB of L3 cache. It provides 256 GB of RAM
+(4×64 GB RDIMM, 3200 MT/s, Dual Rank) and **960 GB of SSD storage**, optimized
+for multiphysics simulations requiring high memory bandwidth.
+
+**b)** The second, also a Dell R650xs (hostname pinho), features the same dual
+Intel Xeon Silver 4316 processors at 2.30 GHz, for a total of **40 cores**,
+with 25 MB of L2 cache and 30 MB of L3 cache per processor. Like abeto, it
+offers 256 GB of RAM and **960 GB of SSD storage**, ensuring redundancy and
+balanced performance across the system.
+
+**c)** The third, a Dell PowerEdge R650 (hostname jacaranda), is configured
+with a single Intel Xeon Gold 6348 processor at 2.60 GHz, offering **28
+cores**, 35 MB of L2 cache, and 42 MB of L3 cache. It is equipped with 128 GB
+of RAM (4×32 GB RDIMM, 3200 MT/s, Dual Rank) and a larger **1.87 TB SSD**,
+making it particularly suitable for jobs requiring faster core performance and
+expanded storage.
+
+Complementing the servers, LabMFA maintains a Synology NAS system with a
+dual-core 2.3 GHz processor, 4 GB of memory, and 24 TB of RAID-configured
+storage, dedicated to the safe organization, archiving, and backup of
+large-scale scientific datasets.
+
+To guarantee high throughput and efficient communication between nodes and
+storage, the infrastructure is interconnected via a 48-port 10 Gbit/s
+high-speed switch, enabling fast data transfer, parallel computing scalability,
+and seamless integration across the cluster.
+
+Together, these resources form a reliable, scalable, and versatile HPC
+environment, enabling researchers and students to tackle complex problems in
+computational fluid dynamics, turbulence, multiphase flows, and coupled
+fluid-structure interaction.
 
 - **In-House Simulation Tools**:
   The group develops custom solvers implemented in C++ and Python, integrating:
@@ -67,29 +108,90 @@ Brazil
 Experimental Facilities
 =======================
 
-LabMFA houses a low-speed, open-circuit wind tunnel designed for academic and research applications. Key features include:
+LabMFA maintains two dedicated wind tunnels that allow researchers, students, and collaborators to investigate a wide range of aerodynamic problems. Together, they combine versatility, precision, and accessibility, forming a unique environment for both high-level research and teaching.
 
-- **Custom-Built 3-Component Balance**:
-  Developed in-house to enable precise measurement of aerodynamic forces (lift, drag, and pitching moment) acting on various test bodies.
+Wind Tunnel 1 – High-Speed Subsonic Facility
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- **Aerodynamic Testing**:
-  Several profiles can be tested, including NACA and GOE airfoils. Results have been validated through benchmark comparisons against standard datasets such as Blevins (1984).
+Our first wind tunnel is a **low-speed, open-circuit subsonic facility** operating at **ambient laboratory temperature**. It was designed to perform high-fidelity aerodynamic tests and validate numerical models under controlled conditions.
 
-- **Multirange Flow Control**:
-  The wind tunnel supports continuous and precise adjustment of airflow velocities, allowing a wide spectrum of test conditions.
+**Main Features:**
 
-- **Data Visualization and Analysis**:
-  Lift (Cl) and drag (Cd) coefficients are measured across varying angles of attack, producing curves that match well with theoretical expectations and experimental benchmarks.
+**Geometry and Structure**
 
-- **Research Applications**:
-  - Airfoil performance and optimization
-  - Flow separation and transition studies
-  - Small-scale wind energy systems
+- Test section: **41 cm × 32 cm**, length **180 cm**
+- Blue metallic-wall construction, with **transparent and removable panels** that facilitate optical access and easy model installation
+
+**Flow Conditions**
+
+- Maximum airspeed: **110 km/h** (≈ 30.6 m/s)
+- Speed variation achieved with **flux blockers** (without frequency inverters)
+- Driven by a **powerful axial fan** ensuring steady and uniform airflow
+
+**Flow Conditioning**
+
+- **Equally spaced screens** minimize turbulence and stabilize the velocity profile in the test section
+
+**Instrumentation**
+
+- **Custom-built 3-component balance** for lift, drag, and moment forces
+- **Pitot tube** for velocity calibration
+- **Manometers** for static and differential pressure
+- **Automation system** for programmed sweeps in **angle of attack, yaw, and pitch**
+
+**Applications**
+
+- Precision aerodynamic testing of airfoils and small-scale devices
+- Benchmarking and validation of computational models
+- Studies of flow separation, transition, and thin-film formation
+
+Wind Tunnel 2 – Large Cross-Section Facility
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The second wind tunnel was developed to complement the high-speed system. With a **larger cross-section** and **lower maximum speed**, it is particularly suitable for **educational use**, flow visualization, and tests requiring more space.
+
+**Main Features:**
+
+**Geometry and Structure**
+
+- Test section: **100 cm × 100 cm**, length **100 cm**
+- Solid **wooden walls** with **transparent and removable panels** for accessibility and visualization
+
+**Flow Conditions**
+
+- Maximum airspeed: **10 km/h** (≈ 2.8 m/s)
+- Flow control by **flux blockers**
+- Driven by an **axial fan**
+
+**Flow Conditioning**
+
+- **Equally spaced screens** to align and stabilize airflow across the wide section
+
+**Instrumentation**
+
+- **Pitot tube** for velocity measurements
+- **Manometer** for pressure readings
+
+**Applications**
+
+- Teaching and training in experimental aerodynamics
+- Calibration of instruments and sensors
+- Flow visualization at larger scales
+- Low-speed studies for conceptual and educational demonstrations
+
+LabMFA Wind Tunnel Capabilities
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By maintaining **two complementary wind tunnels**, LabMFA offers a flexible platform that serves both **cutting-edge research** and **educational training**:
+
+  - The **first tunnel** provides the **high-speed precision** required for academic and industrial-grade aerodynamic investigations.
+  - The **second tunnel** provides a **large workspace** for low-speed flows, making it ideal for teaching, outreach, and practical training of students.
 
 Images and graphs include:
+
 - General and front views of the wind tunnel test section and balance setup.
 - Plots comparing experimental lift and drag coefficients with standard
-reference data.
+    reference data.
 
 .. list-table::
    :widths: 50 50
@@ -121,10 +223,24 @@ reference data.
 Location and Integration
 ========================
 
-LabMFA is located within the Technology Center of the Federal University of Rio
-de Janeiro (UFRJ), on Ilha do Fundão. The lab benefits from a collaborative
-research environment and is integrated into a wider network of engineering
-research laboratories at COPPE.
+The **experimental facilities**, combined with LabMFA’s **advanced numerical
+infrastructure**, provide an integrated environment where **experiments and
+simulations complement each other seamlessly**. This synergy enables
+high-precision validation of computational models and fosters innovative
+research in multiphase flows, aerodynamics, and heat transfer. Together, these
+capabilities establish LabMFA as a national reference center and a **unique hub
+in Brazil for fluid mechanics and aerodynamics**, open to collaboration with
+academic institutions, industry partners, and outreach initiatives that bring
+science closer to society.
+
+LabMFA is strategically located within the **Technology Center of the Federal
+University of Rio de Janeiro (UFRJ)**, on Ilha do Fundão. Positioned inside
+COPPE, one of Latin America’s largest graduate engineering institutes, the
+laboratory benefits from a **dynamic collaborative ecosystem** and close
+integration with a wide network of specialized research groups and
+laboratories. This environment not only strengthens interdisciplinary projects
+but also provides researchers and students with direct access to **cutting-edge
+resources** and an international academic community.
 
 .. Place your references here
 .. _Finite Element Method: https://en.wikipedia.org/wiki/Finite_element_method
