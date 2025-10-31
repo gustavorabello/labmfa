@@ -24,6 +24,15 @@ innovative work being done at **LabMFA**, where experts are unlocking
 new solutions for complex engineering challenges. Get ready to be
 inspired by the latest advancements in fluid dynamics in complex flows!
 
+ .. youtube:: ai9vYJgVCwU?si=8fZa2-uuzeVWCwBH
+     :class: youtube-16x9
+     :allowfullscreen: yes
+     :seamless: yes
+     :align: left
+     :comment: Incompressible flow past an elastically supported cylinder at Re=88. The Navier-Stokes equations were solved using the Finite Element and Semi-Lagrangian Methods in the ALE reference frame. The spatial discretization was done by employment of the bilinear quadrilateral enriched by a bubble function, known as the Quad Mini element.
+
+|
+
  .. youtube:: JwXJ4_h5fbA?si=V712kptXkcTGdzo1
      :class: youtube-16x9
      :allowfullscreen: yes
