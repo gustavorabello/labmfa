@@ -8,15 +8,17 @@ ____________________________________
 .. image:: {static}/images/person/lionel.png
    :name: lionel_face
    :width: 25%
-   :alt: lionel 
+   :alt: lionel
    :align: left
 
-Works on the development and research in the construction and
-assembly of laboratory and computational equipment at LabMFA.
+Mechanical technician with more than 30 years of experience at
+*LabMFA*. Works on the development, construction, assembly and
+maintenance of experimental and computational equipment used in
+research activities. Has extensive experience in laboratory
+infrastructure, machining, instrumentation, prototype fabrication and
+technical support for experimental fluid mechanics and multiphysics
+research projects.
 
-|
-|
-|
 |
 |
 |
