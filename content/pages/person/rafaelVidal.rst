@@ -2,7 +2,7 @@ Rafael Araujo Vidal
 ___________________
 
 :date: 2025-06-03 23:38
-:modified: 2025-06-03 23:38
+:modified: 2026-05-26 18:38
 :slug: person/rafaelVidal
 
 |
@@ -39,6 +39,26 @@ analysis and design of flexible pipes for offshore oil and gas applications.
  - scientific computing
  - finite element method
 
+.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
+
+**publications with Prof. Gustavo R. Anjos**:
+
+Journal Articles
+~~~~~~~~~~~~~~~~
+
+.. class:: publications-list journal-publications
+
+#. Santos, Daniel B. V.; Vidal, Rafael; Valluri, Prashant; Anjos, Gustavo R. `Computation of Deformable Interface Two-Phase Flows: A Semi-Lagrangian Finite Element Approach <https://doi.org/10.1002/fld.5342>`_. *International Journal for Numerical Methods in Fluids*, vol. 97(3), 233-243 (2024).
+
+Conference Papers
+~~~~~~~~~~~~~~~~~
+
+.. class:: publications-list conference-publications
+
+#. Vidal, R. A.; Santos, D. B. V.; Anjos, Gustavo R. **Computation of Deformable Interface Two-Phase Flows - A Semi-Lagrangian Finite Element Approach**. *Anais do CILAMCE 2023 - The XLIV Ibero-Latin American Congress on Computational Methods in Engineering* (CILAMCE), Porto, Portugal, 2023.
+#. Anjos, G. R.; Vidal, R. A. **A Semi-Lagrangian Finite Element Method for Two-Phase Flows**. *JEM* (JEM), 2023.
+
+.. AUTO-GENERATED COAUTHORED ARTICLES END
 
 .. Place your references here
 .. _Rafael Vidal: https://www.linkedin.com/in/rafael-vidal-156645144/

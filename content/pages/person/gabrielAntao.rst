@@ -2,7 +2,7 @@ Gabriel Felipe de Oliveira Antão
 ________________________________
 
 :date: 2022-09-16 17:10
-:modified: 2022-09-16 17:10
+:modified: 2026-05-26 18:40
 :slug: person/gabrielAntao
 
 Gabriel Felipe de Oliveira Antão Ferreira was a M.Sc. student at

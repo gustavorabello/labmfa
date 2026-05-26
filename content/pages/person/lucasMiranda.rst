@@ -2,7 +2,7 @@ Lucas Mendes Miranda
 ____________________
 
 :date: 2024-09-10 22:10
-:modified: 2024-09-10 22:10
+:modified: 2026-05-26 18:38
 :slug: person/lucasMiranda
 
 .. image:: {static}/images/person/lucasMiranda.jpg

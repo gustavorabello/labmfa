@@ -2,7 +2,7 @@ Antonio Emanuel Marques dos Santos
 __________________________________
 
 :date: 2025-09-18 22:10
-:modified: 2025-09-18 22:10
+:modified: 2026-05-26 18:43
 :slug: person/antonioEmanuel
 
 |
@@ -52,6 +52,27 @@ dynamics.
  - microrreactors
  - rocket propulsion
  - biodiesel production
+
+.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
+
+**publications with Prof. Gustavo R. Anjos**:
+
+Journal Articles
+~~~~~~~~~~~~~~~~
+
+.. class:: publications-list journal-publications
+
+#. Santos, Daniel B. V.; Santos, Antônio E. M.; Bandarra Filho, Enio P.; Anjos, G. R. `Numerical Investigation of a Gas Bubble in Complex Geometries for Industrial Process Equipment Design <https://doi.org/10.3390/fluids10070172>`_. *Fluids*, vol. 10(7), 172 (2025).
+
+Conference Papers
+~~~~~~~~~~~~~~~~~
+
+.. class:: publications-list conference-publications
+
+#. Santos, A. E. M.; Anjos, G.R. **Numerical Analysis of Flow in Microchannels Using The Finite Element Method**. *Anais do 12º Congresso Brasileiro de Pesquisa e Desenvolvimento em Petróleo e Gás* (PDPetro), Florianópolis, Brazil, 2024.
+#. Santos, A. E. M.; Anjos, G.R. **Numerical Analysis of Two-Phase Flows in a Micro-Reactor for Biodiesel Production**. *Anais do 20th Brazilian Congress of Thermal Sciences and Engineering* (ENCIT), Foz do Iguaçu, Brazil, 2024.
+
+.. AUTO-GENERATED COAUTHORED ARTICLES END
 
 .. Place your references here
 .. _0009-0009-6428-3381: https://orcid.org/0009-0009-6428-3381

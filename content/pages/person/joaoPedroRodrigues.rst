@@ -2,7 +2,7 @@ João Pedro Rodrigues
 ____________________
 
 :date: 2022-09-16 12:10
-:modified: 2022-09-16 12:10
+:modified: 2026-05-26 18:38
 :slug: person/joaoPedroRodrigues
 
 João Pedro Rodrigues was a undergrad student at `UFRJ`_/`Poli`_ under

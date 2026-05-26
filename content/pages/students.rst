@@ -39,10 +39,6 @@ ______________
   *Numerical Analisys of FSI with the Finite Element Method*,
   2025
 
- `Everton Taveira Baldes Vieira`_ --
-  *Numerical Analisys of Two-Phase Flows in Nuclear Reactors*,
-  2024
-
  `Lucas Mendes Miranda`_ --
   *Study of Cold Plate Fin Geometries to Improve Heat Transfer Capabilities of Eletronics Cooling Solutions Utilizing the Finite Element Method*,
   2024
@@ -66,6 +62,10 @@ __________________________________
  `Breno Sarmento`_ --
   *Creation of Local Implicit Surfaces by Quadratic Fitting on Triangular Meshes*,
   2024
+
+ `Rodrigo Gadelha Salvaterra Dutra`_ --
+  *Multiphase Flow Injection Model of B100 Biodiesel and Air in a Combustion Chamber*,
+  2026
 
 Alumni
 __________________________________
@@ -128,6 +128,7 @@ __________________________________
 
 .. Place your references here
 .. _Gabriel de Lucas Garden: /person/gabrielGarden
+.. _Rodrigo Gadelha Salvaterra Dutra: /person/rodrigoDutra
 .. _Everton Taveira Baldes Vieira: /person/evertonTaveira
 .. _Lucas Mendes Miranda: /person/lucasMiranda
 .. _Juliana Calazans de Cerqueira: /person/julianaCalazans

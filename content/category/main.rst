@@ -2,14 +2,16 @@ Fluid Mechanics and Aerodynamics Laboratory
 -------------------------------------------
 
 :date: 2022-08-23 17:47
-:modified: 2022-08-23 17:47
+:modified: 2026-05-22 15:45
 
-With more than 30 years existence, Fluid Mechanics and Aerodynamics
-Laboratory (**LabMFA**) is one of the most consolidated laboratory of
-the **Department of Mechanical Engineering** within **Coppe - Graduate
-School of Engineering** with strong research activity
-providing scientific and technological advances in the areas of fluid
-mechanics, aerodynamics, wind energy and atmospheric sciences. 
+With more than 30 years of activity, the Fluid Mechanics and
+Aerodynamics Laboratory (**LabMFA**) is one of the most established
+laboratories of the **Department of Mechanical Engineering** within
+**COPPE - Graduate School of Engineering** at UFRJ. The laboratory
+develops research in fluid mechanics with a current emphasis on
+**computational modeling**, **finite element methods**, **multiphase
+flows**, **fluid-structure interaction**, heat transfer, and complex flow
+simulation.
 
 |
 
@@ -21,19 +23,61 @@ mechanics, aerodynamics, wind energy and atmospheric sciences.
 
 |
 
-**LabMFA** members have been orienting their activities towards the
-training of **human resources** and the development of **new knowledge**
-that provide scientific and technological advances in the areas of
-**fluid mechanics**, **aerodynamics**, **wind energy** and **atmospheric
-sciences** and **computational fluid dynamics - CFD**. The training of
-human resources has been carried out at all levels, from undergrad
-scientific research programs to graduate programs, with **master's**
-and **doctoral** students, including **post-doctorate** researchers. 
+**LabMFA** members orient their activities toward the training of
+**human resources** and the development of **new knowledge** in
+computational and applied fluid mechanics. Aerodynamics remains part of
+the laboratory's history and capabilities, with selected activities still
+conducted in the area, but the present research profile is mainly driven
+by numerical methods and multiphysics flow problems. The training of
+human resources has been carried out at all levels, from undergraduate
+scientific research programs to graduate programs, with **master's** and
+**doctoral** students, including **postdoctoral** researchers.
+
+Research at a Glance
+====================
+
+Current LabMFA research is concentrated on:
+
+* **Computational fluid dynamics (CFD)** and high-fidelity numerical
+  simulation
+* **Finite Element Method (FEM)** formulations for fluid and coupled
+  flow problems
+* **Two-phase and multiphase flows**, including deformable interfaces,
+  bubble dynamics, coalescence, breakup, and surface-force-dominated
+  flows
+* **Fluid-structure interaction (FSI)** involving moving boundaries,
+  rigid body motion, and deformable structures
+* **Heat and mass transfer** in complex flow configurations
+* **Aerodynamics and wind-related flows**, maintained as a complementary
+  and historical area of expertise
+
+LabMFA in Numbers
+=================
+
+* More than **30 years** of research activity
+* Approximately **300 m2** of laboratory building area
+* Approximately **200 m2** of open experimental area
+* **2 wind tunnels** available for teaching, validation, and selected
+  aerodynamic studies
+* High-performance computing and data storage infrastructure for
+  numerical simulations
+* Training of undergraduate, **M.Sc.**, **D.Sc.**, and postdoctoral
+  researchers
+
+Explore LabMFA
+==============
+
+* Learn more `about the laboratory`_
+* Explore current `research activities`_
+* Meet the `staff`_ and `students`_
+* View the laboratory `facilities`_
+* See `theses and dissertations`_
+* `Contact LabMFA`_
 
 The left image below is a photography of the building showing the
-3-floor installations as well as the open area where the wind tunnels
-are installed. The right hand side photo is the inside view of the
-12-seated meeting room located at the 3rd. floor of **labMFA**.
+3-floor installations as well as the open area where experimental
+facilities are installed. The right hand side photo is the inside view
+of the meeting room located on the 3rd floor of **LabMFA**.
 
 .. image:: {static}/images/building.png
    :name: building
@@ -44,11 +88,18 @@ are installed. The right hand side photo is the inside view of the
    :width: 48%
    :alt: meeting room
 
-The working space comprises 3-floor laboratory including **300m2** of
-building area with large meeting room for 12 seated attendees with 50''
-TV and white board, 20-seat lecture room fully equipped, 2 student
-offices with 12 desk total capacity, permanent staff room and full
-equipped atelier/machinery repair shop, in addition to **200m2** of open
-space area comprising 2 **wind tunnels** with balance and
-instrumentation for technical **research** and **education**.
+The working space comprises a 3-floor laboratory, including **300 m2** of
+building area with a meeting room, a fully equipped 20-seat lecture room,
+student offices, a permanent staff room, and an atelier/machinery repair
+shop. The laboratory also has approximately **200 m2** of open space with
+experimental facilities, including **2 wind tunnels** with balance and
+instrumentation used for education, validation, and selected research
+activities.
 
+.. _about the laboratory: /about/
+.. _research activities: /research/
+.. _staff: /staff/
+.. _students: /students/
+.. _facilities: /facilities/
+.. _theses and dissertations: /thesis/
+.. _Contact LabMFA: /contact/

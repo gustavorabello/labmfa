@@ -2,7 +2,7 @@ Eduardo Dias Correa
 ___________________
 
 :date: 2025-04-29 22:10
-:modified: 2024-04-29 22:10
+:modified: 2026-05-26 18:34
 :slug: person/eduardoCorrea
 
 |
@@ -47,6 +47,20 @@ media**.
  - finite element analysis
  - radiation heat transfer
  - functional analysis
+
+.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
+
+**publications with Prof. Gustavo R. Anjos**:
+
+Conference Papers
+~~~~~~~~~~~~~~~~~
+
+.. class:: publications-list conference-publications
+
+#. Silva Neto, J. L.; Correa, E. D.; Gama, R. M. S.; Anjos, G. R. **A Robust Newton-Based Variational Framework for Nonlinear Conduction-Radiation PDEs with Localized Sources**. *Proceedings of the Encontro Nacional de Modelagem Computacional* (ENMC), 2025.
+#. Silva Neto, J. L.; Correa, E. D.; Gama, R. M. S.; Anjos, G. R. **On the Temperature Distribution in a Flat Plate Induced by an External Thermal Radiant Source**. *Proceedings of the XLVI Ibero-Latin-American Congress on Computational Methods in Engineering* (CILAMCE), Vitoria, Brazil, 2025.
+
+.. AUTO-GENERATED COAUTHORED ARTICLES END
 
 .. Place your references here
 .. _0000-0001-6478-7453: https://orcid.org/0000-0001-6478-7453

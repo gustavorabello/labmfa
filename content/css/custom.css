@@ -46,3 +46,34 @@ pre.bibtex {
   white-space: pre-wrap; /* CSS3 - Text module (Candidate Recommendation) http://www.w3.org/TR/css3-text/#white-space */
   word-wrap: break-word; /* IE 5.5+ */
 }
+
+@media screen and (min-width: 768px) {
+  aside {
+    box-sizing: border-box;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  aside > div {
+    box-sizing: border-box;
+    min-height: 0;
+    padding-bottom: 48px;
+  }
+}
+
+ol.publications-list {
+  padding-left: 2.25rem;
+}
+
+ol.publications-list li {
+  line-height: 1.45;
+  margin-bottom: .8rem;
+  padding: .15rem .45rem;
+}
+
+ol.journal-publications li {
+  background-color: rgba(0, 64, 133, .08);
+  border-left: 4px solid #004085;
+  border-radius: 0 4px 4px 0;
+  padding: .65rem .8rem;
+}

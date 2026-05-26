@@ -24,6 +24,24 @@ innovative work being done at **LabMFA**, where experts are unlocking
 new solutions for complex engineering challenges. Get ready to be
 inspired by the latest advancements in fluid dynamics in complex flows!
 
+ .. youtube:: 8mNDazdvzoQ?si=S9b4EB9sqsojKuVm
+     :class: youtube-16x9
+     :allowfullscreen: yes
+     :seamless: yes
+     :align: left
+     :comment: This video presents a numerical simulation of the airflow around a symmetric airfoil positioned inside the LabMFA wind tunnel. The simulation was developed using the Finite Element Method to analyze the aerodynamic behavior of the flow around the airfoil. Angle of attack: 6º Chord length: 12.85 cm Maximum thickness: 2.77cm Freestream velocity: 5km/h Reynolds number: 11,400 Mesh: 377,635 nodes and 251,290 elements
+
+|
+
+ .. youtube:: bQlEXyuJBsk?si=ZKch1X_aiZ2XblSg
+     :class: youtube-16x9
+     :allowfullscreen: yes
+     :seamless: yes
+     :align: left
+     :comment: Four elastically supported cylinders were simulated using the FEM at Re=90. The cylinders have a dimensionless mass equal to 2, no damping and a reduced velocity equal to 6.
+
+|
+
  .. youtube:: ai9vYJgVCwU?si=8fZa2-uuzeVWCwBH
      :class: youtube-16x9
      :allowfullscreen: yes

@@ -2,7 +2,7 @@ Fabio Gaspar Santos Junior
 __________________________
 
 :date: 2024-08-10 22:10
-:modified: 2024-08-10 22:10
+:modified: 2026-05-26 18:57
 :slug: person/fabioGasparJr
 
 |
@@ -38,8 +38,21 @@ My doctoral research focuses on computational fluid dynamics (CFD) and the finit
  - fluid-solid interaction 
  - non-Newtonian fluids 
  - blood flow 
- - Biological Systems 
+ - Biological Systems
 
+.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
+
+**publications with Prof. Gustavo R. Anjos**:
+
+Conference Papers
+~~~~~~~~~~~~~~~~~
+
+.. class:: publications-list conference-publications
+
+#. Junior, F. G. S.; McGinty, S.; Anjos, G. R. **Numerical Simulation of a Non-Newtonian Fluid-Solid Interaction**. *Proceedings of the 28th International Congress of Mechanical Engineering* (COBEM), 2025.
+#. Gaspar Junior, F.; Mangiavacchi, N.; McGinty, S.; Anjos, G.R. **Computation of Fluid and Rigid Body Interaction Using a New Immersed Finite Element Method**. *Anais of 10th International Symposium on Fluid-Structure Interactions* (FIV), Foz do Iguaçu, Brazil, 2024.
+
+.. AUTO-GENERATED COAUTHORED ARTICLES END
 
 .. Place your references here
 .. _0009-0000-4139-6089: https://orcid.org/0009-0000-4139-6089

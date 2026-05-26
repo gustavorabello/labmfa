@@ -2,7 +2,7 @@ Felipe Feres Ferreira
 _____________________
 
 :date: 2025-06-04 21:00
-:modified: 2025-06-04 21:00
+:modified: 2026-05-26 18:43
 :slug: person/felipeFeres
 
 |
@@ -44,6 +44,19 @@ involved in the implementation of subsea projects within the Oil & Gas sector.
  - particle-laden simulations
  - aerodynamics
 
+.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
+
+**publications with Prof. Gustavo R. Anjos**:
+
+Conference Papers
+~~~~~~~~~~~~~~~~~
+
+.. class:: publications-list conference-publications
+
+#. Ferreira, F. F.; Anjos, G.R. **Numerical Simulation of a Multiphase Flow inside a Diesel Particulate Filter**. *JEM* (JEM), 2023.
+#. Ferreira, F. F.; Anjos, G.R. **Finite Element Method Applied to Diesel Particulate Filter Flow**. *Anais do 19th Brazilian Congress of Thermal Sciences and Engineering* (ENCIT), Bento Gonçalves, Brazil, 2022.
+
+.. AUTO-GENERATED COAUTHORED ARTICLES END
 
 .. Place your references here
 .. #_0000-0003-3279-7459: https://orcid.org/0000-0003-3279-745

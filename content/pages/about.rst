@@ -2,7 +2,7 @@ About the lab
 -------------
 
 :date: 2022-08-23 17:47
-:modified: 2024-11-02 20:30
+:modified: 2026-05-22 15:30
 :slug: about
 
 Overview
@@ -20,6 +20,39 @@ and atmospheric sciences. The training of human resources has been
 carried out at all levels, from scientific initiation programs, with
 undergraduate students, to postgraduate programs, with master's and
 doctoral students.
+
+Mission
+=======
+
+LabMFA's mission is to advance scientific and technological knowledge in
+fluid mechanics and aerodynamics while contributing to the education of
+highly qualified engineers, researchers, and professors. The laboratory
+combines fundamental research, numerical modeling, experimental methods,
+and applied engineering studies to address complex flow problems relevant
+to academia, industry, and society.
+
+Institutional Role
+==================
+
+Located within the Technology Center of the Federal University of Rio de
+Janeiro, LabMFA is part of the academic environment of COPPE/UFRJ and the
+Mechanical Engineering Program. This position enables close interaction
+with undergraduate and graduate education, interdisciplinary research
+groups, and national and international scientific collaborations.
+
+Laboratory Infrastructure
+=========================
+
+LabMFA provides an integrated environment for experimental and numerical
+research. Its infrastructure includes laboratory workspaces, student and
+staff rooms, a meeting room, a lecture room, technical support areas, and
+experimental facilities dedicated to aerodynamic testing and fluid flow
+investigation.
+
+The laboratory also combines wind tunnel experiments, measurement systems,
+computational resources, and in-house numerical tools, allowing students
+and researchers to connect theory, simulation, and experimental validation.
+More detailed information is available on the `Facilities`_ page.
 
 Research Focus
 ==============
@@ -181,3 +214,4 @@ Development, ended recently. More recently, **LAbMFA** has established a
 cooperation with the Petroleum Engineering Laboratory at the University
 of Tulsa, OK, USA, in the area of two-phase flow in pipelines.
 
+.. _Facilities: /facilities/

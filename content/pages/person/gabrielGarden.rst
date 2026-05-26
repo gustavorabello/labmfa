@@ -2,7 +2,7 @@ Gabriel de Lucas Garden
 _______________________
 
 :date: 2025-09-18 12:10
-:modified: 2025-09-18 12:10
+:modified: 2026-05-26 18:35
 :slug: person/gabrielGarden
 
 |
@@ -42,6 +42,19 @@ approach using higher-order numerical schemes.
  - vortex-induced vibrations
  - finite element method
  - structural dynamics
+
+.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
+
+**publications with Prof. Gustavo R. Anjos**:
+
+Conference Papers
+~~~~~~~~~~~~~~~~~
+
+.. class:: publications-list conference-publications
+
+#. Garden, G.; Fortuna, I.; Anjos, G. R.; Su, J. **An ALE-SL Method for Fluid-Structure Interactions in Riser Dynamics**. *Proceedings of the 28th International Congress of Mechanical Engineering* (COBEM), 2025.
+
+.. AUTO-GENERATED COAUTHORED ARTICLES END
 
 .. Place your references here
 .. _click to access Lattes: http://lattes.cnpq.br/3117844560481417
