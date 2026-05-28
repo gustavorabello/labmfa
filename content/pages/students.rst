@@ -2,154 +2,229 @@ Students
 --------
 
 :date: 2022-09-10 22:10
-:modified: 2024-07-08 22:10
+:modified: 2026-05-28 14:24
 :slug: students
+
+.. AUTO-GENERATED STUDENTS START: run build.py --update-publications
+
+Post-Doctoral Researchers
+_________________________
+
+ `Daniel Barbedo Vasconcelos Santos`_ --
+  *Finite Element Simulation Fluid-Structure Interaction*,
+  Post-Doctoral Researcher,
+  2025
+
+ `Eduardo Dias Correa`_ --
+  *Analytical and Numerical Method for non-Linear Problems in Convection and Radiation Heat Transfer*,
+  Post-Doctoral Researcher,
+  2025
 
 D.Sc. Students
 ______________
 
  `Antonio Emanuel Marques dos Santos`_ --
-  *High Order Finite Element in Unstructured Meshes*,
+  *Numerical Analysis of Two-Phase Flow using the Finite Element Method*,
+  D.Sc. Student,
   2025
 
- `Jorge Angel Aguilera Liendo`_  --
-  *Optimization Models For Gas Transportation Through Pipelines*,
-  2024
+ `Fábio Gaspar Júnior`_ --
+  *Immersed Finite-Element Methods for FSI*,
+  D.Sc. Student,
+  2025
 
- `Gabriel Ricardo Güntensperger Sousa`_  --
-  *Coalescense Study in Two-Phase Flows*,
-  2024
+ `Gabriel Ricardo Güntensperger Sousa`_ --
+  *Numerical Investigation of Droplet Approximation and Coalescence in Biofuel Synthesis*,
+  D.Sc. Student,
+  2025
 
- `João Paulo Innocente de Souza`_  --
-  *Flow Induced Vibration Simulations Using the Finite Element Method*,
-  2022
+ `João Paulo Innocente de Souza`_ --
+  *Development of a Multiphase Systems Simulator Based on the Finite Element Method*,
+  D.Sc. Student,
+  2025
 
- `Fábio Gaspar Junior`_ --
-  *Non-Newtonian Fluid-Structure Interaction Simulations Using the Finite Element Method*,
-  2022
+ `Jorge Angel Aguilera Liendo`_ --
+  *Numerical Investigation of Aerodynamics in Pipes*,
+  D.Sc. Student,
+  2025
+
+ `Jose Lages da Silva Neto`_ --
+  *Heat Transfer in Extended Surfaces in Transient Regime*,
+  D.Sc. Student,
+  2025
 
  `Leandro Marques dos Santos`_ --
-  *Non-Newtonian Two-Phase Flow Simulation in Biological Systems*,
-  2020
+  *Blood-Flow Modelling with Stream-Function/Vorticity FEM*,
+  D.Sc. Student,
+  2025
 
 M.Sc. Students
 ______________
 
+ `Afrânio Augusto Gomes Gonçalves`_ --
+  *Modelling of Fluid Flow Using Quadrilateral Unstructured Meshes*,
+  M.Sc. Student,
+  2025
+
  `Gabriel de Lucas Garden`_ --
-  *Numerical Analisys of FSI with the Finite Element Method*,
+  *Modelling of Interaction of Fluid Flow and Structure using Unstructured Meshes*,
+  M.Sc. Student,
+  2025
+
+ `Juliana Calazans de Cerqueira`_ --
+  *Fluid Dynamics in Variable Porosity Filters*,
+  M.Sc. Student,
   2025
 
  `Lucas Mendes Miranda`_ --
-  *Study of Cold Plate Fin Geometries to Improve Heat Transfer Capabilities of Eletronics Cooling Solutions Utilizing the Finite Element Method*,
-  2024
-
- `Juliana Calazans de Cerqueira`_ --
-  *Numerical Analysis of the Effect of Porosity on the Production of Biofuels in the Streamfunction Vorticity Formulation Using Finite Element Method*,
-  2024
-
- `João Victor Barros dos Santos`_ --
-  *Airfoil Optimization for the Improvement of the Performance of Horizontal Axis Wind Turbine*,
+  *Cold-Plate Fin Geometries for Electronics Cooling*,
   M.Sc. Student,
-  2022
-
- `Afrânio Augusto Gomes Goncalves`_ --
-  *Quadrilateral Elements in FE Analysis*,
-  2020
+  2025
 
 Undergrad Scientific Research - IC
 __________________________________
 
- `Breno Sarmento`_ --
-  *Creation of Local Implicit Surfaces by Quadratic Fitting on Triangular Meshes*,
-  2024
+ `Carlos Arturo Echenique Hernandez`_ --
+  *CFD Simulations on Complex Geometries Using the Finite Element Method*,
+  Undergraduate Scientific Research Student,
+  2026
+
+ `Gabriel Braz`_ --
+  *Aerodynamic Study of Complex Profiles*,
+  Undergraduate Scientific Research Student,
+  2026
 
  `Rodrigo Gadelha Salvaterra Dutra`_ --
-  *Multiphase Flow Injection Model of B100 Biodiesel and Air in a Combustion Chamber*,
+  *Multiphase Flow Injection Model of Biodiesel B100 and Air in a Combustion Chamber*,
+  Undergraduate Scientific Research Student,
   2026
 
 Alumni
-__________________________________
+______
+
+ `Breno Mota Sarmento`_ --
+  *Curvature Estimation on Surfaces via Local Quadratic Fitting and Comparative Analysis*,
+  Undergrad Scientific Research,
+  2026
 
  `Higor Odilon Gottgtroy`_ --
-  *Numerical Simulation of 2D Flow in a Butterfly-Type Control Valve*,
+  *Numerical Simulation of 2D Flow in Butterfly Control Valves*,
+  M.Sc.,
   2025
 
- `Gabriel Felipe de Oliveira Antão`_ --
+ `Lucas Borges Menezes`_ --
+  *Validation of CFD Simulations Using the Darcy-Forchheimer Model Against Experimental Data for Bag Filters*,
+  Undergrad Scientific Research,
+  2025
+
+ `Gabriel Felipe Oliveira Antão`_ --
   *Development of Fluid Flow Simulator Based on Characteristic-Based Split Method*,
   M.Sc.,
   2024
 
- `Aline Barbosa Figueiredo`_ --
-  *Leak Location in Gas Pipeline with Two-Phase Flow in a Stratified Pattern*,
-  Post-Doc,
-  2024
-
- `Rodrigo Augusto Camara Patricio`_ --
-  *Numerical Simulation of Two-Phase Flow in Gas Pipelines in Stratified and Slug Patterns in the Presence of a Pig*,
-  Ph.D. Student,
-  2024
-
- `Rafael Araujo Vidal`_ --
-  *A semi-Lagrangian method for two-phase flow simulation*,
-  M.Sc.,
-  2023
-
- `Felipe Feres Ferreira`_ --
-  *CFD Analysis of a Diesel Particulate Filter Performance Using Biodiesel*,
-  M.Sc.,
-  2023
-
- `Anna Barbara Coimbra`_ --
-  *Numerical Analysis of Filters in Biofuel Systems*,
-  Undergrad Scientific Research,
-  2023
-
- `João Pedro Rodrigues`_ --
-  *Analysis of Biofuel Systems Using the Finite Element Method*,
+ `Anna Bárbara Serejo Coimbra`_ --
+  *Pollutant Filtration in Multiphase Flows Resulting from Biofuel Combustion*,
   Undergrad Scientific Research,
   2023
 
  `Daniel Moreira Spesani`_ --
-  *Numerical Methods for the Analysis of Biofuel Systems*,
+  *Multiphase Flow of Biofuels Through the Finite Element Method*,
   Undergrad Scientific Research,
   2023
 
- `Raphael Viggiano Neves de Freitas`_ --
-  *Transient Modeling and Simulation of Piston Devices Moving Through Single-Phase and Two-Phase Flows in Pipes Applied to Pigs And Plungers*,
-  Ph.D. Student,
-  2022
+ `Felipe Féres Ferreira`_ --
+  *Finite Element Method Applied to Diesel Particulate Filter Flow*,
+  M.Sc.,
+  2023
 
- `Carina Nogueira Sondermann`_ --
-  *Numerical Prediction of Intermittent Two-Phase Flow in Horizontal and Inclined Pipelines and Comparison with Experiments*,
-  Ph.D. Student,
+ `João Pedro Rodrigues`_ --
+  *Pollutant Filtration in Multiphase Flows Resulting from Biodiesel Combustion*,
+  Undergrad Scientific Research,
+  2023
+
+ `Rafael Araújo Vidal`_ --
+  *Computation of Deformable Interface Two-Phase Flows – A Semi-Lagrangian Finite Element Approach*,
+  M.Sc.,
+  2023
+
+ `João Deodato Batista dos Santos`_ --
+  *Reduced-Order Modeling of Fluid-Structure Interaction*,
+  Post-Doc,
   2021
-  *Simulation of Two Phase Flow in Pipelines Including One Energy Equation for the Mixture Using the FCT Numerical Method*,
-  2016
+
+ `Matheus Dias da Rocha`_ --
+  *Numerical Simulation of Multiphase Flows*,
+  Undergrad Scientific Research,
+  2021
+
+ `Luis Henrique Carnevale da Cunha`_ --
+  *Stream-Function Vorticity FEM Formulation Applied to Conjugated Heat-Transfer Problems*,
+  M.Sc.,
+  2020
+
+  *Finite Element Method for Cooling Electronic Components*,
+  Undergrad Scientific Research,
+  2019
+
+ `Ramon Christian Moreira Gomes Mendes Juvenal`_ --
+  *Finite Element Method Applied to Pollutant Dispersed Flow Resulting from Biofuel Production*,
+  Undergrad Scientific Research,
+  2020
+
+ `Erik Gros`_ --
+  *Numerical Modelling of Two-Phase Flow with Moving Boundary-Fitted Meshes*,
+  D.Sc.,
+  2018
+
+ `Eduardo Vitral Freigedo Rodrigues`_ --
+  *Nano-Patterning of Surfaces by Ion Sputtering - Numerical Study of the Anisotropic Damped Kuramoto–Sivashinsky Equation*,
+  M.Sc.,
+  2015
+
+ `Paulo Roberto Berti Leite Filho`_ --
+  *Numerical Simulation System for Multiphase Flows*,
+  Undergrad Scientific Research,
+  2015
+
+ `Rafael Alves da Silva Filomeno`_ --
+  *Data Processing and Numerical Programming in Multiphase Systems*,
+  Undergrad Scientific Research,
+  2015
 
 .. Place your references here
-.. _Gabriel de Lucas Garden: /person/gabrielGarden
-.. _Rodrigo Gadelha Salvaterra Dutra: /person/rodrigoDutra
-.. _Everton Taveira Baldes Vieira: /person/evertonTaveira
-.. _Lucas Mendes Miranda: /person/lucasMiranda
-.. _Juliana Calazans de Cerqueira: /person/julianaCalazans
+.. _Afrânio Augusto Gomes Gonçalves: /person/afranioGoncalves
+.. _Anna Bárbara Serejo Coimbra: /person/annaCoimbra
 .. _Antonio Emanuel Marques dos Santos: /person/antonioEmanuel
-.. _Gabriel Ricardo Güntensperger Sousa: /person/gabrielSousa
-.. _João Paulo Innocente de Souza: /person/joaoInnocente
-.. _Leandro Marques dos Santos: /person/leandroMarques
-.. _Fábio Gaspar Junior: /person/fabioGasparJr
-.. _Felipe Feres Ferreira: /person/felipeFeres
-.. _Gabriel Felipe de Oliveira Antão: /person/gabrielAntao
-.. _Rafael Araujo Vidal: /person/rafaelVidal
-.. _Afrânio Augusto Gomes Goncalves: /person/afranioGoncalves
-.. _Higor Odilon Gottgtroy: /person/higorOdilon
-.. _Anna Barbara Coimbra: /person/annaCoimbra
-.. _João Pedro Rodrigues: /person/joaoPedroRodrigues
+.. _Breno Mota Sarmento: /person/brenoSarmento
+.. _Carlos Arturo Echenique Hernandez: /person/carlosEchenique
+.. _Daniel Barbedo Vasconcelos Santos: /person/danielBarbedo
 .. _Daniel Moreira Spesani: /person/danielSpesani
-.. _Breno Sarmento: /person/brenoSarmento
-.. _Raphael Viggiano Neves de Freitas: /person/raphaelViggianoFreitas
-.. _Aline Barbosa Figueiredo: /person/alineBarbosaFigueiredo
-.. _João Victor Barros dos Santos: /person/joaoVictorSantos
-.. _Carina Nogueira Sondermann: /person/carinaSondermann
-.. _Rodrigo Augusto Camara Patricio: /person/rodrigoCamaraPatricio
-.. _Jorge Angel Aguilera Liendo: /person/jorgeLiendo
+.. _Eduardo Dias Correa: /person/eduardoCorrea
+.. _Eduardo Vitral Freigedo Rodrigues: /person/eduardoVitralFreigedoRodrigues
+.. _Erik Gros: /person/erikGros
+.. _Fábio Gaspar Júnior: /person/fabioGasparJr
+.. _Felipe Féres Ferreira: /person/felipeFeres
+.. _Gabriel Braz: /person/gabrielBraz
+.. _Gabriel de Lucas Garden: /person/gabrielGarden
+.. _Gabriel Felipe Oliveira Antão: /person/gabrielFelipeOliveiraAntao
+.. _Gabriel Ricardo Güntensperger Sousa: /person/gabrielSousa
+.. _Higor Odilon Gottgtroy: /person/higorOdilon
+.. _João Deodato Batista dos Santos: /person/joaoDeodatoBatistaSantos
+.. _João Paulo Innocente de Souza: /person/joaoInnocente
+.. _João Pedro Rodrigues: /person/joaoPedroRodrigues
+.. _Jorge Angel Aguilera Liendo: /person/jorgeAngelAguileraLiendo
+.. _Jose Lages da Silva Neto: /person/joseLagesSilvaNeto
+.. _Juliana Calazans de Cerqueira: /person/julianaCalazans
+.. _Leandro Marques dos Santos: /person/leandroMarquesSantos
+.. _Lucas Borges Menezes: /person/lucasBorgesMenezes
+.. _Lucas Mendes Miranda: /person/lucasMiranda
+.. _Luis Henrique Carnevale da Cunha: /person/luisHenriqueCarnevaleCunha
+.. _Matheus Dias da Rocha: /person/matheusDiasRocha
+.. _Paulo Roberto Berti Leite Filho: /person/pauloRobertoBertiLeiteFilho
+.. _Rafael Alves da Silva Filomeno: /person/rafaelAlvesSilvaFilomeno
+.. _Rafael Araújo Vidal: /person/rafaelVidal
+.. _Ramon Christian Moreira Gomes Mendes Juvenal: /person/ramonChristianMoreiraGomesMendesJuvenal
+.. _Rodrigo Gadelha Salvaterra Dutra: /person/rodrigoDutra
+
+.. AUTO-GENERATED STUDENTS END
 

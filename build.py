@@ -15,6 +15,7 @@ import os
 import posixpath
 import re
 import shutil
+import subprocess
 import sys
 import time
 import unicodedata
@@ -37,10 +38,21 @@ JOURNALS_BIB = BIB_DIR / 'journals.bib'
 CONFERENCES_BIB = BIB_DIR / 'papers_conferences.bib'
 BOOKS_BIB = BIB_DIR / 'books.bib'
 CHAPTERS_BIB = BIB_DIR / 'chapters.bib'
+THESIS_CONCLUDED_BIB = BIB_DIR / 'thesisConcluded.bib'
+THESIS_NOT_CONCLUDED_BIB = BIB_DIR / 'thesisNotConcluded.bib'
+IC_CONCLUDED_BIB = BIB_DIR / 'icConcluded.bib'
+IC_NOT_CONCLUDED_BIB = BIB_DIR / 'icNotConcluded.bib'
+POSTDOC_CONCLUDED_BIB = BIB_DIR / 'postdocConcluded.bib'
+POSTDOC_NOT_CONCLUDED_BIB = BIB_DIR / 'postdocNotConcluded.bib'
 PUBLICATIONS_START = '.. AUTO-GENERATED PUBLICATIONS START: run build.py --update-publications'
 PUBLICATIONS_END = '.. AUTO-GENERATED PUBLICATIONS END'
 STUDENT_ARTICLES_START = '.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications'
 STUDENT_ARTICLES_END = '.. AUTO-GENERATED COAUTHORED ARTICLES END'
+STUDENTS_START = '.. AUTO-GENERATED STUDENTS START: run build.py --update-publications'
+STUDENTS_END = '.. AUTO-GENERATED STUDENTS END'
+PROFILE_REQUEST_FROM = 'gustavo.rabello@coppe.ufrj.br'
+PROFILE_REQUEST_DRAFT_DIR = Path('/private/tmp/labmfa-profile-email-drafts')
+GMAIL_PROFILE_DRAFT_SCRIPT = BASE_DIR / 'scripts/gmail_profile_draft.py'
 REMOTE_SITE_DIR = '/html'
 REMOTE_MANIFEST = '.labmfa-manifest.json'
 SFTP_TIMEOUT_SECONDS = 60
@@ -117,11 +129,15 @@ def _parse_fields(text):
     return fields
 
 
-def parse_bibtex(path, entry_type):
-    """Read selected BibTeX entries without adding a build dependency."""
+def parse_bibtex_entries(path, entry_types=None):
+    """Read BibTeX entries without adding a build dependency."""
     source = path.read_text(encoding='utf-8')
     entries = []
     index = 0
+    selected = (
+        {entry.lower() for entry in entry_types}
+        if entry_types is not None else None
+    )
     entry_re = re.compile(r'@([A-Za-z]+)\s*\{', re.IGNORECASE)
 
     while True:
@@ -129,14 +145,24 @@ def parse_bibtex(path, entry_type):
         if not match:
             return entries
 
+        entry_kind = match.group(1).lower()
         body, index = _braced_value(source, match.end() - 1)
-        if match.group(1).lower() != entry_type.lower():
+        if selected is not None and entry_kind not in selected:
             continue
         try:
-            _, fields_text = body.split(',', 1)
+            key, fields_text = body.split(',', 1)
         except ValueError as error:
             raise ValueError('Invalid BibTeX entry in {}'.format(path)) from error
-        entries.append(_parse_fields(fields_text))
+        entry = _parse_fields(fields_text)
+        entry['_entry_type'] = entry_kind
+        entry['_entry_key'] = key.strip()
+        entry['_source_path'] = str(path)
+        entries.append(entry)
+
+
+def parse_bibtex(path, entry_type):
+    """Read selected BibTeX entries without adding a build dependency."""
+    return parse_bibtex_entries(path, {entry_type})
 
 
 def latex_to_text(value):
@@ -424,6 +450,545 @@ def update_generated_section(path, start_marker, end_marker, generated,
     return True
 
 
+def format_bibtex_person_name(value):
+    """Convert the BibTeX 'Family, Given' convention to display order."""
+    value = latex_to_text(value).strip()
+    if ',' not in value:
+        return value
+
+    family, given = [part.strip() for part in value.split(',', 1)]
+    return ' '.join(part for part in (given, family) if part)
+
+
+def student_record(entry, category, status):
+    """Normalize a student/advising BibTeX entry for page generation."""
+    return {
+        'name': format_bibtex_person_name(field(entry, 'author')),
+        'title': field(entry, 'title'),
+        'year': field(entry, 'year'),
+        'school': field(entry, 'school') or field(entry, 'institution'),
+        'address': field(entry, 'address'),
+        'note': field(entry, 'note'),
+        'category': category,
+        'status': status,
+        'entry_type': field(entry, 'type'),
+        'source_key': entry.get('_entry_key', ''),
+    }
+
+
+def is_anjos_supervision(entry):
+    """Keep only records that explicitly list Prof. Gustavo R. Anjos."""
+    return 'anjos' in normalize_name(field(entry, 'note'))
+
+
+def thesis_category(entry):
+    thesis_type = field(entry, 'type').lower()
+    if thesis_type == 'phdthesis':
+        return 'phd'
+    if thesis_type == 'masterthesis':
+        return 'msc'
+    return ''
+
+
+def load_student_records():
+    """Load students and alumni from the advising BibTeX files."""
+    current = []
+    alumni = []
+
+    for entry in parse_bibtex_entries(THESIS_NOT_CONCLUDED_BIB, {'thesis'}):
+        category = thesis_category(entry)
+        if category and is_anjos_supervision(entry):
+            current.append(student_record(entry, category, 'current'))
+
+    for entry in parse_bibtex_entries(THESIS_CONCLUDED_BIB, {'thesis'}):
+        category = thesis_category(entry)
+        if category and is_anjos_supervision(entry):
+            alumni.append(student_record(entry, category, 'alumni'))
+
+    for entry in parse_bibtex_entries(IC_NOT_CONCLUDED_BIB, {'misc'}):
+        if is_anjos_supervision(entry):
+            current.append(student_record(entry, 'ic', 'current'))
+
+    for entry in parse_bibtex_entries(IC_CONCLUDED_BIB, {'misc'}):
+        if is_anjos_supervision(entry):
+            alumni.append(student_record(entry, 'ic', 'alumni'))
+
+    for entry in parse_bibtex_entries(POSTDOC_NOT_CONCLUDED_BIB, {'misc'}):
+        if is_anjos_supervision(entry):
+            current.append(student_record(entry, 'postdoc', 'current'))
+
+    for entry in parse_bibtex_entries(POSTDOC_CONCLUDED_BIB, {'misc'}):
+        if is_anjos_supervision(entry):
+            alumni.append(student_record(entry, 'postdoc', 'alumni'))
+
+    return current, alumni
+
+
+def existing_profile_names():
+    """Return profile display names keyed by slug."""
+    profiles = {}
+    for path in sorted(PERSON_DIR.glob('*.rst')):
+        if path.resolve() == PROFILE_PATH.resolve():
+            continue
+        source = path.read_text(encoding='utf-8')
+        first = next((line.strip() for line in source.splitlines()
+                      if line.strip()), '')
+        if first:
+            profiles[path.stem] = first
+    return profiles
+
+
+def names_compatible(candidate, existing):
+    candidate_tokens = set(name_tokens(candidate))
+    existing_tokens = set(name_tokens(existing))
+
+    if candidate_tokens == existing_tokens:
+        return True
+    if len(candidate_tokens) >= 2 and existing_tokens.issubset(candidate_tokens):
+        return True
+    if len(existing_tokens) >= 2 and candidate_tokens.issubset(existing_tokens):
+        return True
+    return False
+
+
+def profile_slug_for_name(name, profiles):
+    normalized = normalize_name(name)
+    for slug, existing in profiles.items():
+        if normalize_name(existing) == normalized:
+            return slug
+
+    matches = [
+        slug for slug, existing in profiles.items()
+        if names_compatible(name, existing)
+    ]
+    if len(matches) == 1:
+        return matches[0]
+    return ''
+
+
+def camel_slug(name, used):
+    tokens = name_tokens(name)
+    if not tokens:
+        tokens = ['student']
+
+    slug = tokens[0] + ''.join(token.capitalize() for token in tokens[1:])
+    slug = re.sub(r'[^A-Za-z0-9]', '', slug)
+    candidate = slug
+    index = 2
+    while candidate in used:
+        candidate = '{}{}'.format(slug, index)
+        index += 1
+    used.add(candidate)
+    return candidate
+
+
+def assign_profile_slugs(records):
+    profiles = existing_profile_names()
+    used = {path.stem for path in PERSON_DIR.glob('*.rst')}
+
+    for record in records:
+        slug = profile_slug_for_name(record['name'], profiles)
+        if not slug:
+            slug = camel_slug(record['name'], used)
+            profiles[slug] = record['name']
+        record['slug'] = slug
+
+
+def category_label(category, current=True):
+    labels = {
+        'phd': ('D.Sc. Student', 'D.Sc.'),
+        'msc': ('M.Sc. Student', 'M.Sc.'),
+        'ic': ('Undergraduate Scientific Research Student',
+               'Undergrad Scientific Research'),
+        'postdoc': ('Post-Doctoral Researcher', 'Post-Doc'),
+    }
+    return labels[category][0 if current else 1]
+
+
+def sentence_role(category):
+    labels = {
+        'phd': 'D.Sc. student',
+        'msc': 'M.Sc. student',
+        'ic': 'undergraduate scientific research student',
+        'postdoc': 'post-doctoral researcher',
+    }
+    return labels[category]
+
+
+def role_article(category):
+    return 'an' if category in {'msc', 'ic'} else 'a'
+
+
+def infer_research_interests(title):
+    normalized = normalize_name(title)
+    checks = [
+        ('finite element', ('finite element', 'fem', 'element')),
+        ('computational fluid dynamics', ('cfd', 'fluid flow', 'aerodynamic')),
+        ('two-phase and multiphase flows', ('two phase', 'multiphase',
+                                            'droplet', 'biofuel')),
+        ('fluid-structure interaction', ('fluid structure', 'fsi',
+                                         'vibration')),
+        ('heat transfer', ('heat transfer', 'thermal', 'cooling')),
+        ('porous media', ('porosity', 'porous', 'filter')),
+        ('aerodynamics', ('aerodynamic', 'airfoil', 'vortex', 'wind')),
+        ('optimization', ('optimization', 'calibration')),
+        ('numerical methods', ('numerical', 'simulation', 'modelling',
+                               'modeling')),
+        ('scientific computing', ('python', 'computational', 'simulator')),
+    ]
+    interests = [
+        label for label, keywords in checks
+        if any(keyword in normalized for keyword in keywords)
+    ]
+    if 'numerical methods' not in interests:
+        interests.append('numerical methods')
+    if 'scientific computing' not in interests:
+        interests.append('scientific computing')
+    return interests[:6]
+
+
+def render_generic_profile(record):
+    now = datetime.now().strftime('%Y-%m-%d %H:%M')
+    title = record['name']
+    underline = '_' * len(title)
+    role = category_label(record['category'], record['status'] == 'current')
+    role_in_sentence = sentence_role(record['category'])
+    article = role_article(record['category'])
+    verb = 'is' if record['status'] == 'current' else 'was'
+    project = record['title']
+    interests = infer_research_interests(project)
+
+    lines = [
+        title,
+        underline,
+        '',
+        ':date: {}'.format(now),
+        ':modified: {}'.format(now),
+        ':slug: person/{}'.format(record['slug']),
+        '',
+        '|',
+        '',
+        '.. image:: {static}/images/person/generic.jpg',
+        '   :name: {}_face'.format(record['slug']),
+        '   :width: 25%',
+        '   :alt: {}'.format(record['slug']),
+        '   :align: left',
+        '',
+        '{} {} {} {} at `UFRJ`_/`Coppe`_ under the supervision of '
+        '`Prof. Gustavo R. Anjos`_. The project, *{}*, is associated with '
+        'LabMFA research in computational mechanics, fluid dynamics, heat '
+        'transfer, and numerical methods.'.format(
+            record['name'], verb, article, role_in_sentence, project),
+        '',
+        '|',
+        '|',
+        '|',
+        '|',
+        '|',
+        '',
+        '**academic info**:',
+        '',
+        ' - {} at `Coppe`_/`Federal University of Rio de Janeiro`_'.format(role),
+        ' - `Department of Mechanical Engineering`_',
+        ' - Project: *{}*'.format(project),
+        ' - Year: {}'.format(record['year']),
+        ' - Advisor: `Prof. Gustavo R. Anjos`_',
+        '',
+        '|',
+        '',
+        '**research interests**:',
+        '',
+    ]
+    lines.extend(' - {}'.format(interest) for interest in interests)
+    lines.extend([
+        '',
+        '.. Place your references here',
+        '.. _Prof. Gustavo R. Anjos: /person/gustavoRabello',
+        '.. _UFRJ: http://www.ufrj.br',
+        '.. _Federal University of Rio de Janeiro: http://www.ufrj.br',
+        '.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/',
+        '.. _Coppe: http://www.coppe.ufrj.br',
+        '',
+    ])
+    return '\n'.join(lines)
+
+
+def ensure_missing_student_profiles(records):
+    created = []
+    for record in records:
+        path = PERSON_DIR / '{}.rst'.format(record['slug'])
+        if path.exists():
+            continue
+        path.write_text(render_generic_profile(record), encoding='utf-8')
+        created.append((record, path))
+    return created
+
+
+def profile_request_email_subject():
+    return 'Informações para seu perfil no site do LabMFA'
+
+
+def render_profile_request_email_body(record, path):
+    role = category_label(record['category'], record['status'] == 'current')
+    return '\n'.join([
+        'Prezado(a) {},'.format(record['name']),
+        '',
+        'Estou atualizando sua página de perfil no site do LabMFA e criei',
+        'uma versão preliminar usando o modelo genérico do laboratório.',
+        '',
+        'Você poderia, por favor, preencher o arquivo em anexo com as',
+        'informações abaixo para que eu possa substituir o texto temporário',
+        'pelo seu perfil atualizado?',
+        '',
+        '- Um parágrafo curto de biografia em inglês',
+        '- Informações acadêmicas: programa/cargo, instituição, departamento,',
+        '  orientador/coorientadores, CV Lattes, ORCID, e-mail e telefone,',
+        '  caso queira publicar',
+        '- Interesses de pesquisa, preferencialmente como 4 a 8 palavras-chave',
+        '- Uma foto de perfil, caso queira substituir a imagem genérica em',
+        'formato JPG.',
+        '- Links que queira incluir, como página pessoal, GitHub, LinkedIn,',
+        '  Google Scholar ou página de projeto',
+        '',
+        'Informações atualmente registradas no LabMFA:',
+        '- Nome: {}'.format(record['name']),
+        '- Vínculo: {}'.format(role),
+        '- Projeto/título: {}'.format(record['title']),
+        '- Ano: {}'.format(record['year']),
+        '',
+        'Atenciosamente,',
+        'Gustavo',
+    ])
+
+
+def render_profile_request_email(record, path):
+    return '\n'.join([
+        'De: {}'.format(PROFILE_REQUEST_FROM),
+        'Assunto: {}'.format(profile_request_email_subject()),
+        '',
+        render_profile_request_email_body(record, path),
+    ])
+
+
+def write_gmail_draft_payload(record, path):
+    PROFILE_REQUEST_DRAFT_DIR.mkdir(parents=True, exist_ok=True)
+    payload_path = PROFILE_REQUEST_DRAFT_DIR / '{}-gmail-draft.json'.format(
+        record['slug'])
+    payload = {
+        'from': PROFILE_REQUEST_FROM,
+        'subject': profile_request_email_subject(),
+        'body': render_profile_request_email_body(record, path),
+        'attachments': [str(path)],
+    }
+    payload_path.write_text(
+        json.dumps(payload, indent=2, ensure_ascii=False) + '\n',
+        encoding='utf-8',
+    )
+    return payload_path
+
+
+def gmail_credentials_path():
+    return Path(os.environ.get(
+        'LABMFA_GMAIL_CREDENTIALS',
+        str(Path.home() / '.config/labmfa/gmail-credentials.json'),
+    )).expanduser()
+
+
+def create_gmail_profile_draft(payload_path):
+    credentials = gmail_credentials_path()
+    if not credentials.exists():
+        return (
+            False,
+            'Gmail OAuth credentials not found: {}'.format(credentials),
+        )
+
+    if not GMAIL_PROFILE_DRAFT_SCRIPT.exists():
+        return (
+            False,
+            'Gmail draft script not found: {}'.format(
+                GMAIL_PROFILE_DRAFT_SCRIPT),
+        )
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(GMAIL_PROFILE_DRAFT_SCRIPT),
+            '--payload',
+            str(payload_path),
+        ],
+        cwd=str(BASE_DIR),
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        check=False,
+    )
+    return result.returncode == 0, result.stdout.strip()
+
+
+def print_profile_request_emails(created_profiles):
+    if not created_profiles:
+        return
+
+    print(Fore.CYAN + '\n✉️  Gmail API/profile drafts for new generic profiles, grouped by student')
+    print(Fore.CYAN + '─' * 72)
+    for index, (record, path) in enumerate(created_profiles, start=1):
+        if index > 1:
+            print(Fore.CYAN + '─' * 72)
+        gmail_payload_path = write_gmail_draft_payload(record, path.resolve())
+        gmail_ok, gmail_output = create_gmail_profile_draft(gmail_payload_path)
+        print(Fore.RED + Style.BRIGHT + 'Student: {}'.format(record['name']))
+        print(Fore.WHITE + 'Profile RST: {}'.format(path.resolve()))
+        print(Fore.WHITE + 'Gmail API payload: {}'.format(
+            gmail_payload_path.resolve()))
+        if gmail_ok:
+            print(Fore.GREEN + 'Gmail API draft: {}'.format(gmail_output))
+        else:
+            print(Fore.YELLOW + 'Gmail API draft skipped: {}'.format(
+                gmail_output))
+            print(Fore.YELLOW + 'Create credentials following Google Gmail API '
+                  'Desktop OAuth setup, then save them as {}'.format(
+                      gmail_credentials_path()))
+    print(Fore.CYAN + '─' * 72)
+
+
+def record_sort_key(record):
+    year = int(record['year']) if record['year'].isdigit() else 0
+    return (-year, normalize_name(record['name']))
+
+
+def render_student_record(record, current=True):
+    lines = [
+        ' `{}`_ --'.format(record['name']),
+        '  *{}*,'.format(record['title']),
+        '  {},'.format(category_label(record['category'], current)),
+        '  {}'.format(record['year']),
+        '',
+    ]
+    return lines
+
+
+def render_student_group(records, current=True):
+    lines = []
+    for record in sorted(records, key=record_sort_key):
+        lines.extend(render_student_record(record, current=current))
+    return lines
+
+
+def render_alumni(records):
+    grouped = {}
+    for record in records:
+        grouped.setdefault(record['slug'], []).append(record)
+
+    groups = sorted(
+        grouped.values(),
+        key=lambda items: (
+            -max(int(item['year']) if item['year'].isdigit() else 0
+                 for item in items),
+            normalize_name(items[0]['name']),
+        ),
+    )
+
+    lines = []
+    for items in groups:
+        first = sorted(items, key=record_sort_key)[0]
+        lines.append(' `{}`_ --'.format(first['name']))
+        for item in sorted(items, key=record_sort_key):
+            lines.extend([
+                '  *{}*,'.format(item['title']),
+                '  {},'.format(category_label(item['category'], current=False)),
+                '  {}'.format(item['year']),
+                '',
+            ])
+    return lines
+
+
+def render_students_page(current, alumni):
+    active_slugs = {record['slug'] for record in current}
+    alumni = [
+        record for record in alumni
+        if record['slug'] not in active_slugs
+    ]
+
+    sections = [
+        ('Post-Doctoral Researchers', 'postdoc'),
+        ('D.Sc. Students', 'phd'),
+        ('M.Sc. Students', 'msc'),
+        ('Undergrad Scientific Research - IC', 'ic'),
+    ]
+
+    lines = [
+        STUDENTS_START,
+        '',
+    ]
+    for heading, category in sections:
+        records = [
+            record for record in current
+            if record['category'] == category
+        ]
+        if not records:
+            continue
+        lines.extend([
+            heading,
+            '_' * len(heading),
+            '',
+        ])
+        lines.extend(render_student_group(records, current=True))
+
+    if alumni:
+        lines.extend([
+            'Alumni',
+            '_' * len('Alumni'),
+            '',
+        ])
+        lines.extend(render_alumni(alumni))
+
+    all_records = sorted(
+        {record['slug']: record for record in current + alumni}.values(),
+        key=lambda record: normalize_name(record['name']),
+    )
+    lines.extend([
+        '.. Place your references here',
+    ])
+    lines.extend(
+        '.. _{}: /person/{}'.format(record['name'], record['slug'])
+        for record in all_records
+    )
+    lines.extend(['', STUDENTS_END, ''])
+    return '\n'.join(lines)
+
+
+def update_students_page(current, alumni):
+    generated = render_students_page(current, alumni)
+    source = STUDENTS_PATH.read_text(encoding='utf-8')
+    if STUDENTS_START in source and STUDENTS_END in source:
+        before = source.split(STUDENTS_START, 1)[0]
+        after = source.split(STUDENTS_END, 1)[1].lstrip('\n')
+        updated = before.rstrip() + '\n\n' + generated + '\n' + after
+    else:
+        match = re.search(r'(?ms)^:slug:\s*students\s*\n+', source)
+        if not match:
+            raise RuntimeError('Could not find students page metadata block.')
+        before = source[:match.end()]
+        updated = before.rstrip() + '\n\n' + generated
+
+    timestamp = datetime.now().strftime('%Y-%m-%d %H:%M')
+    updated = re.sub(r'(?m)^:modified:.*$',
+                     ':modified: {}'.format(timestamp), updated, count=1)
+    if updated == source:
+        return False
+    STUDENTS_PATH.write_text(updated, encoding='utf-8')
+    return True
+
+
+def update_students_from_bibs():
+    current, alumni = load_student_records()
+    records = current + alumni
+    assign_profile_slugs(records)
+    created = ensure_missing_student_profiles(records)
+    changed = update_students_page(current, alumni)
+    return current, alumni, created, changed
+
+
 def student_profile_slugs():
     """Return all profile slugs in content/pages/person, except Gustavo's page."""
     return {
@@ -460,7 +1025,9 @@ def update_student_publications(journals, conferences):
         if not lines:
             continue
 
-        student_name = lines[0].strip()
+        student_name = next((line.strip() for line in lines if line.strip()), '')
+        if not student_name:
+            continue
 
         articles = [
             entry for entry in shared_articles
@@ -521,6 +1088,8 @@ def update_student_publications(journals, conferences):
 
 def update_publications():
     """Refresh the generated publication section on Gustavo's profile page."""
+    current_students, alumni_students, created_profiles, students_changed = (
+        update_students_from_bibs())
     books = parse_bibtex(BOOKS_BIB, 'book')
     chapters = parse_bibtex(CHAPTERS_BIB, 'incollection')
     journals = parse_bibtex(JOURNALS_BIB, 'article')
@@ -531,14 +1100,28 @@ def update_publications():
         legacy_start='**publications**:')
     listed_pages, listed_articles, listed_conferences, student_changes = (
         update_student_publications(journals, conferences))
-    result = 'Updated' if profile_changed or student_changes else 'Checked'
+    result = (
+        'Updated'
+        if profile_changed or student_changes or students_changed or created_profiles
+        else 'Checked'
+    )
     print('{} publications: {} books, {} book chapters, {} journal articles and '
           '{} conference papers; coauthorship listed on {} student '
-          'profiles ({} journal articles and {} conference papers).'.format(
+          'profiles ({} journal articles and {} conference papers). '
+          'Students page has {} current records and {} alumni records; '
+          '{} generic profiles created.'.format(
               result, len(books), len(chapters), len(journals),
               len(conferences), listed_pages, listed_articles,
-              listed_conferences))
-    return profile_changed or bool(student_changes)
+              listed_conferences, len(current_students), len(alumni_students),
+              len(created_profiles)))
+    if created_profiles:
+        print(Fore.CYAN + 'Created generic profiles: {}'.format(
+            ', '.join(sorted(path.stem for _, path in created_profiles))))
+        print_profile_request_emails(created_profiles)
+    return (
+        profile_changed or bool(student_changes)
+        or students_changed or bool(created_profiles)
+    )
 
 
 def isdir(path):
