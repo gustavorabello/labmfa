@@ -28,6 +28,17 @@ STUDENT_AUTHOR_ALIASES = {
         'a b figueiredo',
     },
 
+    'joseLagesSilvaNeto': {
+        'silva neto jose lages',
+        'jose lages da silva neto',
+        'silva neto j l',
+        'j l silva neto',
+        'lages jose',
+        'jose lages',
+        'lages j',
+        'j lages',
+    },
+
     'annaCoimbra': {
         'coimbra anna',
         'anna coimbra',

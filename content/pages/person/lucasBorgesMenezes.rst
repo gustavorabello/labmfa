@@ -7,14 +7,20 @@ ____________________
 
 |
 
-.. image:: {static}/images/person/generic.jpg
+.. image:: {static}/images/person/lucasBorges.jpg
    :name: lucasBorgesMenezes_face
    :width: 25%
    :alt: lucasBorgesMenezes
    :align: left
 
-Lucas Borges Menezes was an undergraduate scientific research student at `UFRJ`_/`Coppe`_ under the supervision of `Prof. Gustavo R. Anjos`_. The project, *Validation of CFD Simulations Using the Darcy-Forchheimer Model Against Experimental Data for Bag Filters*, is associated with LabMFA research in computational mechanics, fluid dynamics, heat transfer, and numerical methods.
+Lucas Borges Menezes is currently a Ph.D. student in Mechanical Engineering at
+Purdue University. He earned his B.Sc. in Mechanical Engineering from the
+Federal University of Rio de Janeiro (UFRJ), where he worked as an
+undergraduate scientific research student under the supervision of Prof.
+`Prof. Gustavo R. Anjos`_, publishing a paper at ENCIT 2024 and completing his
+undergraduate thesis.
 
+|
 |
 |
 |
@@ -22,6 +28,12 @@ Lucas Borges Menezes was an undergraduate scientific research student at `UFRJ`_
 |
 
 **academic info**:
+
+ - Ph.D. Student in Mechanical Engineering at Purdue University
+ - CV: `click to access Lattes`_
+ - LinkedIn: `Lucas Borges`_
+ - **e-mail**: lucasb54menezes@gmail.com / lborgesm@purdue.edu
+ - Phone: +55 21 97364-6505
 
  - Undergrad Scientific Research at `Coppe`_/`Federal University of Rio de Janeiro`_
  - `Department of Mechanical Engineering`_
@@ -34,6 +46,8 @@ Lucas Borges Menezes was an undergraduate scientific research student at `UFRJ`_
 **research interests**:
 
  - computational fluid dynamics
+ - discrete element method
+ - finite element method
  - porous media
  - numerical methods
  - scientific computing
@@ -53,7 +67,9 @@ Conference Papers
 
 .. Place your references here
 .. _Prof. Gustavo R. Anjos: /person/gustavoRabello
+.. _click to access Lattes: http://lattes.cnpq.br/7098012322504658
 .. _UFRJ: http://www.ufrj.br
+.. _Lucas Borges: https://www.linkedin.com/in/lucasborgesmenezes/
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
 .. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
 .. _Coppe: http://www.coppe.ufrj.br
