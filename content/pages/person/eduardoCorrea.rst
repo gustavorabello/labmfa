@@ -35,7 +35,7 @@ media**.
  - `Department of Mechanical Engineering`_
  - CV: `click to access Lattes`_
  - ORCID: `0000-0001-6478-7453`_
- - **e-mail**: @mecanica.coppe.ufrj.br
+ - **e-mail**: eduardo.correa@mecanica.coppe.ufrj.br
  - phone: +5521997362568
 
 |

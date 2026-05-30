@@ -187,6 +187,19 @@ By maintaining **two complementary wind tunnels**, LabMFA offers a flexible plat
   - The **first tunnel** provides the **high-speed precision** required for academic and industrial-grade aerodynamic investigations.
   - The **second tunnel** provides a **large workspace** for low-speed flows, making it ideal for teaching, outreach, and practical training of students.
 
+Selected Student Work
+~~~~~~~~~~~~~~~~~~~~~
+
+Selected undergraduate final projects supervised by **Prof. Gustavo R. Anjos**
+or **Prof. Gustavo Cesar Rachid Bodstein** and associated with the LabMFA wind
+tunnel activities include:
+
+- `Projeto e Construção de um Túnel de Vento Subsônico de Baixo Custo`_ (Ana Maria Dantas Balmant, 2025), focused on the design and construction of a low-cost subsonic wind tunnel.
+- `Projeto de um Túnel de Vento Subsônico do Tipo Soprador`_ (Felipe Rodrigues Coutinho, 2014), documenting the design of a blower-type subsonic wind tunnel.
+- `Projeto e Otimização Aerodinâmica de uma Aeronave Blended Wing Body para Aviação Comercial`_ (Victor Patzi Lavina Duran, 2024), a recent aerodynamic design study aligned with the laboratory's wind-tunnel and CFD interests.
+- `Projeto Aerodinâmico de um Avião de Treinamento Primário e Acrobático`_ (Luiz Gustavo Merçon Oliveira Costa, 2013), addressing aerodynamic aircraft design methods.
+- `Estudo de Desempenho do Planador ASTIR III Classe Standard pelo Método da Colocação a Partir da Teoria da Linha de Sustentação de Prandtl`_ (Bruno Henrique Salvador Amorim, 2013), a related aerodynamic performance study.
+
 Images and graphs include:
 
 - General and front views of the wind tunnel test section and balance setup.
@@ -243,4 +256,9 @@ but also provides researchers and students with direct access to **cutting-edge
 resources** and an international academic community.
 
 .. Place your references here
+.. _Projeto e Construção de um Túnel de Vento Subsônico de Baixo Custo: /documents/anaMariaBalmant-tcc-tunel-vento.pdf
+.. _Projeto de um Túnel de Vento Subsônico do Tipo Soprador: /documents/felipeCoutinho-tcc-tunel-vento.pdf
+.. _Projeto e Otimização Aerodinâmica de uma Aeronave Blended Wing Body para Aviação Comercial: /documents/victorPatzi-tcc-bwb-aerodinamica.pdf
+.. _Projeto Aerodinâmico de um Avião de Treinamento Primário e Acrobático: /documents/luizGustavoCosta-tcc-aviao-aerodinamico.pdf
+.. _Estudo de Desempenho do Planador ASTIR III Classe Standard pelo Método da Colocação a Partir da Teoria da Linha de Sustentação de Prandtl: /documents/brunoAmorim-tcc-planador-astir.pdf
 .. _Finite Element Method: https://en.wikipedia.org/wiki/Finite_element_method
