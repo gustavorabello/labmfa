@@ -7,7 +7,7 @@ ___________________
 
 |
 
-.. image:: {static}/images/person/unknown-male.jpg
+.. image:: {static}/images/person/generic.jpg
    :name: vidal_face
    :width: 25%
    :alt: vidal
@@ -66,6 +66,5 @@ Conference Papers
 .. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
 .. _Coppe: http://www.coppe.ufrj.br
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-
 
 

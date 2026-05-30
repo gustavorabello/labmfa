@@ -2,7 +2,7 @@ Fluid Mechanics and Aerodynamics Laboratory
 -------------------------------------------
 
 :date: 2022-08-23 17:47
-:modified: 2026-05-22 15:45
+:modified: 2026-05-30 20:22
 
 With more than 30 years of activity, the Fluid Mechanics and
 Aerodynamics Laboratory (**LabMFA**) is one of the most established
@@ -15,11 +15,8 @@ simulation.
 
 |
 
-.. image:: {static}/images/logo-LabMFA.png
-   :name: logo-lab
-   :width: 70%
-   :alt: labmfa logo
-   :align: center
+.. raw:: html
+   :file: ../images/team-mosaic.html
 
 |
 
@@ -63,6 +60,15 @@ LabMFA in Numbers
   numerical simulations
 * Training of undergraduate, **M.Sc.**, **D.Sc.**, and postdoctoral
   researchers
+
+.. AUTO-GENERATED LABMFA NUMBERS START: run build.py --update-publications
+
+* **16** current students and postdoctoral researchers supervised in LabMFA
+* **17** alumni from LabMFA supervision already listed on the site
+* **7** current student and postdoctoral profiles and **8** alumni profiles with at least one coauthored publication listed
+* **7** journal articles and **33** conference papers with student or postdoctoral coauthors
+
+.. AUTO-GENERATED LABMFA NUMBERS END
 
 Explore LabMFA
 ==============

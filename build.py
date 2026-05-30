@@ -31,6 +31,7 @@ init(autoreset=True)
 
 BASE_DIR = Path(__file__).resolve().parent
 PROFILE_PATH = BASE_DIR / 'content/pages/person/gustavoRabello.rst'
+MAIN_PAGE_PATH = BASE_DIR / 'content/category/main.rst'
 PERSON_DIR = BASE_DIR / 'content/pages/person'
 STUDENTS_PATH = BASE_DIR / 'content/pages/students.rst'
 BIB_DIR = Path('/Users/gustavo/projects/misc/latex-personal')
@@ -50,13 +51,17 @@ STUDENT_ARTICLES_START = '.. AUTO-GENERATED COAUTHORED ARTICLES START: run build
 STUDENT_ARTICLES_END = '.. AUTO-GENERATED COAUTHORED ARTICLES END'
 STUDENTS_START = '.. AUTO-GENERATED STUDENTS START: run build.py --update-publications'
 STUDENTS_END = '.. AUTO-GENERATED STUDENTS END'
+MAIN_NUMBERS_START = '.. AUTO-GENERATED LABMFA NUMBERS START: run build.py --update-publications'
+MAIN_NUMBERS_END = '.. AUTO-GENERATED LABMFA NUMBERS END'
 PROFILE_REQUEST_FROM = 'gustavo.rabello@coppe.ufrj.br'
 PROFILE_REQUEST_DRAFT_DIR = Path('/private/tmp/labmfa-profile-email-drafts')
 GMAIL_PROFILE_DRAFT_SCRIPT = BASE_DIR / 'scripts/gmail_profile_draft.py'
+TEAM_MOSAIC_SCRIPT = BASE_DIR / 'scripts/mosaic_images.py'
 REMOTE_SITE_DIR = '/html'
 REMOTE_MANIFEST = '.labmfa-manifest.json'
 SFTP_TIMEOUT_SECONDS = 60
 TEXT_SUFFIXES = {'.css', '.html', '.js', '.json', '.txt', '.xml'}
+DEFAULT_PELICAN_BIN = Path('/Users/gustavo/miniforge3/envs/pelican/bin/pelican')
 
 transport = None
 sftp = None
@@ -997,6 +1002,128 @@ def student_profile_slugs():
         if path.resolve() != PROFILE_PATH.resolve()
     }
 
+
+def publication_identity(entry):
+    return (entry.get('_source_path', ''), entry.get('_entry_key', ''))
+
+
+def match_student_publications(slug, student_name, articles, conferences):
+    matched_articles = [
+        entry for entry in articles
+        if any(
+            is_student_author(slug, student_name, author)
+            for author in publication_authors(entry)
+        )
+    ]
+    matched_conferences = [
+        entry for entry in conferences
+        if any(
+            is_student_author(slug, student_name, author)
+            for author in publication_authors(entry)
+        )
+    ]
+    return matched_articles, matched_conferences
+
+
+def current_and_alumni_records(current, alumni):
+    current_by_slug = {}
+    for record in current:
+        current_by_slug.setdefault(record['slug'], record)
+
+    alumni_by_slug = {}
+    for record in alumni:
+        if record['slug'] in current_by_slug:
+            continue
+        alumni_by_slug.setdefault(record['slug'], record)
+
+    return current_by_slug, alumni_by_slug
+
+
+def collect_student_publication_stats(current, alumni, journals, conferences):
+    shared_articles = [
+        entry for entry in journals
+        if is_professor_publication(entry)
+    ]
+    shared_conferences = [
+        entry for entry in conferences
+        if is_professor_publication(entry)
+    ]
+
+    current_by_slug, alumni_by_slug = current_and_alumni_records(current, alumni)
+    all_records = {}
+    all_records.update(current_by_slug)
+    all_records.update(alumni_by_slug)
+
+    unique_journals = set()
+    unique_conferences = set()
+    current_with_publications = 0
+    alumni_with_publications = 0
+    total_profile_links = 0
+
+    for slug, record in sorted(all_records.items()):
+        matched_articles, matched_conferences = match_student_publications(
+            slug,
+            record['name'],
+            shared_articles,
+            shared_conferences,
+        )
+        has_publications = bool(matched_articles or matched_conferences)
+        if not has_publications:
+            continue
+
+        total_profile_links += len(matched_articles) + len(matched_conferences)
+        unique_journals.update(
+            publication_identity(entry) for entry in matched_articles)
+        unique_conferences.update(
+            publication_identity(entry) for entry in matched_conferences)
+        if slug in current_by_slug:
+            current_with_publications += 1
+        else:
+            alumni_with_publications += 1
+
+    return {
+        'current_count': len(current_by_slug),
+        'alumni_count': len(alumni_by_slug),
+        'current_with_publications': current_with_publications,
+        'alumni_with_publications': alumni_with_publications,
+        'profiles_with_publications': (
+            current_with_publications + alumni_with_publications),
+        'unique_journal_count': len(unique_journals),
+        'unique_conference_count': len(unique_conferences),
+        'total_profile_links': total_profile_links,
+    }
+
+
+def render_main_page_numbers(stats):
+    lines = [
+        MAIN_NUMBERS_START,
+        '',
+        '* **{}** current students and postdoctoral researchers supervised in LabMFA'.format(
+            stats['current_count']),
+        '* **{}** alumni from LabMFA supervision already listed on the site'.format(
+            stats['alumni_count']),
+        '* **{}** current student and postdoctoral profiles and **{}** alumni profiles with at least one coauthored publication listed'.format(
+            stats['current_with_publications'],
+            stats['alumni_with_publications']),
+        '* **{}** journal articles and **{}** conference papers with student or postdoctoral coauthors'.format(
+            stats['unique_journal_count'],
+            stats['unique_conference_count']),
+        '',
+        MAIN_NUMBERS_END,
+        '',
+    ]
+    return '\n'.join(lines)
+
+
+def update_main_page_numbers(stats):
+    generated = render_main_page_numbers(stats)
+    return update_generated_section(
+        MAIN_PAGE_PATH,
+        MAIN_NUMBERS_START,
+        MAIN_NUMBERS_END,
+        generated,
+    )
+
 def update_student_publications(journals, conferences):
     """Publish article and conference coauthorship on all student profile pages."""
     shared_articles = [
@@ -1029,21 +1156,12 @@ def update_student_publications(journals, conferences):
         if not student_name:
             continue
 
-        articles = [
-            entry for entry in shared_articles
-            if any(
-                is_student_author(path.stem, student_name, author)
-                for author in publication_authors(entry)
-            )
-        ]
-
-        student_conferences = [
-            entry for entry in shared_conferences
-            if any(
-                is_student_author(path.stem, student_name, author)
-                for author in publication_authors(entry)
-            )
-        ]
+        articles, student_conferences = match_student_publications(
+            path.stem,
+            student_name,
+            shared_articles,
+            shared_conferences,
+        )
 
         if articles or student_conferences:
             print(
@@ -1098,11 +1216,21 @@ def update_publications():
     profile_changed = update_generated_section(
         PROFILE_PATH, PUBLICATIONS_START, PUBLICATIONS_END, generated,
         legacy_start='**publications**:')
+    main_page_numbers = collect_student_publication_stats(
+        current_students,
+        alumni_students,
+        journals,
+        conferences,
+    )
+    main_page_changed = update_main_page_numbers(main_page_numbers)
     listed_pages, listed_articles, listed_conferences, student_changes = (
         update_student_publications(journals, conferences))
     result = (
         'Updated'
-        if profile_changed or student_changes or students_changed or created_profiles
+        if (
+            profile_changed or main_page_changed or student_changes
+            or students_changed or created_profiles
+        )
         else 'Checked'
     )
     print('{} publications: {} books, {} book chapters, {} journal articles and '
@@ -1119,7 +1247,7 @@ def update_publications():
             ', '.join(sorted(path.stem for _, path in created_profiles))))
         print_profile_request_emails(created_profiles)
     return (
-        profile_changed or bool(student_changes)
+        profile_changed or main_page_changed or bool(student_changes)
         or students_changed or bool(created_profiles)
     )
 
@@ -1168,14 +1296,25 @@ def rm(path):
 def genSite():
     """Generate static site locally with Pelican."""
     update_publications()
+    print(Fore.GREEN + "🧩  Updating homepage mosaic...")
+    subprocess.run(
+        [sys.executable, str(TEAM_MOSAIC_SCRIPT)],
+        cwd=str(BASE_DIR),
+        check=True,
+    )
     directory = BASE_DIR / 'output'
     if directory.exists():
         shutil.rmtree(directory)
         print(Fore.YELLOW + "🗑️  Removed old local directory: " + Fore.CYAN + str(directory))
 
     print(Fore.GREEN + "⚙️  Generating Pelican site...")
-    status = call([
-        sys.executable, '-m', 'pelican',
+    pelican_cmd = [
+        os.environ.get('LABMFA_PELICAN_BIN', str(DEFAULT_PELICAN_BIN))
+    ]
+    if not Path(pelican_cmd[0]).exists():
+        pelican_cmd = [sys.executable, '-m', 'pelican']
+
+    status = call(pelican_cmd + [
         str(BASE_DIR / 'content'),
         '-o', str(directory),
         '-s', str(BASE_DIR / 'pelicanconf.py'),

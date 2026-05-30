@@ -7,7 +7,7 @@ ___________________________________
 
 |
 
-.. image:: {static}/images/person/unknown-male.jpg
+.. image:: {static}/images/person/generic.jpg
    :name: bodstein_face
    :width: 25%
    :alt: bodstein
@@ -34,18 +34,18 @@ Eulerian numerical methods for hyperbolic equations).
 
  - Professor at `Coppe`_/`Federal University of Rio de Janeiro`_
  - `Department of Mechanical Engineering`_
- - CV: `click to access Lattes`_ 
+ - CV: `click to access Lattes`_
  - ORCID: `000-0002-6392-1822`_
  - **e-mail**: gustavo@mecanica.coppe.ufrj.br
  - phone: +552139388406
 
 |
 
-**research interests**: 
+**research interests**:
 
- - two-phase flows in pipes 
- - aerodynamics 
- - lagrangian methods 
+ - two-phase flows in pipes
+ - aerodynamics
+ - lagrangian methods
  -  wind energy analysis
 
 .. Place your references here

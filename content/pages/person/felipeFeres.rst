@@ -7,7 +7,7 @@ _____________________
 
 |
 
-.. image:: {static}/images/person/unknown-male.jpg
+.. image:: {static}/images/person/generic.jpg
    :name: feres_face
    :width: 25%
    :alt: feres

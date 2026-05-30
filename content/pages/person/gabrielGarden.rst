@@ -23,6 +23,8 @@ vibrations with a coupled Arbitrary Lagrangian-Eulerian Finite Element Method
 approach using higher-order numerical schemes.
 
 |
+|
+|
 
 **academic info**:
 

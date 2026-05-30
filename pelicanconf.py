@@ -11,7 +11,7 @@ SITESUBTITLE = "Fluid Mechanics and Aerodynamics Laboratory"
 SITEDESCRIPTION = "Laboratory Website"
 FAVICON = "/images/favicon.ico"
 SITELOGO = "/images/logo_white.png"
-SITEURL = "https://labfma.coppe.ufrj.br"
+SITEURL = "https://labmfa.coppe.ufrj.br"
 SITEUFRJ = "https://www.ufrj.br"
 SITECOPPE = "https://www.coppe.ufrj.br"
 SITEPEM = "https://www.mecanica.coppe.ufrj.br"
@@ -28,15 +28,13 @@ STATIC_PATHS = (
 )
 
 # Extra CSS customization
-EXTRA_PATH_METADATA = {
-    "css/custom.css": {"path": "css/custom.css"},
-}
 CUSTOM_CSS = "css/custom.css"
 
 ROBOTS = "index, follow"
 
 PATH = "content"
 DELETE_OUTPUT_DIRECTORY = True
+IGNORE_FILES = ["team-mosaic.html"]
 
 TIMEZONE = 'America/Sao_Paulo'
 
