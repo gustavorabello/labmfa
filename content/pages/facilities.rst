@@ -194,8 +194,16 @@ Selected undergraduate final projects supervised by **Prof. Gustavo R. Anjos**
 or **Prof. Gustavo Cesar Rachid Bodstein** and associated with the LabMFA wind
 tunnel activities include:
 
+**Directly related to the LabMFA wind tunnels and force-balance infrastructure**
+
 - `Projeto e Construção de um Túnel de Vento Subsônico de Baixo Custo`_ (Ana Maria Dantas Balmant, 2025), focused on the design and construction of a low-cost subsonic wind tunnel.
 - `Projeto de um Túnel de Vento Subsônico do Tipo Soprador`_ (Felipe Rodrigues Coutinho, 2014), documenting the design of a blower-type subsonic wind tunnel.
+- `Desenvolvimento de um Sistema de Aquisição de Dados e Instrumentação de uma Balança de Três Graus de Liberdade para Túnel de Vento`_ (Henrique Martins Lima, 2007), covering the data-acquisition system and instrumentation of a three-degree-of-freedom wind-tunnel balance.
+- `Concepção e Projeto de uma Balança de Três Graus de Liberdade para Medição de Esforços Aerodinâmicos sobre Corpos no Túnel de Vento I do LABMFA`_ (Marcelo de Carvalho Bonniard and Patrick Paquelet Pereira, 2004), dedicated to the conception and design of the balance used in Wind Tunnel I.
+
+**Related aerodynamic studies**
+
+- `Modelagem e Análise Aerodinâmica de Corpos Bidimensionais via Método dos Elementos Finitos`_ (Vinicius Waldileme Coelho Mota, 2026), a recent aerodynamic study supervised by Prof. Gustavo R. Anjos and aligned with the laboratory's wind-tunnel and CFD activities.
 - `Projeto e Otimização Aerodinâmica de uma Aeronave Blended Wing Body para Aviação Comercial`_ (Victor Patzi Lavina Duran, 2024), a recent aerodynamic design study aligned with the laboratory's wind-tunnel and CFD interests.
 - `Projeto Aerodinâmico de um Avião de Treinamento Primário e Acrobático`_ (Luiz Gustavo Merçon Oliveira Costa, 2013), addressing aerodynamic aircraft design methods.
 - `Estudo de Desempenho do Planador ASTIR III Classe Standard pelo Método da Colocação a Partir da Teoria da Linha de Sustentação de Prandtl`_ (Bruno Henrique Salvador Amorim, 2013), a related aerodynamic performance study.
@@ -258,6 +266,9 @@ resources** and an international academic community.
 .. Place your references here
 .. _Projeto e Construção de um Túnel de Vento Subsônico de Baixo Custo: /documents/anaMariaBalmant-tcc-tunel-vento.pdf
 .. _Projeto de um Túnel de Vento Subsônico do Tipo Soprador: /documents/felipeCoutinho-tcc-tunel-vento.pdf
+.. _Desenvolvimento de um Sistema de Aquisição de Dados e Instrumentação de uma Balança de Três Graus de Liberdade para Túnel de Vento: /documents/henriqueMartinsLima-tcc-aquisicao-balanca-tunel-vento.pdf
+.. _Concepção e Projeto de uma Balança de Três Graus de Liberdade para Medição de Esforços Aerodinâmicos sobre Corpos no Túnel de Vento I do LABMFA: /documents/marceloBonniard-patrickPereira-tcc-balanca-tunel-vento.pdf
+.. _Modelagem e Análise Aerodinâmica de Corpos Bidimensionais via Método dos Elementos Finitos: /documents/viniciusMota-tcc-corpos-bidimensionais-aerodinamica.pdf
 .. _Projeto e Otimização Aerodinâmica de uma Aeronave Blended Wing Body para Aviação Comercial: /documents/victorPatzi-tcc-bwb-aerodinamica.pdf
 .. _Projeto Aerodinâmico de um Avião de Treinamento Primário e Acrobático: /documents/luizGustavoCosta-tcc-aviao-aerodinamico.pdf
 .. _Estudo de Desempenho do Planador ASTIR III Classe Standard pelo Método da Colocação a Partir da Teoria da Linha de Sustentação de Prandtl: /documents/brunoAmorim-tcc-planador-astir.pdf

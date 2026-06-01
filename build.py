@@ -17,6 +17,7 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
 import time
 import unicodedata
 from datetime import datetime
@@ -45,6 +46,7 @@ IC_CONCLUDED_BIB = BIB_DIR / 'icConcluded.bib'
 IC_NOT_CONCLUDED_BIB = BIB_DIR / 'icNotConcluded.bib'
 POSTDOC_CONCLUDED_BIB = BIB_DIR / 'postdocConcluded.bib'
 POSTDOC_NOT_CONCLUDED_BIB = BIB_DIR / 'postdocNotConcluded.bib'
+UNDERGRAD_BIB = BIB_DIR / 'undergrad.bib'
 PUBLICATIONS_START = '.. AUTO-GENERATED PUBLICATIONS START: run build.py --update-publications'
 PUBLICATIONS_END = '.. AUTO-GENERATED PUBLICATIONS END'
 STUDENT_ARTICLES_START = '.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications'
@@ -53,6 +55,9 @@ STUDENTS_START = '.. AUTO-GENERATED STUDENTS START: run build.py --update-public
 STUDENTS_END = '.. AUTO-GENERATED STUDENTS END'
 MAIN_NUMBERS_START = '.. AUTO-GENERATED LABMFA NUMBERS START: run build.py --update-publications'
 MAIN_NUMBERS_END = '.. AUTO-GENERATED LABMFA NUMBERS END'
+GENERIC_PROFILE_MARKER = '.. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications'
+DOCUMENTS_DIR = BASE_DIR / 'content' / 'documents'
+LEGACY_DEGREE_WORK_DOCUMENTS_DIR = DOCUMENTS_DIR / 'degree-works'
 PROFILE_REQUEST_FROM = 'gustavo.rabello@coppe.ufrj.br'
 PROFILE_REQUEST_DRAFT_DIR = Path('/private/tmp/labmfa-profile-email-drafts')
 GMAIL_PROFILE_DRAFT_SCRIPT = BASE_DIR / 'scripts/gmail_profile_draft.py'
@@ -202,11 +207,64 @@ def field(entry, name):
     return latex_to_text(entry.get(name, ''))
 
 
-def rst_authors(entry):
-    authors = field(entry, 'author').replace(' and ', '; ')
-    if re.match(r'^[A-Z]\. ', authors):
-        authors = authors.replace('. ', r'\. ', 1)
-    return authors if authors.endswith('.') else authors + '.'
+def professor_author_name(author):
+    tokens = set(name_tokens(author))
+    return 'anjos' in tokens and (
+        'gustavo' in tokens
+        or 'g' in tokens
+        or ('gr' in tokens)
+        or ('r' in tokens and 'g' in tokens)
+    )
+
+
+def rst_author_name(author, highlight_professor=False,
+                    highlight_author=None, highlight_role='prof-author'):
+    formatted = author.strip()
+    if re.match(r'^[A-Z]\. ', formatted):
+        formatted = formatted.replace('. ', r'\. ', 1)
+    highlight = (
+        highlight_professor and professor_author_name(author)
+    ) or (
+        highlight_author is not None and highlight_author(author)
+    )
+    if highlight:
+        formatted = ':{}:`{}`'.format(highlight_role, formatted)
+    return formatted
+
+
+def rst_authors(entry, highlight_professor=False, highlight_author=None,
+                highlight_role='prof-author'):
+    authors = [
+        rst_author_name(
+            author,
+            highlight_professor=highlight_professor,
+            highlight_author=highlight_author,
+            highlight_role=highlight_role,
+        )
+        for author in re.split(r'\s+and\s+', field(entry, 'author'))
+        if author.strip()
+    ]
+    joined = '; '.join(authors)
+    return joined if joined.endswith('.') else joined + '.'
+
+
+def author_highlight_block(role_name):
+    return [
+        '.. role:: {}'.format(role_name),
+        '',
+        '.. raw:: html',
+        '',
+        '   <style>',
+        '   .{} {{'.format(role_name),
+        '     background: rgba(0, 64, 133, 0.16) !important;',
+        '     border-radius: 4px;',
+        '     color: #004085 !important;',
+        '     font-weight: 700 !important;',
+        '     padding: 0 0.14rem;',
+        '   }',
+        '   </style>',
+        '',
+    ]
 
 
 def linked_title(entry):
@@ -220,7 +278,7 @@ def linked_title(entry):
     return '**{}**'.format(title)
 
 
-def render_journal(entry):
+def render_journal(entry, highlight_author=None, highlight_role='prof-author'):
     volume = field(entry, 'volume')
     number = field(entry, 'number')
     pages = field(entry, 'pages') or field(entry, 'article-number')
@@ -228,21 +286,46 @@ def render_journal(entry):
     citation = ', vol. {}{}'.format(volume, issue) if volume else ''
     citation += ', {}'.format(pages) if pages else ''
     return '#. {} {}. *{}*{} ({}).'.format(
-        rst_authors(entry), linked_title(entry), field(entry, 'journal'), citation,
+        rst_authors(
+            entry,
+            highlight_author=highlight_author,
+            highlight_role=highlight_role,
+        ),
+        linked_title(entry), field(entry, 'journal'), citation,
         field(entry, 'year'))
 
 
-def render_book(entry):
+def render_journal_for_profile(entry):
+    return render_journal(
+        entry,
+        highlight_author=professor_author_name,
+        highlight_role='prof-author',
+    )
+
+
+def render_book(entry, highlight_author=None, highlight_role='prof-author'):
     details = [field(entry, 'publisher'), field(entry, 'address')]
     pages = field(entry, 'pages')
     if pages:
         details.append('{} pp.'.format(pages))
     return '#. {} {}. *{}* ({}).'.format(
-        rst_authors(entry), linked_title(entry),
+        rst_authors(
+            entry,
+            highlight_author=highlight_author,
+            highlight_role=highlight_role,
+        ), linked_title(entry),
         ', '.join(part for part in details if part), field(entry, 'year'))
 
 
-def render_chapter(entry):
+def render_book_for_profile(entry):
+    return render_book(
+        entry,
+        highlight_author=professor_author_name,
+        highlight_role='prof-author',
+    )
+
+
+def render_chapter(entry, highlight_author=None, highlight_role='prof-author'):
     details = []
     chapter = field(entry, 'chapter')
     pages = field(entry, 'pages')
@@ -252,23 +335,61 @@ def render_chapter(entry):
         details.append('pp. {}'.format(pages))
     details.extend([field(entry, 'publisher'), field(entry, 'address')])
     return '#. {} {}. In *{}*, {} ({}).'.format(
-        rst_authors(entry), linked_title(entry), field(entry, 'booktitle'),
+        rst_authors(
+            entry,
+            highlight_author=highlight_author,
+            highlight_role=highlight_role,
+        ), linked_title(entry), field(entry, 'booktitle'),
         ', '.join(part for part in details if part), field(entry, 'year'))
 
 
-def render_conference(entry):
+def render_chapter_for_profile(entry):
+    return render_chapter(
+        entry,
+        highlight_author=professor_author_name,
+        highlight_role='prof-author',
+    )
+
+
+def render_conference(entry, highlight_author=None, highlight_role='prof-author'):
     event = field(entry, 'eventtitle')
     address = field(entry, 'address')
     details = ' ({})'.format(event) if event else ''
     details += ', {}'.format(address) if address else ''
     return '#. {} **{}**. *{}*{}, {}.'.format(
-        rst_authors(entry), field(entry, 'title'), field(entry, 'booktitle'),
+        rst_authors(
+            entry,
+            highlight_author=highlight_author,
+            highlight_role=highlight_role,
+        ), field(entry, 'title'), field(entry, 'booktitle'),
         details, field(entry, 'year'))
+
+
+def render_conference_for_profile(entry):
+    return render_conference(
+        entry,
+        highlight_author=professor_author_name,
+        highlight_role='prof-author',
+    )
 
 
 def render_publications(books, chapters, journals, conferences):
     lines = [
         PUBLICATIONS_START,
+        '',
+        '.. role:: prof-author',
+        '',
+        '.. raw:: html',
+        '',
+        '   <style>',
+        '   .prof-author {',
+        '     background: rgba(0, 64, 133, 0.16) !important;',
+        '     border-radius: 4px;',
+        '     color: #004085 !important;',
+        '     font-weight: 700 !important;',
+        '     padding: 0 0.14rem;',
+        '   }',
+        '   </style>',
         '',
         '**publications**:',
         '',
@@ -284,7 +405,7 @@ def render_publications(books, chapters, journals, conferences):
         '.. class:: publications-list book-publications',
         '',
     ]
-    lines.extend(render_book(entry) for entry in books)
+    lines.extend(render_book_for_profile(entry) for entry in books)
     lines.extend([
         '',
         'Book Chapters',
@@ -293,7 +414,7 @@ def render_publications(books, chapters, journals, conferences):
         '.. class:: publications-list chapter-publications',
         '',
     ])
-    lines.extend(render_chapter(entry) for entry in chapters)
+    lines.extend(render_chapter_for_profile(entry) for entry in chapters)
     lines.extend([
         '',
         'Journal Articles',
@@ -302,7 +423,7 @@ def render_publications(books, chapters, journals, conferences):
         '.. class:: publications-list journal-publications',
         '',
     ])
-    lines.extend(render_journal(entry) for entry in journals)
+    lines.extend(render_journal_for_profile(entry) for entry in journals)
     lines.extend([
         '',
         'Conference Papers',
@@ -311,7 +432,7 @@ def render_publications(books, chapters, journals, conferences):
         '.. class:: publications-list conference-publications',
         '',
     ])
-    lines.extend(render_conference(entry) for entry in conferences)
+    lines.extend(render_conference_for_profile(entry) for entry in conferences)
     lines.extend(['', PUBLICATIONS_END, ''])
     return '\n'.join(lines)
 
@@ -391,12 +512,26 @@ def is_student_author(slug, student_name, author):
 
     return student_given_initials.startswith(author_initials)
 
-def render_student_publications(articles, conferences):
+def render_student_publications(articles, conferences, slug, student_name,
+                                completed_works=None):
+    def highlight_author(author):
+        return is_student_author(slug, student_name, author)
+
+    completed_works = completed_works or []
     lines = [
         STUDENT_ARTICLES_START,
         '',
-        '**publications with Prof. Gustavo R. Anjos**:',
     ]
+    if articles or conferences:
+        lines.extend(author_highlight_block('profile-author'))
+    if completed_works:
+        lines.extend(render_student_completed_works(completed_works))
+    if articles or conferences:
+        if completed_works:
+            lines.extend([''])
+        lines.extend([
+            '**publications with Prof. Gustavo R. Anjos**:',
+        ])
     if articles:
         lines.extend([
             '',
@@ -406,7 +541,14 @@ def render_student_publications(articles, conferences):
             '.. class:: publications-list journal-publications',
             '',
         ])
-        lines.extend(render_journal(entry) for entry in articles)
+        lines.extend(
+            render_journal(
+                entry,
+                highlight_author=highlight_author,
+                highlight_role='profile-author',
+            )
+            for entry in articles
+        )
     if conferences:
         lines.extend([
             '',
@@ -416,9 +558,357 @@ def render_student_publications(articles, conferences):
             '.. class:: publications-list conference-publications',
             '',
         ])
-        lines.extend(render_conference(entry) for entry in conferences)
+        lines.extend(
+            render_conference(
+                entry,
+                highlight_author=highlight_author,
+                highlight_role='profile-author',
+            )
+            for entry in conferences
+        )
     lines.extend(['', STUDENT_ARTICLES_END, ''])
     return '\n'.join(lines)
+
+
+def completed_work_label(category):
+    labels = {
+        'phd': 'D.Sc. thesis',
+        'msc': 'M.Sc. dissertation',
+        'ic': 'Undergraduate research work (IC/TCC)',
+    }
+    return labels.get(category, '')
+
+
+def completed_work_heading(category):
+    headings = {
+        'phd': 'D.Sc. thesis',
+        'msc': 'M.Sc. dissertation',
+        'ic': 'IC/TCC project',
+    }
+    return headings.get(category, '')
+
+
+def completed_record_priority(record):
+    priority = 0
+    if record.get('document_url'):
+        priority += 8
+    if record.get('file_path'):
+        priority += 4
+
+    source_path = record.get('source_path', '')
+    if record.get('category') == 'ic' and source_path == str(UNDERGRAD_BIB):
+        priority += 3
+    elif (
+        record.get('category') in {'msc', 'phd'}
+        and source_path == str(THESIS_CONCLUDED_BIB)
+    ):
+        priority += 3
+
+    priority += len(record.get('title', '').strip()) / 1000.0
+    return priority
+
+
+def merge_completed_record_group(records):
+    best = max(records, key=completed_record_priority).copy()
+
+    for record in records:
+        for key in ('document_url', 'file_path', 'school', 'year', 'title'):
+            if not best.get(key) and record.get(key):
+                best[key] = record[key]
+
+    return best
+
+
+def dedupe_completed_records(records):
+    grouped = {}
+    for record in records:
+        key = (
+            record.get('slug', ''),
+            record.get('category', ''),
+            record.get('year', ''),
+        )
+        grouped.setdefault(key, []).append(record)
+
+    deduped = []
+    for key in sorted(grouped):
+        group = grouped[key]
+        if len(group) == 1:
+            deduped.append(group[0])
+        else:
+            deduped.append(merge_completed_record_group(group))
+
+    return deduped
+
+
+def prefer_undergrad_tcc_records(records):
+    preferred_slugs = {
+        record.get('slug', '')
+        for record in records
+        if (
+            record.get('category') == 'ic'
+            and record.get('source_path') == str(UNDERGRAD_BIB)
+            and record.get('file_path')
+        )
+    }
+
+    filtered = []
+    for record in records:
+        if (
+            record.get('slug', '') in preferred_slugs
+            and record.get('category') == 'ic'
+            and record.get('source_path') != str(UNDERGRAD_BIB)
+        ):
+            continue
+        filtered.append(record)
+    return filtered
+
+
+def collect_completed_student_works(alumni_records):
+    works_by_slug = {}
+    for record in dedupe_completed_records(
+        prefer_undergrad_tcc_records(alumni_records)
+    ):
+        if record['category'] not in {'phd', 'msc', 'ic'}:
+            continue
+        works_by_slug.setdefault(record['slug'], []).append(record)
+
+    for slug, records in works_by_slug.items():
+        works_by_slug[slug] = sorted(records, key=record_sort_key)
+    return works_by_slug
+
+
+def degree_work_suffix(category):
+    return {
+        'phd': 'dsc',
+        'msc': 'msc',
+        'ic': 'tcc',
+    }.get(category, '')
+
+
+def publish_degree_work_documents(records, existing_document_urls=None):
+    published = {}
+    existing_document_urls = existing_document_urls or {}
+    DOCUMENTS_DIR.mkdir(parents=True, exist_ok=True)
+
+    for record in records:
+        suffix = degree_work_suffix(record['category'])
+        if not suffix:
+            continue
+        if existing_document_urls.get(record['slug'], {}).get(record['category']):
+            continue
+
+        source = record.get('file_path', '').strip()
+        if not source:
+            continue
+
+        source_path = Path(source).expanduser()
+        if not source_path.exists():
+            continue
+
+        target_name = '{}-{}.pdf'.format(record['slug'], suffix)
+        target_path = DOCUMENTS_DIR / target_name
+        shutil.copy2(source_path, target_path)
+        published[(record['slug'], record['source_key'])] = (
+            '/documents/{}'.format(target_name))
+
+    return published
+
+
+def cleanup_legacy_degree_work_documents():
+    if LEGACY_DEGREE_WORK_DOCUMENTS_DIR.exists():
+        shutil.rmtree(LEGACY_DEGREE_WORK_DOCUMENTS_DIR)
+
+
+def document_degree_info(filename):
+    match = re.match(r'(?P<slug>.+)-(?P<kind>msc|dsc)\.pdf$', filename)
+    if match:
+        return (
+            match.group('slug'),
+            {'msc': 'msc', 'dsc': 'phd'}[match.group('kind')],
+        )
+
+    match = re.match(r'(?P<slug>.+)-tcc(?:-.+)?\.pdf$', filename)
+    if match:
+        return match.group('slug'), 'ic'
+
+    return '', ''
+
+
+def profile_slug_for_document(document_slug, profiles):
+    if document_slug in profiles:
+        return document_slug
+    return profile_slug_for_name(slug_to_name(document_slug), profiles)
+
+
+def infer_completed_work_title_from_profile(source, category):
+    compact = ' '.join(source.split())
+
+    if category in {'msc', 'phd'}:
+        patterns = [
+            r'title of (?:his|her|the) thesis is\s+([^.]+)',
+            r'title of (?:his|her|the) dissertation is\s+([^.]+)',
+        ]
+        for pattern in patterns:
+            match = re.search(pattern, compact, flags=re.IGNORECASE)
+            if match:
+                return match.group(1).strip(' .')
+
+    project_patterns = [
+        r'Project:\s+\*([^*]+)\*',
+        r'The project,\s+\*([^*]+)\*',
+    ]
+    for pattern in project_patterns:
+        match = re.search(pattern, source, flags=re.IGNORECASE)
+        if match:
+            return match.group(1).strip()
+
+    return ''
+
+
+def infer_completed_work_school_from_profile(source):
+    if (
+        'Universidade do Estado do Rio de Janeiro' in source
+        or '`UERJ`_' in source
+    ):
+        return 'Universidade do Estado do Rio de Janeiro'
+    if (
+        'Federal University of Rio de Janeiro' in source
+        or '`UFRJ`_' in source
+    ):
+        return 'Universidade Federal do Rio de Janeiro'
+    return ''
+
+
+def infer_completed_work_year_from_profile(source, category):
+    compact = ' '.join(source.split())
+    patterns = {
+        'msc': [
+            r'M\.Sc\.\s*\((\d{4})\)',
+            r"master'?s degree.*?(\d{4})",
+        ],
+        'phd': [
+            r'D\.Sc\.\s*\((\d{4})\)',
+            r'PhD.*?(\d{4})',
+            r'doctor(?:al)? degree.*?(\d{4})',
+        ],
+        'ic': [],
+    }
+    for pattern in patterns.get(category, []):
+        match = re.search(pattern, compact, flags=re.IGNORECASE)
+        if match:
+            return match.group(1)
+    return ''
+
+
+def collect_existing_document_urls():
+    profiles = existing_profile_names()
+    urls = {}
+
+    for path in sorted(DOCUMENTS_DIR.glob('*.pdf')):
+        document_slug, category = document_degree_info(path.name)
+        if not category:
+            continue
+
+        profile_slug = profile_slug_for_document(document_slug, profiles)
+        if not profile_slug:
+            continue
+
+        urls.setdefault(profile_slug, {})
+        urls[profile_slug].setdefault(
+            category,
+            '/documents/{}'.format(path.name),
+        )
+
+    return urls
+
+
+def add_existing_document_works(completed_works_by_slug, document_urls):
+    completed_works_by_slug = {
+        slug: list(records)
+        for slug, records in completed_works_by_slug.items()
+    }
+
+    for slug, category_urls in document_urls.items():
+        existing_records = completed_works_by_slug.setdefault(slug, [])
+        existing_by_category = {}
+        for record in existing_records:
+            existing_by_category.setdefault(record['category'], []).append(record)
+
+        profile_path = PERSON_DIR / '{}.rst'.format(slug)
+        if not profile_path.exists():
+            continue
+
+        source = profile_path.read_text(encoding='utf-8')
+        student_name = next(
+            (line.strip() for line in source.splitlines() if line.strip()),
+            slug_to_name(slug),
+        )
+
+        for category, url in sorted(category_urls.items()):
+            category_records = existing_by_category.get(category, [])
+            for record in category_records:
+                if not record.get('document_url'):
+                    record['document_url'] = url
+            if category_records:
+                continue
+
+            existing_records.append({
+                'name': student_name,
+                'title': infer_completed_work_title_from_profile(source, category),
+                'year': infer_completed_work_year_from_profile(source, category),
+                'school': infer_completed_work_school_from_profile(source),
+                'address': '',
+                'file_path': '',
+                'note': '',
+                'category': category,
+                'status': 'alumni',
+                'entry_type': '',
+                'source_key': 'document:{}'.format(url.rsplit('/', 1)[-1]),
+                'slug': slug,
+                'document_url': url,
+            })
+
+        completed_works_by_slug[slug] = sorted(existing_records, key=record_sort_key)
+
+    return completed_works_by_slug
+
+
+def degree_work_title(record):
+    url = record.get('document_url', '')
+    title = record.get('title', '').strip()
+    if url:
+        if not title:
+            title = {
+                'phd': 'D.Sc. thesis PDF',
+                'msc': 'M.Sc. dissertation PDF',
+                'ic': 'IC/TCC work PDF',
+            }.get(record.get('category', ''), 'Degree work PDF')
+        return '`{} <{}>`_'.format(title, url)
+    return '*{}*'.format(title)
+
+
+def render_student_completed_works(records):
+    lines = []
+    last_category = None
+    for record in records:
+        if record['category'] != last_category:
+            if lines:
+                lines.append('')
+            lines.extend([
+                '**{}**:'.format(completed_work_heading(record['category'])),
+                '',
+            ])
+            last_category = record['category']
+        parts = [
+            degree_work_title(record),
+            completed_work_label(record['category']),
+        ]
+        if record['school']:
+            parts.append(record['school'])
+        if record['year']:
+            parts.append(record['year'])
+        lines.append(' - {}'.format(', '.join(part for part in parts if part)))
+    return lines
 
 
 def update_generated_section(path, start_marker, end_marker, generated,
@@ -473,11 +963,13 @@ def student_record(entry, category, status):
         'year': field(entry, 'year'),
         'school': field(entry, 'school') or field(entry, 'institution'),
         'address': field(entry, 'address'),
+        'file_path': entry.get('file', '').strip(),
         'note': field(entry, 'note'),
         'category': category,
         'status': status,
         'entry_type': field(entry, 'type'),
         'source_key': entry.get('_entry_key', ''),
+        'source_path': entry.get('_source_path', ''),
     }
 
 
@@ -527,6 +1019,24 @@ def load_student_records():
             alumni.append(student_record(entry, 'postdoc', 'alumni'))
 
     return current, alumni
+
+
+def load_undergrad_completed_records():
+    records = []
+    for entry in parse_bibtex_entries(UNDERGRAD_BIB, {'thesis'}):
+        if not is_anjos_supervision(entry):
+            continue
+        if field(entry, 'type').lower() != 'bachelorsthesis':
+            continue
+        records.append(student_record(entry, 'ic', 'alumni'))
+    return records
+
+
+def filter_ic_completed_records(records, allowed_slugs):
+    return [
+        record for record in records
+        if record['slug'] in allowed_slugs
+    ]
 
 
 def existing_profile_names():
@@ -624,6 +1134,20 @@ def role_article(category):
     return 'an' if category in {'msc', 'ic'} else 'a'
 
 
+def generic_profile_affiliation(record):
+    if record['category'] == 'ic':
+        return {
+            'sentence': '`Polytechnic School`_/`UFRJ`_',
+            'academic': '`Polytechnic School`_/`Federal University of Rio de Janeiro`_',
+            'reference': '.. _Polytechnic School: https://poli.ufrj.br/',
+        }
+    return {
+        'sentence': '`UFRJ`_/`Coppe`_',
+        'academic': '`Coppe`_/`Federal University of Rio de Janeiro`_',
+        'reference': '.. _Coppe: http://www.coppe.ufrj.br',
+    }
+
+
 def infer_research_interests(title):
     normalized = normalize_name(title)
     checks = [
@@ -662,6 +1186,7 @@ def render_generic_profile(record):
     verb = 'is' if record['status'] == 'current' else 'was'
     project = record['title']
     interests = infer_research_interests(project)
+    affiliation = generic_profile_affiliation(record)
 
     lines = [
         title,
@@ -671,6 +1196,8 @@ def render_generic_profile(record):
         ':modified: {}'.format(now),
         ':slug: person/{}'.format(record['slug']),
         '',
+        GENERIC_PROFILE_MARKER,
+        '',
         '|',
         '',
         '.. image:: {static}/images/person/generic.jpg',
@@ -679,11 +1206,17 @@ def render_generic_profile(record):
         '   :alt: {}'.format(record['slug']),
         '   :align: left',
         '',
-        '{} {} {} {} at `UFRJ`_/`Coppe`_ under the supervision of '
+        '{} {} {} {} at {} under the supervision of '
         '`Prof. Gustavo R. Anjos`_. The project, *{}*, is associated with '
         'LabMFA research in computational mechanics, fluid dynamics, heat '
         'transfer, and numerical methods.'.format(
-            record['name'], verb, article, role_in_sentence, project),
+            record['name'],
+            verb,
+            article,
+            role_in_sentence,
+            affiliation['sentence'],
+            project,
+        ),
         '',
         '|',
         '|',
@@ -693,7 +1226,7 @@ def render_generic_profile(record):
         '',
         '**academic info**:',
         '',
-        ' - {} at `Coppe`_/`Federal University of Rio de Janeiro`_'.format(role),
+        ' - {} at {}'.format(role, affiliation['academic']),
         ' - `Department of Mechanical Engineering`_',
         ' - Project: *{}*'.format(project),
         ' - Year: {}'.format(record['year']),
@@ -712,7 +1245,7 @@ def render_generic_profile(record):
         '.. _UFRJ: http://www.ufrj.br',
         '.. _Federal University of Rio de Janeiro: http://www.ufrj.br',
         '.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/',
-        '.. _Coppe: http://www.coppe.ufrj.br',
+        affiliation['reference'],
         '',
     ])
     return '\n'.join(lines)
@@ -720,13 +1253,32 @@ def render_generic_profile(record):
 
 def ensure_missing_student_profiles(records):
     created = []
+    refreshed = 0
     for record in records:
         path = PERSON_DIR / '{}.rst'.format(record['slug'])
+        rendered = render_generic_profile(record)
         if path.exists():
+            source = path.read_text(encoding='utf-8')
+            if is_managed_generic_profile(source) and source != rendered:
+                path.write_text(rendered, encoding='utf-8')
+                refreshed += 1
             continue
-        path.write_text(render_generic_profile(record), encoding='utf-8')
+        path.write_text(rendered, encoding='utf-8')
         created.append((record, path))
-    return created
+    return created, refreshed
+
+
+def is_managed_generic_profile(source):
+    return (
+        GENERIC_PROFILE_MARKER in source
+        or (
+            '.. image:: {static}/images/person/generic.jpg' in source
+            and 'LabMFA research in computational mechanics, fluid dynamics, '
+                'heat transfer, and numerical methods.' in source
+            and ' - Advisor: `Prof. Gustavo R. Anjos`_' in source
+            and '.. Place your references here' in source
+        )
+    )
 
 
 def profile_request_email_subject():
@@ -989,9 +1541,9 @@ def update_students_from_bibs():
     current, alumni = load_student_records()
     records = current + alumni
     assign_profile_slugs(records)
-    created = ensure_missing_student_profiles(records)
+    created, refreshed = ensure_missing_student_profiles(records)
     changed = update_students_page(current, alumni)
-    return current, alumni, created, changed
+    return current, alumni, created, refreshed, changed
 
 
 def student_profile_slugs():
@@ -1124,8 +1676,9 @@ def update_main_page_numbers(stats):
         generated,
     )
 
-def update_student_publications(journals, conferences):
+def update_student_publications(journals, conferences, completed_works_by_slug=None):
     """Publish article and conference coauthorship on all student profile pages."""
+    completed_works_by_slug = completed_works_by_slug or {}
     shared_articles = [
         entry for entry in journals
         if is_professor_publication(entry)
@@ -1162,30 +1715,36 @@ def update_student_publications(journals, conferences):
             shared_articles,
             shared_conferences,
         )
+        completed_works = completed_works_by_slug.get(path.stem, [])
 
-        if articles or student_conferences:
+        if articles or student_conferences or completed_works:
             print(
                 Fore.GREEN
-                + '  ✔ {:28s} {:22s}  {} journal, {} conference'.format(
+                + '  ✔ {:28s} {:22s}  {} journal, {} conference, {} works'.format(
                     path.stem,
                     student_name[:22],
                     len(articles),
                     len(student_conferences),
+                    len(completed_works),
                 )
             )
 
-            listed_pages += 1
+            if articles or student_conferences:
+                listed_pages += 1
             listed_articles += len(articles)
             listed_conferences += len(student_conferences)
 
             generated = render_student_publications(
                 articles,
                 student_conferences,
+                path.stem,
+                student_name,
+                completed_works,
             )
         else:
             print(
                 Fore.YELLOW
-                + '  - {:28s} {:22s}  no publications'.format(
+                + '  - {:28s} {:22s}  no publications or works'.format(
                     path.stem,
                     student_name[:22],
                 )
@@ -1206,8 +1765,33 @@ def update_student_publications(journals, conferences):
 
 def update_publications():
     """Refresh the generated publication section on Gustavo's profile page."""
-    current_students, alumni_students, created_profiles, students_changed = (
+    current_students, alumni_students, created_profiles, refreshed_profiles, students_changed = (
         update_students_from_bibs())
+    student_page_slugs = {record['slug'] for record in current_students + alumni_students}
+    undergrad_completed_records = load_undergrad_completed_records()
+    assign_profile_slugs(undergrad_completed_records)
+    undergrad_completed_records = filter_ic_completed_records(
+        undergrad_completed_records,
+        student_page_slugs,
+    )
+    cleanup_legacy_degree_work_documents()
+    existing_document_urls = collect_existing_document_urls()
+    for slug in list(existing_document_urls):
+        category_urls = existing_document_urls[slug]
+        if slug not in student_page_slugs:
+            category_urls.pop('ic', None)
+        if not category_urls:
+            existing_document_urls.pop(slug, None)
+    completed_records = alumni_students + undergrad_completed_records
+    published_degree_work_documents = publish_degree_work_documents(
+        completed_records,
+        existing_document_urls=existing_document_urls,
+    )
+    for record in completed_records:
+        record['document_url'] = published_degree_work_documents.get(
+            (record['slug'], record['source_key']),
+            existing_document_urls.get(record['slug'], {}).get(record['category'], ''),
+        )
     books = parse_bibtex(BOOKS_BIB, 'book')
     chapters = parse_bibtex(CHAPTERS_BIB, 'incollection')
     journals = parse_bibtex(JOURNALS_BIB, 'article')
@@ -1216,6 +1800,10 @@ def update_publications():
     profile_changed = update_generated_section(
         PROFILE_PATH, PUBLICATIONS_START, PUBLICATIONS_END, generated,
         legacy_start='**publications**:')
+    completed_works_by_slug = add_existing_document_works(
+        collect_completed_student_works(completed_records),
+        existing_document_urls,
+    )
     main_page_numbers = collect_student_publication_stats(
         current_students,
         alumni_students,
@@ -1224,12 +1812,16 @@ def update_publications():
     )
     main_page_changed = update_main_page_numbers(main_page_numbers)
     listed_pages, listed_articles, listed_conferences, student_changes = (
-        update_student_publications(journals, conferences))
+        update_student_publications(
+            journals,
+            conferences,
+            completed_works_by_slug=completed_works_by_slug,
+        ))
     result = (
         'Updated'
         if (
             profile_changed or main_page_changed or student_changes
-            or students_changed or created_profiles
+            or students_changed or created_profiles or refreshed_profiles
         )
         else 'Checked'
     )
@@ -1237,18 +1829,18 @@ def update_publications():
           '{} conference papers; coauthorship listed on {} student '
           'profiles ({} journal articles and {} conference papers). '
           'Students page has {} current records and {} alumni records; '
-          '{} generic profiles created.'.format(
+          '{} generic profiles created and {} refreshed.'.format(
               result, len(books), len(chapters), len(journals),
               len(conferences), listed_pages, listed_articles,
               listed_conferences, len(current_students), len(alumni_students),
-              len(created_profiles)))
+              len(created_profiles), refreshed_profiles))
     if created_profiles:
         print(Fore.CYAN + 'Created generic profiles: {}'.format(
             ', '.join(sorted(path.stem for _, path in created_profiles))))
         print_profile_request_emails(created_profiles)
     return (
         profile_changed or main_page_changed or bool(student_changes)
-        or students_changed or bool(created_profiles)
+        or students_changed or bool(created_profiles) or bool(refreshed_profiles)
     )
 
 
@@ -1303,6 +1895,10 @@ def genSite():
         check=True,
     )
     directory = BASE_DIR / 'output'
+    previous_snapshot = (
+        collect_directory_snapshot(directory)
+        if directory.exists() else None
+    )
     if directory.exists():
         shutil.rmtree(directory)
         print(Fore.YELLOW + "🗑️  Removed old local directory: " + Fore.CYAN + str(directory))
@@ -1322,6 +1918,7 @@ def genSite():
     if status:
         raise RuntimeError('Pelican site generation failed.')
     print(Fore.GREEN + "✅  Site generation complete.")
+    print_directory_stats(directory, previous_snapshot)
 
 
 def human_size(size):
@@ -1331,10 +1928,150 @@ def human_size(size):
         size /= 1024
 
 
+def collect_directory_stats(root):
+    files = 0
+    directories = 0
+    total_size = 0
+    suffix_counts = {}
+    largest = []
+
+    for path in root.rglob('*'):
+        if path.is_dir():
+            directories += 1
+            continue
+        if not path.is_file():
+            continue
+
+        size = path.stat().st_size
+        files += 1
+        total_size += size
+        suffix = path.suffix.lower() or '[no ext]'
+        suffix_counts[suffix] = suffix_counts.get(suffix, 0) + 1
+        largest.append((size, path.relative_to(root)))
+
+    largest.sort(reverse=True)
+    top_suffixes = sorted(
+        suffix_counts.items(),
+        key=lambda item: (-item[1], item[0]),
+    )[:5]
+
+    return {
+        'files': files,
+        'directories': directories,
+        'total_size': total_size,
+        'top_suffixes': top_suffixes,
+        'largest': largest[:5],
+    }
+
+
+def collect_directory_snapshot(root):
+    files = {}
+    directories = set()
+
+    for path in root.rglob('*'):
+        relative = path.relative_to(root).as_posix()
+        if path.is_dir():
+            directories.add(relative)
+            continue
+        if not path.is_file():
+            continue
+        files[relative] = {
+            'size': path.stat().st_size,
+            'sha256': file_digest(path),
+        }
+
+    return {
+        'files': files,
+        'directories': directories,
+    }
+
+
+def compare_directory_snapshots(previous, current):
+    previous_files = previous['files'] if previous else {}
+    previous_directories = previous['directories'] if previous else set()
+    current_files = current['files']
+    current_directories = current['directories']
+
+    new_files = sorted(set(current_files) - set(previous_files))
+    removed_files = sorted(set(previous_files) - set(current_files))
+    modified_files = sorted(
+        relative for relative in set(current_files).intersection(previous_files)
+        if current_files[relative]['sha256'] != previous_files[relative]['sha256']
+    )
+    new_directories = sorted(current_directories - previous_directories)
+    removed_directories = sorted(previous_directories - current_directories)
+
+    return {
+        'new_files': new_files,
+        'modified_files': modified_files,
+        'removed_files': removed_files,
+        'new_directories': new_directories,
+        'removed_directories': removed_directories,
+    }
+
+
+def print_path_list(label, paths):
+    if not paths:
+        return
+    print('{} ({}):'.format(label, len(paths)))
+    for relative in paths:
+        print('  - {}'.format(relative))
+
+
+def print_directory_stats(root, previous_snapshot=None):
+    stats = collect_directory_stats(root)
+    current_snapshot = collect_directory_snapshot(root)
+    changes = compare_directory_snapshots(previous_snapshot, current_snapshot)
+    print(Fore.CYAN + '\n📊 Generated site stats')
+    print(Fore.CYAN + '─' * 72)
+    print(
+        'Output: {} directories, {} files, total size {}'.format(
+            stats['directories'],
+            stats['files'],
+            human_size(stats['total_size']),
+        )
+    )
+    if stats['top_suffixes']:
+        print('Most common file types: {}'.format(
+            ', '.join(
+                '{} ({})'.format(suffix, count)
+                for suffix, count in stats['top_suffixes']
+            )
+        ))
+    if stats['largest']:
+        print('Largest files:')
+        for size, relative in stats['largest']:
+            print('  - {} ({})'.format(relative, human_size(size)))
+    if previous_snapshot is not None:
+        print('Changed since previous local build:')
+        print('  New files: {}, modified files: {}, removed files: {}, new directories: {}, removed directories: {}'.format(
+            len(changes['new_files']),
+            len(changes['modified_files']),
+            len(changes['removed_files']),
+            len(changes['new_directories']),
+            len(changes['removed_directories']),
+        ))
+        print_path_list('New files', changes['new_files'])
+        print_path_list('Modified files', changes['modified_files'])
+        print_path_list('Removed files', changes['removed_files'])
+        print_path_list('New directories', changes['new_directories'])
+        print_path_list('Removed directories', changes['removed_directories'])
+
+
 def file_digest(path):
     digest = hashlib.sha256()
     with path.open('rb') as input_file:
         for block in iter(lambda: input_file.read(1024 * 1024), b''):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def remote_file_digest(path):
+    digest = hashlib.sha256()
+    with sftp.open(path, 'rb') as input_file:
+        for block in iter(lambda: input_file.read(1024 * 1024), b''):
+            if not block:
+                break
             digest.update(block)
     return digest.hexdigest()
 
@@ -1400,82 +2137,97 @@ def prune_remote_files(root, previous, local_relatives):
     return removed, failures
 
 
+def build_upload_snapshot(local_root):
+    staging_parent = tempfile.TemporaryDirectory(prefix='labmfa-upload-')
+    snapshot_root = Path(staging_parent.name) / local_root.name
+    shutil.copytree(local_root, snapshot_root)
+    return staging_parent, snapshot_root
+
+
 def upload(localpath, remotepath, full_upload=False):
     """Synchronize the generated local site to the server over SFTP."""
-    local_root = Path(localpath).resolve()
+    source_root = Path(localpath).resolve()
     remote_root = remotepath.rstrip('/')
     ensure_remote_dir(remote_root)
 
-    local_files = sorted(path for path in local_root.rglob('*') if path.is_file())
-    local = {
-        path.relative_to(local_root).as_posix(): {
-            'path': path,
-            'size': path.stat().st_size,
-            'sha256': file_digest(path),
+    staging_parent, local_root = build_upload_snapshot(source_root)
+    print(Fore.CYAN + '📦  Upload snapshot prepared: {}'.format(local_root))
+
+    try:
+        local_files = sorted(path for path in local_root.rglob('*') if path.is_file())
+        local = {
+            path.relative_to(local_root).as_posix(): {
+                'path': path,
+                'size': path.stat().st_size,
+                'sha256': file_digest(path),
+            }
+            for path in local_files
         }
-        for path in local_files
-    }
-    remote = remote_inventory(remote_root)
-    previous = load_remote_manifest(remote_root)
-    has_manifest = bool(previous)
-    to_upload = []
-    reused_by_size = 0
+        remote = remote_inventory(remote_root)
+        previous = load_remote_manifest(remote_root)
+        has_manifest = bool(previous)
+        to_upload = []
+        reused_by_digest = 0
 
-    for relative, metadata in local.items():
-        if full_upload:
-            to_upload.append(relative)
-        elif relative in previous:
-            if previous[relative] != metadata['sha256'] or relative not in remote:
+        for relative, metadata in local.items():
+            if full_upload:
                 to_upload.append(relative)
-        elif (not has_manifest and relative in remote
-              and metadata['size'] == remote[relative].st_size
-              and metadata['path'].suffix.lower() not in TEXT_SUFFIXES):
-            # Bootstrap the manifest from a pre-existing deployment without
-            # resending large unchanged document/image/font assets.
-            reused_by_size += 1
-        else:
-            to_upload.append(relative)
+            elif relative in previous:
+                if previous[relative] != metadata['sha256'] or relative not in remote:
+                    to_upload.append(relative)
+            elif not has_manifest and relative in remote:
+                remote_file = posixpath.join(remote_root, relative)
+                if metadata['size'] != remote[relative].st_size:
+                    to_upload.append(relative)
+                elif remote_file_digest(remote_file) != metadata['sha256']:
+                    to_upload.append(relative)
+                else:
+                    reused_by_digest += 1
+            else:
+                to_upload.append(relative)
 
-    total_bytes = sum(local[relative]['size'] for relative in to_upload)
-    print(Fore.BLUE + '🚀  Synchronizing {} files ({} total; {} to transfer, {}).'.format(
-        len(local), human_size(sum(item['size'] for item in local.values())),
-        len(to_upload), human_size(total_bytes)))
-    if reused_by_size:
-        print(Fore.CYAN + '    Reusing {} existing binary assets while creating the upload manifest.'.format(
-            reused_by_size))
+        total_bytes = sum(local[relative]['size'] for relative in to_upload)
+        print(Fore.BLUE + '🚀  Synchronizing {} files ({} total; {} to transfer, {}).'.format(
+            len(local), human_size(sum(item['size'] for item in local.values())),
+            len(to_upload), human_size(total_bytes)))
+        if reused_by_digest:
+            print(Fore.CYAN + '    Reusing {} existing server files after checksum verification while creating the upload manifest.'.format(
+                reused_by_digest))
 
-    uploaded_bytes = 0
-    for number, relative in enumerate(to_upload, start=1):
-        metadata = local[relative]
-        remote_file = posixpath.join(remote_root, relative)
-        ensure_remote_dir(posixpath.dirname(remote_file))
-        prefix = '[{}/{}] {}'.format(number, len(to_upload), relative)
+        uploaded_bytes = 0
+        for number, relative in enumerate(to_upload, start=1):
+            metadata = local[relative]
+            remote_file = posixpath.join(remote_root, relative)
+            ensure_remote_dir(posixpath.dirname(remote_file))
+            prefix = '[{}/{}] {}'.format(number, len(to_upload), relative)
 
-        def progress(transferred, total, prefix=prefix):
-            overall = uploaded_bytes + transferred
-            print('\r    {}: {} / {}  overall {} / {}'.format(
-                prefix, human_size(transferred), human_size(total),
-                human_size(overall), human_size(total_bytes)),
-                end='', flush=True)
+            def progress(transferred, total, prefix=prefix):
+                overall = uploaded_bytes + transferred
+                print('\r    {}: {} / {}  overall {} / {}'.format(
+                    prefix, human_size(transferred), human_size(total),
+                    human_size(overall), human_size(total_bytes)),
+                    end='', flush=True)
 
-        sftp.put(str(metadata['path']), remote_file, callback=progress, confirm=True)
-        uploaded_bytes += metadata['size']
-        print()
+            sftp.put(str(metadata['path']), remote_file, callback=progress, confirm=True)
+            uploaded_bytes += metadata['size']
+            print()
 
-    # Persist successful synchronization before optional cleanup. Unknown
-    # server-managed files are intentionally left untouched.
-    manifest = {relative: metadata['sha256'] for relative, metadata in local.items()}
-    write_remote_manifest(remote_root, manifest)
-    removed, failed_removals = prune_remote_files(remote_root, previous, set(local))
-    if failed_removals:
-        for relative, _ in failed_removals:
-            manifest[relative] = previous[relative]
+        # Persist successful synchronization before optional cleanup. Unknown
+        # server-managed files are intentionally left untouched.
+        manifest = {relative: metadata['sha256'] for relative, metadata in local.items()}
         write_remote_manifest(remote_root, manifest)
-    print(Fore.BLUE + '✅  Synchronization complete: {} uploaded, {} obsolete files removed.'.format(
-        human_size(uploaded_bytes), removed))
-    for relative, error in failed_removals:
-        print(Fore.YELLOW + '⚠️  Could not remove tracked obsolete file {}: {}'.format(
-            relative, error))
+        removed, failed_removals = prune_remote_files(remote_root, previous, set(local))
+        if failed_removals:
+            for relative, _ in failed_removals:
+                manifest[relative] = previous[relative]
+            write_remote_manifest(remote_root, manifest)
+        print(Fore.BLUE + '✅  Synchronization complete: {} uploaded, {} obsolete files removed.'.format(
+            human_size(uploaded_bytes), removed))
+        for relative, error in failed_removals:
+            print(Fore.YELLOW + '⚠️  Could not remove tracked obsolete file {}: {}'.format(
+                relative, error))
+    finally:
+        staging_parent.cleanup()
 
 
 def deploy(full_upload=False):

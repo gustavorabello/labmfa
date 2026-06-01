@@ -2,7 +2,7 @@ Gabriel de Lucas Garden
 _______________________
 
 :date: 2025-09-18 12:10
-:modified: 2026-05-26 18:35
+:modified: 2026-05-31 23:14
 :slug: person/gabrielGarden
 
 |
@@ -47,6 +47,24 @@ approach using higher-order numerical schemes.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
 
+.. role:: profile-author
+
+.. raw:: html
+
+   <style>
+   .profile-author {
+     background: rgba(0, 64, 133, 0.16) !important;
+     border-radius: 4px;
+     color: #004085 !important;
+     font-weight: 700 !important;
+     padding: 0 0.14rem;
+   }
+   </style>
+
+**IC/TCC project**:
+
+ - `An Arbitrary Lagrangian-Eulerian Finite Element Method For Vortex-Induced Vibrations Prediction </documents/gabrielGarden-tcc.pdf>`_, Undergraduate research work (IC/TCC), Universidade Federal do Rio de Janeiro, 2025
+
 **publications with Prof. Gustavo R. Anjos**:
 
 Conference Papers
@@ -54,7 +72,7 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
-#. Garden, G.; Fortuna, I.; Anjos, G. R.; Su, J. **An ALE-SL Method for Fluid-Structure Interactions in Riser Dynamics**. *Proceedings of the 28th International Congress of Mechanical Engineering* (COBEM), 2025.
+#. :profile-author:`Garden, G.`; Fortuna, I.; Anjos, G. R.; Su, J. **An ALE-SL Method for Fluid-Structure Interactions in Riser Dynamics**. *Proceedings of the 28th International Congress of Mechanical Engineering* (COBEM), 2025.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 

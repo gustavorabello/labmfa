@@ -2,7 +2,7 @@ Rafael Araujo Vidal
 ___________________
 
 :date: 2025-06-03 23:38
-:modified: 2026-05-26 18:38
+:modified: 2026-05-31 23:14
 :slug: person/rafaelVidal
 
 |
@@ -41,6 +41,24 @@ analysis and design of flexible pipes for offshore oil and gas applications.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
 
+.. role:: profile-author
+
+.. raw:: html
+
+   <style>
+   .profile-author {
+     background: rgba(0, 64, 133, 0.16) !important;
+     border-radius: 4px;
+     color: #004085 !important;
+     font-weight: 700 !important;
+     padding: 0 0.14rem;
+   }
+   </style>
+
+**M.Sc. dissertation**:
+
+ - `Computation of Deformable Interface Two-Phase Flows – A Semi-Lagrangian Finite Element Approach </documents/rafaelVidal-msc.pdf>`_, M.Sc. dissertation, Universidade Federal do Rio de Janeiro, 2023
+
 **publications with Prof. Gustavo R. Anjos**:
 
 Journal Articles
@@ -48,15 +66,15 @@ Journal Articles
 
 .. class:: publications-list journal-publications
 
-#. Santos, Daniel B. V.; Vidal, Rafael; Valluri, Prashant; Anjos, Gustavo R. `Computation of Deformable Interface Two-Phase Flows: A Semi-Lagrangian Finite Element Approach <https://doi.org/10.1002/fld.5342>`_. *International Journal for Numerical Methods in Fluids*, vol. 97(3), 233-243 (2024).
+#. Santos, Daniel B. V.; :profile-author:`Vidal, Rafael`; Valluri, Prashant; Anjos, Gustavo R. `Computation of Deformable Interface Two-Phase Flows: A Semi-Lagrangian Finite Element Approach <https://doi.org/10.1002/fld.5342>`_. *International Journal for Numerical Methods in Fluids*, vol. 97(3), 233-243 (2024).
 
 Conference Papers
 ~~~~~~~~~~~~~~~~~
 
 .. class:: publications-list conference-publications
 
-#. Vidal, R. A.; Santos, D. B. V.; Anjos, Gustavo R. **Computation of Deformable Interface Two-Phase Flows - A Semi-Lagrangian Finite Element Approach**. *Anais do CILAMCE 2023 - The XLIV Ibero-Latin American Congress on Computational Methods in Engineering* (CILAMCE), Porto, Portugal, 2023.
-#. Anjos, G. R.; Vidal, R. A. **A Semi-Lagrangian Finite Element Method for Two-Phase Flows**. *JEM* (JEM), 2023.
+#. :profile-author:`Vidal, R. A.`; Santos, D. B. V.; Anjos, Gustavo R. **Computation of Deformable Interface Two-Phase Flows - A Semi-Lagrangian Finite Element Approach**. *Anais do CILAMCE 2023 - The XLIV Ibero-Latin American Congress on Computational Methods in Engineering* (CILAMCE), Porto, Portugal, 2023.
+#. Anjos, G. R.; :profile-author:`Vidal, R. A.`. **A Semi-Lagrangian Finite Element Method for Two-Phase Flows**. *JEM* (JEM), 2023.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 

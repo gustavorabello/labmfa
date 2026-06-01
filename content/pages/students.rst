@@ -2,7 +2,7 @@ Students
 --------
 
 :date: 2022-09-10 22:10
-:modified: 2026-05-30 20:50
+:modified: 2026-06-01 11:35
 :slug: students
 
 .. AUTO-GENERATED STUDENTS START: run build.py --update-publications
@@ -192,13 +192,13 @@ ______
   2015
 
 .. Place your references here
-.. _Afrânio Augusto Gomes Gonçalves: /person/afranioGoncalves
-.. _Anna Bárbara Serejo Coimbra: /person/annaCoimbra
+.. _Afrânio Augusto Gomes Gonçalves: /person/afranioAugustoGomesGoncalves
+.. _Anna Bárbara Serejo Coimbra: /person/annaBarbaraSerejoCoimbra
 .. _Antonio Emanuel Marques dos Santos: /person/antonioEmanuel
 .. _Breno Mota Sarmento: /person/brenoSarmento
 .. _Carlos Arturo Echenique Hernandez: /person/carlosEchenique
 .. _Daniel Barbedo Vasconcelos Santos: /person/danielBarbedo
-.. _Daniel Moreira Spesani: /person/danielSpesani
+.. _Daniel Moreira Spesani: /person/danielMoreiraSpesani
 .. _Eduardo Dias Correa: /person/eduardoCorrea
 .. _Eduardo Vitral Freigedo Rodrigues: /person/eduardoVitralFreigedoRodrigues
 .. _Erik Gros: /person/erikGros

@@ -2,7 +2,7 @@ Higor Odilon Gottgtroy
 ______________________
 
 :date: 2025-06-05 08:00
-:modified: 2025-06-05 08:00
+:modified: 2026-05-31 23:14
 :slug: person/higorOdilon
 
 |
@@ -47,7 +47,13 @@ S.A. (`Transpetro`_)
  - scientific computing
  - numerical methods
 
+.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
 
+**M.Sc. dissertation**:
+
+ - `Numerical Simulation of 2D Flow in Butterfly Control Valves </documents/higorOdilon-msc.pdf>`_, M.Sc. dissertation, Universidade Federal do Rio de Janeiro, 2025
+
+.. AUTO-GENERATED COAUTHORED ARTICLES END
 
 .. Place your references here
 .. _click to access LinkedIn: https://br.linkedin.com/in/higor-odilon-gottgtroy-3a074a1b1

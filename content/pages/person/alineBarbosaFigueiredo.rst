@@ -2,7 +2,7 @@ Aline Barbosa Figueiredo
 ________________________
 
 :date: 2024-10-22 17:10
-:modified: 2024-11-04 17:10
+:modified: 2026-05-31 23:29
 :slug: person/alineBarbosaFigueiredo
 
 |
@@ -32,16 +32,28 @@ to locate pipeline leaks in a **two-phase flow**, and a second to
 
  - Post-Doctoral Researcher at `Coppe`_/`Federal University of Rio de Janeiro`_
  - `Department of Mechanical Engineering`_
- - CV: `click to access Lattes`_ 
+ - CV: `click to access Lattes`_
  - **e-mail**: aline.figueiredo@coppe.ufrj.br
 
 |
 
-**research interests**: 
+**research interests**:
 
- - two-phase flows in pipes 
+ - two-phase flows in pipes
  - lagrangian methods
  - numerical modeling
+
+.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
+
+**M.Sc. dissertation**:
+
+ - `M.Sc. dissertation PDF </documents/alineFigueiredo-msc.pdf>`_, M.Sc. dissertation, Universidade Federal do Rio de Janeiro, 2010
+
+**D.Sc. thesis**:
+
+ - `D.Sc. thesis PDF </documents/alineFigueiredo-dsc.pdf>`_, D.Sc. thesis, Universidade Federal do Rio de Janeiro, 2010
+
+.. AUTO-GENERATED COAUTHORED ARTICLES END
 
 .. Place your references here
 .. _click to access Lattes: http://lattes.cnpq.br/8281596930689761

@@ -2,7 +2,7 @@ Carina Nogueira Sondermann
 __________________________
 
 :date: 2024-11-04 12:10
-:modified: 2024-11-04 12:10
+:modified: 2026-05-31 23:14
 :slug: person/carinaSondermann
 
 |
@@ -40,6 +40,18 @@ Horizontal Well and Artificial Lift Projects (TUHWALP).
  - **research interests**: Fluid Mechanics, Multiphase Flow, Pipe Flow Modeling, Numerical Simulation, Transient Pipeline Flow,  Experimental Analysis
 
 |
+
+.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
+
+**D.Sc. thesis**:
+
+ - `D.Sc. thesis PDF </documents/carinaSondermann-dsc.pdf>`_, D.Sc. thesis, Universidade Federal do Rio de Janeiro, 2021
+
+**M.Sc. dissertation**:
+
+ - `M.Sc. dissertation PDF </documents/carinaSondermann-msc.pdf>`_, M.Sc. dissertation, Universidade Federal do Rio de Janeiro, 2016
+
+.. AUTO-GENERATED COAUTHORED ARTICLES END
 
 .. Place your references here
 .. _Department of Petroleum Engineering: https://utulsa.edu/programs/petroleum-engineering/

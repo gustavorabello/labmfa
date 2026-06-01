@@ -2,7 +2,7 @@ Lucas Borges Menezes
 ____________________
 
 :date: 2026-05-28 13:59
-:modified: 2026-05-28 13:59
+:modified: 2026-05-31 23:14
 :slug: person/lucasBorgesMenezes
 
 |
@@ -54,6 +54,25 @@ undergraduate thesis.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
 
+.. role:: profile-author
+
+.. raw:: html
+
+   <style>
+   .profile-author {
+     background: rgba(0, 64, 133, 0.16) !important;
+     border-radius: 4px;
+     color: #004085 !important;
+     font-weight: 700 !important;
+     padding: 0 0.14rem;
+   }
+   </style>
+
+**IC/TCC project**:
+
+ - *Automatic Calibration of Parameters for Discrete Element Simulation of Granular Materials Using Computational Optimization*, Undergraduate research work (IC/TCC), Universidade Federal do Rio de Janeiro, 2026
+ - *Validation of CFD Simulations Using the Darcy-Forchheimer Model Against Experimental Data for Bag Filters*, Undergraduate research work (IC/TCC), Universidade Federal do Rio de Janeiro, 2025
+
 **publications with Prof. Gustavo R. Anjos**:
 
 Conference Papers
@@ -61,7 +80,7 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
-#. Menezes, L. B.; Januario, J. R.; Anjos, G.R. **Validation of CFD Simulations Using the Darcy-Forchheimer Model Against Experimental Data for Bag Filters**. *Anais do 20th Brazilian Congress of Thermal Sciences and Engineering* (ENCIT), Foz do Iguaçu, Brazil, 2024.
+#. :profile-author:`Menezes, L. B.`; Januario, J. R.; Anjos, G.R. **Validation of CFD Simulations Using the Darcy-Forchheimer Model Against Experimental Data for Bag Filters**. *Anais do 20th Brazilian Congress of Thermal Sciences and Engineering* (ENCIT), Foz do Iguaçu, Brazil, 2024.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 

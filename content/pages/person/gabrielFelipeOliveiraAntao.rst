@@ -1,9 +1,11 @@
 Gabriel Felipe Oliveira Antão
 _____________________________
 
-:date: 2026-05-28 13:45
-:modified: 2026-05-28 13:45
+:date: 2026-06-01 11:35
+:modified: 2026-06-01 11:35
 :slug: person/gabrielFelipeOliveiraAntao
+
+.. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications
 
 |
 
@@ -36,6 +38,14 @@ Gabriel Felipe Oliveira Antão was an M.Sc. student at `UFRJ`_/`Coppe`_ under th
  - computational fluid dynamics
  - scientific computing
  - numerical methods
+
+.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
+
+**M.Sc. dissertation**:
+
+ - `Development of Fluid Flow Simulator Based on Characteristic-Based Split Method </documents/gabrielAntao-msc.pdf>`_, M.Sc. dissertation, Universidade Federal do Rio de Janeiro, 2024
+
+.. AUTO-GENERATED COAUTHORED ARTICLES END
 
 .. Place your references here
 .. _Prof. Gustavo R. Anjos: /person/gustavoRabello

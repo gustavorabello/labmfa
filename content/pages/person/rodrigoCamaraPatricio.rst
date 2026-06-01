@@ -2,7 +2,7 @@ Rodrigo Augusto Camara Patricio
 _______________________________
 
 :date: 2024-10-22 17:10
-:modified: 2025-01-14 17:10
+:modified: 2026-05-31 23:14
 :slug: person/rodrigoCamaraPatricio
 
 |
@@ -42,6 +42,18 @@ Gustavo Bodstein`_.
  - single-phase flows in pipes
  - two-phase flows in pipes
  - pig
+
+.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
+
+**D.Sc. thesis**:
+
+ - `D.Sc. thesis PDF </documents/rodrigoPatricio-dsc.pdf>`_, D.Sc. thesis, Universidade Federal do Rio de Janeiro, 2024
+
+**M.Sc. dissertation**:
+
+ - `M.Sc. dissertation PDF </documents/rodrigoPatricio-msc.pdf>`_, M.Sc. dissertation, Universidade Federal do Rio de Janeiro, 2016
+
+.. AUTO-GENERATED COAUTHORED ARTICLES END
 
 .. Place your references here
 .. _Prof. Gustavo Bodstein: /person/gustavoBodstein

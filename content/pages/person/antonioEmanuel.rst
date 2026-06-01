@@ -2,7 +2,7 @@ Antonio Emanuel Marques dos Santos
 __________________________________
 
 :date: 2025-09-18 22:10
-:modified: 2026-05-26 18:43
+:modified: 2026-05-31 23:14
 :slug: person/antonioEmanuel
 
 |
@@ -55,6 +55,24 @@ dynamics.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
 
+.. role:: profile-author
+
+.. raw:: html
+
+   <style>
+   .profile-author {
+     background: rgba(0, 64, 133, 0.16) !important;
+     border-radius: 4px;
+     color: #004085 !important;
+     font-weight: 700 !important;
+     padding: 0 0.14rem;
+   }
+   </style>
+
+**M.Sc. dissertation**:
+
+ - `Numerical Analysis of Two-Phase Flow in a Micro-Reactor for Biodiesel Production </documents/antonioEmanuel-msc.pdf>`_, M.Sc. dissertation, Universidade Federal do Rio de Janeiro, 2025
+
 **publications with Prof. Gustavo R. Anjos**:
 
 Journal Articles
@@ -62,15 +80,15 @@ Journal Articles
 
 .. class:: publications-list journal-publications
 
-#. Santos, Daniel B. V.; Santos, Antônio E. M.; Bandarra Filho, Enio P.; Anjos, G. R. `Numerical Investigation of a Gas Bubble in Complex Geometries for Industrial Process Equipment Design <https://doi.org/10.3390/fluids10070172>`_. *Fluids*, vol. 10(7), 172 (2025).
+#. Santos, Daniel B. V.; :profile-author:`Santos, Antônio E. M.`; Bandarra Filho, Enio P.; Anjos, G. R. `Numerical Investigation of a Gas Bubble in Complex Geometries for Industrial Process Equipment Design <https://doi.org/10.3390/fluids10070172>`_. *Fluids*, vol. 10(7), 172 (2025).
 
 Conference Papers
 ~~~~~~~~~~~~~~~~~
 
 .. class:: publications-list conference-publications
 
-#. Santos, A. E. M.; Anjos, G.R. **Numerical Analysis of Flow in Microchannels Using The Finite Element Method**. *Anais do 12º Congresso Brasileiro de Pesquisa e Desenvolvimento em Petróleo e Gás* (PDPetro), Florianópolis, Brazil, 2024.
-#. Santos, A. E. M.; Anjos, G.R. **Numerical Analysis of Two-Phase Flows in a Micro-Reactor for Biodiesel Production**. *Anais do 20th Brazilian Congress of Thermal Sciences and Engineering* (ENCIT), Foz do Iguaçu, Brazil, 2024.
+#. :profile-author:`Santos, A. E. M.`; Anjos, G.R. **Numerical Analysis of Flow in Microchannels Using The Finite Element Method**. *Anais do 12º Congresso Brasileiro de Pesquisa e Desenvolvimento em Petróleo e Gás* (PDPetro), Florianópolis, Brazil, 2024.
+#. :profile-author:`Santos, A. E. M.`; Anjos, G.R. **Numerical Analysis of Two-Phase Flows in a Micro-Reactor for Biodiesel Production**. *Anais do 20th Brazilian Congress of Thermal Sciences and Engineering* (ENCIT), Foz do Iguaçu, Brazil, 2024.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 

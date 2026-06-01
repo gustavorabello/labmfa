@@ -1,9 +1,11 @@
 Rafael Alves da Silva Filomeno
 ______________________________
 
-:date: 2026-05-28 12:41
-:modified: 2026-05-28 12:41
+:date: 2026-06-01 11:35
+:modified: 2026-06-01 11:35
 :slug: person/rafaelAlvesSilvaFilomeno
+
+.. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications
 
 |
 
@@ -13,7 +15,7 @@ ______________________________
    :alt: rafaelAlvesSilvaFilomeno
    :align: left
 
-Rafael Alves da Silva Filomeno was a undergrad scientific research at `UERJ`_/`Gesar`_ under the supervision of `Prof. Gustavo R. Anjos`_. The project, *Data Processing and Numerical Programming in Multiphase Systems*, is associated with LabMFA research in computational mechanics, fluid dynamics, heat transfer, and numerical methods.
+Rafael Alves da Silva Filomeno was an undergraduate scientific research student at `Polytechnic School`_/`UFRJ`_ under the supervision of `Prof. Gustavo R. Anjos`_. The project, *Data Processing and Numerical Programming in Multiphase Systems*, is associated with LabMFA research in computational mechanics, fluid dynamics, heat transfer, and numerical methods.
 
 |
 |
@@ -23,7 +25,8 @@ Rafael Alves da Silva Filomeno was a undergrad scientific research at `UERJ`_/`G
 
 **academic info**:
 
- - Undergrad Scientific Research at `UERJ`_/`Gesar`_
+ - Undergrad Scientific Research at `Polytechnic School`_/`Federal University of Rio de Janeiro`_
+ - `Department of Mechanical Engineering`_
  - Project: *Data Processing and Numerical Programming in Multiphase Systems*
  - Year: 2015
  - Advisor: `Prof. Gustavo R. Anjos`_
@@ -36,8 +39,17 @@ Rafael Alves da Silva Filomeno was a undergrad scientific research at `UERJ`_/`G
  - numerical methods
  - scientific computing
 
-.. Place your references here
+.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
+
+**IC/TCC project**:
+
+ - *Data Processing and Numerical Programming in Multiphase Systems*, Undergraduate research work (IC/TCC), Universidade do Estado do Rio de Janeiro, 2015
+
+.. AUTO-GENERATED COAUTHORED ARTICLES END
+
 .. Place your references here
 .. _Prof. Gustavo R. Anjos: /person/gustavoRabello
-.. _UERJ: http://www.uerj.br
-.. _Gesar: http://www.gesar.uerj.br
+.. _UFRJ: http://www.ufrj.br
+.. _Federal University of Rio de Janeiro: http://www.ufrj.br
+.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Polytechnic School: https://poli.ufrj.br/

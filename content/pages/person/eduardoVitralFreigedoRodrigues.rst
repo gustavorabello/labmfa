@@ -2,7 +2,7 @@ Eduardo Vitral Freigedo Rodrigues
 _________________________________
 
 :date: 2026-05-28 12:41
-:modified: 2026-05-28 12:41
+:modified: 2026-05-31 23:14
 :slug: person/eduardoVitralFreigedoRodrigues
 
 |
@@ -42,6 +42,24 @@ methods, fluid dynamics, heat transfer, and numerical methods.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
 
+.. role:: profile-author
+
+.. raw:: html
+
+   <style>
+   .profile-author {
+     background: rgba(0, 64, 133, 0.16) !important;
+     border-radius: 4px;
+     color: #004085 !important;
+     font-weight: 700 !important;
+     padding: 0 0.14rem;
+   }
+   </style>
+
+**M.Sc. dissertation**:
+
+ - *Nano-Patterning of Surfaces by Ion Sputtering - Numerical Study of the Anisotropic Damped Kuramoto–Sivashinsky Equation*, M.Sc. dissertation, Universidade do Estado do Rio de Janeiro, 2015
+
 **publications with Prof. Gustavo R. Anjos**:
 
 Conference Papers
@@ -49,7 +67,7 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
-#. Rodrigues, E.V.F.; Pontes, J.; Walgraef, D.; Anjos, G. R.; Mangiavacchi, N. **Nano-patterning of Surfaces by Ion Sputtering: Numerical Study of the Kuramoto-Sivashinsky Equation by Implicit Time Splitting**. *70 Congresso Anual da ABM* (ABM), Rio de Janeiro, Brazil, 2015.
+#. :profile-author:`Rodrigues, E.V.F.`; Pontes, J.; Walgraef, D.; Anjos, G. R.; Mangiavacchi, N. **Nano-patterning of Surfaces by Ion Sputtering: Numerical Study of the Kuramoto-Sivashinsky Equation by Implicit Time Splitting**. *70 Congresso Anual da ABM* (ABM), Rio de Janeiro, Brazil, 2015.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 

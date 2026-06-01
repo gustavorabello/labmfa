@@ -2,7 +2,7 @@ Felipe Feres Ferreira
 _____________________
 
 :date: 2025-06-04 21:00
-:modified: 2026-05-26 18:43
+:modified: 2026-05-31 23:14
 :slug: person/felipeFeres
 
 |
@@ -46,6 +46,28 @@ involved in the implementation of subsea projects within the Oil & Gas sector.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
 
+.. role:: profile-author
+
+.. raw:: html
+
+   <style>
+   .profile-author {
+     background: rgba(0, 64, 133, 0.16) !important;
+     border-radius: 4px;
+     color: #004085 !important;
+     font-weight: 700 !important;
+     padding: 0 0.14rem;
+   }
+   </style>
+
+**M.Sc. dissertation**:
+
+ - `Finite Element Method Applied to Diesel Particulate Filter Flow </documents/felipeFeres-msc.pdf>`_, M.Sc. dissertation, Universidade Federal do Rio de Janeiro, 2023
+
+**IC/TCC project**:
+
+ - `CFD Analysis of the Flow around a Horizontal-Axis Wind Turbine </documents/felipeFeres-tcc.pdf>`_, Undergraduate research work (IC/TCC), Universidade Federal do Rio de Janeiro, 2020
+
 **publications with Prof. Gustavo R. Anjos**:
 
 Conference Papers
@@ -53,8 +75,8 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
-#. Ferreira, F. F.; Anjos, G.R. **Numerical Simulation of a Multiphase Flow inside a Diesel Particulate Filter**. *JEM* (JEM), 2023.
-#. Ferreira, F. F.; Anjos, G.R. **Finite Element Method Applied to Diesel Particulate Filter Flow**. *Anais do 19th Brazilian Congress of Thermal Sciences and Engineering* (ENCIT), Bento Gonçalves, Brazil, 2022.
+#. :profile-author:`Ferreira, F. F.`; Anjos, G.R. **Numerical Simulation of a Multiphase Flow inside a Diesel Particulate Filter**. *JEM* (JEM), 2023.
+#. :profile-author:`Ferreira, F. F.`; Anjos, G.R. **Finite Element Method Applied to Diesel Particulate Filter Flow**. *Anais do 19th Brazilian Congress of Thermal Sciences and Engineering* (ENCIT), Bento Gonçalves, Brazil, 2022.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 

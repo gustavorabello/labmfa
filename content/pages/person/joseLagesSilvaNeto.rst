@@ -2,7 +2,7 @@ Jose Lages da Silva Neto
 ________________________
 
 :date: 2026-05-28 12:41
-:modified: 2026-05-30 12:19
+:modified: 2026-05-31 21:28
 :slug: person/joseLagesSilvaNeto
 
 |
@@ -46,6 +46,20 @@ and `Prof. Gustavo R. Anjos`_.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
 
+.. role:: profile-author
+
+.. raw:: html
+
+   <style>
+   .profile-author {
+     background: rgba(0, 64, 133, 0.16) !important;
+     border-radius: 4px;
+     color: #004085 !important;
+     font-weight: 700 !important;
+     padding: 0 0.14rem;
+   }
+   </style>
+
 **publications with Prof. Gustavo R. Anjos**:
 
 Conference Papers
@@ -53,8 +67,8 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
-#. Silva Neto, J. L.; Correa, E. D.; Gama, R. M. S.; Anjos, G. R. **A Robust Newton-Based Variational Framework for Nonlinear Conduction-Radiation PDEs with Localized Sources**. *Proceedings of the Encontro Nacional de Modelagem Computacional* (ENMC), 2025.
-#. Silva Neto, J. L.; Correa, E. D.; Gama, R. M. S.; Anjos, G. R. **On the Temperature Distribution in a Flat Plate Induced by an External Thermal Radiant Source**. *Proceedings of the XLVI Ibero-Latin-American Congress on Computational Methods in Engineering* (CILAMCE), Vitoria, Brazil, 2025.
+#. :profile-author:`Silva Neto, J. L.`; Correa, E. D.; Gama, R. M. S.; Anjos, G. R. **A Robust Newton-Based Variational Framework for Nonlinear Conduction-Radiation PDEs with Localized Sources**. *Proceedings of the Encontro Nacional de Modelagem Computacional* (ENMC), 2025.
+#. :profile-author:`Silva Neto, J. L.`; Correa, E. D.; Gama, R. M. S.; Anjos, G. R. **On the Temperature Distribution in a Flat Plate Induced by an External Thermal Radiant Source**. *Proceedings of the XLVI Ibero-Latin-American Congress on Computational Methods in Engineering* (CILAMCE), Vitoria, Brazil, 2025.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 

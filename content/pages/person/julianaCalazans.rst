@@ -2,7 +2,7 @@ Juliana Calazans de Cerqueira
 _____________________________
 
 :date: 2025-01-19 17:30
-:modified: 2025-01-19 17:30
+:modified: 2026-05-31 23:18
 :slug: person/julianaCalazans
 
 |
@@ -26,6 +26,8 @@ mechanics, computational fluid dynamics, multiphase flows, heat and mass
 transfer, programming and, data analysis.
 
 |
+|
+|
 
 **academic info**:
 
@@ -46,6 +48,14 @@ transfer, programming and, data analysis.
  - code developement
  - data analysis
  - flexible pipes
+
+.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
+
+**IC/TCC project**:
+
+ - `Numerical Analysis of the Effect of Porosity on Biofuel Production in the Stream-Function Vorticity Formulation Using the Finite Element Method </documents/julianaCalazans-tcc.pdf>`_, Undergraduate research work (IC/TCC), Universidade Federal do Rio de Janeiro, 2022
+
+.. AUTO-GENERATED COAUTHORED ARTICLES END
 
 .. Place your references here
 .. _click to access Lattes: http://lattes.cnpq.br/4696370853225936

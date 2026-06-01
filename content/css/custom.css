@@ -77,3 +77,11 @@ ol.journal-publications li {
   border-radius: 0 4px 4px 0;
   padding: .65rem .8rem;
 }
+
+.prof-author {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 32%, rgba(0, 64, 133, .18) 32%);
+  border-radius: 4px;
+  color: inherit;
+  font-weight: 700;
+  padding: 0 .14rem;
+}

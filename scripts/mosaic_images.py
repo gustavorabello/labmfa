@@ -10,14 +10,16 @@
 from __future__ import annotations
 
 import html
-import math
 import re
+import sys
 import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_DIR = SCRIPT_DIR.parent
+if str(PROJECT_DIR) not in sys.path:
+    sys.path.insert(0, str(PROJECT_DIR))
 CONTENT_DIR = PROJECT_DIR / "content"
 PERSON_DIR = CONTENT_DIR / "pages" / "person"
 FRAGMENT_PATH = CONTENT_DIR / "images" / "team-mosaic.html"
@@ -96,10 +98,35 @@ def normalize_name(value: str) -> str:
     return " ".join(simplified.split())
 
 
+def postdoc_slugs() -> set[str]:
+    try:
+        import build
+    except ImportError:
+        return set()
+
+    current, alumni = build.load_student_records()
+    records = current + alumni
+    build.assign_profile_slugs(records)
+    return {
+        record["slug"]
+        for record in records
+        if record["category"] == "postdoc"
+    }
+
+
+def display_name(name: str, slug: str, postdocs: set[str]) -> str:
+    if slug not in postdocs:
+        return name
+    if normalize_name(name).startswith("dr"):
+        return name
+    return f"Dr. {name}"
+
+
 def load_members() -> list[Member]:
     members: list[Member] = []
+    postdocs = postdoc_slugs()
     for path in sorted(PERSON_DIR.glob("*.rst")):
-        name = first_heading(path)
+        name = display_name(first_heading(path), path.stem, postdocs)
         image_path, placeholder = profile_image(path)
         if placeholder:
             continue
@@ -242,6 +269,7 @@ def render_member_tile(member: Member, placement: TilePlacement) -> str:
     image_path = html.escape(member.image_path, quote=True)
     return """    <a class="labmfa-team-mosaic__person" href="{href}" title="{title}" aria-label="{title}" style="background: #dfe7ee; border-radius: 14px; box-shadow: 0 10px 24px rgba(15, 35, 55, .12); display: block; grid-column: {col_start} / span {col_span}; grid-row: {row_start} / span {row_span}; min-height: 0; min-width: 0; overflow: hidden; position: relative; text-decoration: none;">
       <img src="{image_path}" alt="{title}" loading="lazy" style="display: block; width: 100%; height: 100%; object-fit: cover;">
+      <span class="labmfa-team-mosaic__name" style="bottom: .55rem; color: #fff; font-size: .78rem; font-weight: 600; left: .65rem; line-height: 1.2; opacity: 0; position: absolute; right: .65rem; transform: translateY(6px); transition: opacity .2s ease, transform .2s ease; z-index: 2;">{title}</span>
     </a>""".format(
         href=href,
         title=title,
@@ -273,7 +301,26 @@ def render_fragment(members: list[Member]) -> str:
         for member, placement in zip(members, layout.placements)
     ]
 
-    return """<div class="labmfa-team-mosaic" aria-label="LabMFA team mosaic" style="margin: 0 auto 1.5rem; max-width: {max_width}; width: 100%;">
+    return """<style>
+.labmfa-team-mosaic__person::after {{
+  background: linear-gradient(180deg, rgba(10, 20, 30, 0) 42%, rgba(10, 20, 30, .72) 100%);
+  content: "";
+  inset: 0;
+  opacity: 0;
+  position: absolute;
+  transition: opacity .2s ease;
+}}
+.labmfa-team-mosaic__person:hover::after,
+.labmfa-team-mosaic__person:focus::after {{
+  opacity: 1;
+}}
+.labmfa-team-mosaic__person:hover .labmfa-team-mosaic__name,
+.labmfa-team-mosaic__person:focus .labmfa-team-mosaic__name {{
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}}
+</style>
+<div class="labmfa-team-mosaic" aria-label="LabMFA team mosaic" style="margin: 0 auto 1.5rem; max-width: {max_width}; width: 100%;">
   <div class="labmfa-team-mosaic__grid" style="display: grid; width: 100%; aspect-ratio: {columns} / {rows}; gap: {gap}; grid-template-columns: repeat({columns}, minmax(0, 1fr)); grid-template-rows: repeat({rows}, minmax(0, 1fr));">
 {tiles}
 {logo}

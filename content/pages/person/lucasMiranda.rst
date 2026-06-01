@@ -2,7 +2,7 @@ Lucas Mendes Miranda
 ____________________
 
 :date: 2024-09-10 22:10
-:modified: 2026-05-26 18:38
+:modified: 2026-05-31 23:14
 :slug: person/lucasMiranda
 
 .. image:: {static}/images/person/lucasMiranda.jpg
@@ -45,6 +45,14 @@ network.
  - single- and two-phase flows 
  - finite element method 
  - heat-transfer
+
+.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
+
+**IC/TCC project**:
+
+ - `Study of Cold-Plate Fin Geometries to Improve Heat-Transfer Capability of Electronics Cooling Solutions Utilizing the Finite Element Method </documents/lucasMiranda-tcc.pdf>`_, Undergraduate research work (IC/TCC), Universidade Federal do Rio de Janeiro, 2023
+
+.. AUTO-GENERATED COAUTHORED ARTICLES END
 
 .. Place your references here
 .. _0009-0009-9282-1626: https://orcid.org/0009-0009-9282-1626

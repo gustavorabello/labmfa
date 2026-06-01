@@ -3,7 +3,7 @@ Breno Mota Sarmento
 ___________________
 
 :date: 2025-06-02 12:10
-:modified: 2025-06-02 12:10
+:modified: 2026-05-31 23:14
 :slug: person/brenoSarmento
 
 |
@@ -47,6 +47,14 @@ Barbedo`_.
  - algebraic quadric fitting
  - surface reconstruction
  - finite element method
+
+.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
+
+**IC/TCC project**:
+
+ - *Curvature Estimation on Surfaces via Local Quadratic Fitting and Comparative Analysis*, Undergraduate research work (IC/TCC), Universidade Federal do Rio de Janeiro, 2026
+
+.. AUTO-GENERATED COAUTHORED ARTICLES END
 
 .. Place your references here
 .. _Prof. Gustavo R. Anjos: /person/gustavoRabello

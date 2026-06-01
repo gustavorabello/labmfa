@@ -1,9 +1,11 @@
 Gabriel Braz
 ____________
 
-:date: 2026-05-28 13:59
-:modified: 2026-05-28 13:59
+:date: 2026-06-01 11:35
+:modified: 2026-06-01 11:35
 :slug: person/gabrielBraz
+
+.. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications
 
 |
 
@@ -13,7 +15,7 @@ ____________
    :alt: gabrielBraz
    :align: left
 
-Gabriel Braz is an undergraduate scientific research student at `UFRJ`_/`Coppe`_ under the supervision of `Prof. Gustavo R. Anjos`_. The project, *Aerodynamic Study of Complex Profiles*, is associated with LabMFA research in computational mechanics, fluid dynamics, heat transfer, and numerical methods.
+Gabriel Braz is an undergraduate scientific research student at `Polytechnic School`_/`UFRJ`_ under the supervision of `Prof. Gustavo R. Anjos`_. The project, *Aerodynamic Study of Complex Profiles*, is associated with LabMFA research in computational mechanics, fluid dynamics, heat transfer, and numerical methods.
 
 |
 |
@@ -23,7 +25,7 @@ Gabriel Braz is an undergraduate scientific research student at `UFRJ`_/`Coppe`_
 
 **academic info**:
 
- - Undergraduate Scientific Research Student at `Coppe`_/`Federal University of Rio de Janeiro`_
+ - Undergraduate Scientific Research Student at `Polytechnic School`_/`Federal University of Rio de Janeiro`_
  - `Department of Mechanical Engineering`_
  - Project: *Aerodynamic Study of Complex Profiles*
  - Year: 2026
@@ -43,4 +45,4 @@ Gabriel Braz is an undergraduate scientific research student at `UFRJ`_/`Coppe`_
 .. _UFRJ: http://www.ufrj.br
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
 .. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
-.. _Coppe: http://www.coppe.ufrj.br
+.. _Polytechnic School: https://poli.ufrj.br/

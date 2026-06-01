@@ -13,13 +13,13 @@ ___________________________
    :alt: jorgeAngelAguileraLiendo
    :align: left
 
-Jorge Angel Aguilera Liendo is a Doctor of Science (D.Sc.) student at COPPE,
-Federal University of Rio de Janeiro (UFRJ), under the supervision of Prof.
-Gustavo R. Anjos. His research focuses on the numerical investigation of
-aerodynamic phenomena in internal flows, with applications in pipeline systems
-and energy transport. His work involves computational fluid dynamics (CFD),
-advanced numerical methods, and scientific computing to analyze complex flow
-behavior and support engineering decision-making.
+Jorge Angel Aguilera Liendo is a Doctor of Science (D.Sc.) student at `Coppe`_,
+`Federal University of Rio de Janeiro`_ (`UFRJ`_), under the supervision of
+`Prof. Gustavo R. Anjos`_. His research focuses on the numerical investigation
+of aerodynamic phenomena in internal flows, with applications in pipeline
+systems and energy transport. His work involves computational fluid dynamics
+(CFD), advanced numerical methods, and scientific computing to analyze complex
+flow behavior and support engineering decision-making.
 
 |
 |

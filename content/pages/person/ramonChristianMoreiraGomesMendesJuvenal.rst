@@ -1,9 +1,11 @@
 Ramon Christian Moreira Gomes Mendes Juvenal
 ____________________________________________
 
-:date: 2026-05-28 12:41
-:modified: 2026-05-28 12:41
+:date: 2026-06-01 11:35
+:modified: 2026-06-01 11:35
 :slug: person/ramonChristianMoreiraGomesMendesJuvenal
+
+.. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications
 
 |
 
@@ -13,7 +15,7 @@ ____________________________________________
    :alt: ramonChristianMoreiraGomesMendesJuvenal
    :align: left
 
-Ramon Christian Moreira Gomes Mendes Juvenal was a undergrad scientific research at `UFRJ`_/`Coppe`_ under the supervision of `Prof. Gustavo R. Anjos`_. The project, *Finite Element Method Applied to Pollutant Dispersed Flow Resulting from Biofuel Production*, is associated with LabMFA research in computational mechanics, fluid dynamics, heat transfer, and numerical methods.
+Ramon Christian Moreira Gomes Mendes Juvenal was an undergraduate scientific research student at `Polytechnic School`_/`UFRJ`_ under the supervision of `Prof. Gustavo R. Anjos`_. The project, *Finite Element Method Applied to Pollutant Dispersed Flow Resulting from Biofuel Production*, is associated with LabMFA research in computational mechanics, fluid dynamics, heat transfer, and numerical methods.
 
 |
 |
@@ -23,7 +25,7 @@ Ramon Christian Moreira Gomes Mendes Juvenal was a undergrad scientific research
 
 **academic info**:
 
- - Undergrad Scientific Research at `Coppe`_/`Federal University of Rio de Janeiro`_
+ - Undergrad Scientific Research at `Polytechnic School`_/`Federal University of Rio de Janeiro`_
  - `Department of Mechanical Engineering`_
  - Project: *Finite Element Method Applied to Pollutant Dispersed Flow Resulting from Biofuel Production*
  - Year: 2020
@@ -38,9 +40,17 @@ Ramon Christian Moreira Gomes Mendes Juvenal was a undergrad scientific research
  - numerical methods
  - scientific computing
 
+.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
+
+**IC/TCC project**:
+
+ - *Finite Element Method Applied to Pollutant Dispersed Flow Resulting from Biofuel Production*, Undergraduate research work (IC/TCC), Universidade Federal do Rio de Janeiro, 2020
+
+.. AUTO-GENERATED COAUTHORED ARTICLES END
+
 .. Place your references here
 .. _Prof. Gustavo R. Anjos: /person/gustavoRabello
 .. _UFRJ: http://www.ufrj.br
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
 .. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
-.. _Coppe: http://www.coppe.ufrj.br
+.. _Polytechnic School: https://poli.ufrj.br/
