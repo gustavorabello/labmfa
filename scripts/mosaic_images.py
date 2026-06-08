@@ -33,10 +33,15 @@ PLACEHOLDER_IMAGES = {
 }
 TARGET_RATIO = 1.55
 LOGO_SHAPES = (
+    (0, 0),
     (1, 1),
     (2, 1),
     (1, 2),
+    (3, 1),
+    (1, 3),
     (2, 2),
+    (3, 2),
+    (2, 3),
 )
 MOSAIC_GAP = ".45rem"
 MOSAIC_MAX_WIDTH = "56rem"
@@ -183,6 +188,7 @@ def build_photo_placements(
     logo_row: int,
     logo_col_span: int,
     logo_row_span: int,
+    member_count: int,
 ) -> tuple[TilePlacement, ...]:
     occupied = [[False] * columns for _ in range(rows)]
     mark(
@@ -209,6 +215,8 @@ def build_photo_placements(
             )
         )
         occupied[row][col] = True
+        if len(placements) == member_count:
+            break
     return tuple(placements)
 
 
@@ -237,6 +245,7 @@ def find_layout(member_count: int) -> Layout:
                 logo_row,
                 logo_col_span,
                 logo_row_span,
+                member_count,
             )
             if len(placements) != member_count:
                 continue
@@ -244,7 +253,12 @@ def find_layout(member_count: int) -> Layout:
             ratio = columns / rows
             center_offset = abs((columns / 2) - (logo_col + logo_col_span / 2))
             center_offset += abs((rows / 2) - (logo_row + logo_row_span / 2))
-            logo_penalty = 0.0 if (logo_col_span, logo_row_span) == (1, 1) else 0.08
+            if (logo_col_span, logo_row_span) == (0, 0):
+                logo_penalty = 0.3
+            elif (logo_col_span, logo_row_span) == (1, 1):
+                logo_penalty = 0.0
+            else:
+                logo_penalty = 0.08
             score = abs(ratio - TARGET_RATIO) + center_offset * 0.05 + logo_penalty
             if best_score is None or score < best_score:
                 best_score = score
@@ -282,6 +296,9 @@ def render_member_tile(member: Member, placement: TilePlacement) -> str:
 
 
 def render_logo_tile(layout: Layout) -> str:
+    if layout.logo_col_span == 0 or layout.logo_row_span == 0:
+        return ""
+
     return """    <div class="labmfa-team-mosaic__logo" aria-hidden="true" style="align-items: center; background: rgba(255, 255, 255, .96); border: 1px solid rgba(0, 64, 133, .14); border-radius: 50%; box-shadow: 0 22px 44px rgba(15, 35, 55, .2); display: flex; grid-column: {col_start} / span {col_span}; grid-row: {row_start} / span {row_span}; justify-content: center; min-height: 0; min-width: 0; overflow: hidden; padding: 1rem; pointer-events: none;">
       <img src="{logo_path}" alt="LabMFA logo" style="display: block; width: 100%; height: 100%; object-fit: contain;">
     </div>""".format(

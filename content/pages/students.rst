@@ -2,7 +2,7 @@ Students
 --------
 
 :date: 2022-09-10 22:10
-:modified: 2026-06-07 22:41
+:modified: 2026-06-08 16:15
 :slug: students
 
 .. AUTO-GENERATED STUDENTS START: run build.py --update-publications
@@ -91,6 +91,11 @@ __________________________________
 
  `Gabriel Braz`_ --
   *Aerodynamic Study of Complex Profiles*,
+  Undergraduate Scientific Research Student,
+  2026
+
+ `Malik Boufhal`_ --
+  *Development and Validation of a Finite Element Solver for Complex Flows Including Moving Interfaces*,
   Undergraduate Scientific Research Student,
   2026
 
@@ -219,6 +224,7 @@ ______
 .. _Lucas Borges Menezes: /person/lucasBorgesMenezes
 .. _Lucas Mendes Miranda: /person/lucasMiranda
 .. _Luis Henrique Carnevale da Cunha: /person/luisHenriqueCarnevaleCunha
+.. _Malik Boufhal: /person/malikBoufhal
 .. _Matheus Dias da Rocha: /person/matheusDiasRocha
 .. _Paulo Roberto Berti Leite Filho: /person/pauloRobertoBertiLeiteFilho
 .. _Rafael Alves da Silva Filomeno: /person/rafaelAlvesSilvaFilomeno

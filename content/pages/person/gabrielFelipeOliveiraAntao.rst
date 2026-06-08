@@ -1,8 +1,8 @@
 Gabriel Felipe Oliveira Antão
 _____________________________
 
-:date: 2026-06-07 22:41
-:modified: 2026-06-07 22:41
+:date: 2026-06-08 16:15
+:modified: 2026-06-08 16:15
 :slug: person/gabrielFelipeOliveiraAntao
 
 .. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications
