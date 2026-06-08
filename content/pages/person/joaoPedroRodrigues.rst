@@ -1,11 +1,9 @@
 João Pedro Rodrigues
 ____________________
 
-:date: 2026-06-01 11:35
-:modified: 2026-06-01 11:35
+:date: 2026-05-31 23:21
+:modified: 2026-06-07 22:37
 :slug: person/joaoPedroRodrigues
-
-.. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications
 
 |
 
@@ -15,19 +13,25 @@ ____________________
    :alt: joaoPedroRodrigues
    :align: left
 
-João Pedro Rodrigues was an undergraduate scientific research student at `Polytechnic School`_/`UFRJ`_ under the supervision of `Prof. Gustavo R. Anjos`_. The project, *Pollutant Filtration in Multiphase Flows Resulting from Biodiesel Combustion*, is associated with LabMFA research in computational mechanics, fluid dynamics, heat transfer, and numerical methods.
+Mechanical Engineering graduate from `Polytechnic School`_/`Federal University
+of Rio de Janeiro`_. During undergraduate studies, worked on two research
+projects: one focused on neural networks applied to biodiesel synthesis, and
+the other, under the supervision of `Prof. Gustavo R. Anjos`_, on finite
+element method applied to stream-vorticity formulation to evaluate flows in
+porus media. Now João is working as flowline engineer in Oil & Gas industry,
+gaining experience in flowline modelling in Abaqus, VAS and global buckling
+analysis, VIV and free span analysis, wall thickness design, cathodic
+protection of submarine systems and other required analyses for subsea systems
+design.
 
-|
-|
-|
 |
 |
 
 **academic info**:
 
- - Undergrad Scientific Research at `Polytechnic School`_/`Federal University of Rio de Janeiro`_
+ - Mechanical Engineering graduate from `Polytechnic School`_/`Federal University of Rio de Janeiro`_
  - `Department of Mechanical Engineering`_
- - Project: *Pollutant Filtration in Multiphase Flows Resulting from Biodiesel Combustion*
+ - Project: *Study of Flows in Biodiesel Emission Particulate Filters*
  - Year: 2023
  - Advisor: `Prof. Gustavo R. Anjos`_
 
@@ -35,9 +39,13 @@ João Pedro Rodrigues was an undergraduate scientific research student at `Polyt
 
 **research interests**:
 
- - two-phase and multiphase flows
  - numerical methods
- - scientific computing
+ - finit element method
+ - finit volume method
+ - optimization
+ - vortex-induced vibrations
+ - fluid-structure interaction
+ - heat transfer
 
 .. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
 

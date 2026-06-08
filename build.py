@@ -17,7 +17,6 @@ import re
 import shutil
 import subprocess
 import sys
-import tempfile
 import time
 import unicodedata
 from datetime import datetime
@@ -67,6 +66,8 @@ REMOTE_MANIFEST = '.labmfa-manifest.json'
 SFTP_TIMEOUT_SECONDS = 60
 TEXT_SUFFIXES = {'.css', '.html', '.js', '.json', '.txt', '.xml'}
 DEFAULT_PELICAN_BIN = Path('/Users/gustavo/miniforge3/envs/pelican/bin/pelican')
+OUTPUT_DIR = BASE_DIR / 'output.nosync'
+ICLOUD_CONFLICT_SUFFIX_RE = re.compile(r'^.+ \d+$')
 
 transport = None
 sftp = None
@@ -1894,7 +1895,7 @@ def genSite():
         cwd=str(BASE_DIR),
         check=True,
     )
-    directory = BASE_DIR / 'output'
+    directory = OUTPUT_DIR
     previous_snapshot = (
         collect_directory_snapshot(directory)
         if directory.exists() else None
@@ -1917,6 +1918,7 @@ def genSite():
     ])
     if status:
         raise RuntimeError('Pelican site generation failed.')
+    remove_icloud_conflicts(directory)
     print(Fore.GREEN + "✅  Site generation complete.")
     print_directory_stats(directory, previous_snapshot)
 
@@ -2066,6 +2068,48 @@ def file_digest(path):
     return digest.hexdigest()
 
 
+def is_icloud_conflict_path(path):
+    return any(
+        ICLOUD_CONFLICT_SUFFIX_RE.match(component)
+        for component in path.parts
+    )
+
+
+def remove_icloud_conflicts(root):
+    root = Path(root)
+    if not root.exists():
+        return []
+
+    conflicts = sorted(
+        (
+            path for path in root.rglob('*')
+            if is_icloud_conflict_path(path.relative_to(root))
+        ),
+        key=lambda path: len(path.relative_to(root).parts),
+        reverse=True,
+    )
+    removed = []
+    removed_roots = set()
+    for path in conflicts:
+        if any(parent in removed_roots for parent in path.parents):
+            continue
+        if not path.exists():
+            continue
+        if path.is_dir():
+            shutil.rmtree(path)
+            removed_roots.add(path)
+        else:
+            path.unlink()
+        removed.append(path.relative_to(root).as_posix())
+
+    if removed:
+        print(Fore.YELLOW + '🧹  Removed {} iCloud conflict paths from {}:'.format(
+            len(removed), root))
+        for relative in removed:
+            print(Fore.YELLOW + '    - {}'.format(relative))
+    return removed
+
+
 def remote_file_digest(path):
     digest = hashlib.sha256()
     with sftp.open(path, 'rb') as input_file:
@@ -2137,97 +2181,88 @@ def prune_remote_files(root, previous, local_relatives):
     return removed, failures
 
 
-def build_upload_snapshot(local_root):
-    staging_parent = tempfile.TemporaryDirectory(prefix='labmfa-upload-')
-    snapshot_root = Path(staging_parent.name) / local_root.name
-    shutil.copytree(local_root, snapshot_root)
-    return staging_parent, snapshot_root
-
-
 def upload(localpath, remotepath, full_upload=False):
     """Synchronize the generated local site to the server over SFTP."""
     source_root = Path(localpath).resolve()
     remote_root = remotepath.rstrip('/')
     ensure_remote_dir(remote_root)
 
-    staging_parent, local_root = build_upload_snapshot(source_root)
-    print(Fore.CYAN + '📦  Upload snapshot prepared: {}'.format(local_root))
+    remove_icloud_conflicts(source_root)
+    local_root = source_root
+    print(Fore.CYAN + '📦  Upload source: {}'.format(local_root))
 
-    try:
-        local_files = sorted(path for path in local_root.rglob('*') if path.is_file())
-        local = {
-            path.relative_to(local_root).as_posix(): {
-                'path': path,
-                'size': path.stat().st_size,
-                'sha256': file_digest(path),
-            }
-            for path in local_files
+    local_files = sorted(path for path in local_root.rglob('*') if path.is_file())
+    local = {
+        path.relative_to(local_root).as_posix(): {
+            'path': path,
+            'size': path.stat().st_size,
+            'sha256': file_digest(path),
         }
-        remote = remote_inventory(remote_root)
-        previous = load_remote_manifest(remote_root)
-        has_manifest = bool(previous)
-        to_upload = []
-        reused_by_digest = 0
+        for path in local_files
+    }
+    remote = remote_inventory(remote_root)
+    previous = load_remote_manifest(remote_root)
+    has_manifest = bool(previous)
+    to_upload = []
+    reused_by_digest = 0
 
-        for relative, metadata in local.items():
-            if full_upload:
+    for relative, metadata in local.items():
+        if full_upload:
+            to_upload.append(relative)
+        elif relative in previous:
+            if previous[relative] != metadata['sha256'] or relative not in remote:
                 to_upload.append(relative)
-            elif relative in previous:
-                if previous[relative] != metadata['sha256'] or relative not in remote:
-                    to_upload.append(relative)
-            elif not has_manifest and relative in remote:
-                remote_file = posixpath.join(remote_root, relative)
-                if metadata['size'] != remote[relative].st_size:
-                    to_upload.append(relative)
-                elif remote_file_digest(remote_file) != metadata['sha256']:
-                    to_upload.append(relative)
-                else:
-                    reused_by_digest += 1
-            else:
-                to_upload.append(relative)
-
-        total_bytes = sum(local[relative]['size'] for relative in to_upload)
-        print(Fore.BLUE + '🚀  Synchronizing {} files ({} total; {} to transfer, {}).'.format(
-            len(local), human_size(sum(item['size'] for item in local.values())),
-            len(to_upload), human_size(total_bytes)))
-        if reused_by_digest:
-            print(Fore.CYAN + '    Reusing {} existing server files after checksum verification while creating the upload manifest.'.format(
-                reused_by_digest))
-
-        uploaded_bytes = 0
-        for number, relative in enumerate(to_upload, start=1):
-            metadata = local[relative]
+        elif not has_manifest and relative in remote:
             remote_file = posixpath.join(remote_root, relative)
-            ensure_remote_dir(posixpath.dirname(remote_file))
-            prefix = '[{}/{}] {}'.format(number, len(to_upload), relative)
+            if metadata['size'] != remote[relative].st_size:
+                to_upload.append(relative)
+            elif remote_file_digest(remote_file) != metadata['sha256']:
+                to_upload.append(relative)
+            else:
+                reused_by_digest += 1
+        else:
+            to_upload.append(relative)
 
-            def progress(transferred, total, prefix=prefix):
-                overall = uploaded_bytes + transferred
-                print('\r    {}: {} / {}  overall {} / {}'.format(
-                    prefix, human_size(transferred), human_size(total),
-                    human_size(overall), human_size(total_bytes)),
-                    end='', flush=True)
+    total_bytes = sum(local[relative]['size'] for relative in to_upload)
+    print(Fore.BLUE + '🚀  Synchronizing {} files ({} total; {} to transfer, {}).'.format(
+        len(local), human_size(sum(item['size'] for item in local.values())),
+        len(to_upload), human_size(total_bytes)))
+    if reused_by_digest:
+        print(Fore.CYAN + '    Reusing {} existing server files after checksum verification while creating the upload manifest.'.format(
+            reused_by_digest))
 
-            sftp.put(str(metadata['path']), remote_file, callback=progress, confirm=True)
-            uploaded_bytes += metadata['size']
-            print()
+    uploaded_bytes = 0
+    for number, relative in enumerate(to_upload, start=1):
+        metadata = local[relative]
+        remote_file = posixpath.join(remote_root, relative)
+        ensure_remote_dir(posixpath.dirname(remote_file))
+        prefix = '[{}/{}] {}'.format(number, len(to_upload), relative)
 
-        # Persist successful synchronization before optional cleanup. Unknown
-        # server-managed files are intentionally left untouched.
-        manifest = {relative: metadata['sha256'] for relative, metadata in local.items()}
+        def progress(transferred, total, prefix=prefix):
+            overall = uploaded_bytes + transferred
+            print('\r    {}: {} / {}  overall {} / {}'.format(
+                prefix, human_size(transferred), human_size(total),
+                human_size(overall), human_size(total_bytes)),
+                end='', flush=True)
+
+        sftp.put(str(metadata['path']), remote_file, callback=progress, confirm=True)
+        uploaded_bytes += metadata['size']
+        print()
+
+    # Persist successful synchronization before optional cleanup. Unknown
+    # server-managed files are intentionally left untouched.
+    manifest = {relative: metadata['sha256'] for relative, metadata in local.items()}
+    write_remote_manifest(remote_root, manifest)
+    removed, failed_removals = prune_remote_files(remote_root, previous, set(local))
+    if failed_removals:
+        for relative, _ in failed_removals:
+            manifest[relative] = previous[relative]
         write_remote_manifest(remote_root, manifest)
-        removed, failed_removals = prune_remote_files(remote_root, previous, set(local))
-        if failed_removals:
-            for relative, _ in failed_removals:
-                manifest[relative] = previous[relative]
-            write_remote_manifest(remote_root, manifest)
-        print(Fore.BLUE + '✅  Synchronization complete: {} uploaded, {} obsolete files removed.'.format(
-            human_size(uploaded_bytes), removed))
-        for relative, error in failed_removals:
-            print(Fore.YELLOW + '⚠️  Could not remove tracked obsolete file {}: {}'.format(
-                relative, error))
-    finally:
-        staging_parent.cleanup()
+    print(Fore.BLUE + '✅  Synchronization complete: {} uploaded, {} obsolete files removed.'.format(
+        human_size(uploaded_bytes), removed))
+    for relative, error in failed_removals:
+        print(Fore.YELLOW + '⚠️  Could not remove tracked obsolete file {}: {}'.format(
+            relative, error))
 
 
 def deploy(full_upload=False):
@@ -2246,7 +2281,7 @@ def deploy(full_upload=False):
     connect_sftp()
     try:
         print("\n" + Fore.YELLOW + "→ Step 3:" + Fore.RESET + " Synchronizing site on server...")
-        upload(BASE_DIR / 'output', REMOTE_SITE_DIR, full_upload=full_upload)
+        upload(OUTPUT_DIR, REMOTE_SITE_DIR, full_upload=full_upload)
     finally:
         print("\n" + Fore.YELLOW + "→ Step 4:" + Fore.RESET + " Closing SFTP connection...")
         sftp.close()

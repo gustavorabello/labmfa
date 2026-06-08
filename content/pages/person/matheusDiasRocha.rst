@@ -1,8 +1,8 @@
 Matheus Dias da Rocha
 _____________________
 
-:date: 2026-06-01 11:35
-:modified: 2026-06-01 11:35
+:date: 2026-06-07 22:41
+:modified: 2026-06-07 22:41
 :slug: person/matheusDiasRocha
 
 .. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications

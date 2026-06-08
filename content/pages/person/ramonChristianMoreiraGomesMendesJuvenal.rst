@@ -1,8 +1,8 @@
 Ramon Christian Moreira Gomes Mendes Juvenal
 ____________________________________________
 
-:date: 2026-06-01 11:35
-:modified: 2026-06-01 11:35
+:date: 2026-06-07 22:41
+:modified: 2026-06-07 22:41
 :slug: person/ramonChristianMoreiraGomesMendesJuvenal
 
 .. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications

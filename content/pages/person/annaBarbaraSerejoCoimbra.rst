@@ -1,8 +1,8 @@
 Anna Bárbara Serejo Coimbra
 ___________________________
 
-:date: 2026-06-01 11:35
-:modified: 2026-06-01 11:35
+:date: 2026-06-07 22:41
+:modified: 2026-06-07 22:41
 :slug: person/annaBarbaraSerejoCoimbra
 
 .. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications

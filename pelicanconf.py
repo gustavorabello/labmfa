@@ -33,6 +33,7 @@ CUSTOM_CSS = "css/custom.css"
 ROBOTS = "index, follow"
 
 PATH = "content"
+OUTPUT_PATH = "output.nosync"
 DELETE_OUTPUT_DIRECTORY = True
 IGNORE_FILES = ["team-mosaic.html"]
 

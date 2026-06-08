@@ -2,7 +2,7 @@ Students
 --------
 
 :date: 2022-09-10 22:10
-:modified: 2026-06-01 11:35
+:modified: 2026-06-07 22:41
 :slug: students
 
 .. AUTO-GENERATED STUDENTS START: run build.py --update-publications
