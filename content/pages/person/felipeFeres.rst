@@ -2,7 +2,7 @@ Felipe Feres Ferreira
 _____________________
 
 :date: 2025-06-04 21:00
-:modified: 2026-05-31 23:14
+:modified: 2026-07-16 21:43
 :slug: person/felipeFeres
 
 |
@@ -75,8 +75,8 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
-#. :profile-author:`Ferreira, F. F.`; Anjos, G.R. **Numerical Simulation of a Multiphase Flow inside a Diesel Particulate Filter**. *JEM* (JEM), 2023.
-#. :profile-author:`Ferreira, F. F.`; Anjos, G.R. **Finite Element Method Applied to Diesel Particulate Filter Flow**. *Anais do 19th Brazilian Congress of Thermal Sciences and Engineering* (ENCIT), Bento Gonçalves, Brazil, 2022.
+#. :profile-author:`Ferreira, F. F.`; Anjos, G.R. **Numerical Simulation of a Multiphase Flow inside a Diesel Particulate Filter**. *JEM*, 2023.
+#. :profile-author:`Ferreira, F. F.`; Anjos, G.R. **Finite Element Method Applied to Diesel Particulate Filter Flow**. *Anais do 19th Brazilian Congress of Thermal Sciences and Engineering*, Bento Gonçalves, Brazil, 2022.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 

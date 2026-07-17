@@ -1,8 +1,8 @@
 Leandro Marques dos Santos
 __________________________
 
-:date: 2026-06-08 16:15
-:modified: 2026-06-08 16:15
+:date: 2026-07-16 22:29
+:modified: 2026-07-16 22:29
 :slug: person/leandroMarquesSantos
 
 .. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications
@@ -43,11 +43,11 @@ Leandro Marques dos Santos was an M.Sc. student at `UFRJ`_/`Coppe`_ under the su
 
 **M.Sc. dissertation**:
 
- - *Blood-Flow Simulation in Coronary Artery Using Stream-Function/Vorticity FEM*, M.Sc. dissertation, Universidade do Estado do Rio de Janeiro, 2020
+ - `Blood-Flow Simulation in Coronary Artery Using Stream-Function/Vorticity FEM </documents/leandroMarquesSantos-msc.pdf>`_, M.Sc. dissertation, Universidade do Estado do Rio de Janeiro, 2020
 
 **IC/TCC project**:
 
- - *Finite Element Numerical Simulation of Flow in Coronary Artery*, Undergraduate research work (IC/TCC), Universidade do Estado do Rio de Janeiro, 2018
+ - `Finite Element Numerical Simulation of Flow in Coronary Artery </documents/leandroMarquesSantos-tcc.pdf>`_, Undergraduate research work (IC/TCC), Universidade do Estado do Rio de Janeiro, 2018
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 

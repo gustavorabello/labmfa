@@ -1,20 +1,16 @@
-PY?=
-PELICAN?=pelican
-PELICANOPTS=
+PYTHON ?= /Users/gustavo/miniforge3/envs/pelican/bin/python
+PELICAN ?= /Users/gustavo/miniforge3/envs/pelican/bin/pelican
+PELICANOPTS =
 
-BASEDIR=$(CURDIR)
-INPUTDIR=$(BASEDIR)/content
-OUTPUTDIR=$(BASEDIR)/output.nosync
-CONFFILE=$(BASEDIR)/pelicanconf.py
-PUBLISHCONF=$(BASEDIR)/publishconf.py
+BASEDIR = $(CURDIR)
+INPUTDIR = $(BASEDIR)/content
+OUTPUTDIR = $(BASEDIR)/output.nosync
+CONFFILE = $(BASEDIR)/pelicanconf.py
+PUBLISHCONF = $(BASEDIR)/publishconf.py
 
-SSH_HOST=localhost
-SSH_PORT=22
-SSH_USER=gustavo
-SSH_TARGET_DIR=/var/www
+GITHUB_PAGES_BRANCH = gh-pages
 
-GITHUB_PAGES_BRANCH=gh-pages
-
+.DEFAULT_GOAL := all
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -26,37 +22,43 @@ ifeq ($(RELATIVE), 1)
 	PELICANOPTS += --relative-urls
 endif
 
-SERVER ?= "0.0.0.0"
+SERVER ?= 0.0.0.0
 
 PORT ?= 0
 ifneq ($(PORT), 0)
 	PELICANOPTS += -p $(PORT)
 endif
 
-
 help:
-	@echo 'Makefile for a pelican Web site                                           '
-	@echo '                                                                          '
-	@echo 'Usage:                                                                    '
-	@echo '   make html                           (re)generate the web site          '
-	@echo '   make clean                          remove the generated files         '
-	@echo '   make regenerate                     regenerate files upon modification '
-	@echo '   make publish                        generate using production settings '
+	@echo 'Makefile for the LabMFA Pelican site'
+	@echo
+	@echo 'Usage:'
+	@echo '   make                                update data and fully build the site'
+	@echo '   make publish                        fully build and upload via SFTP'
+	@echo '   make html                           generate Pelican content only'
+	@echo '   make production                     generate with production settings'
+	@echo '   make clean                          remove the generated files'
+	@echo '   make regenerate                     regenerate files upon modification'
 	@echo '   make serve [PORT=8000]              serve site at http://localhost:8000'
-	@echo '   make serve-global [SERVER=0.0.0.0]  serve (as root) to $(SERVER):80    '
-	@echo '   make devserver [PORT=8000]          serve and regenerate together      '
-	@echo '   make devserver-global               regenerate and serve on 0.0.0.0    '
-	@echo '   make ssh_upload                     upload the web site via SSH        '
-	@echo '   make sftp_upload                    upload the web site via SFTP       '
-	@echo '   make rsync_upload                   upload the web site via rsync+ssh  '
-	@echo '   make github                         upload the web site via gh-pages   '
-	@echo '                                                                          '
-	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html   '
-	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
-	@echo '                                                                          '
+	@echo '   make serve-global [SERVER=0.0.0.0]  serve on the selected interface'
+	@echo '   make devserver [PORT=8000]          serve and regenerate together'
+	@echo '   make devserver-global               serve and regenerate on all interfaces'
+	@echo '   make github                         upload the site via gh-pages'
+	@echo
+	@echo 'Set DEBUG=1 to enable Pelican debug mode.'
+	@echo 'Set RELATIVE=1 to enable relative URLs.'
+
+all:
+	LABMFA_PELICAN_BIN="$(PELICAN)" "$(PYTHON)" build.py --build-only
 
 html:
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+
+production:
+	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
+
+publish:
+	LABMFA_PELICAN_BIN="$(PELICAN)" "$(PYTHON)" build.py
 
 clean:
 	[ ! -d "$(OUTPUTDIR)" ] || rm -rf "$(OUTPUTDIR)"
@@ -74,23 +76,10 @@ devserver:
 	"$(PELICAN)" -lr "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
 
 devserver-global:
-	$(PELICAN) -lr $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS) -b 0.0.0.0
+	"$(PELICAN)" -lr "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS) -b 0.0.0.0
 
-publish:
-	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
-
-ssh_upload: publish
-	scp -P $(SSH_PORT) -r "$(OUTPUTDIR)"/* "$(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)"
-
-sftp_upload: publish
-	printf 'put -r $(OUTPUTDIR)/*' | sftp $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
-
-rsync_upload: publish
-	rsync -e "ssh -p $(SSH_PORT)" -P -rvzc --include tags --cvs-exclude --delete "$(OUTPUTDIR)"/ "$(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)"
-
-github: publish
+github: production
 	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) "$(OUTPUTDIR)"
 	git push origin $(GITHUB_PAGES_BRANCH)
 
-
-.PHONY: html help clean regenerate serve serve-global devserver publish ssh_upload rsync_upload github
+.PHONY: all help html production publish clean regenerate serve serve-global devserver devserver-global github

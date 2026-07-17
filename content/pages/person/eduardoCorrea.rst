@@ -2,7 +2,7 @@ Eduardo Dias Correa
 ___________________
 
 :date: 2025-04-29 22:10
-:modified: 2026-05-31 21:28
+:modified: 2026-07-16 21:42
 :slug: person/eduardoCorrea
 
 |
@@ -71,8 +71,8 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
-#. Silva Neto, J. L.; :profile-author:`Correa, E. D.`; Gama, R. M. S.; Anjos, G. R. **A Robust Newton-Based Variational Framework for Nonlinear Conduction-Radiation PDEs with Localized Sources**. *Proceedings of the Encontro Nacional de Modelagem Computacional* (ENMC), 2025.
-#. Silva Neto, J. L.; :profile-author:`Correa, E. D.`; Gama, R. M. S.; Anjos, G. R. **On the Temperature Distribution in a Flat Plate Induced by an External Thermal Radiant Source**. *Proceedings of the XLVI Ibero-Latin-American Congress on Computational Methods in Engineering* (CILAMCE), Vitoria, Brazil, 2025.
+#. Silva Neto, J. L.; :profile-author:`Correa, E. D.`; Gama, R. M. S.; Anjos, G. R. **A Robust Newton-Based Variational Framework for Nonlinear Conduction-Radiation PDEs with Localized Sources**. *Proceedings of the Encontro Nacional de Modelagem Computacional*, 2025.
+#. Silva Neto, J. L.; :profile-author:`Correa, E. D.`; Gama, R. M. S.; Anjos, G. R. **On the Temperature Distribution in a Flat Plate Induced by an External Thermal Radiant Source**. *Proceedings of the XLVI Ibero-Latin-American Congress on Computational Methods in Engineering*, Vitoria, Brazil, 2025.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 

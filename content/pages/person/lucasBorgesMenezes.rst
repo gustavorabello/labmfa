@@ -2,7 +2,7 @@ Lucas Borges Menezes
 ____________________
 
 :date: 2026-05-28 13:59
-:modified: 2026-05-31 23:14
+:modified: 2026-07-16 21:42
 :slug: person/lucasBorgesMenezes
 
 |
@@ -70,8 +70,7 @@ undergraduate thesis.
 
 **IC/TCC project**:
 
- - *Automatic Calibration of Parameters for Discrete Element Simulation of Granular Materials Using Computational Optimization*, Undergraduate research work (IC/TCC), Universidade Federal do Rio de Janeiro, 2026
- - *Validation of CFD Simulations Using the Darcy-Forchheimer Model Against Experimental Data for Bag Filters*, Undergraduate research work (IC/TCC), Universidade Federal do Rio de Janeiro, 2025
+ - `Automatic Calibration of Parameters for Discrete Element Simulation of Granular Materials Using Computational Optimization </documents/lucasBorgesMenezes-tcc.pdf>`_, Undergraduate research work (IC/TCC), Universidade Federal do Rio de Janeiro, 2026
 
 **publications with Prof. Gustavo R. Anjos**:
 
@@ -80,7 +79,7 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
-#. :profile-author:`Menezes, L. B.`; Januario, J. R.; Anjos, G.R. **Validation of CFD Simulations Using the Darcy-Forchheimer Model Against Experimental Data for Bag Filters**. *Anais do 20th Brazilian Congress of Thermal Sciences and Engineering* (ENCIT), Foz do Iguaçu, Brazil, 2024.
+#. :profile-author:`Menezes, L. B.`; Januario, J. R.; Anjos, G.R. **Validation of CFD Simulations Using the Darcy-Forchheimer Model Against Experimental Data for Bag Filters**. *Anais do 20th Brazilian Congress of Thermal Sciences and Engineering*, Foz do Iguaçu, Brazil, 2024.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 

@@ -1,5 +1,5 @@
-# This file is only used if you use `make publish` or
-# explicitly specify it as your config file.
+# Production settings used by `make publish`, `make production`, or when this
+# file is explicitly selected as the Pelican configuration.
 
 import os
 import sys
@@ -10,8 +10,13 @@ from pelicanconf import *
 SITEURL = 'https://labmfa.coppe.ufrj.br'
 RELATIVE_URLS = False
 
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/{slug}.atom.xml'
+# The SFTP account cannot create new top-level directories under /html.
+# Keep every feed disabled so publishing never attempts to create /html/feeds.
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
+TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
 
 DELETE_OUTPUT_DIRECTORY = True
 

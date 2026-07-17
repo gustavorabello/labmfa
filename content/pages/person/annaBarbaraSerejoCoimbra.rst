@@ -1,8 +1,8 @@
 Anna Bárbara Serejo Coimbra
 ___________________________
 
-:date: 2026-06-08 16:15
-:modified: 2026-06-08 16:15
+:date: 2026-07-16 22:29
+:modified: 2026-07-16 22:29
 :slug: person/annaBarbaraSerejoCoimbra
 
 .. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications
@@ -66,7 +66,7 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
-#. :profile-author:`Coimbra, A. B. S.`; Anjos, G.R. **Analysis of Filtration Efficiency in Numerical Simulations of Biofuels Combustion**. *Anais do 20th Brazilian Congress of Thermal Sciences and Engineering* (ENCIT), Foz do Iguaçu, Brazil, 2024.
+#. :profile-author:`Coimbra, A. B. S.`; Anjos, G.R. **Analysis of Filtration Efficiency in Numerical Simulations of Biofuels Combustion**. *Anais do 20th Brazilian Congress of Thermal Sciences and Engineering*, Foz do Iguaçu, Brazil, 2024.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 

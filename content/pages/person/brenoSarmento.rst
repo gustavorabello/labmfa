@@ -3,7 +3,7 @@ Breno Mota Sarmento
 ___________________
 
 :date: 2025-06-02 12:10
-:modified: 2026-05-31 23:14
+:modified: 2026-07-16 21:42
 :slug: person/brenoSarmento
 
 |
@@ -52,7 +52,7 @@ Barbedo`_.
 
 **IC/TCC project**:
 
- - *Curvature Estimation on Surfaces via Local Quadratic Fitting and Comparative Analysis*, Undergraduate research work (IC/TCC), Universidade Federal do Rio de Janeiro, 2026
+ - `Curvature Estimation on Surfaces via Local Quadratic Fitting and Comparative Analysis </documents/brenoSarmento-tcc.pdf>`_, Undergraduate research work (IC/TCC), Universidade Federal do Rio de Janeiro, 2026
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 

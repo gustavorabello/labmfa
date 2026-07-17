@@ -34,18 +34,11 @@ PROFILE_PATH = BASE_DIR / 'content/pages/person/gustavoRabello.rst'
 MAIN_PAGE_PATH = BASE_DIR / 'content/category/main.rst'
 PERSON_DIR = BASE_DIR / 'content/pages/person'
 STUDENTS_PATH = BASE_DIR / 'content/pages/students.rst'
-BIB_DIR = Path('/Users/gustavo/projects/misc/latex-personal')
-JOURNALS_BIB = BIB_DIR / 'journals.bib'
-CONFERENCES_BIB = BIB_DIR / 'papers_conferences.bib'
-BOOKS_BIB = BIB_DIR / 'books.bib'
-CHAPTERS_BIB = BIB_DIR / 'chapters.bib'
-THESIS_CONCLUDED_BIB = BIB_DIR / 'thesisConcluded.bib'
-THESIS_NOT_CONCLUDED_BIB = BIB_DIR / 'thesisNotConcluded.bib'
-IC_CONCLUDED_BIB = BIB_DIR / 'icConcluded.bib'
-IC_NOT_CONCLUDED_BIB = BIB_DIR / 'icNotConcluded.bib'
-POSTDOC_CONCLUDED_BIB = BIB_DIR / 'postdocConcluded.bib'
-POSTDOC_NOT_CONCLUDED_BIB = BIB_DIR / 'postdocNotConcluded.bib'
-UNDERGRAD_BIB = BIB_DIR / 'undergrad.bib'
+ACADEMIC_DB_DIR = Path(os.environ.get(
+    'ACADEMIC_DB_DIR',
+    '/Users/gustavo/projects/academicDB',
+)).expanduser()
+ACADEMIC_SOURCES_DIR = ACADEMIC_DB_DIR / 'sources'
 PUBLICATIONS_START = '.. AUTO-GENERATED PUBLICATIONS START: run build.py --update-publications'
 PUBLICATIONS_END = '.. AUTO-GENERATED PUBLICATIONS END'
 STUDENT_ARTICLES_START = '.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications'
@@ -61,6 +54,7 @@ PROFILE_REQUEST_FROM = 'gustavo.rabello@coppe.ufrj.br'
 PROFILE_REQUEST_DRAFT_DIR = Path('/private/tmp/labmfa-profile-email-drafts')
 GMAIL_PROFILE_DRAFT_SCRIPT = BASE_DIR / 'scripts/gmail_profile_draft.py'
 TEAM_MOSAIC_SCRIPT = BASE_DIR / 'scripts/mosaic_images.py'
+ADVISING_TOPICS_SCRIPT = BASE_DIR / 'scripts/prepare_advising_topics.py'
 REMOTE_SITE_DIR = '/html'
 REMOTE_MANIFEST = '.labmfa-manifest.json'
 SFTP_TIMEOUT_SECONDS = 60
@@ -86,94 +80,159 @@ def connect_sftp():
     sftp.get_channel().settimeout(SFTP_TIMEOUT_SECONDS)
 
 
-def _braced_value(text, start):
-    """Return the content and final index of a balanced BibTeX braced value."""
-    if text[start] != '{':
-        raise ValueError('Expected a braced BibTeX value')
+def _yaml_scalar(value):
+    """Parse the scalar subset emitted by AcademicDB's YAML writer."""
+    value = value.strip()
+    if not value:
+        return ''
+    if value.startswith('"') and value.endswith('"'):
+        return json.loads(value)
+    if value == 'null':
+        return None
+    if value == 'true':
+        return True
+    if value == 'false':
+        return False
+    if re.fullmatch(r'-?[0-9]+', value):
+        return int(value)
+    if re.fullmatch(r'-?[0-9]+\.[0-9]+', value):
+        return float(value)
+    return value
 
-    depth = 1
-    index = start + 1
-    while index < len(text) and depth:
-        char = text[index]
-        if char == '\\':
-            index += 2
+
+def parse_academic_yaml(text):
+    """Read the simple mappings/lists used by AcademicDB sources."""
+    lines = []
+    for raw in text.splitlines():
+        if not raw.strip():
             continue
-        if char == '{':
-            depth += 1
-        elif char == '}':
-            depth -= 1
-        index += 1
+        stripped = raw.lstrip(' ')
+        if stripped.startswith('#'):
+            continue
+        lines.append((len(raw) - len(stripped), stripped.rstrip()))
 
-    if depth:
-        raise ValueError('Unclosed braced value in BibTeX input')
-    return text[start + 1:index - 1], index
+    if not lines:
+        return {}
 
+    def split_pair(value):
+        key, separator, item = value.partition(':')
+        if not separator:
+            raise ValueError('Expected YAML key/value pair: {}'.format(value))
+        return key.strip(), item.strip()
 
-def _parse_fields(text):
-    fields = {}
-    index = 0
-    while index < len(text):
-        separator = re.match(r'[\s,]*', text[index:])
-        index += separator.end()
-        match = re.match(r'([A-Za-z][A-Za-z0-9_-]*)\s*=\s*', text[index:])
-        if not match:
-            break
+    def parse_block(index, indent):
+        if index >= len(lines) or lines[index][0] < indent:
+            return {}, index
 
-        key = match.group(1).lower()
-        index += match.end()
-        if text[index:index + 1] == '{':
-            value, index = _braced_value(text, index)
-        elif text[index:index + 1] == '"':
-            end = index + 1
-            while end < len(text):
-                if text[end] == '"' and text[end - 1] != '\\':
+        if lines[index][1].startswith('-'):
+            values = []
+            while index < len(lines):
+                line_indent, line = lines[index]
+                if line_indent != indent or not line.startswith('-'):
                     break
-                end += 1
-            value = text[index + 1:end]
-            index = end + 1
-        else:
-            end = text.find(',', index)
-            end = len(text) if end == -1 else end
-            value = text[index:end].strip()
-            index = end
-        fields[key] = value
-    return fields
+                rest = line[1:].strip()
+                index += 1
+                if rest:
+                    values.append(_yaml_scalar(rest))
+                else:
+                    item, index = parse_block(index, indent + 2)
+                    values.append(item)
+            return values, index
+
+        values = {}
+        while index < len(lines):
+            line_indent, line = lines[index]
+            if line_indent != indent or line.startswith('-'):
+                break
+            key, value = split_pair(line)
+            index += 1
+            if value:
+                values[key] = _yaml_scalar(value)
+            else:
+                child, index = parse_block(index, indent + 2)
+                values[key] = child
+        return values, index
+
+    data, final_index = parse_block(0, lines[0][0])
+    if final_index != len(lines):
+        raise ValueError('Unsupported YAML structure')
+    return data
 
 
-def parse_bibtex_entries(path, entry_types=None):
-    """Read BibTeX entries without adding a build dependency."""
-    source = path.read_text(encoding='utf-8')
-    entries = []
-    index = 0
-    selected = (
-        {entry.lower() for entry in entry_types}
-        if entry_types is not None else None
+def _is_duplicate_academic_source(path):
+    """Ignore iCloud-style numbered copies when the original YAML exists."""
+    match = re.search(r' [0-9]+$', path.stem)
+    if not match:
+        return False
+    original = path.with_name(path.stem[:match.start()] + path.suffix)
+    return original.exists()
+
+
+def load_academic_sources(*relative_directories):
+    """Load canonical YAML records from selected AcademicDB source trees."""
+    if not ACADEMIC_SOURCES_DIR.is_dir():
+        raise FileNotFoundError(
+            'AcademicDB sources directory not found: {}'.format(
+                ACADEMIC_SOURCES_DIR))
+
+    records = []
+    for relative_directory in relative_directories:
+        source_dir = ACADEMIC_SOURCES_DIR / relative_directory
+        if not source_dir.is_dir():
+            raise FileNotFoundError(
+                'AcademicDB source category not found: {}'.format(source_dir))
+        for path in sorted(source_dir.rglob('*.yaml')):
+            if _is_duplicate_academic_source(path):
+                continue
+            record = parse_academic_yaml(path.read_text(encoding='utf-8'))
+            if not isinstance(record, dict):
+                raise ValueError('{}: source must be a mapping'.format(path))
+            record['_source_path'] = str(path)
+            record['_source_relative'] = str(
+                path.relative_to(ACADEMIC_SOURCES_DIR))
+            records.append(record)
+    return records
+
+
+def academic_publication_entry(record):
+    """Adapt an AcademicDB publication record to the existing renderer."""
+    entry = {
+        key.replace('_', '-'): str(value)
+        for key, value in record.items()
+        if not key.startswith('_') and not isinstance(value, (list, dict))
+        and value is not None
+    }
+    entry['author'] = ' and '.join(record.get('authors') or [])
+    entry['_entry_type'] = str(record.get('bibtex_type') or '')
+    entry['_entry_key'] = str(record.get('bibtex_key') or record.get('id') or '')
+    entry['_source_path'] = record['_source_path']
+    return entry
+
+
+def load_academic_publications():
+    """Return books, chapters, journals and conferences from AcademicDB."""
+    books = [academic_publication_entry(record) for record in
+             load_academic_sources('books') if record.get('type') == 'book']
+    chapters = [academic_publication_entry(record) for record in
+                load_academic_sources('chapters') if record.get('type') == 'chapter']
+    articles = load_academic_sources('articles')
+    journals = [
+        academic_publication_entry(record) for record in articles
+        if record.get('type') == 'article' and record.get('subtype') == 'journal'
+    ]
+    conferences = [
+        academic_publication_entry(record) for record in articles
+        if record.get('type') == 'article' and record.get('subtype') == 'conference'
+    ]
+
+    def newest_first(entry):
+        year = field(entry, 'year')
+        return (-int(year) if year.isdigit() else 0, entry['_source_path'])
+
+    return tuple(
+        sorted(entries, key=newest_first)
+        for entries in (books, chapters, journals, conferences)
     )
-    entry_re = re.compile(r'@([A-Za-z]+)\s*\{', re.IGNORECASE)
-
-    while True:
-        match = entry_re.search(source, index)
-        if not match:
-            return entries
-
-        entry_kind = match.group(1).lower()
-        body, index = _braced_value(source, match.end() - 1)
-        if selected is not None and entry_kind not in selected:
-            continue
-        try:
-            key, fields_text = body.split(',', 1)
-        except ValueError as error:
-            raise ValueError('Invalid BibTeX entry in {}'.format(path)) from error
-        entry = _parse_fields(fields_text)
-        entry['_entry_type'] = entry_kind
-        entry['_entry_key'] = key.strip()
-        entry['_source_path'] = str(path)
-        entries.append(entry)
-
-
-def parse_bibtex(path, entry_type):
-    """Read selected BibTeX entries without adding a build dependency."""
-    return parse_bibtex_entries(path, {entry_type})
 
 
 def latex_to_text(value):
@@ -596,12 +655,12 @@ def completed_record_priority(record):
     if record.get('file_path'):
         priority += 4
 
-    source_path = record.get('source_path', '')
-    if record.get('category') == 'ic' and source_path == str(UNDERGRAD_BIB):
+    source_collection = record.get('source_collection', '')
+    if record.get('category') == 'ic' and source_collection == 'undergraduate':
         priority += 3
     elif (
         record.get('category') in {'msc', 'phd'}
-        and source_path == str(THESIS_CONCLUDED_BIB)
+        and source_collection in {'masters', 'phd'}
     ):
         priority += 3
 
@@ -647,7 +706,7 @@ def prefer_undergrad_tcc_records(records):
         for record in records
         if (
             record.get('category') == 'ic'
-            and record.get('source_path') == str(UNDERGRAD_BIB)
+            and record.get('source_collection') == 'undergraduate'
             and record.get('file_path')
         )
     }
@@ -657,7 +716,7 @@ def prefer_undergrad_tcc_records(records):
         if (
             record.get('slug', '') in preferred_slugs
             and record.get('category') == 'ic'
-            and record.get('source_path') != str(UNDERGRAD_BIB)
+            and record.get('source_collection') != 'undergraduate'
         ):
             continue
         filtered.append(record)
@@ -946,8 +1005,8 @@ def update_generated_section(path, start_marker, end_marker, generated,
     return True
 
 
-def format_bibtex_person_name(value):
-    """Convert the BibTeX 'Family, Given' convention to display order."""
+def format_family_given_name(value):
+    """Convert the AcademicDB 'Family, Given' convention to display order."""
     value = latex_to_text(value).strip()
     if ',' not in value:
         return value
@@ -956,81 +1015,97 @@ def format_bibtex_person_name(value):
     return ' '.join(part for part in (given, family) if part)
 
 
+def academic_document_path(entry):
+    """Return the preferred document path, resolving AcademicDB-relative files."""
+    documents = entry.get('documents') or []
+    candidates = [
+        document.get('path', '').strip()
+        for document in documents
+        if isinstance(document, dict) and document.get('path')
+    ]
+    pdf_candidates = [
+        candidate for candidate in candidates
+        if Path(candidate).suffix.lower() == '.pdf'
+    ]
+    if pdf_candidates:
+        candidates = pdf_candidates
+    if not candidates:
+        return ''
+
+    path = Path(candidates[0]).expanduser()
+    if not path.is_absolute():
+        path = ACADEMIC_DB_DIR / path
+    return str(path)
+
+
 def student_record(entry, category, status):
-    """Normalize a student/advising BibTeX entry for page generation."""
+    """Normalize an AcademicDB student record for page generation."""
     return {
-        'name': format_bibtex_person_name(field(entry, 'author')),
-        'title': field(entry, 'title'),
-        'year': field(entry, 'year'),
-        'school': field(entry, 'school') or field(entry, 'institution'),
-        'address': field(entry, 'address'),
-        'file_path': entry.get('file', '').strip(),
-        'note': field(entry, 'note'),
+        'name': format_family_given_name(str(entry.get('name') or '')),
+        'title': str(entry.get('title') or ''),
+        'year': str(entry.get('year') or ''),
+        'school': str(entry.get('school') or entry.get('institution') or ''),
+        'address': str(entry.get('address') or ''),
+        'file_path': academic_document_path(entry),
+        'note': str(entry.get('note') or ''),
         'category': category,
         'status': status,
-        'entry_type': field(entry, 'type'),
-        'source_key': entry.get('_entry_key', ''),
+        'entry_type': str(entry.get('work_type') or ''),
+        'source_key': str(entry.get('bibtex_key') or entry.get('id') or ''),
         'source_path': entry.get('_source_path', ''),
+        'source_collection': entry.get('_source_relative', '').split('/', 2)[1],
     }
 
 
 def is_anjos_supervision(entry):
     """Keep only records that explicitly list Prof. Gustavo R. Anjos."""
-    return 'anjos' in normalize_name(field(entry, 'note'))
-
-
-def thesis_category(entry):
-    thesis_type = field(entry, 'type').lower()
-    if thesis_type == 'phdthesis':
-        return 'phd'
-    if thesis_type == 'masterthesis':
-        return 'msc'
-    return ''
+    return 'anjos' in normalize_name(str(entry.get('note') or ''))
 
 
 def load_student_records():
-    """Load students and alumni from the advising BibTeX files."""
+    """Load current students and alumni from canonical AcademicDB YAMLs."""
     current = []
     alumni = []
 
-    for entry in parse_bibtex_entries(THESIS_NOT_CONCLUDED_BIB, {'thesis'}):
-        category = thesis_category(entry)
-        if category and is_anjos_supervision(entry):
-            current.append(student_record(entry, category, 'current'))
-
-    for entry in parse_bibtex_entries(THESIS_CONCLUDED_BIB, {'thesis'}):
-        category = thesis_category(entry)
-        if category and is_anjos_supervision(entry):
-            alumni.append(student_record(entry, category, 'alumni'))
-
-    for entry in parse_bibtex_entries(IC_NOT_CONCLUDED_BIB, {'misc'}):
-        if is_anjos_supervision(entry):
-            current.append(student_record(entry, 'ic', 'current'))
-
-    for entry in parse_bibtex_entries(IC_CONCLUDED_BIB, {'misc'}):
-        if is_anjos_supervision(entry):
-            alumni.append(student_record(entry, 'ic', 'alumni'))
-
-    for entry in parse_bibtex_entries(POSTDOC_NOT_CONCLUDED_BIB, {'misc'}):
-        if is_anjos_supervision(entry):
-            current.append(student_record(entry, 'postdoc', 'current'))
-
-    for entry in parse_bibtex_entries(POSTDOC_CONCLUDED_BIB, {'misc'}):
-        if is_anjos_supervision(entry):
-            alumni.append(student_record(entry, 'postdoc', 'alumni'))
+    category_by_level = {
+        'phd': 'phd',
+        'masters': 'msc',
+        'ic': 'ic',
+        'postdoc': 'postdoc',
+    }
+    entries = load_academic_sources(
+        'students/phd',
+        'students/masters',
+        'students/ic',
+        'students/postdoc',
+    )
+    for entry in entries:
+        if entry.get('type') != 'student' or not is_anjos_supervision(entry):
+            continue
+        category = category_by_level.get(str(entry.get('level') or '').lower())
+        status = str(entry.get('status') or '').lower()
+        if not category or status not in {'ongoing', 'completed'}:
+            continue
+        target = current if status == 'ongoing' else alumni
+        target.append(student_record(
+            entry,
+            category,
+            'current' if status == 'ongoing' else 'alumni',
+        ))
 
     return current, alumni
 
 
 def load_undergrad_completed_records():
-    records = []
-    for entry in parse_bibtex_entries(UNDERGRAD_BIB, {'thesis'}):
-        if not is_anjos_supervision(entry):
-            continue
-        if field(entry, 'type').lower() != 'bachelorsthesis':
-            continue
-        records.append(student_record(entry, 'ic', 'alumni'))
-    return records
+    return [
+        student_record(entry, 'ic', 'alumni')
+        for entry in load_academic_sources('students/undergraduate')
+        if (
+            entry.get('type') == 'student'
+            and str(entry.get('work_type') or '').lower() == 'bachelorsthesis'
+            and is_anjos_supervision(entry)
+        )
+    ]
 
 
 def filter_ic_completed_records(records, allowed_slugs):
@@ -1538,7 +1613,7 @@ def update_students_page(current, alumni):
     return True
 
 
-def update_students_from_bibs():
+def update_students_from_academic_db():
     current, alumni = load_student_records()
     records = current + alumni
     assign_profile_slugs(records)
@@ -1767,7 +1842,7 @@ def update_student_publications(journals, conferences, completed_works_by_slug=N
 def update_publications():
     """Refresh the generated publication section on Gustavo's profile page."""
     current_students, alumni_students, created_profiles, refreshed_profiles, students_changed = (
-        update_students_from_bibs())
+        update_students_from_academic_db())
     student_page_slugs = {record['slug'] for record in current_students + alumni_students}
     undergrad_completed_records = load_undergrad_completed_records()
     assign_profile_slugs(undergrad_completed_records)
@@ -1793,10 +1868,7 @@ def update_publications():
             (record['slug'], record['source_key']),
             existing_document_urls.get(record['slug'], {}).get(record['category'], ''),
         )
-    books = parse_bibtex(BOOKS_BIB, 'book')
-    chapters = parse_bibtex(CHAPTERS_BIB, 'incollection')
-    journals = parse_bibtex(JOURNALS_BIB, 'article')
-    conferences = parse_bibtex(CONFERENCES_BIB, 'inproceedings')
+    books, chapters, journals, conferences = load_academic_publications()
     generated = render_publications(books, chapters, journals, conferences)
     profile_changed = update_generated_section(
         PROFILE_PATH, PUBLICATIONS_START, PUBLICATIONS_END, generated,
@@ -1886,9 +1958,16 @@ def rm(path):
     print(Fore.YELLOW + "🧹  Remote directory cleaned: " + Fore.CYAN + path)
 
 
-def genSite():
-    """Generate static site locally with Pelican."""
+def genSite(settings_path=None):
+    """Regenerate derived content and build the complete Pelican site."""
+    settings_path = settings_path or BASE_DIR / 'pelicanconf.py'
     update_publications()
+    print(Fore.GREEN + "🧭  Updating advising topics...")
+    subprocess.run(
+        [sys.executable, str(ADVISING_TOPICS_SCRIPT)],
+        cwd=str(BASE_DIR),
+        check=True,
+    )
     print(Fore.GREEN + "🧩  Updating homepage mosaic...")
     subprocess.run(
         [sys.executable, str(TEAM_MOSAIC_SCRIPT)],
@@ -1914,7 +1993,7 @@ def genSite():
     status = call(pelican_cmd + [
         str(BASE_DIR / 'content'),
         '-o', str(directory),
-        '-s', str(BASE_DIR / 'pelicanconf.py'),
+        '-s', str(settings_path),
     ])
     if status:
         raise RuntimeError('Pelican site generation failed.')
@@ -2275,7 +2354,7 @@ def deploy(full_upload=False):
     start = time.time()
 
     print("\n" + Fore.YELLOW + "→ Step 1:" + Fore.RESET + " Generating local Pelican site...")
-    genSite()
+    genSite(BASE_DIR / 'publishconf.py')
 
     print("\n" + Fore.YELLOW + "→ Step 2:" + Fore.RESET + " Connecting to server...")
     connect_sftp()
@@ -2295,10 +2374,16 @@ def deploy(full_upload=False):
 
 def main():
     parser = argparse.ArgumentParser(description='Build and deploy the LabMFA website.')
-    parser.add_argument(
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument(
         '--update-publications',
         action='store_true',
         help='update the generated profile publication list without deploying',
+    )
+    mode.add_argument(
+        '--build-only',
+        action='store_true',
+        help='fully generate the local site without connecting to the server',
     )
     parser.add_argument(
         '--full-upload',
@@ -2309,6 +2394,8 @@ def main():
 
     if args.update_publications:
         update_publications()
+    elif args.build_only:
+        genSite()
     else:
         deploy(full_upload=args.full_upload)
 

@@ -2,7 +2,7 @@ Gabriel de Lucas Garden
 _______________________
 
 :date: 2025-09-18 12:10
-:modified: 2026-05-31 23:14
+:modified: 2026-07-16 21:42
 :slug: person/gabrielGarden
 
 |
@@ -72,7 +72,7 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
-#. :profile-author:`Garden, G.`; Fortuna, I.; Anjos, G. R.; Su, J. **An ALE-SL Method for Fluid-Structure Interactions in Riser Dynamics**. *Proceedings of the 28th International Congress of Mechanical Engineering* (COBEM), 2025.
+#. :profile-author:`Garden, G.`; Fortuna, I.; Anjos, G. R.; Su, J. **An ALE-SL Method for Fluid-Structure Interactions in Riser Dynamics**. *Proceedings of the 28th International Congress of Mechanical Engineering*, 2025.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 

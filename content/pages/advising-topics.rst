@@ -2,14 +2,14 @@ Supervision Themes and Research Lines
 -------------------------------------
 
 :date: 2026-05-31 22:20
-:modified: 2026-05-31 22:18
+:modified: 2026-07-16 22:29
 :status: draft
 :slug: advising-topics
 
 This draft page organizes completed undergraduate final projects, M.Sc.
 dissertations, and D.Sc. theses by research line.
 
-The taxonomy is generated from local ``.bib`` files through
+The taxonomy is generated from ``academicDB/sources`` YAML files through
 ``python3 scripts/prepare_advising_topics.py``.
 
 .. AUTO-GENERATED ADVISING TOPICS START: run python3 scripts/prepare_advising_topics.py
@@ -22,7 +22,7 @@ This section groups works centered on multiphase phenomena and related transport
 - `TCC` 2026 - *Experimental Study on Taylor Bubbles* (Renato Rosa Oliveira)
 - `M.Sc.` 2025 - `Numerical Analysis of Two-Phase Flow in a Micro-Reactor for Biodiesel Production <doc-emanuelSantos2025_>`_ (Antonio Emanuel Marques dos Santos)
 - `D.Sc.` 2024 - `Finite Element Simulation of Three-Dimensional Two-Phase Flows in Complex Geometries <doc-barbedo2024_>`_ (Daniel Barbedo Vasconcelos Santos)
-- `M.Sc.` 2023 - `Computation of Deformable Interface Two-Phase Flows – A Semi-Lagrangian Finite Element Approach <doc-vidal2023thesis_>`_ (Rafael Araújo Vidal)
+- `M.Sc.` 2023 - `Computation of Deformable Interface Two-Phase Flows - A Semi-Lagrangian Finite Element Approach <doc-vidal2023thesis_>`_ (Rafael Araújo Vidal)
 - `M.Sc.` 2023 - `Finite Element Method Applied to Diesel Particulate Filter Flow <doc-feres2023_>`_ (Felipe Féres Ferreira)
 - `TCC` 2023 - *Analysis of Filtration Efficiency in Biocombustion Emissions through Numerical Simulation on Unstructured Grids* (Anna Barbara Serejo Coimbra)
 - `TCC` 2023 - *Numerical Analysis of Biofuels Flow in a Porous Medium* (Daniel Moreira Spesani)
@@ -55,6 +55,7 @@ heat transfer, porous media, and thermal systems
 ________________________________________________
 
 - `TCC` 2026 - *Analysis of a Heat Exchanger Used for Homebrewing Beer Production* (Pedro Henrique Paranhos Lima)
+- `TCC` 2026 - *Numerical Thermal and Kinematic Simulation in Plates with Heat Exchange Enhancing Profiles* (Guilherme Oliveira Rosa)
 - `TCC` 2025 - *Study of Heat Transfer in a Plate-Fin Heat Sink Using the Finite Element Method Implemented in Python* (Mateus Duarte de Oliveira)
 - `TCC` 2025 - *Variational and Numerical Analysis of the Poisson Equation for Heat Transfer Problems* (Yuri Paes Gomes)
 - `TCC` 2023 - *Finite Element Method for Heat Transfer in a Voltage Regulator Module Cooled by Heat Sink* (Gabriel Affonso Costa Waehneldt)
@@ -73,7 +74,7 @@ ________________________________________________
 - `TCC` 2019 - *Stream-Function Vorticity Formulation for Conjugated Heat-Transfer Problems Using FEM* (Luis Henrique Carnevale da Cunha)
 - `TCC` 2018 - *Numerical Simulator for Heat Exchangers and Thermal Design of an Aeronautical Fuel-Cooled Oil Cooler* (José Ricardo da Silva Cerqueira Junior)
 - `TCC` 2018 - *Temperature Distribution Analysis by the Finite Element Method* (Leonardo Vieira Cunha)
-- `TCC` 2017 - *Modelagem do Sistema de Refrigeração das Câmaras de Resfriados do Frigorífico Novo Meriti* (Leonardo Lobo da Nóbrega; Luiz Alberto Santos Leite)
+- `TCC` 2017 - *Modelagem do Sistema de Refrigeração das Câmaras de Resfriados do Frigorífico Novo Meriti* (Leonardo Lobo da Nóbrega)
 - `TCC` 2017 - *Techno-Economic Analysis of the Steam System for a Microbrewery* (Yan Yanomami da Fonte Eloy)
 
 
@@ -124,7 +125,7 @@ This section groups works whose main contribution is computational methodology, 
 - `TCC` 2023 - *Implementation of the Finite Element Method in Python for the Parametric Study of Heat Sink in Computer Processors* (Thyago Araújo Capitanio)
 - `TCC` 2023 - *Solução Numérica da Equação da Onda Unidimensional pelo Método de Diferenças Finitas de Forma Explícita e Implícita* (Alex Fraga Rocha)
 - `TCC` 2019 - *Deep Learning for Computational Fluid Dynamics* (Leonardo Fernando Ferreira)
-- `M.Sc.` 2015 - *Nano-Patterning of Surfaces by Ion Sputtering - Numerical Study of the Anisotropic Damped Kuramoto–Sivashinsky Equation* (Eduardo Vitral Freigedo Rodrigues)
+- `M.Sc.` 2015 - *Nano-Patterning of Surfaces by Ion Sputtering - Numerical Study of the Anisotropic Damped Kuramoto-Sivashinsky Equation* (Eduardo Vitral Freigedo Rodrigues)
 
 
 .. Place your references here

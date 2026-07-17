@@ -2,7 +2,7 @@ Fabio Gaspar Santos Junior
 __________________________
 
 :date: 2024-08-10 22:10
-:modified: 2026-05-31 21:28
+:modified: 2026-07-16 21:43
 :slug: person/fabioGasparJr
 
 |
@@ -63,8 +63,8 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
-#. :profile-author:`Junior, F. G. S.`; McGinty, S.; Anjos, G. R. **Numerical Simulation of a Non-Newtonian Fluid-Solid Interaction**. *Proceedings of the 28th International Congress of Mechanical Engineering* (COBEM), 2025.
-#. :profile-author:`Gaspar Junior, F.`; Mangiavacchi, N.; McGinty, S.; Anjos, G.R. **Computation of Fluid and Rigid Body Interaction Using a New Immersed Finite Element Method**. *Anais of 10th International Symposium on Fluid-Structure Interactions* (FIV), Foz do Iguaçu, Brazil, 2024.
+#. :profile-author:`Junior, F. G. S.`; McGinty, S.; Anjos, G. R. **Numerical Simulation of a Non-Newtonian Fluid-Solid Interaction**. *Proceedings of the 28th International Congress of Mechanical Engineering*, 2025.
+#. :profile-author:`Gaspar Junior, F.`; Mangiavacchi, N.; McGinty, S.; Anjos, G.R. **Computation of Fluid and Rigid Body Interaction Using a New Immersed Finite Element Method**. *Anais of 10th International Symposium on Fluid-Structure Interactions*, Foz do Iguaçu, Brazil, 2024.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 

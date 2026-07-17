@@ -2,7 +2,7 @@ Students
 --------
 
 :date: 2022-09-10 22:10
-:modified: 2026-06-08 16:15
+:modified: 2026-07-16 22:29
 :slug: students
 
 .. AUTO-GENERATED STUDENTS START: run build.py --update-publications
@@ -148,7 +148,7 @@ ______
   2023
 
  `Rafael Araújo Vidal`_ --
-  *Computation of Deformable Interface Two-Phase Flows – A Semi-Lagrangian Finite Element Approach*,
+  *Computation of Deformable Interface Two-Phase Flows - A Semi-Lagrangian Finite Element Approach*,
   M.Sc.,
   2023
 
@@ -182,7 +182,7 @@ ______
   2018
 
  `Eduardo Vitral Freigedo Rodrigues`_ --
-  *Nano-Patterning of Surfaces by Ion Sputtering - Numerical Study of the Anisotropic Damped Kuramoto–Sivashinsky Equation*,
+  *Nano-Patterning of Surfaces by Ion Sputtering - Numerical Study of the Anisotropic Damped Kuramoto-Sivashinsky Equation*,
   M.Sc.,
   2015
 

@@ -2,7 +2,7 @@ Antonio Emanuel Marques dos Santos
 __________________________________
 
 :date: 2025-09-18 22:10
-:modified: 2026-05-31 23:14
+:modified: 2026-07-16 21:42
 :slug: person/antonioEmanuel
 
 |
@@ -87,8 +87,8 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
-#. :profile-author:`Santos, A. E. M.`; Anjos, G.R. **Numerical Analysis of Flow in Microchannels Using The Finite Element Method**. *Anais do 12º Congresso Brasileiro de Pesquisa e Desenvolvimento em Petróleo e Gás* (PDPetro), Florianópolis, Brazil, 2024.
-#. :profile-author:`Santos, A. E. M.`; Anjos, G.R. **Numerical Analysis of Two-Phase Flows in a Micro-Reactor for Biodiesel Production**. *Anais do 20th Brazilian Congress of Thermal Sciences and Engineering* (ENCIT), Foz do Iguaçu, Brazil, 2024.
+#. :profile-author:`Santos, A. E. M.`; Anjos, G.R. **Numerical Analysis of Flow in Microchannels Using The Finite Element Method**. *Anais do 12º Congresso Brasileiro de Pesquisa e Desenvolvimento em Petróleo e Gás*, Florianópolis, Brazil, 2024.
+#. :profile-author:`Santos, A. E. M.`; Anjos, G.R. **Numerical Analysis of Two-Phase Flows in a Micro-Reactor for Biodiesel Production**. *Anais do 20th Brazilian Congress of Thermal Sciences and Engineering*, Foz do Iguaçu, Brazil, 2024.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 

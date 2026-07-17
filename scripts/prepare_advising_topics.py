@@ -5,7 +5,7 @@
 # Date: 2026-05-31
 # File: prepare_advising_topics.py
 
-"""Generate the draft advising-topics page from local BibTeX sources."""
+"""Generate the draft advising-topics page from AcademicDB YAML sources."""
 
 from __future__ import annotations
 
@@ -22,8 +22,6 @@ if str(PROJECT_DIR) not in sys.path:
 import build
 
 OUTPUT_PATH = PROJECT_DIR / "content/pages/advising-topics.rst"
-UNDERGRAD_BIB = build.BIB_DIR / "undergrad.bib"
-THESIS_CONCLUDED_BIB = build.BIB_DIR / "thesisConcluded.bib"
 
 CATEGORY_ORDER = [
     "multiphase flows, interface dynamics, two-phase flows, particulate flows",
@@ -99,6 +97,7 @@ CATEGORY_MAP = {
     "gottgtroy2025": CATEGORY_ORDER[6],
     "rodrigues2015thesis": CATEGORY_ORDER[6],
     "brenoMota2026_tcc": CATEGORY_ORDER[6],
+    "guilhermeRosa2026_tcc": CATEGORY_ORDER[2],
     "lucasBorges2026": CATEGORY_ORDER[6],
     "heitor2025": CATEGORY_ORDER[6],
     "carvalho2025": CATEGORY_ORDER[6],
@@ -193,17 +192,31 @@ def format_title(entry_key: str, title: str) -> str:
 
 def load_entries() -> list[dict[str, str]]:
     combined = []
-    for path in (THESIS_CONCLUDED_BIB, UNDERGRAD_BIB):
-        for entry in build.parse_bibtex_entries(path, {"thesis"}):
-            if not has_anjos_advising(entry):
-                continue
-            entry_type = entry.get("type", "").strip().lower()
-            if entry_type not in TYPE_LABELS:
-                continue
-            key = entry["_entry_key"]
-            if key not in CATEGORY_MAP:
-                raise KeyError(f"Missing category mapping for {key}")
-            combined.append(entry)
+    records = build.load_academic_sources(
+        "students/phd/completed",
+        "students/masters/completed",
+        "students/undergraduate",
+    )
+    for record in records:
+        if record.get("type") != "student":
+            continue
+        entry = {
+            "author": str(record.get("name") or ""),
+            "title": str(record.get("title") or ""),
+            "year": str(record.get("year") or ""),
+            "note": str(record.get("note") or ""),
+            "type": str(record.get("work_type") or ""),
+            "_entry_key": str(record.get("bibtex_key") or record.get("id") or ""),
+        }
+        if not has_anjos_advising(entry):
+            continue
+        entry_type = entry["type"].strip().lower()
+        if entry_type not in TYPE_LABELS:
+            continue
+        key = entry["_entry_key"]
+        if key not in CATEGORY_MAP:
+            raise KeyError(f"Missing category mapping for {key}")
+        combined.append(entry)
     return combined
 
 
@@ -263,7 +276,7 @@ def render_page(entries: list[dict[str, str]]) -> str:
         "This draft page organizes completed undergraduate final projects, M.Sc.",
         "dissertations, and D.Sc. theses by research line.",
         "",
-        "The taxonomy is generated from local ``.bib`` files through",
+        "The taxonomy is generated from ``academicDB/sources`` YAML files through",
         "``python3 scripts/prepare_advising_topics.py``.",
         "",
         ".. AUTO-GENERATED ADVISING TOPICS START: run python3 scripts/prepare_advising_topics.py",
