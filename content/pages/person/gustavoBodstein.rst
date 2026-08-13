@@ -2,7 +2,7 @@ Prof. Gustavo Cesar Rachid Bodstein
 ___________________________________
 
 :date: 2022-09-19 12:10
-:modified: 2022-09-19 12:10
+:modified: 2026-08-12 22:35
 :slug: person/gustavoBodstein
 
 |
@@ -47,6 +47,33 @@ Eulerian numerical methods for hyperbolic equations).
  - aerodynamics
  - lagrangian methods
  -  wind energy analysis
+
+.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
+
+.. role:: profile-author
+
+.. raw:: html
+
+   <style>
+   .profile-author {
+     background: rgba(0, 64, 133, 0.16) !important;
+     border-radius: 4px;
+     color: #004085 !important;
+     font-weight: 700 !important;
+     padding: 0 0.14rem;
+   }
+   </style>
+
+**publications with Prof. Gustavo R. Anjos**:
+
+Conference Papers
+~~~~~~~~~~~~~~~~~
+
+.. class:: publications-list conference-publications
+
+#. Santos, A. E. M.; Anjos, G. R.; :profile-author:`Bodstein, G. C. R.`. **Numerical analysis of heat and mass transfer in microreactors for biodiesel synthesis**. *Proceedings of the 18th International Heat Transfer Conference*, 2026.
+
+.. AUTO-GENERATED COAUTHORED ARTICLES END
 
 .. Place your references here
 .. _000-0002-6392-1822: https://orcid.org/0000-0002-6392-1822

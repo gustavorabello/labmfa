@@ -1,8 +1,8 @@
 Leandro Marques dos Santos
 __________________________
 
-:date: 2026-08-12 20:36
-:modified: 2026-08-12 20:36
+:date: 2026-08-12 22:36
+:modified: 2026-08-12 22:36
 :slug: person/leandroMarquesSantos
 
 .. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications
@@ -55,5 +55,5 @@ Leandro Marques dos Santos was an M.Sc. student at `UFRJ`_/`Coppe`_ under the su
 .. _Prof. Gustavo R. Anjos: /person/gustavoRabello
 .. _UFRJ: http://www.ufrj.br
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
+.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
 .. _Coppe: http://www.coppe.ufrj.br

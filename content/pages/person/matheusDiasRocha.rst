@@ -1,8 +1,8 @@
 Matheus Dias da Rocha
 _____________________
 
-:date: 2026-08-12 20:36
-:modified: 2026-08-12 20:36
+:date: 2026-08-12 22:36
+:modified: 2026-08-12 22:36
 :slug: person/matheusDiasRocha
 
 .. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications
@@ -51,5 +51,5 @@ Matheus Dias da Rocha was an undergraduate scientific research student at `Polyt
 .. _Prof. Gustavo R. Anjos: /person/gustavoRabello
 .. _UFRJ: http://www.ufrj.br
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
+.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
 .. _Polytechnic School: https://poli.ufrj.br/

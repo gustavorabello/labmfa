@@ -1,8 +1,8 @@
 Ramon Christian Moreira Gomes Mendes Juvenal
 ____________________________________________
 
-:date: 2026-08-12 20:36
-:modified: 2026-08-12 20:36
+:date: 2026-08-12 22:36
+:modified: 2026-08-12 22:36
 :slug: person/ramonChristianMoreiraGomesMendesJuvenal
 
 .. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications
@@ -52,5 +52,5 @@ Ramon Christian Moreira Gomes Mendes Juvenal was an undergraduate scientific res
 .. _Prof. Gustavo R. Anjos: /person/gustavoRabello
 .. _UFRJ: http://www.ufrj.br
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
+.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
 .. _Polytechnic School: https://poli.ufrj.br/

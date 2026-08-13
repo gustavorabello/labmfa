@@ -2,7 +2,7 @@ Prof. Gustavo R. Anjos
 ______________________
 
 :date: 2022-09-14 22:10
-:modified: 2026-08-12 20:36
+:modified: 2026-08-12 22:35
 :slug: person/gustavoRabello
 
 |
@@ -208,7 +208,7 @@ Conference Papers
 .. class:: publications-list conference-publications
 
 #. J\. L. Silva Neto; E\. D. Correa; R\. M. S. Gama; :prof-author:`G\. R. Anjos`. **Analytical and numerical methodology for the temperature distribution on surfaces exposed to a radiant heat source**. *Proceedings of the 18th International Heat Transfer Conference*, 2026.
-#. . **Numerical analysis of heat and mass transfer in microreactors for biodiesel synthesis**. *Proceedings of the 18th International Heat Transfer Conference*, 2026.
+#. Santos, A. E. M.; :prof-author:`Anjos, G. R.`; Bodstein, G. C. R. **Numerical analysis of heat and mass transfer in microreactors for biodiesel synthesis**. *Proceedings of the 18th International Heat Transfer Conference*, 2026.
 #. Garden, G. L.; Souza, J. P. I.; Su, Jian; :prof-author:`Anjos, G.R.`. **A Higher-Order Semi-Lagrangian ALE-FE Method for Fluid-Structure Interaction Problems**. *Proceedings of Flow-Induced Vibration 2026 (FIV 2026)*, Paris, France, 2026.
 #. Souza, J. P. I.; :prof-author:`Anjos, G.R.`. **A Finite Element Analysis of Flow-induced Vibration in Nonlinear Elastic Structures**. *Proceedings of Flow-Induced Vibration 2026 (FIV 2026)*, Paris, France, 2026.
 #. Garden, G.; Fortuna, I.; :prof-author:`Anjos, G. R.`; Su, J. **An ALE-SL Method for Fluid-Structure Interactions in Riser Dynamics**. *Proceedings of the 28th International Congress of Mechanical Engineering*, Curitiba, Brazil, 2025.
