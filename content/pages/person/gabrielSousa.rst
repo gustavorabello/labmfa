@@ -2,7 +2,7 @@ Gabriel Ricardo Güntensperger Sousa
 ___________________________________
 
 :date: 2024-09-16 17:10
-:modified: 2024-11-15 17:10
+:modified: 2026-08-06 12:01
 :slug: person/gabrielSousa
 
 |
@@ -48,6 +48,37 @@ Fluid Mechanics and Aerodynamics Laboratory (LabMFA).
  - finite element method 
  - coalescence in two-phase flows
 
+.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
+
+.. role:: profile-author
+
+.. raw:: html
+
+   <style>
+   .profile-author {
+     background: rgba(0, 64, 133, 0.16) !important;
+     border-radius: 4px;
+     color: #004085 !important;
+     font-weight: 700 !important;
+     padding: 0 0.14rem;
+   }
+   </style>
+
+**publications with Prof. Gustavo R. Anjos**:
+
+Conference Abstracts
+~~~~~~~~~~~~~~~~~~~~
+
+.. class:: publications-list abstract-publications
+
+#. :profile-author:`Sousa, G. R. G.`; Anjos, G. R. **Numerical Investigation of Moving Boundary Flows Using a Semi-Lagrangian/ALE Framework**. *II Rio de Janeiro Fluid Mechanics Symposium (Rio Fluids 2026)*, Rio de Janeiro, Brazil, 2026.
+#. Anjos, G. R.; Santos, D. B. V.; :profile-author:`Sousa, G. R. G.`; Santos, A. E. M. **Approximation and Coalescence of Multiples Bubbles in Two-Phase Flows**. *23rd IACM Computational Fluids Conference (CFC 2025)*, Santiago, Chile, 2025.
+#. Anjos, G. R.; Santos, D. B. V.; :profile-author:`Sousa, G. R. G.`; Gaspar Junior, F.; Santos, A. E. M. **High-Order Finite Element Method for Non-Newtonian Two-Phase Flows with Moving Interfaces**. *International Workshop on Numerical Methods in Non-Newtonian Flows (IWNMNNF)*, Buzios, Brazil, 2025.
+#. :profile-author:`Sousa, G. R. G.`; Santos, A. E. M.; Anjos, G. R. **Numerical Investigation and Comparison of Bubble Approximation and Coalescence in Two-Phase Flows**. *8th Multiphase Flows Journey (JEM 2025)*, Sao Carlos, Brazil, 2025.
+#. :profile-author:`Sousa, G. R. G.`; Santos, A. E. M.; Anjos, G. R. **Numerical Investigation and Comparison of Bubble Approximation and Coalescence in Two-Phase Flows**. *Rio de Janeiro Fluid Mechanics Symposium (Rio Fluids 2025)*, Niteroi, Brazil, 2025.
+
+.. AUTO-GENERATED COAUTHORED ARTICLES END
+
 .. Place your references here
 .. _0009-0006-6013-7107: https://orcid.org/0009-0006-6013-7107
 .. _click to access Lattes: http://lattes.cnpq.br/5025968815757707
@@ -59,6 +90,6 @@ Fluid Mechanics and Aerodynamics Laboratory (LabMFA).
 .. _more info: https://gustavorabello.github.io/research/newton-2020.html
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
 .. _UFRJ: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
 .. _Coppe: http://www.coppe.ufrj.br
 

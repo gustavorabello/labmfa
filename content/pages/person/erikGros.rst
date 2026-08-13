@@ -2,7 +2,7 @@ Erik Gros
 _________
 
 :date: 2026-05-28 12:41
-:modified: 2026-07-16 21:42
+:modified: 2026-07-29 14:56
 :slug: person/erikGros
 
 |
@@ -78,6 +78,13 @@ Conference Papers
 
 #. Anjos, Gustavo; :profile-author:`Gros, E.`; Selvam K.; Peixinho, J. **Rising Bubble in a Vertical Slowly Diverging Pipe**. *Proceedings of 9th World Conference on Experimental Heat Transfer, Fluid Mechanics and Thermodynamics*, Foz do Iguaçu, Brazil, 2017.
 #. :profile-author:`Gros, Erik`; Rabello dos Anjos, Gustavo. **An ALE-FEM Method for Axisymmetric Two-Phase Flows**. *Proceedings of the 24th ABCM International Congress of Mechanical Engineering*, 2017.
+
+Conference Abstracts
+~~~~~~~~~~~~~~~~~~~~
+
+.. class:: publications-list abstract-publications
+
+#. :profile-author:`Gros, E.`; Anjos, G. R.; Thome, J. R. **An ALE Finite Element Approach for Two-Phase Flow with Phase Change**. *69th Annual Meeting of the APS Division of Fluid Dynamics*, Portland, United States, 2016.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 

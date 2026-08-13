@@ -2,7 +2,7 @@ Students
 --------
 
 :date: 2022-09-10 22:10
-:modified: 2026-07-16 22:29
+:modified: 2026-08-12 20:36
 :slug: students
 
 .. AUTO-GENERATED STUDENTS START: run build.py --update-publications
@@ -84,11 +84,6 @@ ______________
 Undergrad Scientific Research - IC
 __________________________________
 
- `Carlos Arturo Echenique Hernandez`_ --
-  *CFD Simulations on Complex Geometries Using the Finite Element Method*,
-  Undergraduate Scientific Research Student,
-  2026
-
  `Gabriel Braz`_ --
   *Aerodynamic Study of Complex Profiles*,
   Undergraduate Scientific Research Student,
@@ -109,6 +104,11 @@ ______
 
  `Breno Mota Sarmento`_ --
   *Curvature Estimation on Surfaces via Local Quadratic Fitting and Comparative Analysis*,
+  Undergrad Scientific Research,
+  2026
+
+ `Carlos Arturo Echenique Hernandez`_ --
+  *CFD Simulations on Complex Geometries Using the Finite Element Method*,
   Undergrad Scientific Research,
   2026
 

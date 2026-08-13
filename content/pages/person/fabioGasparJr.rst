@@ -2,7 +2,7 @@ Fabio Gaspar Santos Junior
 __________________________
 
 :date: 2024-08-10 22:10
-:modified: 2026-07-16 21:43
+:modified: 2026-07-29 14:56
 :slug: person/fabioGasparJr
 
 |
@@ -63,8 +63,16 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
-#. :profile-author:`Junior, F. G. S.`; McGinty, S.; Anjos, G. R. **Numerical Simulation of a Non-Newtonian Fluid-Solid Interaction**. *Proceedings of the 28th International Congress of Mechanical Engineering*, 2025.
+#. :profile-author:`Junior, F. G. S.`; McGinty, S.; Anjos, G. R. **Numerical Simulation of a Non-Newtonian Fluid-Solid Interaction**. *Proceedings of the 28th International Congress of Mechanical Engineering*, Curitiba, Brazil, 2025.
 #. :profile-author:`Gaspar Junior, F.`; Mangiavacchi, N.; McGinty, S.; Anjos, G.R. **Computation of Fluid and Rigid Body Interaction Using a New Immersed Finite Element Method**. *Anais of 10th International Symposium on Fluid-Structure Interactions*, Foz do Iguaçu, Brazil, 2024.
+
+Conference Abstracts
+~~~~~~~~~~~~~~~~~~~~
+
+.. class:: publications-list abstract-publications
+
+#. Anjos, G. R.; Santos, D. B. V.; Sousa, G. R. G.; :profile-author:`Gaspar Junior, F.`; Santos, A. E. M. **High-Order Finite Element Method for Non-Newtonian Two-Phase Flows with Moving Interfaces**. *International Workshop on Numerical Methods in Non-Newtonian Flows (IWNMNNF)*, Buzios, Brazil, 2025.
+#. :profile-author:`Gaspar Junior, F.`; Mangiavacchi, N.; McGinty, S.; Anjos, G. R. **Application of Immersed Finite Element Method for Modeling non-Newtonian Fluid Around Rigid Bodies**. *Bifurcations and Instabilities in Fluid Dynamics (BIFD 2024)*, Edinburgh, United Kingdom, 2024.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 
@@ -78,6 +86,6 @@ Conference Papers
 .. _CAPES: https://www.gov.br/capes/pt-br
 .. _more info: https://gustavorabello.github.io.html
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
 .. _Coppe: http://www.coppe.ufrj.br
 

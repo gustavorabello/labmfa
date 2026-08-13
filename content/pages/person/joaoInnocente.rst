@@ -2,7 +2,7 @@ João Paulo Innocente de Souza
 _____________________________
 
 :date: 2024-10-24 22:10
-:modified: 2026-07-16 21:43
+:modified: 2026-08-12 20:36
 :slug: person/joaoInnocente
 
 |
@@ -81,12 +81,22 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
-#. :profile-author:`Souza, J. P. I.`; Anjos, G. R. **A Finite Element Analysis of Flow-Induced Vibration in Nonlinear Elastic Structures**. *Proceedings of the 28th International Congress of Mechanical Engineering*, 2025.
+#. Garden, G. L.; :profile-author:`Souza, J. P. I.`; Su, Jian; Anjos, G.R. **A Higher-Order Semi-Lagrangian ALE-FE Method for Fluid-Structure Interaction Problems**. *Proceedings of Flow-Induced Vibration 2026 (FIV 2026)*, Paris, France, 2026.
+#. :profile-author:`Souza, J. P. I.`; Anjos, G.R. **A Finite Element Analysis of Flow-induced Vibration in Nonlinear Elastic Structures**. *Proceedings of Flow-Induced Vibration 2026 (FIV 2026)*, Paris, France, 2026.
+#. :profile-author:`Souza, J. P. I.`; Anjos, G. R. **A Finite Element Analysis of Flow-Induced Vibration in Nonlinear Elastic Structures**. *Proceedings of the 28th International Congress of Mechanical Engineering*, Curitiba, Brazil, 2025.
 #. :profile-author:`Souza, J. P. I.`; Anjos, G.R. **The Finite Element Method Applied to Fluid-Structure Interaction Using the Arbitrary Lagrangian-Eulerian and the Semi-Lagrangian Methods**. *Anais do 20th Brazilian Congress of Thermal Sciences and Engineering*, Foz do Iguaçu, Brazil, 2024.
 #. :profile-author:`Souza, João P. I.`; Anjos, Gustavo R. **A Comparison Between Porous and Free-Flow Media Using the Finite Element Method to Solve the Generalized Darcy/Forchheimer Equation**. *Anais do 27th International Congress of Mechanical Engineering*, Florianópolis, Brazil, 2023.
 #. :profile-author:`Souza, J. P. I.`; Anjos, G.R. **Numerical Simulation of Flows in Conjugated Regions Using the Finite Element Method to Solve the Darcy-Forchheimer Momentum and Energy Equations**. *Anais do 19th Brazilian Congress of Thermal Sciences and Engineering*, Bento Gonçalves, Brazil, 2022.
 #. :profile-author:`Souza, J. P. I.`; Anjos, G.R. **Particle-Laden Multiphase Flows: A Finite Element Analysis on Biofuel Particle Emissions**. *Proceedings of 8th International Symposium on Advances in Computational Heat Transfer (CHT-21)*, Rio de Janeiro, Brazil, 2021.
 #. :profile-author:`Souza, J. P. I.`; Anjos, Gustavo R. **Finite Element Analysis on Biofuel Particles Dispersion**. *Proceedings of 26th International Congress of Mechanical Engineering*, Florianópolis, Brazil, 2021.
+
+Conference Abstracts
+~~~~~~~~~~~~~~~~~~~~
+
+.. class:: publications-list abstract-publications
+
+#. :profile-author:`João P. I. Souza`; Diego S. Duarte; Gustavo R. Anjos. **A Multiphysics Finite Element Framework for Thermo-Fluid-Structure Interaction Applied to Nonlinear Flexible Fins**. **, 2027.
+#. :profile-author:`Souza, J. P. I.`; Anjos, G. R. **A Finite Element Analysis of Fluid-Structure Interaction With Nonlinear Structures**. *II Rio de Janeiro Fluid Mechanics Symposium (Rio Fluids 2026)*, Rio de Janeiro, Brazil, 2026.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 
@@ -103,5 +113,5 @@ Conference Papers
 .. _more info: https://gustavorabello.github.io/research/newton-2020.html
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
 .. _UFRJ: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
 .. _Coppe: http://www.coppe.ufrj.br

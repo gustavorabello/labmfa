@@ -42,6 +42,6 @@ Participatory Management from `NIDES`_/`UFRJ`_ (advisor: `Dr. Flávio Chedid`_).
 .. _NIDES: http://www.nides.ufrj.br
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
 .. _UFRJ: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
 .. _Coppe: http://www.coppe.ufrj.br
 .. _Dr. Flávio Chedid: https://nides.ufrj.br/index.php/pessoas/44-equipe-ppgtds/364-flavio-chedid-henriques

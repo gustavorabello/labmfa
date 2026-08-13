@@ -1,8 +1,8 @@
 Daniel Moreira Spesani
 ______________________
 
-:date: 2026-07-16 22:29
-:modified: 2026-07-16 22:29
+:date: 2026-08-12 20:36
+:modified: 2026-08-12 20:36
 :slug: person/danielMoreiraSpesani
 
 .. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications
@@ -42,9 +42,32 @@ Daniel Moreira Spesani was an undergraduate scientific research student at `Poly
 
 .. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
 
+.. role:: profile-author
+
+.. raw:: html
+
+   <style>
+   .profile-author {
+     background: rgba(0, 64, 133, 0.16) !important;
+     border-radius: 4px;
+     color: #004085 !important;
+     font-weight: 700 !important;
+     padding: 0 0.14rem;
+   }
+   </style>
+
 **IC/TCC project**:
 
  - `Numerical Analysis of Biofuels Flow in a Porous Medium </documents/danielMoreiraSpesani-tcc.pdf>`_, Undergraduate research work (IC/TCC), Universidade Federal do Rio de Janeiro, 2023
+
+**publications with Prof. Gustavo R. Anjos**:
+
+Conference Abstracts
+~~~~~~~~~~~~~~~~~~~~
+
+.. class:: publications-list abstract-publications
+
+#. :profile-author:`Spesani, Daniel Moreira`; Anjos, Gustavo Rabello dos. **Escoamento de Biocombustiveis por um Filtro atraves do Metodo de Elementos Finitos**. *12a Semana de Integracao Academica da UFRJ (SIAc)*, Rio de Janeiro, Brazil, 2023.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 
@@ -52,5 +75,5 @@ Daniel Moreira Spesani was an undergraduate scientific research student at `Poly
 .. _Prof. Gustavo R. Anjos: /person/gustavoRabello
 .. _UFRJ: http://www.ufrj.br
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
 .. _Polytechnic School: https://poli.ufrj.br/

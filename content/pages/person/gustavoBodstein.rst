@@ -54,5 +54,5 @@ Eulerian numerical methods for hyperbolic equations).
 .. _UFRJ: http://www.ufrj.br
 .. _ABCM: http://www.abcm.org.br
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
 .. _Coppe: http://www.coppe.ufrj.br

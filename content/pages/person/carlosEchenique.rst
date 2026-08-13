@@ -3,7 +3,7 @@ Carlos Echenique
 ________________
 
 :date: 2026-05-28 12:10
-:modified: 2026-05-28 12:10
+:modified: 2026-08-06 12:01
 :slug: person/carlosEchenique
 
 |
@@ -45,11 +45,19 @@ techniques to engineering and physics simulations.
  - computational fluid dynamics
  - finite element method
 
+.. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
+
+**IC/TCC project**:
+
+ - *CFD Simulations on Complex Geometries Using the Finite Element Method*, Undergraduate research work (IC/TCC), 2026
+
+.. AUTO-GENERATED COAUTHORED ARTICLES END
+
 .. Place your references here
 .. _Prof. Gustavo R. Anjos: /person/gustavoRabello
 .. _Centrale Méditerranée: https://www.centrale-mediterranee.fr/en
 .. _UFRJ: http://www.ufrj.br
 .. _0009-0003-1825-9272: https://orcid.org/0009-0003-1825-9272
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
 .. _Polytechnic School: https://poli.ufrj.br/

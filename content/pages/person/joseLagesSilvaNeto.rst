@@ -2,7 +2,7 @@ Jose Lages da Silva Neto
 ________________________
 
 :date: 2026-05-28 12:41
-:modified: 2026-07-16 21:42
+:modified: 2026-08-12 20:36
 :slug: person/joseLagesSilvaNeto
 
 |
@@ -67,6 +67,7 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
+#. :profile-author:`J\. L. Silva Neto`; E\. D. Correa; R\. M. S. Gama; G\. R. Anjos. **Analytical and numerical methodology for the temperature distribution on surfaces exposed to a radiant heat source**. *Proceedings of the 18th International Heat Transfer Conference*, 2026.
 #. :profile-author:`Silva Neto, J. L.`; Correa, E. D.; Gama, R. M. S.; Anjos, G. R. **A Robust Newton-Based Variational Framework for Nonlinear Conduction-Radiation PDEs with Localized Sources**. *Proceedings of the Encontro Nacional de Modelagem Computacional*, 2025.
 #. :profile-author:`Silva Neto, J. L.`; Correa, E. D.; Gama, R. M. S.; Anjos, G. R. **On the Temperature Distribution in a Flat Plate Induced by an External Thermal Radiant Source**. *Proceedings of the XLVI Ibero-Latin-American Congress on Computational Methods in Engineering*, Vitoria, Brazil, 2025.
 

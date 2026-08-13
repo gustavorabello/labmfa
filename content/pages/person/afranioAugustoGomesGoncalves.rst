@@ -61,7 +61,7 @@ engineering analytics.
 .. _UFRJ: http://www.ufrj.br
 .. _0000-0001-6847-709X: https://orcid.org/0000-0001-6847-709X
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
 .. _Coppe: http://www.coppe.ufrj.br
 .. _click to access LinkedIn: https://www.linkedin.com/in/afrânio-a-g-gonçalves/
 .. _click to access Lattes: https://lattes.cnpq.br/7578932730183287

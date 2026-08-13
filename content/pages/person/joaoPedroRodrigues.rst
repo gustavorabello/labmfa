@@ -2,7 +2,7 @@ João Pedro Rodrigues
 ____________________
 
 :date: 2026-05-31 23:21
-:modified: 2026-06-07 22:37
+:modified: 2026-07-29 14:56
 :slug: person/joaoPedroRodrigues
 
 |
@@ -49,9 +49,32 @@ design.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES START: run build.py --update-publications
 
+.. role:: profile-author
+
+.. raw:: html
+
+   <style>
+   .profile-author {
+     background: rgba(0, 64, 133, 0.16) !important;
+     border-radius: 4px;
+     color: #004085 !important;
+     font-weight: 700 !important;
+     padding: 0 0.14rem;
+   }
+   </style>
+
 **IC/TCC project**:
 
  - `Study of Flows in Particulate Filters in Biodiesel Emissions </documents/joaoPedroRodrigues-tcc.pdf>`_, Undergraduate research work (IC/TCC), Universidade Federal do Rio de Janeiro, 2023
+
+**publications with Prof. Gustavo R. Anjos**:
+
+Conference Abstracts
+~~~~~~~~~~~~~~~~~~~~
+
+.. class:: publications-list abstract-publications
+
+#. :profile-author:`Ferreira, Joao Pedro Rodrigues`; Anjos, Gustavo Rabello dos. **Filtragem de Poluentes em Escoamentos Multifasicos Provenientes da Combustao de Biodiesel**. *12a Semana de Integracao Academica da UFRJ (SIAc)*, Rio de Janeiro, Brazil, 2023.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 
@@ -59,5 +82,5 @@ design.
 .. _Prof. Gustavo R. Anjos: /person/gustavoRabello
 .. _UFRJ: http://www.ufrj.br
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
 .. _Polytechnic School: https://poli.ufrj.br/

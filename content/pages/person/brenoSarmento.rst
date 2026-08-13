@@ -65,5 +65,5 @@ Barbedo`_.
 .. _0009-0003-1825-9272: https://orcid.org/0009-0003-1825-9272
 .. _click to access Lattes: http://lattes.cnpq.br/6999865760633540
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
 .. _Polytechnic School: https://poli.ufrj.br/

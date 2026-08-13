@@ -48,6 +48,6 @@ implementation in modern internal combustion engines.
 .. _Prof. Gustavo R. Anjos: /person/gustavoRabello
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
 .. _UFRJ: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
 .. _Polytechnic School: https://poli.ufrj.br/
 

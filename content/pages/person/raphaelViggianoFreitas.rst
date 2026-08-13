@@ -33,7 +33,7 @@ Raphael Viggiano Neves de Freitas was a M.Sc./D.Sc student at
 .. _Prof. Gustavo Bodstein: /person/gustavoBodstein
 .. _UFRJ: http://www.ufrj.br
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
 .. _Coppe: http://www.coppe.ufrj.br
 
 

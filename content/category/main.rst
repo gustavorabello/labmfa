@@ -2,7 +2,7 @@ Fluid Mechanics and Aerodynamics Laboratory
 -------------------------------------------
 
 :date: 2022-08-23 17:47
-:modified: 2026-06-08 09:47
+:modified: 2026-08-12 20:36
 
 With more than 30 years of activity, the Fluid Mechanics and
 Aerodynamics Laboratory (**LabMFA**) is one of the most established
@@ -63,10 +63,10 @@ LabMFA in Numbers
 
 .. AUTO-GENERATED LABMFA NUMBERS START: run build.py --update-publications
 
-* **17** current students and postdoctoral researchers supervised in LabMFA
-* **17** alumni from LabMFA supervision already listed on the site
-* **7** current student and postdoctoral profiles and **8** alumni profiles with at least one coauthored publication listed
-* **7** journal articles and **33** conference papers with student or postdoctoral coauthors
+* **16** current students and postdoctoral researchers supervised in LabMFA
+* **18** alumni from LabMFA supervision already listed on the site
+* **8** current student and postdoctoral profiles and **10** alumni profiles with at least one coauthored publication listed
+* **7** journal articles, **36** conference papers and **17** conference abstracts with student or postdoctoral coauthors
 
 .. AUTO-GENERATED LABMFA NUMBERS END
 

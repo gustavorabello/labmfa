@@ -24,6 +24,24 @@ innovative work being done at **LabMFA**, where experts are unlocking
 new solutions for complex engineering challenges. Get ready to be
 inspired by the latest advancements in fluid dynamics in complex flows!
 
+ .. youtube:: TwiEROhsHLA?si=tXfegkeBYlfSpuDp
+     :class: youtube-16x9
+     :allowfullscreen: yes
+     :seamless: yes
+     :align: left
+     :comment: This video visualizes the classic "backward-facing step" flow, a standard benchmark in Computational Fluid Dynamics (CFD) used to study flow separation, boundary layer detachment, and vortex formation. In this simulation (Reynolds Number = 100), we validate and compare three different stabilization methods implemented in a Navier-Stokes Finite Element Solver: 1st Order Semi-Lagrangian 2nd Order Semi-Lagrangian Streamline-Upwind Petrov-Galerkin (SUPG) At the end of the video, a comparative graph shows the longitudinal velocity and the reattachment length of the recirculation zone for each numerical method against standard benchmark data (Biswas). You can clearly see how the chosen stabilization technique impacts the numerical dissipation and the accuracy of the flow simulation! Visualized and rendered using ParaView.
+
+|
+
+ .. youtube:: y8HpDByYyoo?si=Fq_-2oe6AmSVYYp4
+     :class: youtube-16x9
+     :allowfullscreen: yes
+     :seamless: yes
+     :align: left
+     :comment: Finite Element simulation for fluid-structure interaction with nonlinear elastic structure connected to a cylinder, with Re=100. For time discretization of the fluid domain, the semi-Lagrangian method is used. Ref.: Turek, S. and Hron, J. (2006). Proposal for numerical benchmarking of fluid-structure interaction between an elasticobject and laminar incompressible flow. Lecture Notes in Computational Science and Engineering, 53: 371–385.
+
+|
+
  .. youtube:: 8mNDazdvzoQ?si=S9b4EB9sqsojKuVm
      :class: youtube-16x9
      :allowfullscreen: yes

@@ -1,8 +1,8 @@
 Gabriel Felipe Oliveira Antão
 _____________________________
 
-:date: 2026-07-16 22:29
-:modified: 2026-07-16 22:29
+:date: 2026-08-12 20:36
+:modified: 2026-08-12 20:36
 :slug: person/gabrielFelipeOliveiraAntao
 
 .. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications
@@ -51,5 +51,5 @@ Gabriel Felipe Oliveira Antão was an M.Sc. student at `UFRJ`_/`Coppe`_ under th
 .. _Prof. Gustavo R. Anjos: /person/gustavoRabello
 .. _UFRJ: http://www.ufrj.br
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
 .. _Coppe: http://www.coppe.ufrj.br

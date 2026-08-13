@@ -2,7 +2,7 @@ Supervision Themes and Research Lines
 -------------------------------------
 
 :date: 2026-05-31 22:20
-:modified: 2026-07-16 22:29
+:modified: 2026-08-12 20:36
 :status: draft
 :slug: advising-topics
 

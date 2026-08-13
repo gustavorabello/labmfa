@@ -89,5 +89,5 @@ Conference Papers
 .. _UFRJ: http://www.ufrj.br
 .. _Lucas Borges: https://www.linkedin.com/in/lucasborgesmenezes/
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
 .. _Coppe: http://www.coppe.ufrj.br

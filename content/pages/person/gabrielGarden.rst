@@ -2,7 +2,7 @@ Gabriel de Lucas Garden
 _______________________
 
 :date: 2025-09-18 12:10
-:modified: 2026-07-16 21:42
+:modified: 2026-08-06 12:01
 :slug: person/gabrielGarden
 
 |
@@ -72,7 +72,16 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
-#. :profile-author:`Garden, G.`; Fortuna, I.; Anjos, G. R.; Su, J. **An ALE-SL Method for Fluid-Structure Interactions in Riser Dynamics**. *Proceedings of the 28th International Congress of Mechanical Engineering*, 2025.
+#. :profile-author:`Garden, G. L.`; Souza, J. P. I.; Su, Jian; Anjos, G.R. **A Higher-Order Semi-Lagrangian ALE-FE Method for Fluid-Structure Interaction Problems**. *Proceedings of Flow-Induced Vibration 2026 (FIV 2026)*, Paris, France, 2026.
+#. :profile-author:`Garden, G.`; Fortuna, I.; Anjos, G. R.; Su, J. **An ALE-SL Method for Fluid-Structure Interactions in Riser Dynamics**. *Proceedings of the 28th International Congress of Mechanical Engineering*, Curitiba, Brazil, 2025.
+
+Conference Abstracts
+~~~~~~~~~~~~~~~~~~~~
+
+.. class:: publications-list abstract-publications
+
+#. :profile-author:`Garden, G. L.`; Su, J.; Anjos, G. R. **A Finite Element Method Coupled with a Semi-Lagrangian Scheme for Turbulent Fluid-Structure Interactions**. *XV Escola de Primavera de Transição e Turbulência (EPTT 2026)*, Niteroi, Brazil, 2026.
+#. :profile-author:`Garden, Gabriel`; Fortuna, Igor; Jian, Su; Anjos, Gustavo Rabello dos. **Uma Abordagem SL-LEA para o Estudo de Vibracoes Induzidas por Vortices**. *14a Semana de Integracao Academica da UFRJ (SIAc)*, Rio de Janeiro, Brazil, 2025.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 
@@ -84,7 +93,7 @@ Conference Papers
 .. _CAPES: https://www.gov.br/capes/pt-br
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
 .. _UFRJ: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
 .. _COPPE: http://www.coppe.ufrj.br
 .. _Prof. Gustavo R. Anjos: /person/gustavoRabello
 .. _Prof. Su Jian:  https://scholar.google.com/citations?user=DPgkJg8AAAAJ&hl=zh-CN

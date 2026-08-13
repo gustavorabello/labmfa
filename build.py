@@ -23,7 +23,7 @@ from datetime import datetime
 from pathlib import Path
 from subprocess import call
 from stat import S_ISDIR
-from colorama import init, Fore, Style
+from colorama import init, Back, Fore, Style
 from student_aliases import STUDENT_AUTHOR_ALIASES
 
 # Initialize colorama
@@ -210,7 +210,7 @@ def academic_publication_entry(record):
 
 
 def load_academic_publications():
-    """Return books, chapters, journals and conferences from AcademicDB."""
+    """Return books, chapters, journals, conferences and abstracts."""
     books = [academic_publication_entry(record) for record in
              load_academic_sources('books') if record.get('type') == 'book']
     chapters = [academic_publication_entry(record) for record in
@@ -224,6 +224,10 @@ def load_academic_publications():
         academic_publication_entry(record) for record in articles
         if record.get('type') == 'article' and record.get('subtype') == 'conference'
     ]
+    abstracts = [
+        academic_publication_entry(record) for record in articles
+        if record.get('type') == 'article' and record.get('subtype') == 'abstract'
+    ]
 
     def newest_first(entry):
         year = field(entry, 'year')
@@ -231,7 +235,7 @@ def load_academic_publications():
 
     return tuple(
         sorted(entries, key=newest_first)
-        for entries in (books, chapters, journals, conferences)
+        for entries in (books, chapters, journals, conferences, abstracts)
     )
 
 
@@ -433,7 +437,24 @@ def render_conference_for_profile(entry):
     )
 
 
-def render_publications(books, chapters, journals, conferences):
+def render_abstract(entry, highlight_author=None, highlight_role='prof-author'):
+    """Render a conference abstract using its event metadata."""
+    return render_conference(
+        entry,
+        highlight_author=highlight_author,
+        highlight_role=highlight_role,
+    )
+
+
+def render_abstract_for_profile(entry):
+    return render_abstract(
+        entry,
+        highlight_author=professor_author_name,
+        highlight_role='prof-author',
+    )
+
+
+def render_publications(books, chapters, journals, conferences, abstracts):
     lines = [
         PUBLICATIONS_START,
         '',
@@ -493,6 +514,15 @@ def render_publications(books, chapters, journals, conferences):
         '',
     ])
     lines.extend(render_conference_for_profile(entry) for entry in conferences)
+    lines.extend([
+        '',
+        'Conference Abstracts',
+        '~~~~~~~~~~~~~~~~~~~~',
+        '',
+        '.. class:: publications-list abstract-publications',
+        '',
+    ])
+    lines.extend(render_abstract_for_profile(entry) for entry in abstracts)
     lines.extend(['', PUBLICATIONS_END, ''])
     return '\n'.join(lines)
 
@@ -572,8 +602,8 @@ def is_student_author(slug, student_name, author):
 
     return student_given_initials.startswith(author_initials)
 
-def render_student_publications(articles, conferences, slug, student_name,
-                                completed_works=None):
+def render_student_publications(articles, conferences, abstracts, slug,
+                                student_name, completed_works=None):
     def highlight_author(author):
         return is_student_author(slug, student_name, author)
 
@@ -582,11 +612,11 @@ def render_student_publications(articles, conferences, slug, student_name,
         STUDENT_ARTICLES_START,
         '',
     ]
-    if articles or conferences:
+    if articles or conferences or abstracts:
         lines.extend(author_highlight_block('profile-author'))
     if completed_works:
         lines.extend(render_student_completed_works(completed_works))
-    if articles or conferences:
+    if articles or conferences or abstracts:
         if completed_works:
             lines.extend([''])
         lines.extend([
@@ -625,6 +655,23 @@ def render_student_publications(articles, conferences, slug, student_name,
                 highlight_role='profile-author',
             )
             for entry in conferences
+        )
+    if abstracts:
+        lines.extend([
+            '',
+            'Conference Abstracts',
+            '~~~~~~~~~~~~~~~~~~~~',
+            '',
+            '.. class:: publications-list abstract-publications',
+            '',
+        ])
+        lines.extend(
+            render_abstract(
+                entry,
+                highlight_author=highlight_author,
+                highlight_role='profile-author',
+            )
+            for entry in abstracts
         )
     lines.extend(['', STUDENT_ARTICLES_END, ''])
     return '\n'.join(lines)
@@ -1635,7 +1682,8 @@ def publication_identity(entry):
     return (entry.get('_source_path', ''), entry.get('_entry_key', ''))
 
 
-def match_student_publications(slug, student_name, articles, conferences):
+def match_student_publications(slug, student_name, articles, conferences,
+                               abstracts):
     matched_articles = [
         entry for entry in articles
         if any(
@@ -1650,7 +1698,14 @@ def match_student_publications(slug, student_name, articles, conferences):
             for author in publication_authors(entry)
         )
     ]
-    return matched_articles, matched_conferences
+    matched_abstracts = [
+        entry for entry in abstracts
+        if any(
+            is_student_author(slug, student_name, author)
+            for author in publication_authors(entry)
+        )
+    ]
+    return matched_articles, matched_conferences, matched_abstracts
 
 
 def current_and_alumni_records(current, alumni):
@@ -1667,13 +1722,18 @@ def current_and_alumni_records(current, alumni):
     return current_by_slug, alumni_by_slug
 
 
-def collect_student_publication_stats(current, alumni, journals, conferences):
+def collect_student_publication_stats(current, alumni, journals, conferences,
+                                      abstracts):
     shared_articles = [
         entry for entry in journals
         if is_professor_publication(entry)
     ]
     shared_conferences = [
         entry for entry in conferences
+        if is_professor_publication(entry)
+    ]
+    shared_abstracts = [
+        entry for entry in abstracts
         if is_professor_publication(entry)
     ]
 
@@ -1684,26 +1744,35 @@ def collect_student_publication_stats(current, alumni, journals, conferences):
 
     unique_journals = set()
     unique_conferences = set()
+    unique_abstracts = set()
     current_with_publications = 0
     alumni_with_publications = 0
     total_profile_links = 0
 
     for slug, record in sorted(all_records.items()):
-        matched_articles, matched_conferences = match_student_publications(
-            slug,
-            record['name'],
-            shared_articles,
-            shared_conferences,
+        matched_articles, matched_conferences, matched_abstracts = (
+            match_student_publications(
+                slug,
+                record['name'],
+                shared_articles,
+                shared_conferences,
+                shared_abstracts,
+            )
         )
-        has_publications = bool(matched_articles or matched_conferences)
+        has_publications = bool(
+            matched_articles or matched_conferences or matched_abstracts)
         if not has_publications:
             continue
 
-        total_profile_links += len(matched_articles) + len(matched_conferences)
+        total_profile_links += (
+            len(matched_articles) + len(matched_conferences)
+            + len(matched_abstracts))
         unique_journals.update(
             publication_identity(entry) for entry in matched_articles)
         unique_conferences.update(
             publication_identity(entry) for entry in matched_conferences)
+        unique_abstracts.update(
+            publication_identity(entry) for entry in matched_abstracts)
         if slug in current_by_slug:
             current_with_publications += 1
         else:
@@ -1718,6 +1787,7 @@ def collect_student_publication_stats(current, alumni, journals, conferences):
             current_with_publications + alumni_with_publications),
         'unique_journal_count': len(unique_journals),
         'unique_conference_count': len(unique_conferences),
+        'unique_abstract_count': len(unique_abstracts),
         'total_profile_links': total_profile_links,
     }
 
@@ -1733,9 +1803,10 @@ def render_main_page_numbers(stats):
         '* **{}** current student and postdoctoral profiles and **{}** alumni profiles with at least one coauthored publication listed'.format(
             stats['current_with_publications'],
             stats['alumni_with_publications']),
-        '* **{}** journal articles and **{}** conference papers with student or postdoctoral coauthors'.format(
+        '* **{}** journal articles, **{}** conference papers and **{}** conference abstracts with student or postdoctoral coauthors'.format(
             stats['unique_journal_count'],
-            stats['unique_conference_count']),
+            stats['unique_conference_count'],
+            stats['unique_abstract_count']),
         '',
         MAIN_NUMBERS_END,
         '',
@@ -1752,8 +1823,9 @@ def update_main_page_numbers(stats):
         generated,
     )
 
-def update_student_publications(journals, conferences, completed_works_by_slug=None):
-    """Publish article and conference coauthorship on all student profile pages."""
+def update_student_publications(journals, conferences, abstracts,
+                                completed_works_by_slug=None):
+    """Publish journal, conference and abstract coauthorship on profiles."""
     completed_works_by_slug = completed_works_by_slug or {}
     shared_articles = [
         entry for entry in journals
@@ -1763,11 +1835,16 @@ def update_student_publications(journals, conferences, completed_works_by_slug=N
         entry for entry in conferences
         if is_professor_publication(entry)
     ]
+    shared_abstracts = [
+        entry for entry in abstracts
+        if is_professor_publication(entry)
+    ]
 
     updated_pages = 0
     listed_pages = 0
     listed_articles = 0
     listed_conferences = 0
+    listed_abstracts = 0
 
     print(Fore.CYAN + '\n📚 Student publication check')
     print(Fore.CYAN + '─' * 72)
@@ -1785,34 +1862,40 @@ def update_student_publications(journals, conferences, completed_works_by_slug=N
         if not student_name:
             continue
 
-        articles, student_conferences = match_student_publications(
-            path.stem,
-            student_name,
-            shared_articles,
-            shared_conferences,
+        articles, student_conferences, student_abstracts = (
+            match_student_publications(
+                path.stem,
+                student_name,
+                shared_articles,
+                shared_conferences,
+                shared_abstracts,
+            )
         )
         completed_works = completed_works_by_slug.get(path.stem, [])
 
-        if articles or student_conferences or completed_works:
+        if articles or student_conferences or student_abstracts or completed_works:
             print(
                 Fore.GREEN
-                + '  ✔ {:28s} {:22s}  {} journal, {} conference, {} works'.format(
+                + '  ✔ {:28s} {:22s}  {} journal, {} conference, {} abstract, {} works'.format(
                     path.stem,
                     student_name[:22],
                     len(articles),
                     len(student_conferences),
+                    len(student_abstracts),
                     len(completed_works),
                 )
             )
 
-            if articles or student_conferences:
+            if articles or student_conferences or student_abstracts:
                 listed_pages += 1
             listed_articles += len(articles)
             listed_conferences += len(student_conferences)
+            listed_abstracts += len(student_abstracts)
 
             generated = render_student_publications(
                 articles,
                 student_conferences,
+                student_abstracts,
                 path.stem,
                 student_name,
                 completed_works,
@@ -1837,7 +1920,13 @@ def update_student_publications(journals, conferences, completed_works_by_slug=N
 
     print(Fore.CYAN + '─' * 72)
 
-    return listed_pages, listed_articles, listed_conferences, updated_pages
+    return (
+        listed_pages,
+        listed_articles,
+        listed_conferences,
+        listed_abstracts,
+        updated_pages,
+    )
 
 def update_publications():
     """Refresh the generated publication section on Gustavo's profile page."""
@@ -1868,8 +1957,9 @@ def update_publications():
             (record['slug'], record['source_key']),
             existing_document_urls.get(record['slug'], {}).get(record['category'], ''),
         )
-    books, chapters, journals, conferences = load_academic_publications()
-    generated = render_publications(books, chapters, journals, conferences)
+    books, chapters, journals, conferences, abstracts = load_academic_publications()
+    generated = render_publications(
+        books, chapters, journals, conferences, abstracts)
     profile_changed = update_generated_section(
         PROFILE_PATH, PUBLICATIONS_START, PUBLICATIONS_END, generated,
         legacy_start='**publications**:')
@@ -1882,12 +1972,15 @@ def update_publications():
         alumni_students,
         journals,
         conferences,
+        abstracts,
     )
     main_page_changed = update_main_page_numbers(main_page_numbers)
-    listed_pages, listed_articles, listed_conferences, student_changes = (
+    (listed_pages, listed_articles, listed_conferences, listed_abstracts,
+     student_changes) = (
         update_student_publications(
             journals,
             conferences,
+            abstracts,
             completed_works_by_slug=completed_works_by_slug,
         ))
     result = (
@@ -1898,14 +1991,16 @@ def update_publications():
         )
         else 'Checked'
     )
-    print('{} publications: {} books, {} book chapters, {} journal articles and '
-          '{} conference papers; coauthorship listed on {} student '
-          'profiles ({} journal articles and {} conference papers). '
+    print('{} publications: {} books, {} book chapters, {} journal articles, '
+          '{} conference papers and {} conference abstracts; coauthorship '
+          'listed on {} student profiles ({} journal articles, {} conference '
+          'papers and {} conference abstracts). '
           'Students page has {} current records and {} alumni records; '
           '{} generic profiles created and {} refreshed.'.format(
               result, len(books), len(chapters), len(journals),
-              len(conferences), listed_pages, listed_articles,
-              listed_conferences, len(current_students), len(alumni_students),
+              len(conferences), len(abstracts), listed_pages, listed_articles,
+              listed_conferences, listed_abstracts, len(current_students),
+              len(alumni_students),
               len(created_profiles), refreshed_profiles))
     if created_profiles:
         print(Fore.CYAN + 'Created generic profiles: {}'.format(
@@ -2091,12 +2186,21 @@ def compare_directory_snapshots(previous, current):
     }
 
 
-def print_path_list(label, paths):
+def _chip(text, back, fore=Fore.BLACK):
+    """Render a small highlighted "badge" so a category stands out at a glance."""
+    return back + fore + Style.BRIGHT + ' ' + text + ' ' + Style.RESET_ALL
+
+
+def print_path_list(label, paths, chip=None, text_color=Fore.WHITE, bullet='•'):
+    """List changed paths, tagging each line with a coloured badge."""
     if not paths:
         return
-    print('{} ({}):'.format(label, len(paths)))
+    print(Style.BRIGHT + text_color + '  {} ({}):'.format(label, len(paths)))
     for relative in paths:
-        print('  - {}'.format(relative))
+        if chip is not None:
+            print('    {}  {}{}'.format(chip, text_color, relative))
+        else:
+            print('    {} {}{}'.format(bullet, text_color, relative))
 
 
 def print_directory_stats(root, previous_snapshot=None):
@@ -2123,20 +2227,53 @@ def print_directory_stats(root, previous_snapshot=None):
         print('Largest files:')
         for size, relative in stats['largest']:
             print('  - {} ({})'.format(relative, human_size(size)))
-    if previous_snapshot is not None:
-        print('Changed since previous local build:')
-        print('  New files: {}, modified files: {}, removed files: {}, new directories: {}, removed directories: {}'.format(
-            len(changes['new_files']),
-            len(changes['modified_files']),
-            len(changes['removed_files']),
-            len(changes['new_directories']),
-            len(changes['removed_directories']),
-        ))
-        print_path_list('New files', changes['new_files'])
-        print_path_list('Modified files', changes['modified_files'])
-        print_path_list('Removed files', changes['removed_files'])
-        print_path_list('New directories', changes['new_directories'])
-        print_path_list('Removed directories', changes['removed_directories'])
+
+    # ----- What's new since the previous build (highlighted prominently) -----
+    if previous_snapshot is None:
+        print(Fore.CYAN + Style.BRIGHT
+              + '\n✨ First local build recorded — no previous state to compare yet.')
+        return
+
+    new_files = changes['new_files']
+    modified_files = changes['modified_files']
+    removed_files = changes['removed_files']
+    new_directories = changes['new_directories']
+    removed_directories = changes['removed_directories']
+    total_changes = (
+        len(new_files) + len(modified_files) + len(removed_files)
+        + len(new_directories) + len(removed_directories)
+    )
+
+    print()
+    print(Style.BRIGHT + Fore.MAGENTA + '━' * 72)
+    print(Style.BRIGHT + Fore.MAGENTA + '  ✨ WHAT’S NEW SINCE THE PREVIOUS BUILD')
+    print(Style.BRIGHT + Fore.MAGENTA + '━' * 72)
+
+    if total_changes == 0:
+        print(Fore.GREEN + Style.BRIGHT
+              + '  ✓  Nothing changed — the generated site is identical to the last build.')
+        return
+
+    print('  {}   {}   {}   {}   {}'.format(
+        Fore.GREEN + Style.BRIGHT + '✚ {} new'.format(len(new_files)) + Style.RESET_ALL,
+        Fore.YELLOW + Style.BRIGHT + '✎ {} modified'.format(len(modified_files)) + Style.RESET_ALL,
+        Fore.RED + Style.BRIGHT + '✖ {} removed'.format(len(removed_files)) + Style.RESET_ALL,
+        Fore.CYAN + '📂 {} new dirs'.format(len(new_directories)) + Style.RESET_ALL,
+        Fore.CYAN + Style.DIM + '🗑 {} removed dirs'.format(len(removed_directories)) + Style.RESET_ALL,
+    ))
+    print()
+
+    # New files first and most prominent — this is the highlight of the build.
+    print_path_list('New files', new_files,
+                    chip=_chip('NEW', Back.GREEN), text_color=Fore.GREEN + Style.BRIGHT)
+    print_path_list('Modified files', modified_files,
+                    chip=_chip('MOD', Back.YELLOW), text_color=Fore.YELLOW)
+    print_path_list('Removed files', removed_files,
+                    chip=_chip('DEL', Back.RED, fore=Fore.WHITE), text_color=Fore.RED)
+    print_path_list('New directories', new_directories,
+                    text_color=Fore.CYAN, bullet='📂')
+    print_path_list('Removed directories', removed_directories,
+                    text_color=Fore.CYAN + Style.DIM, bullet='🗑')
 
 
 def file_digest(path):

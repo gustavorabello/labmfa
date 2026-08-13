@@ -2,7 +2,7 @@ Eduardo Dias Correa
 ___________________
 
 :date: 2025-04-29 22:10
-:modified: 2026-07-16 21:42
+:modified: 2026-08-12 20:36
 :slug: person/eduardoCorrea
 
 |
@@ -71,8 +71,16 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
+#. J\. L. Silva Neto; :profile-author:`E\. D. Correa`; R\. M. S. Gama; G\. R. Anjos. **Analytical and numerical methodology for the temperature distribution on surfaces exposed to a radiant heat source**. *Proceedings of the 18th International Heat Transfer Conference*, 2026.
 #. Silva Neto, J. L.; :profile-author:`Correa, E. D.`; Gama, R. M. S.; Anjos, G. R. **A Robust Newton-Based Variational Framework for Nonlinear Conduction-Radiation PDEs with Localized Sources**. *Proceedings of the Encontro Nacional de Modelagem Computacional*, 2025.
 #. Silva Neto, J. L.; :profile-author:`Correa, E. D.`; Gama, R. M. S.; Anjos, G. R. **On the Temperature Distribution in a Flat Plate Induced by an External Thermal Radiant Source**. *Proceedings of the XLVI Ibero-Latin-American Congress on Computational Methods in Engineering*, Vitoria, Brazil, 2025.
+
+Conference Abstracts
+~~~~~~~~~~~~~~~~~~~~
+
+.. class:: publications-list abstract-publications
+
+#. Gimenez, A.; Santos, D. B. V.; :profile-author:`Correa, E. D.`; Anjos, G. R. **Numerical Analysis of the Flow Around the Profile of a Riachuelo-Class Submarine**. *II Rio de Janeiro Fluid Mechanics Symposium (Rio Fluids 2026)*, Rio de Janeiro, Brazil, 2026.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 
@@ -90,5 +98,5 @@ Conference Papers
 .. _more info: https://gustavorabello.github.io/research/newton-2020.html
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
 .. _UFRJ: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
 .. _Coppe: http://www.coppe.ufrj.br

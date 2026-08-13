@@ -61,6 +61,6 @@ Gustavo Bodstein`_.
 .. _UFRJ: http://www.ufrj.br
 .. _CEPEL: https://www.cepel.br
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
 .. _Coppe: http://www.coppe.ufrj.br
 .. _click to access Lattes: http://lattes.cnpq.br/0191696602579320

@@ -1,8 +1,8 @@
 Anna Bárbara Serejo Coimbra
 ___________________________
 
-:date: 2026-07-16 22:29
-:modified: 2026-07-16 22:29
+:date: 2026-08-12 20:36
+:modified: 2026-08-12 20:36
 :slug: person/annaBarbaraSerejoCoimbra
 
 .. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications
@@ -68,11 +68,18 @@ Conference Papers
 
 #. :profile-author:`Coimbra, A. B. S.`; Anjos, G.R. **Analysis of Filtration Efficiency in Numerical Simulations of Biofuels Combustion**. *Anais do 20th Brazilian Congress of Thermal Sciences and Engineering*, Foz do Iguaçu, Brazil, 2024.
 
+Conference Abstracts
+~~~~~~~~~~~~~~~~~~~~
+
+.. class:: publications-list abstract-publications
+
+#. :profile-author:`Coimbra, Anna Barbara Serejo`; Anjos, Gustavo Rabello dos. **Analise de Eficiencia de Filtragem em Emissoes de Biocombustiveis por meio de Simulacao Numerica em Malhas Nao Estruturadas**. *12a Semana de Integracao Academica da UFRJ (SIAc)*, Rio de Janeiro, Brazil, 2023.
+
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 
 .. Place your references here
 .. _Prof. Gustavo R. Anjos: /person/gustavoRabello
 .. _UFRJ: http://www.ufrj.br
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
 .. _Polytechnic School: https://poli.ufrj.br/

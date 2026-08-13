@@ -2,7 +2,7 @@ Antonio Emanuel Marques dos Santos
 __________________________________
 
 :date: 2025-09-18 22:10
-:modified: 2026-07-16 21:42
+:modified: 2026-08-06 12:01
 :slug: person/antonioEmanuel
 
 |
@@ -90,6 +90,18 @@ Conference Papers
 #. :profile-author:`Santos, A. E. M.`; Anjos, G.R. **Numerical Analysis of Flow in Microchannels Using The Finite Element Method**. *Anais do 12º Congresso Brasileiro de Pesquisa e Desenvolvimento em Petróleo e Gás*, Florianópolis, Brazil, 2024.
 #. :profile-author:`Santos, A. E. M.`; Anjos, G.R. **Numerical Analysis of Two-Phase Flows in a Micro-Reactor for Biodiesel Production**. *Anais do 20th Brazilian Congress of Thermal Sciences and Engineering*, Foz do Iguaçu, Brazil, 2024.
 
+Conference Abstracts
+~~~~~~~~~~~~~~~~~~~~
+
+.. class:: publications-list abstract-publications
+
+#. :profile-author:`Santos, A. E. M.`; Anjos, G. R. **Numerical Analysis of Two-Phase Flow in a Micro-Reactor for Biodiesel Production**. *II Rio de Janeiro Fluid Mechanics Symposium (Rio Fluids 2026)*, Rio de Janeiro, Brazil, 2026.
+#. Anjos, G. R.; Santos, D. B. V.; Sousa, G. R. G.; :profile-author:`Santos, A. E. M.`. **Approximation and Coalescence of Multiples Bubbles in Two-Phase Flows**. *23rd IACM Computational Fluids Conference (CFC 2025)*, Santiago, Chile, 2025.
+#. Anjos, G. R.; Santos, D. B. V.; Sousa, G. R. G.; Gaspar Junior, F.; :profile-author:`Santos, A. E. M.`. **High-Order Finite Element Method for Non-Newtonian Two-Phase Flows with Moving Interfaces**. *International Workshop on Numerical Methods in Non-Newtonian Flows (IWNMNNF)*, Buzios, Brazil, 2025.
+#. :profile-author:`Santos, A. E. M.`; Anjos, G. R. **Numerical Analysis of Flow in a Microreactor**. *I Rio de Janeiro Fluid Mechanics Symposium (Rio Fluids 2025)*, Niterói, Brazil, 2025.
+#. Sousa, G. R. G.; :profile-author:`Santos, A. E. M.`; Anjos, G. R. **Numerical Investigation and Comparison of Bubble Approximation and Coalescence in Two-Phase Flows**. *8th Multiphase Flows Journey (JEM 2025)*, Sao Carlos, Brazil, 2025.
+#. Sousa, G. R. G.; :profile-author:`Santos, A. E. M.`; Anjos, G. R. **Numerical Investigation and Comparison of Bubble Approximation and Coalescence in Two-Phase Flows**. *Rio de Janeiro Fluid Mechanics Symposium (Rio Fluids 2025)*, Niteroi, Brazil, 2025.
+
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 
 .. Place your references here
@@ -105,5 +117,5 @@ Conference Papers
 .. _more info: https://gustavorabello.github.io/research/newton-2020.html
 .. _Federal University of Rio de Janeiro: http://www.ufrj.br
 .. _UFRJ: http://www.ufrj.br
-.. _Department of Mechanical Engineering: http://www.mecanica.ufrj.br/index.php/en/
+.. _Department of Mechanical Engineering: https://www.mecanica.ufrj.br/en/
 .. _Coppe: http://www.coppe.ufrj.br
