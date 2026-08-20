@@ -85,3 +85,17 @@ ol.journal-publications li {
   font-weight: 700;
   padding: 0 .14rem;
 }
+
+/* Row of sponsor/funder logos shown side by side and centred.
+   The higher-specificity selector is needed to beat
+   `article.single p { text-align: justify !important }` above. */
+article.single p.logo-row,
+p.logo-row {
+  text-align: center !important;
+}
+
+p.logo-row img {
+  vertical-align: middle;
+  margin: 0 2.4rem;
+  max-width: 100%;
+}

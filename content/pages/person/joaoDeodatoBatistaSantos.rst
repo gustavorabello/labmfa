@@ -1,8 +1,8 @@
 João Deodato Batista dos Santos
 _______________________________
 
-:date: 2026-08-12 22:36
-:modified: 2026-08-12 22:36
+:date: 2026-08-20 07:32
+:modified: 2026-08-20 07:32
 :slug: person/joaoDeodatoBatistaSantos
 
 .. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications

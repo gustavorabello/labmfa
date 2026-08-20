@@ -2,7 +2,7 @@ João Paulo Innocente de Souza
 _____________________________
 
 :date: 2024-10-24 22:10
-:modified: 2026-08-12 20:36
+:modified: 2026-08-14 19:31
 :slug: person/joaoInnocente
 
 |
@@ -95,7 +95,7 @@ Conference Abstracts
 
 .. class:: publications-list abstract-publications
 
-#. :profile-author:`João P. I. Souza`; Diego S. Duarte; Gustavo R. Anjos. **A Multiphysics Finite Element Framework for Thermo-Fluid-Structure Interaction Applied to Nonlinear Flexible Fins**. **, 2027.
+#. :profile-author:`João P. I. Souza`; Diego S. Duarte; Gustavo R. Anjos. **A Multiphysics Finite Element Framework for Thermo-Fluid-Structure Interaction Applied to Nonlinear Flexible Fins**. *24th IACM Computational Fluids Conference 12-15 March 2027, Yokohama*, 2027.
 #. :profile-author:`Souza, J. P. I.`; Anjos, G. R. **A Finite Element Analysis of Fluid-Structure Interaction With Nonlinear Structures**. *II Rio de Janeiro Fluid Mechanics Symposium (Rio Fluids 2026)*, Rio de Janeiro, Brazil, 2026.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END

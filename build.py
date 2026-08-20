@@ -416,17 +416,33 @@ def render_chapter_for_profile(entry):
 
 
 def render_conference(entry, highlight_author=None, highlight_role='prof-author'):
+    booktitle = field(entry, 'booktitle')
     event = field(entry, 'eventtitle')
     address = field(entry, 'address')
-    details = ' ({})'.format(event) if event else ''
-    details += ', {}'.format(address) if address else ''
-    return '#. {} **{}**. *{}*{}, {}.'.format(
+    year = field(entry, 'year')
+
+    # Some imported abstract records provide the conference only in ``note``.
+    # Never emit an empty ``**``/``* *`` inline span: docutils treats it as a
+    # malformed strong marker and Pelican then drops the whole profile page.
+    venue = booktitle or field(entry, 'note') or event
+    details = []
+    if event and event != venue:
+        details.append('({})'.format(event))
+    if address:
+        details.append(address)
+    if year:
+        details.append(year)
+
+    citation = ' *{}*'.format(venue) if venue else ''
+    if details:
+        citation += '{}{}'.format(', ' if citation else ' ', ', '.join(details))
+
+    return '#. {} **{}**.{}.'.format(
         rst_authors(
             entry,
             highlight_author=highlight_author,
             highlight_role=highlight_role,
-        ), field(entry, 'title'), field(entry, 'booktitle'),
-        details, field(entry, 'year'))
+        ), field(entry, 'title'), citation)
 
 
 def render_conference_for_profile(entry):

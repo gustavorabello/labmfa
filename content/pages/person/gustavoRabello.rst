@@ -2,7 +2,7 @@ Prof. Gustavo R. Anjos
 ______________________
 
 :date: 2022-09-14 22:10
-:modified: 2026-08-12 22:35
+:modified: 2026-08-14 19:31
 :slug: person/gustavoRabello
 
 |
@@ -282,7 +282,7 @@ Conference Abstracts
 
 .. class:: publications-list abstract-publications
 
-#. João P. I. Souza; Diego S. Duarte; :prof-author:`Gustavo R. Anjos`. **A Multiphysics Finite Element Framework for Thermo-Fluid-Structure Interaction Applied to Nonlinear Flexible Fins**. **, 2027.
+#. João P. I. Souza; Diego S. Duarte; :prof-author:`Gustavo R. Anjos`. **A Multiphysics Finite Element Framework for Thermo-Fluid-Structure Interaction Applied to Nonlinear Flexible Fins**. *24th IACM Computational Fluids Conference 12-15 March 2027, Yokohama*, 2027.
 #. Gimenez, A.; Santos, D. B. V.; Correa, E. D.; :prof-author:`Anjos, G. R.`. **Numerical Analysis of the Flow Around the Profile of a Riachuelo-Class Submarine**. *II Rio de Janeiro Fluid Mechanics Symposium (Rio Fluids 2026)*, Rio de Janeiro, Brazil, 2026.
 #. Santos, A. E. M.; :prof-author:`Anjos, G. R.`. **Numerical Analysis of Two-Phase Flow in a Micro-Reactor for Biodiesel Production**. *II Rio de Janeiro Fluid Mechanics Symposium (Rio Fluids 2026)*, Rio de Janeiro, Brazil, 2026.
 #. Garden, G. L.; Su, J.; :prof-author:`Anjos, G. R.`. **A Finite Element Method Coupled with a Semi-Lagrangian Scheme for Turbulent Fluid-Structure Interactions**. *XV Escola de Primavera de Transição e Turbulência (EPTT 2026)*, Niteroi, Brazil, 2026.

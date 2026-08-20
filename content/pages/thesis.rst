@@ -112,7 +112,7 @@ Supervised or co-supervised by Prof. Gustavo Cesar Rachid Bodstein
 
 .. Place your references here
 .. _Antonio Emanuel Marques dos Santos: /person/antonioEmanuel
-.. _João Paulo Innocente de Souza: /person/joaoPauloInnocente
+.. _João Paulo Innocente de Souza: /person/joaoInnocente
 .. _Daniel Barbedo Vasconcelos Santos: /person/danielBarbedo
 .. _Felipe Feres Ferreira: /person/felipeFeres
 .. _Rafael Araujo Vidal: /person/rafaelVidal
