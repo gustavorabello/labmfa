@@ -2,7 +2,7 @@ Prof. Gustavo R. Anjos
 ______________________
 
 :date: 2022-09-14 22:10
-:modified: 2026-08-14 19:31
+:modified: 2026-09-15 22:29
 :slug: person/gustavoRabello
 
 |
@@ -176,6 +176,8 @@ Journal Articles
 
 .. class:: publications-list journal-publications
 
+#. Garden, G.L.; Su, J.; :prof-author:`Anjos, G.R.`. `A higher-order semi-Lagrangian mixed finite element methodology in an arbitrary Lagrangian–Eulerian framework for vortex-induced vibrations of rigid structures <https://doi.org/10.1016/j.oceaneng.2026.128109>`_. *Ocean Engineering*, vol. 367, 128109 (2026).
+#. Jose Lages da Silva Neto; Eduardo D. Correa; Rogerio M. S. Gama; :prof-author:`Gustavo R. Anjos`. `Analytical bounds and finite element modeling of the temperature distribution on a thin plate heated by a localized radiant source <https://doi.org/10.3934/math.20261100>`_. *AIMS Mathematics*, vol. 11(8), 27481-27507 (2026).
 #. Santos, Daniel B. V.; Santos, Antônio E. M.; Bandarra Filho, Enio P.; :prof-author:`Anjos, G. R.`. `Numerical Investigation of a Gas Bubble in Complex Geometries for Industrial Process Equipment Design <https://doi.org/10.3390/fluids10070172>`_. *Fluids*, vol. 10(7), 172 (2025).
 #. Santos, Daniel B. V.; Vidal, Rafael; Valluri, Prashant; :prof-author:`Anjos, Gustavo R.`. `Computation of Deformable Interface Two-Phase Flows: A Semi-Lagrangian Finite Element Approach <https://doi.org/10.1002/fld.5342>`_. *International Journal for Numerical Methods in Fluids*, vol. 97(3), 233-243 (2024).
 #. Santos, Daniel B. V.; Oliveira, Gustavo P.; Mangiavacchi, Norberto; Valluri, Prashant; :prof-author:`Anjos, Gustavo R.`. `Numerical Investigation of Gas Bubble Interaction in a Circular Cross-Section Channel in Shear Flow <https://doi.org/10.3390/fluids9020032>`_. *Fluids*, vol. 9(2), 32 (2024).
@@ -194,11 +196,11 @@ Journal Articles
 #. Lucena, R. M.; Mangiavacchi, N.; Pontes, J.; :prof-author:`Anjos, G.`; McGinty, S. `On the transport through polymer layer and porous arterial wall in drug-eluting stents <https://doi.org/10.1007/s40430-018-1487-8>`_. *Journal of the Brazilian Society of Mechanical Sciences and Engineering*, vol. 40(12), 572 (2018).
 #. E\. Vitral; D\. Walgraef; J\. Pontes; :prof-author:`G.R. Anjos`; N\. Mangiavacchi. `Nano-patterning of surfaces by ion sputtering: Numerical study of the anisotropic damped Kuramoto-Sivashinsky equation <https://doi.org/10.1016/j.commatsci.2018.01.034>`_. *Computational Materials Science*, vol. 146, 193-203 (2018).
 #. Oliveira, G. P.; :prof-author:`Anjos, G.`; Pontes, J.; Mangiavacchi, N.; Thome, J. R. `ALE/finite element modeling of an unconfined bubble plume in periodic domain: bubble shape and oscillation analysis <https://doi.org/10.1007/s40430-015-0320-x>`_. *Journal of the Brazilian Society of Mechanical Sciences and Engineering*, vol. 37(6), 1647-1664 (2015).
-#. Oliveira, G. C. P.; MANGIAVACCHI, NORBERTO; :prof-author:`ANJOS, G.`; Pontes, J.; Thome, J. R. `Comparative CFD Simulations of Gas Transport in Slug Flow from Periodic Arrays with Single or Multiple Bubbles <https://doi.org/10.6062/jcis.2015.06.01.0093>`_. *Journal of Computational Interdisciplinary Sciences*, vol. 6(1), 31-35 (2015).
+#. Oliveira, G. C. P.; Mangiavacchi, Norberto; :prof-author:`Anjos, G.`; Pontes, J.; Thome, J. R. `Comparative CFD Simulations of Gas Transport in Slug Flow from Periodic Arrays with Single or Multiple Bubbles <https://doi.org/10.6062/jcis.2015.06.01.0093>`_. *Journal of Computational Interdisciplinary Sciences*, vol. 6(1), 31-35 (2015).
 #. :prof-author:`G.R. Anjos`; N\. Borhani; N\. Mangiavacchi; J.R. Thome. `A 3D moving mesh Finite Element Method for two-phase flows <https://doi.org/10.1016/j.jcp.2014.03.067>`_. *Journal of Computational Physics*, vol. 270, 366-377 (2014).
 #. :prof-author:`Gustavo Anjos`; Norberto Mangiavacchi; Navid Borhani; John R. Thome. `3D ALE Finite-Element Method for Two-Phase Flows With Phase Change <https://doi.org/10.1080/01457632.2013.833407>`_. *Heat Transfer Engineering*, vol. 35(5), 537-547 (2014).
 #. :prof-author:`Anjos, G. R.`; Mangiavacchi, N.; Pontes, J. `Three-dimensional finite element method for rotating disk flows <https://doi.org/10.1007/s40430-013-0120-0>`_. *Journal of the Brazilian Society of Mechanical Sciences and Engineering*, vol. 36(4), 709-724 (2014).
-#. Mangiavacchi N.; Oliveira G. C. P.; :prof-author:`ANJOS G. R.`; Thome J. R. **Numerical Simulation of a Periodic Array of Bubbles in a Channel**. *Mecánica Computacional*, vol. 32(21), 1813-1824 (2013).
+#. Mangiavacchi N.; Oliveira G. C. P.; :prof-author:`Anjos G. R.`; Thome J. R. **Numerical Simulation of a Periodic Array of Bubbles in a Channel**. *Mecánica Computacional*, vol. 32(21), 1813-1824 (2013).
 #. :prof-author:`Anjos, G. R. dos`; Mangiavacchi, N.; Pontes, J.; Soares, C. B. P. `Numerical modelling of the hydrodynamic field coupled to the transport of chemical species through the finite-element method <https://doi.org/10.1002/pamm.200700087>`_. *PAMM*, vol. 7(1), 2100013-2100014 (2007).
 #. Pontes, José; :prof-author:`Rabello dos Anjos, Gustavo`; Mangiavacchi, Norberto. `Finite-element method simulation of rotating disk flow: effect of the transport of a chemical species <https://doi.org/10.1002/pamm.200700427>`_. *PAMM*, vol. 7(1), 2100041-2100042 (2007).
 
@@ -207,13 +209,13 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
-#. J\. L. Silva Neto; E\. D. Correa; R\. M. S. Gama; :prof-author:`G\. R. Anjos`. **Analytical and numerical methodology for the temperature distribution on surfaces exposed to a radiant heat source**. *Proceedings of the 18th International Heat Transfer Conference*, 2026.
-#. Santos, A. E. M.; :prof-author:`Anjos, G. R.`; Bodstein, G. C. R. **Numerical analysis of heat and mass transfer in microreactors for biodiesel synthesis**. *Proceedings of the 18th International Heat Transfer Conference*, 2026.
+#. J\. L. Silva Neto; E\. D. Correa; R\. M. S. Gama; :prof-author:`G\. R. Anjos`. **Analytical and numerical methodology for the temperature distribution on surfaces exposed to a radiant heat source**. *Proceedings of the 18th International Heat Transfer Conference*, Rio de Janeiro, Brazil, 2026.
+#. Santos, A. E. M.; :prof-author:`Anjos, G. R.`; Bodstein, G. C. R. **Numerical analysis of heat and mass transfer in microreactors for biodiesel synthesis**. *Proceedings of the 18th International Heat Transfer Conference*, Rio de Janeiro, Brazil, 2026.
 #. Garden, G. L.; Souza, J. P. I.; Su, Jian; :prof-author:`Anjos, G.R.`. **A Higher-Order Semi-Lagrangian ALE-FE Method for Fluid-Structure Interaction Problems**. *Proceedings of Flow-Induced Vibration 2026 (FIV 2026)*, Paris, France, 2026.
 #. Souza, J. P. I.; :prof-author:`Anjos, G.R.`. **A Finite Element Analysis of Flow-induced Vibration in Nonlinear Elastic Structures**. *Proceedings of Flow-Induced Vibration 2026 (FIV 2026)*, Paris, France, 2026.
 #. Garden, G.; Fortuna, I.; :prof-author:`Anjos, G. R.`; Su, J. **An ALE-SL Method for Fluid-Structure Interactions in Riser Dynamics**. *Proceedings of the 28th International Congress of Mechanical Engineering*, Curitiba, Brazil, 2025.
 #. Junior, F. G. S.; McGinty, S.; :prof-author:`Anjos, G. R.`. **Numerical Simulation of a Non-Newtonian Fluid-Solid Interaction**. *Proceedings of the 28th International Congress of Mechanical Engineering*, Curitiba, Brazil, 2025.
-#. Silva Neto, J. L.; Correa, E. D.; Gama, R. M. S.; :prof-author:`Anjos, G. R.`. **A Robust Newton-Based Variational Framework for Nonlinear Conduction-Radiation PDEs with Localized Sources**. *Proceedings of the Encontro Nacional de Modelagem Computacional*, 2025.
+#. Silva Neto, J. L.; Correa, E. D.; Gama, R. M. S.; :prof-author:`Anjos, G. R.`. **A Robust Newton-Based Variational Framework for Nonlinear Conduction-Radiation PDEs with Localized Sources**. *Proceedings of the Encontro Nacional de Modelagem Computacional*, Montes Claros, Brazil, 2025.
 #. Silva Neto, J. L.; Correa, E. D.; Gama, R. M. S.; :prof-author:`Anjos, G. R.`. **On the Temperature Distribution in a Flat Plate Induced by an External Thermal Radiant Source**. *Proceedings of the XLVI Ibero-Latin-American Congress on Computational Methods in Engineering*, Vitoria, Brazil, 2025.
 #. Souza, J. P. I.; :prof-author:`Anjos, G. R.`. **A Finite Element Analysis of Flow-Induced Vibration in Nonlinear Elastic Structures**. *Proceedings of the 28th International Congress of Mechanical Engineering*, Curitiba, Brazil, 2025.
 #. Coimbra, A. B. S.; :prof-author:`Anjos, G.R.`. **Analysis of Filtration Efficiency in Numerical Simulations of Biofuels Combustion**. *Anais do 20th Brazilian Congress of Thermal Sciences and Engineering*, Foz do Iguaçu, Brazil, 2024.
@@ -223,8 +225,8 @@ Conference Papers
 #. Santos, D. B. V.; :prof-author:`Anjos, G.R.`. **Finite Element Simulation of Two-Phase Flows with Heat and Mass Transfer Through a Decoupled Mesh Method**. *Anais do 20th Brazilian Congress of Thermal Sciences and Engineering*, Foz do Iguaçu, Brazil, 2024.
 #. Santos, A. E. M.; :prof-author:`Anjos, G.R.`. **Numerical Analysis of Two-Phase Flows in a Micro-Reactor for Biodiesel Production**. *Anais do 20th Brazilian Congress of Thermal Sciences and Engineering*, Foz do Iguaçu, Brazil, 2024.
 #. Souza, J. P. I.; :prof-author:`Anjos, G.R.`. **The Finite Element Method Applied to Fluid-Structure Interaction Using the Arbitrary Lagrangian-Eulerian and the Semi-Lagrangian Methods**. *Anais do 20th Brazilian Congress of Thermal Sciences and Engineering*, Foz do Iguaçu, Brazil, 2024.
-#. :prof-author:`Anjos, G. R.`; Vidal, R. A. **A Semi-Lagrangian Finite Element Method for Two-Phase Flows**. *JEM*, 2023.
-#. Ferreira, F. F.; :prof-author:`Anjos, G.R.`. **Numerical Simulation of a Multiphase Flow inside a Diesel Particulate Filter**. *JEM*, 2023.
+#. :prof-author:`Anjos, G. R.`; Vidal, R. A. **A Semi-Lagrangian Finite Element Method for Two-Phase Flows**. *JEM*, Rio de Janeiro, Brazil, 2023.
+#. Ferreira, F. F.; :prof-author:`Anjos, G.R.`. **Numerical Simulation of a Multiphase Flow inside a Diesel Particulate Filter**. *JEM*, Rio de Janeiro, Brazil, 2023.
 #. Santos, D. B. V.; :prof-author:`Anjos, G.R.`. **Three Dimensional Finite Element Two-Phase Flow Simulation Using a Front Tracking Method**. *Proceedings of the 27th International Congress of Mechanical Engineering*, Florianópolis, Brazil, 2023.
 #. Santos, D. B. V.; :prof-author:`Anjos, G.R.`. **Three Dimensional Two-Phase Finite Element Simulation Using a Front-Tracking Method**. *JEM*, Rio de Janeiro, Brazil, 2023.
 #. Souza, João P. I.; :prof-author:`Anjos, Gustavo R.`. **A Comparison Between Porous and Free-Flow Media Using the Finite Element Method to Solve the Generalized Darcy/Forchheimer Equation**. *Anais do 27th International Congress of Mechanical Engineering*, Florianópolis, Brazil, 2023.
@@ -245,14 +247,14 @@ Conference Papers
 #. Cunha, L.H.C.; :prof-author:`Anjos, G. R.`; Mangiavacchi, N. **Semi-Lagrangean Method Applied in the Conjugated Heat Problem Using an Axisymmetrical Stream Function-Vorticity Formulation**. *Anais do 25th International Congress of Mechanical Engineering*, Uberlândia, Brazil, 2019.
 #. Oliveira, G. C. P.; :prof-author:`Anjos, G. R.`; Pontes, Jose; Mangiavacchi, Norberto. **Two-Step Semi-Lagrangian Integration for ALE/FEM Two-Phase Flows**. *Proceedings of the 10th International Conference on Multiphase Flow*, Rio de Janeiro, Brazil, 2019.
 #. Cunha, L.H.C.; :prof-author:`Anjos, G. R.`; Mangiavacchi, N. **Stream Function-Vorticity Formulation and Heat Transport Using FEM for Unstructured Meshes and Complex Domains**. *Anais do II Congresso Brasileiro de Fluidodinâmica Computacional*, Rio de Janeiro, Brazil, 2018.
-#. Carnevale da Cunha, Luís Henrique; :prof-author:`Rabello dos Anjos, Gustavo`; Mangiavacchi, Norberto. **Finite Element Analysis Applied on the Cooling of Electronic Components**. *Anais do X Congresso Nacional de Engenharia Mecânica*, 2018.
+#. Carnevale da Cunha, Luís Henrique; :prof-author:`Rabello dos Anjos, Gustavo`; Mangiavacchi, Norberto. **Finite Element Analysis Applied on the Cooling of Electronic Components**. *Anais do X Congresso Nacional de Engenharia Mecânica*, Salvador, Brazil, 2018.
 #. Cunha, L.H.C.; :prof-author:`Anjos, Gustavo R.`; Mangiavacchi, N. **Stream Function-Vorticity Formulation Applied in the Conjugated Heat Problem Using the FEM with Unstructured Mesh**. *Proceedings of the 17th Brazilian Congress of Thermal Sciences and Engineering*, Águas de Lindóia, Brazil, 2018.
 #. Frazzoli, F.; Lucena, R. M.; Mangiavacchi, N.; Pontes, J.; :prof-author:`Anjos, Gustavo R.`; McGinty, S. **Anisotropic Transport Through Polymer Layer and Porous Arterial Wall with Binding in Drug-Eluting Stents Using the FEM**. *Proceedings of the 17th Brazilian Congress of Thermal Sciences and Engineering*, Águas de Lindóia, Brazil, 2018.
 #. Marques, L.; :prof-author:`Anjos, G. R.`; Pontes, J. **Blood Flow Simulation Using Stream Function-Vorticity FEM Formulation**. *Anais do II Congresso Brasileiro de Fluidodinâmica Computacional*, Rio de Janeiro, Brazil, 2018.
 #. Marques, L.; :prof-author:`Anjos, G. R.`; Pontes, J. **Numerical Simulation of Blood Flow Dynamics in Coronary Artery Using Streamfunction-Vorticity Formulation**. *Anais do X Congresso Nacional de Engenharia Mecânica*, Salvador, Brazil, 2018.
 #. Marques, L.; :prof-author:`Gustavo Anjos`; Pontes, J. **Blood Flow Dynamics Simulation in Coronary Artery with Drug-Eluting Stent Using Finite Element Method**. *Proceedings of the 17th Brazilian Congress of Thermal Sciences and Engineering*, Águas de Lindóia, Brazil, 2018.
 #. :prof-author:`Anjos, Gustavo`; Gros, E.; Selvam K.; Peixinho, J. **Rising Bubble in a Vertical Slowly Diverging Pipe**. *Proceedings of 9th World Conference on Experimental Heat Transfer, Fluid Mechanics and Thermodynamics*, Foz do Iguaçu, Brazil, 2017.
-#. Gros, Erik; :prof-author:`Rabello dos Anjos, Gustavo`. **An ALE-FEM Method for Axisymmetric Two-Phase Flows**. *Proceedings of the 24th ABCM International Congress of Mechanical Engineering*, 2017.
+#. Gros, Erik; :prof-author:`Rabello dos Anjos, Gustavo`. **An ALE-FEM Method for Axisymmetric Two-Phase Flows**. *Proceedings of the 24th ABCM International Congress of Mechanical Engineering*, Curitiba, Brazil, 2017.
 #. Lobo, Leonardo; Alberto Santos Leite, Luiz; Fonseca Costa, Manoel Antonio; :prof-author:`Rabello dos Anjos, Gustavo`. **Computational Modeling and Energy Evaluation of a Real Cooling System of a Refrigeration Chamber**. *Proceedings of the 24th ABCM International Congress of Mechanical Engineering*, Curitiba, Brazil, 2017.
 #. Mangiavacchi, Norberto; da Rocha Miranda Pontes, José; :prof-author:`Rabello dos Anjos, Gustavo`; McGinty, Sean; Manhaes de Lucena, Rachel. **Transport Through Polymer Layer and Porous Arterial Wall with Binding in Drug-Eluting Stents Using the FEM**. *Proceedings of the 24th ABCM International Congress of Mechanical Engineering*, Curitiba, Brazil, 2017.
 #. McGinty, Sean; Manhaes de Lucena, Rachel; da Rocha Miranda Pontes, José; Mangiavacchi, Norberto; :prof-author:`Rabello dos Anjos, Gustavo`. **Dynamics of Blood Flow in Coronary Artery**. *Proceedings of the 24th ABCM International Congress of Mechanical Engineering*, Curitiba, Brazil, 2017.
@@ -274,7 +276,7 @@ Conference Papers
 #. :prof-author:`Anjos, G. R.`; Mangiavacchi, N.; Pontes, J.; Soares, C. B. P. **Simulação Numérica das Equações de Saint-Venant Utilizando o Método dos Elementos Finitos**. *Simpósio de Pós Graduação em Engenharia Mecânica*, Uberlândia, Brazil, 2006.
 #. :prof-author:`Anjos, G. R.`; Mangiavacchi, N.; Pontes, J.; Soares, C. B. P. **Modelagem Numérica de Escoamentos Acoplados ao Transporte de Uma Espécie Química por Elementos Finitos**. *Proceedings of the 11th Brazilian Congress of Thermal Sciences and Engineering*, Curitiba, Brazil, 2006.
 #. :prof-author:`Anjos, G. R.`; Mangiavacchi, N.; Mila R. Avelino. **Simulação Experimental de Camada Limite Atmosférica Costeira em Túnel de Vento**. *II Congresso Sobre Planejamento e Gestão da Zona Costeira dos Paíse de Expressão Portuguesa*, Recife, Brazil, 2004.
-#. Mila R. Avelino; :prof-author:`Anjos, G. R.`; Sadik Kakaç. **Turbulent Forced Convection Air Cooling of Electronics**. *10th Brazilian Congress of Thermal Sciences and Engineering*, 2004.
+#. Mila R. Avelino; :prof-author:`Anjos, G. R.`; Sadik Kakaç. **Turbulent Forced Convection Air Cooling of Electronics**. *10th Brazilian Congress of Thermal Sciences and Engineering*, Rio de Janeiro, Brazil, 2004.
 #. Mila R. Avelino; :prof-author:`Anjos, G. R.`. **Simulação Experimental de Camada Limite Atmosférica Costeira em Túnel de Vento**. *Proceedings of the 10th Brazilian Congress of Thermal Sciences and Engineering*, Rio de Janeiro, Brazil, 2004.
 
 Conference Abstracts
@@ -282,7 +284,7 @@ Conference Abstracts
 
 .. class:: publications-list abstract-publications
 
-#. João P. I. Souza; Diego S. Duarte; :prof-author:`Gustavo R. Anjos`. **A Multiphysics Finite Element Framework for Thermo-Fluid-Structure Interaction Applied to Nonlinear Flexible Fins**. *24th IACM Computational Fluids Conference 12-15 March 2027, Yokohama*, 2027.
+#. João P. I. Souza; Diego S. Duarte; :prof-author:`Gustavo R. Anjos`. **A Multiphysics Finite Element Framework for Thermo-Fluid-Structure Interaction Applied to Nonlinear Flexible Fins**. *anais do 24th IACM Computational Fluids Conference*, yokohama, japão, 2027.
 #. Gimenez, A.; Santos, D. B. V.; Correa, E. D.; :prof-author:`Anjos, G. R.`. **Numerical Analysis of the Flow Around the Profile of a Riachuelo-Class Submarine**. *II Rio de Janeiro Fluid Mechanics Symposium (Rio Fluids 2026)*, Rio de Janeiro, Brazil, 2026.
 #. Santos, A. E. M.; :prof-author:`Anjos, G. R.`. **Numerical Analysis of Two-Phase Flow in a Micro-Reactor for Biodiesel Production**. *II Rio de Janeiro Fluid Mechanics Symposium (Rio Fluids 2026)*, Rio de Janeiro, Brazil, 2026.
 #. Garden, G. L.; Su, J.; :prof-author:`Anjos, G. R.`. **A Finite Element Method Coupled with a Semi-Lagrangian Scheme for Turbulent Fluid-Structure Interactions**. *XV Escola de Primavera de Transição e Turbulência (EPTT 2026)*, Niteroi, Brazil, 2026.

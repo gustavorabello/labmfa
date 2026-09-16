@@ -1,8 +1,8 @@
 Luis Henrique Carnevale da Cunha
 ________________________________
 
-:date: 2026-08-20 07:32
-:modified: 2026-08-20 07:32
+:date: 2026-09-15 22:29
+:modified: 2026-09-15 22:29
 :slug: person/luisHenriqueCarnevaleCunha
 
 .. AUTO-GENERATED GENERIC PROFILE: run build.py --update-publications
@@ -73,7 +73,7 @@ Conference Papers
 
 #. :profile-author:`Cunha, L.H.C.`; Anjos, G. R.; Mangiavacchi, N. **Semi-Lagrangean Method Applied in the Conjugated Heat Problem Using an Axisymmetrical Stream Function-Vorticity Formulation**. *Anais do 25th International Congress of Mechanical Engineering*, Uberlândia, Brazil, 2019.
 #. :profile-author:`Cunha, L.H.C.`; Anjos, G. R.; Mangiavacchi, N. **Stream Function-Vorticity Formulation and Heat Transport Using FEM for Unstructured Meshes and Complex Domains**. *Anais do II Congresso Brasileiro de Fluidodinâmica Computacional*, Rio de Janeiro, Brazil, 2018.
-#. :profile-author:`Carnevale da Cunha, Luís Henrique`; Rabello dos Anjos, Gustavo; Mangiavacchi, Norberto. **Finite Element Analysis Applied on the Cooling of Electronic Components**. *Anais do X Congresso Nacional de Engenharia Mecânica*, 2018.
+#. :profile-author:`Carnevale da Cunha, Luís Henrique`; Rabello dos Anjos, Gustavo; Mangiavacchi, Norberto. **Finite Element Analysis Applied on the Cooling of Electronic Components**. *Anais do X Congresso Nacional de Engenharia Mecânica*, Salvador, Brazil, 2018.
 #. :profile-author:`Cunha, L.H.C.`; Anjos, Gustavo R.; Mangiavacchi, N. **Stream Function-Vorticity Formulation Applied in the Conjugated Heat Problem Using the FEM with Unstructured Mesh**. *Proceedings of the 17th Brazilian Congress of Thermal Sciences and Engineering*, Águas de Lindóia, Brazil, 2018.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END

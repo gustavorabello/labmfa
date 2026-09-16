@@ -2,18 +2,13 @@ Students
 --------
 
 :date: 2022-09-10 22:10
-:modified: 2026-08-20 07:32
+:modified: 2026-09-15 22:29
 :slug: students
 
 .. AUTO-GENERATED STUDENTS START: run build.py --update-publications
 
 Post-Doctoral Researchers
 _________________________
-
- `Daniel Barbedo Vasconcelos Santos`_ --
-  *Finite Element Simulation Fluid-Structure Interaction*,
-  Post-Doctoral Researcher,
-  2025
 
  `Eduardo Dias Correa`_ --
   *Analytical and Numerical Method for non-Linear Problems in Convection and Radiation Heat Transfer*,
@@ -50,11 +45,6 @@ ______________
 
  `Jose Lages da Silva Neto`_ --
   *Heat Transfer in Extended Surfaces in Transient Regime*,
-  D.Sc. Student,
-  2025
-
- `Leandro Marques dos Santos`_ --
-  *Blood-Flow Modelling with Stream-Function/Vorticity FEM*,
   D.Sc. Student,
   2025
 
@@ -112,6 +102,19 @@ ______
   Undergrad Scientific Research,
   2026
 
+ `Daniel Barbedo Vasconcelos Santos`_ --
+  *Finite Element Simulation Fluid-Structure Interaction*,
+  Post-Doc,
+  2025
+
+  *Finite Element Simulation of Three-Dimensional Two-Phase Flows in Complex Geometries*,
+  D.Sc.,
+  2024
+
+  *Finite Element Simulation Fluid-Structure Interaction*,
+  Post-Doc,
+  2024
+
  `Higor Odilon Gottgtroy`_ --
   *Numerical Simulation of 2D Flow in Butterfly Control Valves*,
   M.Sc.,
@@ -161,6 +164,11 @@ ______
   *Numerical Simulation of Multiphase Flows*,
   Undergrad Scientific Research,
   2021
+
+ `Leandro Marques dos Santos`_ --
+  *Blood-Flow Simulation in Coronary Artery Using Stream-Function/Vorticity FEM*,
+  M.Sc.,
+  2020
 
  `Luis Henrique Carnevale da Cunha`_ --
   *Stream-Function Vorticity FEM Formulation Applied to Conjugated Heat-Transfer Problems*,

@@ -82,7 +82,7 @@ PLUGIN_PATHS = [
     "plugins",
 ]
 PLUGINS = [
-     "pelican_youtube",
+     "labmfa_youtube",
 #    "deadlinks",
 #    "bibtex",
 #    "bibcite",

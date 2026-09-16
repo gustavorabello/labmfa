@@ -2,7 +2,7 @@ Eduardo Dias Correa
 ___________________
 
 :date: 2025-04-29 22:10
-:modified: 2026-08-12 20:36
+:modified: 2026-09-04 12:12
 :slug: person/eduardoCorrea
 
 |
@@ -66,13 +66,20 @@ media**.
 
 **publications with Prof. Gustavo R. Anjos**:
 
+Journal Articles
+~~~~~~~~~~~~~~~~
+
+.. class:: publications-list journal-publications
+
+#. Jose Lages da Silva Neto; :profile-author:`Eduardo D. Correa`; Rogerio M. S. Gama; Gustavo R. Anjos. `Analytical bounds and finite element modeling of the temperature distribution on a thin plate heated by a localized radiant source <https://doi.org/10.3934/math.20261100>`_. *AIMS Mathematics*, vol. 11(8), 27481-27507 (2026).
+
 Conference Papers
 ~~~~~~~~~~~~~~~~~
 
 .. class:: publications-list conference-publications
 
-#. J\. L. Silva Neto; :profile-author:`E\. D. Correa`; R\. M. S. Gama; G\. R. Anjos. **Analytical and numerical methodology for the temperature distribution on surfaces exposed to a radiant heat source**. *Proceedings of the 18th International Heat Transfer Conference*, 2026.
-#. Silva Neto, J. L.; :profile-author:`Correa, E. D.`; Gama, R. M. S.; Anjos, G. R. **A Robust Newton-Based Variational Framework for Nonlinear Conduction-Radiation PDEs with Localized Sources**. *Proceedings of the Encontro Nacional de Modelagem Computacional*, 2025.
+#. J\. L. Silva Neto; :profile-author:`E\. D. Correa`; R\. M. S. Gama; G\. R. Anjos. **Analytical and numerical methodology for the temperature distribution on surfaces exposed to a radiant heat source**. *Proceedings of the 18th International Heat Transfer Conference*, Rio de Janeiro, Brazil, 2026.
+#. Silva Neto, J. L.; :profile-author:`Correa, E. D.`; Gama, R. M. S.; Anjos, G. R. **A Robust Newton-Based Variational Framework for Nonlinear Conduction-Radiation PDEs with Localized Sources**. *Proceedings of the Encontro Nacional de Modelagem Computacional*, Montes Claros, Brazil, 2025.
 #. Silva Neto, J. L.; :profile-author:`Correa, E. D.`; Gama, R. M. S.; Anjos, G. R. **On the Temperature Distribution in a Flat Plate Induced by an External Thermal Radiant Source**. *Proceedings of the XLVI Ibero-Latin-American Congress on Computational Methods in Engineering*, Vitoria, Brazil, 2025.
 
 Conference Abstracts

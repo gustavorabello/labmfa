@@ -2,7 +2,7 @@ Rafael Araujo Vidal
 ___________________
 
 :date: 2025-06-03 23:38
-:modified: 2026-07-16 21:42
+:modified: 2026-09-04 12:12
 :slug: person/rafaelVidal
 
 |
@@ -73,7 +73,7 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
-#. Anjos, G. R.; :profile-author:`Vidal, R. A.`. **A Semi-Lagrangian Finite Element Method for Two-Phase Flows**. *JEM*, 2023.
+#. Anjos, G. R.; :profile-author:`Vidal, R. A.`. **A Semi-Lagrangian Finite Element Method for Two-Phase Flows**. *JEM*, Rio de Janeiro, Brazil, 2023.
 #. :profile-author:`Vidal, R. A.`; Santos, D. B. V.; Anjos, Gustavo R. **Computation of Deformable Interface Two-Phase Flows - A Semi-Lagrangian Finite Element Approach**. *Anais do CILAMCE 2023 - The XLIV Ibero-Latin American Congress on Computational Methods in Engineering*, Porto, Portugal, 2023.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END

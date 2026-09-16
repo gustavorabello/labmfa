@@ -2,7 +2,7 @@ Gabriel de Lucas Garden
 _______________________
 
 :date: 2025-09-18 12:10
-:modified: 2026-08-06 12:01
+:modified: 2026-09-15 22:29
 :slug: person/gabrielGarden
 
 |
@@ -66,6 +66,13 @@ approach using higher-order numerical schemes.
  - `An Arbitrary Lagrangian-Eulerian Finite Element Method For Vortex-Induced Vibrations Prediction </documents/gabrielGarden-tcc.pdf>`_, Undergraduate research work (IC/TCC), Universidade Federal do Rio de Janeiro, 2025
 
 **publications with Prof. Gustavo R. Anjos**:
+
+Journal Articles
+~~~~~~~~~~~~~~~~
+
+.. class:: publications-list journal-publications
+
+#. :profile-author:`Garden, G.L.`; Su, J.; Anjos, G.R. `A higher-order semi-Lagrangian mixed finite element methodology in an arbitrary Lagrangian–Eulerian framework for vortex-induced vibrations of rigid structures <https://doi.org/10.1016/j.oceaneng.2026.128109>`_. *Ocean Engineering*, vol. 367, 128109 (2026).
 
 Conference Papers
 ~~~~~~~~~~~~~~~~~

@@ -2,7 +2,7 @@ Prof. Gustavo Cesar Rachid Bodstein
 ___________________________________
 
 :date: 2022-09-19 12:10
-:modified: 2026-08-12 22:35
+:modified: 2026-09-04 12:12
 :slug: person/gustavoBodstein
 
 |
@@ -71,7 +71,7 @@ Conference Papers
 
 .. class:: publications-list conference-publications
 
-#. Santos, A. E. M.; Anjos, G. R.; :profile-author:`Bodstein, G. C. R.`. **Numerical analysis of heat and mass transfer in microreactors for biodiesel synthesis**. *Proceedings of the 18th International Heat Transfer Conference*, 2026.
+#. Santos, A. E. M.; Anjos, G. R.; :profile-author:`Bodstein, G. C. R.`. **Numerical analysis of heat and mass transfer in microreactors for biodiesel synthesis**. *Proceedings of the 18th International Heat Transfer Conference*, Rio de Janeiro, Brazil, 2026.
 
 .. AUTO-GENERATED COAUTHORED ARTICLES END
 
