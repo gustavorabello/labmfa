@@ -11,16 +11,18 @@ TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
 echo "Downloading $REPO@$TAG..."
-curl -fsSL "https://github.com/$REPO/archive/refs/tags/$TAG.tar.gz" | tar -xz -C "$TMP"
-SRC="$(find "$TMP" -mindepth 1 -maxdepth 1 -type d | head -1)"
+mkdir -p "$TMP/src" "$TMP/app"
+curl -fsSL "https://github.com/$REPO/archive/refs/tags/$TAG.tar.gz" | tar -xz --strip-components=1 -C "$TMP/src"
 
 # Only what the browser needs; build files and docs stay out.
+cp "$TMP/src/index.html" "$TMP/src/favicon.ico" "$TMP/src/LICENSE" "$TMP/app/"
+cp -R "$TMP/src/assets" "$TMP/src/simulations" "$TMP/app/"
+rm -f "$TMP/app/assets/tailwind.src.css"
+find "$TMP/app" -name '.DS_Store' -delete
+printf '%s\n' "$TAG" > "$TMP/app/VERSION"
+
+# Replace the old copy only now that everything above has succeeded.
 rm -rf "$DEST"
-mkdir -p "$DEST"
-cp "$SRC/index.html" "$SRC/favicon.ico" "$SRC/LICENSE" "$DEST/"
-cp -R "$SRC/assets" "$SRC/simulations" "$DEST/"
-rm -f "$DEST/assets/tailwind.src.css"
-find "$DEST" -name '.DS_Store' -delete
-printf '%s\n' "$TAG" > "$DEST/VERSION"
+mv "$TMP/app" "$DEST"
 
 echo "OK: $DEST synced to $TAG ($(find "$DEST" -type f | wc -l | tr -d ' ') files)"

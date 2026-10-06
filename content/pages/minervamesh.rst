@@ -34,6 +34,6 @@ MinervaMesh was developed by **Luiz Gustavo Santos Farias** as his undergraduate
 final project in Mechanical Engineering at Escola Politécnica, UFRJ,
 supervised by Prof. Gustavo Rabello dos Anjos. It is open source under the
 MIT license. Source code: `github.com/lgsfarias/minervamesh`_ (the version
-served here is recorded in ``VERSION``).
+served here is recorded in `VERSION <{static}/minervamesh/app/VERSION>`_).
 
 .. _github.com/lgsfarias/minervamesh: https://github.com/lgsfarias/minervamesh
