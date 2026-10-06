@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../../../favicon.ico" />
+    <title>MinervaMesh - Condução Permanente (Barra 1D com Geração Interna)</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.8.1/core.css" integrity="sha384-C7Vo5fjeYiyN27fdJgeiteaUwrLVW0+I9EbpT1kBxsxac8+kxV5zYrLayugNSu1q" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../../../assets/tailwind.css" />
+    <script type="module" src="https://pyscript.net/releases/2025.8.1/core.js" integrity="sha384-3iTboEo+2h87xDhKzYs49FbFFhi1sOZV/X7TQG7Bf9A0Lo1ZO98j9P0LBbu8GrW4" crossorigin="anonymous"></script>
+    <!-- Adicionando Prism.js para syntax highlighting -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet" integrity="sha384-wFjoQjtV1y5jVHbt0p35Ui8aV8GVpEZkyF99OXWqP/eNJDU93D3Ugxkoyh6Y2I4A" crossorigin="anonymous"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha384-06z5D//U/xpvxZHuUz92xBvq3DqBBFi7Up53HRrbV7Jlv7Yvh/MZ7oenfUe9iCEt" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js" integrity="sha384-WJdEkJKrbsqw0evQ4GB6mlsKe5cGTxBOw4KAEIa52ZLB7DDpliGkwdme/HMa5n1m" crossorigin="anonymous"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen p-8">
+    <div class="max-w-4xl mx-auto relative">
+      <img
+        src="../../../assets/logo_poli_ufrj.png"
+        alt="Logo Politécnica UFRJ"
+        class="h-12 w-auto absolute top-0 right-0 mt-2 mr-2 opacity-80"
+      />
+      <div class="flex items-center mb-8">
+        <a
+          href="../../../index.html"
+          class="flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-150"
+        >
+          <i class="fas fa-arrow-left mr-2"></i>
+          <span class="font-medium">Voltar para Menu</span>
+        </a>
+      </div>
+      <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+        Condução Permanente - Barra 1D com Geração Interna
+      </h2>
+      <div class="flex justify-center mb-8">
+        <img
+          src="../../../assets/conducao_esquema.png"
+          alt="Esquema físico da condução de calor"
+          class="max-w-3xl w-full rounded shadow"
+        />
+      </div>
+      <div class="mb-8 bg-blue-50 border-l-4 border-blue-400 p-4 rounded">
+        <h3 class="font-semibold text-lg text-blue-800 mb-2">Sobre o problema</h3>
+        <p class="text-gray-700 mb-2">
+          Esta simulação resolve o problema de condução de calor unidimensional em uma barra com
+          geração interna de calor, representando, por exemplo, uma resistência elétrica. As
+          extremidades da barra são mantidas em temperaturas fixas (<strong>T=0</strong> e
+          <strong>T=1</strong>).
+        </p>
+        <h4 class="font-semibold text-blue-700 mt-4 mb-1">Método utilizado</h4>
+        <p class="text-gray-700">
+          A solução numérica é obtida pelo <strong>Método das Diferenças Finitas (MDF)</strong>, que
+          discretiza a barra em vários nós e resolve o sistema linear resultante para encontrar a
+          distribuição de temperatura.
+        </p>
+      </div>
+      <div id="controls" class="bg-white rounded-lg shadow-md p-6 mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="flex flex-col">
+            <label for="nx" class="text-sm font-medium text-gray-700 mb-1">Número de Nós:</label>
+            <input
+              type="number"
+              id="nx"
+              value="10"
+              min="1"
+              class="rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            />
+          </div>
+          <div class="flex flex-col">
+            <label for="alpha" class="text-sm font-medium text-gray-700 mb-1">Alpha:</label>
+            <input
+              type="number"
+              id="alpha"
+              value="0.1"
+              step="0.01"
+              class="rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            />
+          </div>
+          <div class="flex flex-col">
+            <label for="Q" class="text-sm font-medium text-gray-700 mb-1"
+              >Geração de Calor (Q):</label
+            >
+            <input
+              type="number"
+              id="Q"
+              value="2"
+              step="0.1"
+              class="rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+            />
+          </div>
+        </div>
+        <div class="mt-6 flex justify-center space-x-4">
+          <button
+            id="runBtn"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md transition duration-150 ease-in-out"
+          >
+            Rodar Simulação
+          </button>
+          <button
+            id="showCodeBtn"
+            class="bg-gray-600 hover:bg-gray-700 text-white font-medium py-2 px-6 rounded-md transition duration-150 ease-in-out"
+          >
+            <i class="fas fa-code mr-2"></i>Ver Código Fonte
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal para exibir o código fonte -->
+    <div
+      id="codeModal"
+      class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center"
+    >
+      <div class="bg-white rounded-lg p-6 max-w-4xl w-full max-h-[80vh] overflow-y-auto">
+        <div class="flex justify-between itens-center mb-4">
+          <h3 class="text-xl font-bold text-gray-800">Código Fonte da Simulação</h3>
+          <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700">
+            <i class="fas a-times text-xl"></i>
+          </button>
+        </div>
+        <pre><code class="language-python" id="sourceCode"></code></pre>
+      </div>
+    </div>
+
+    <script type="py" src="simulation.py" config="config.toml"></script>
+
+    <script>
+      // Função para carregar e exibir o código fonte
+      async function loadSourceCode() {
+        try {
+          const response = await fetch('simulation.py');
+          const code = await response.text();
+          document.getElementById('sourceCode').textContent = code;
+          Prism.highlightElement(document.getElementById('sourceCode'));
+        } catch (error) {
+          console.error('Erro ao carregar o código fonte:', error);
+        }
+      }
+
+      // Event listeners para o modal
+      document.getElementById('showCodeBtn').addEventListener('click', () => {
+        document.getElementById('codeModal').classList.remove('hidden');
+        document.getElementById('codeModal').classList.add('flex');
+        loadSourceCode();
+      });
+
+      document.getElementById('closeModalBtn').addEventListener('click', () => {
+        document.getElementById('codeModal').classList.add('hidden');
+        document.getElementById('codeModal').classList.remove('flex');
+      });
+
+      // Fechar modal ao clicar fora dele
+      document.getElementById('codeModal').addEventListener('click', (e) => {
+        if (e.target === document.getElementById('codeModal')) {
+          document.getElementById('codeModal').classList.add('hidden');
+          document.getElementById('codeModal').classList.remove('flex');
+        }
+      });
+    </script>
+    <footer class="mt-8 text-center text-gray-500 text-sm opacity-80 w-full pb-6">
+    MinervaMesh &middot; Desenvolvido por Luiz Gustavo Santos Farias &middot;
+    <a href="https://github.com/lgsfarias/minervamesh" class="underline hover:text-gray-700">Código-fonte no GitHub</a>
+    &middot; Licença MIT
+  </footer>
+</body>
+</html>
+
+

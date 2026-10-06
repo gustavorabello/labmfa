@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MinervaMesh - Simulações</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="assets/tailwind.css" />
+</head>
+
+<body class="bg-gray-50 min-h-screen flex flex-col justify-between relative">
+  <img src="assets/logo_poli_ufrj.png" alt="Logo Politécnica UFRJ"
+    class="h-12 w-auto absolute top-0 right-0 mt-4 mr-4 opacity-80" />
+  <div class="flex-1 flex items-center justify-center px-4">
+    <div class="max-w-xl w-full bg-white rounded-xl shadow-md p-8 border border-gray-100">
+      <h1 class="text-3xl font-semibold text-center text-gray-900 tracking-tight">MinervaMesh</h1>
+      <p class="text-center text-gray-600 mt-2">Simulações numéricas com uma interface simples e consistente.</p>
+      <h2 class="text-base font-medium text-gray-700 mt-8 mb-3">Escolha o tipo de simulação</h2>
+      <div class="space-y-3">
+        <details class="bg-white rounded-lg border border-gray-200">
+          <summary class="cursor-pointer select-none px-4 py-3 font-medium text-gray-800">MDF (Método das Diferenças
+            Finitas)</summary>
+          <div class="p-4 pt-0 flex flex-col gap-2">
+            <a href="simulations/mdf/conducao-permanente-barra1d-geracao/index.html"
+              class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 rounded-md transition">Condução
+              Permanente 1D com Geração Interna</a>
+            <a href="simulations/mdf/equacao-onda/index.html"
+              class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 rounded-md transition">Equação
+              da Onda 1D</a>
+          </div>
+        </details>
+        <details class="bg-white rounded-lg border border-gray-200">
+          <summary class="cursor-pointer select-none px-4 py-3 font-medium text-gray-800">MEF (Método dos Elementos
+            Finitos)</summary>
+          <div class="p-4 pt-0 flex flex-col gap-2">
+            <a href="simulations/mef/conducao-permanente-barra1d-mef/index.html"
+              class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 rounded-md transition">Condução
+              Permanente 1D
+            </a>
+            <a href="simulations/mef/calor-transiente-1d/index.html"
+              class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 rounded-md transition">Condução
+              Transiente 1D com k(x) Variável</a>
+            <a href="simulations/mef/conveccao-difusao-1d/index.html"
+              class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 rounded-md transition">Convecção-Difusão
+              1D Permanente</a>
+            <a href="simulations/mef/viga-1d-mef/index.html"
+              class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 rounded-md transition">Viga
+              1D - Análise de Flexão</a>
+            <a href="simulations/mef/vibracao-1d-mef/index.html"
+              class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 rounded-md transition">Vibração
+              1D - Problema de Autovalor</a>
+            <a href="simulations/mef/transcalor/index.html"
+              class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 rounded-md transition">Simulação
+              Transiente 2D
+            </a>
+            <a href="simulations/mef/escoamento-fluido-2d/escoamento-potencial/index.html"
+              class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 rounded-md transition">Escoamento
+              Potencial 2D</a>
+            <a href="simulations/mef/escoamento-fluido-2d/navier-stokes/index.html"
+              class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 rounded-md transition">Navier-Stokes
+              2D (Vorticidade)</a>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+  <footer class="mt-8 text-center text-gray-500 text-sm opacity-80 w-full pb-6">
+    MinervaMesh &middot; Desenvolvido por Luiz Gustavo Santos Farias &middot;
+    <a href="https://github.com/lgsfarias/minervamesh" class="underline hover:text-gray-700">Código-fonte no GitHub</a>
+    &middot; Licença MIT
+  </footer>
+</body>
+
+</html>

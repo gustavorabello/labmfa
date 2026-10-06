@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../../../favicon.ico" />
+    <title>MinervaMesh - Condução Transiente 1D</title>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.8.1/core.css" integrity="sha384-C7Vo5fjeYiyN27fdJgeiteaUwrLVW0+I9EbpT1kBxsxac8+kxV5zYrLayugNSu1q" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../../../assets/tailwind.css" />
+    <script type="module" src="https://pyscript.net/releases/2025.8.1/core.js" integrity="sha384-3iTboEo+2h87xDhKzYs49FbFFhi1sOZV/X7TQG7Bf9A0Lo1ZO98j9P0LBbu8GrW4" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" integrity="sha384-wFjoQjtV1y5jVHbt0p35Ui8aV8GVpEZkyF99OXWqP/eNJDU93D3Ugxkoyh6Y2I4A" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha384-06z5D//U/xpvxZHuUz92xBvq3DqBBFi7Up53HRrbV7Jlv7Yvh/MZ7oenfUe9iCEt" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js" integrity="sha384-WJdEkJKrbsqw0evQ4GB6mlsKe5cGTxBOw4KAEIa52ZLB7DDpliGkwdme/HMa5n1m" crossorigin="anonymous"></script>
+    <style>
+      #loading,
+      #sim-loading {
+        border: none;
+        background: transparent;
+        padding: 0;
+      }
+      #loading::backdrop,
+      #sim-loading::backdrop {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+      }
+      .box {
+        background-color: white;
+        border-radius: 0.5rem;
+        padding: 1.5rem;
+        width: 300px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+      }
+      .spinner {
+        animation: spin 1s linear infinite;
+        height: 2.5rem;
+        width: 2.5rem;
+        border: 4px solid #3B82F6;
+        border-top-color: transparent;
+        border-radius: 9999px;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+    </style>
+    <script type="module">
+      const loading = document.getElementById('loading');
+      addEventListener('py:ready', () => loading.close());
+      loading.showModal();
+    </script>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+    <dialog id="loading">
+      <div class="box">
+        <div class="spinner"></div>
+        <p class="text-gray-700 font-medium text-center">Carregando PyScript...</p>
+      </div>
+    </dialog>
+    <dialog id="sim-loading">
+      <div class="box">
+        <div class="spinner"></div>
+        <p class="text-gray-700 font-medium text-center">Executando simulação...</p>
+      </div>
+    </dialog>
+    <div class="max-w-5xl mx-auto relative">
+        <img src="../../../assets/logo_poli_ufrj.png" alt="Logo Politécnica UFRJ" class="h-12 w-auto absolute top-0 right-0 mt-2 mr-2 opacity-80" />
+
+        <div class="flex items-center mb-6">
+            <a href="../../../index.html" class="flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-150">
+                <span class="font-medium">Voltar para Menu</span>
+            </a>
+        </div>
+
+        <h2 class="text-3xl font-bold text-gray-800 mb-6 text-center">Condução Transiente 1D (MEF)</h2>
+
+        <div class="mb-6 bg-blue-50 border-l-4 border-blue-400 p-4 rounded">
+            <h3 class="font-semibold text-lg text-blue-800 mb-2">Sobre o problema</h3>
+            <p class="text-gray-700 mb-2">Resolvemos a equação da condução transiente de calor 1D usando Método dos Elementos Finitos com condutividade térmica variável k(x).
+                Condições de contorno: T(0,t) = 0 e T(L,t) = 1. Condutividade: k(x) = k₁ para x < L/2 e k(x) = k₂ para x ≥ L/2 (configuráveis).</p>
+            <h4 class="font-semibold text-blue-700 mt-4 mb-1">Método utilizado</h4>
+            <p class="text-gray-700">Utilizamos o <strong>Método dos Elementos Finitos (MEF)</strong> com elementos lineares uniformemente espaçados e integração temporal via <strong>método de Crank-Nicolson</strong>.
+                O número de elementos é configurável, demonstrando a flexibilidade do MEF para tratar condutividade térmica variável. A solução analítica mostrada é para k(x) constante (linha reta) como referência.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg shadow p-5">
+                <h3 class="text-lg font-semibold text-blue-700 mb-4">Parâmetros</h3>
+                <div class="space-y-3">
+                    <div>
+                        <label for="L" class="block text-sm font-medium text-gray-700">Comprimento (L)</label>
+                        <input type="number" id="L" value="1.0" step="0.1" min="0.2" class="w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500" />
+                    </div>
+                    <div>
+                        <label for="k1" class="block text-sm font-medium text-gray-700">Condutividade primeira metade (k₁)</label>
+                        <input type="number" id="k1" value="5.0" step="0.1" min="0.1" class="w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500" />
+                    </div>
+                    <div>
+                        <label for="k2" class="block text-sm font-medium text-gray-700">Condutividade segunda metade (k₂)</label>
+                        <input type="number" id="k2" value="1.0" step="0.1" min="0.1" class="w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500" />
+                    </div>
+                    <div>
+                        <label for="n_elements" class="block text-sm font-medium text-gray-700">Número de elementos</label>
+                        <input type="number" id="n_elements" value="40" min="2" step="1" class="w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500" />
+                    </div>
+                    <div>
+                        <label for="rho_cp" class="block text-sm font-medium text-gray-700">Densidade × Calor específico (ρcₚ)</label>
+                        <input type="number" id="rho_cp" value="1.0" step="0.1" min="0.1" class="w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500" />
+                    </div>
+                    <div>
+                        <label for="dt" class="block text-sm font-medium text-gray-700">Passo de tempo (dt)</label>
+                        <input type="number" id="dt" value="0.001" step="0.0005" min="0.0005" class="w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500" />
+                    </div>
+                    <div>
+                        <label for="theta" class="block text-sm font-medium text-gray-700">Parâmetro θ (0=explícito, 0.5=Crank-Nicolson, 1=implícito)</label>
+                        <input type="number" id="theta" value="0.5" step="0.1" min="0" max="1" class="w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500" />
+                    </div>
+                    <div>
+                        <label for="tmax" class="block text-sm font-medium text-gray-700">Tempo total (s)</label>
+                        <input type="number" id="tmax" value="0.200" step="0.01" min="0.01" class="w-full rounded-md border-gray-300 focus:border-blue-500 focus:ring-blue-500" />
+                    </div>
+                </div>
+                <div class="flex gap-3 mt-5">
+                    <button id="runHeatBtn" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded">Executar</button>
+                    <button id="showCodeBtn" class="bg-gray-600 hover:bg-gray-700 text-white font-medium py-2 px-4 rounded"><i class="fas fa-code mr-2"></i>Ver Código Fonte</button>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 bg-white rounded-lg shadow p-5">
+                <h3 class="text-lg font-semibold text-blue-700 mb-4">Resultado</h3>
+                <div id="heat-output" class="w-full min-h-[360px] bg-gray-50 rounded flex items-center justify-center text-gray-500"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="py" src="simulation.py" config="config.toml"></script>
+
+    <script>
+      const heatOutput = document.getElementById('heat-output');
+      document.addEventListener('py:ready', () => {
+        heatOutput.textContent = 'Clique em "Executar" para gerar a animação';
+      });
+    </script>
+
+    <div id="codeModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
+        <div class="bg-white rounded-lg p-6 max-w-4xl w-full max-h-[80vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-gray-800">Código Fonte - Condução Transiente 1D (MEF)</h3>
+                <button id="closeModalBtn" class="text-gray-500 hover:text-gray-700"><i class="fas fa-times text-xl"></i></button>
+            </div>
+            <pre><code class="language-python" id="sourceCode"></code></pre>
+        </div>
+    </div>
+
+    <script>
+        async function loadSourceCode() {
+            try {
+                const response = await fetch('simulation.py');
+                const code = await response.text();
+                document.getElementById('sourceCode').textContent = code;
+                Prism.highlightElement(document.getElementById('sourceCode'));
+            } catch (e) { console.error(e); }
+        }
+        document.getElementById('showCodeBtn').addEventListener('click', () => {
+            const m = document.getElementById('codeModal');
+            m.classList.remove('hidden'); m.classList.add('flex');
+            loadSourceCode();
+        });
+        document.getElementById('closeModalBtn').addEventListener('click', () => {
+            const m = document.getElementById('codeModal');
+            m.classList.add('hidden'); m.classList.remove('flex');
+        });
+        document.getElementById('codeModal').addEventListener('click', (e) => {
+            const m = document.getElementById('codeModal');
+            if (e.target === m) { m.classList.add('hidden'); m.classList.remove('flex'); }
+        });
+    </script>
+  <footer class="mt-8 text-center text-gray-500 text-sm opacity-80 w-full pb-6">
+    MinervaMesh &middot; Desenvolvido por Luiz Gustavo Santos Farias &middot;
+    <a href="https://github.com/lgsfarias/minervamesh" class="underline hover:text-gray-700">Código-fonte no GitHub</a>
+    &middot; Licença MIT
+  </footer>
+</body>
+</html>

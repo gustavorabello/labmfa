@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../../favicon.ico" />
+    <title>MinervaMesh - Gerador de Malhas</title>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.8.1/core.css" integrity="sha384-C7Vo5fjeYiyN27fdJgeiteaUwrLVW0+I9EbpT1kBxsxac8+kxV5zYrLayugNSu1q" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../../../assets/tailwind.css" />
+    <script type="module" src="https://pyscript.net/releases/2025.8.1/core.js" integrity="sha384-3iTboEo+2h87xDhKzYs49FbFFhi1sOZV/X7TQG7Bf9A0Lo1ZO98j9P0LBbu8GrW4" crossorigin="anonymous"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" integrity="sha384-Hl48Kq2HifOWdXEjMsKo6qxqvRLTYqIGbvlENBmkHAxZKIGCXv43H6W1jA671RzC" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-4 md:p-8">
+    <div class="max-w-6xl mx-auto relative">
+        <img
+            src="../../../assets/logo_poli_ufrj.png"
+            alt="Logo Politécnica UFRJ"
+            class="h-12 w-auto absolute top-0 right-0 mt-2 mr-2 opacity-80"
+        />
+        <div class="flex items-center mb-8">
+            <a
+                href="../../../index.html"
+                class="flex items-center text-blue-600 hover:text-blue-800 transition-colors duration-150"
+            >
+                <i class="fas fa-arrow-left mr-2"></i>
+                <span class="font-medium">Voltar para Menu</span>
+            </a>
+        </div>
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">
+            MinervaMesh - Gerador de Malhas com Furos
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Painel de Parâmetros -->
+            <div class="bg-white rounded-lg shadow-md p-6 md:col-span-1">
+                <h3 class="text-xl font-semibold text-blue-700 mb-4 border-b pb-2">Parâmetros da Malha</h3>
+                <div class="mb-4">
+                    <label for="lc" class="block text-sm font-medium text-gray-700 mb-1">Tamanho da Malha (lc):</label>
+                    <input type="number" id="lc" value="0.05" step="0.01" min="0.01" max="0.2" class="rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 w-full" />
+                    <div class="text-xs text-gray-500 mt-1">(0.01 - 0.2)</div>
+                </div>
+                <div class="mb-4">
+                    <label for="L" class="block text-sm font-medium text-gray-700 mb-1">Comprimento do Domínio (L):</label>
+                    <input type="number" id="L" value="1.0" step="0.1" min="0.5" max="2.0" class="rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 w-full" />
+                    <div class="text-xs text-gray-500 mt-1">(0.5 - 2.0)</div>
+                </div>
+                <div class="mb-6">
+                    <label for="H" class="block text-sm font-medium text-gray-700 mb-1">Altura do Domínio (H):</label>
+                    <input type="number" id="H" value="0.5" step="0.1" min="0.2" max="1.0" class="rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 w-full" />
+                    <div class="text-xs text-gray-500 mt-1">(0.2 - 1.0)</div>
+                </div>
+                <h3 class="text-xl font-semibold text-blue-700 mb-4 border-b pb-2">Tipo de Furo</h3>
+                <div class="mb-4">
+                    <label for="hole-type" class="block text-sm font-medium text-gray-700 mb-1">Forma do Furo:</label>
+                    <select id="hole-type" class="rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 w-full">
+                        <option value="none">Sem Furo</option>
+                        <option value="circle">Círculo</option>
+                        <option value="square">Quadrado</option>
+                        <option value="elipse">Elipse</option>
+                    </select>
+                </div>
+                <div id="hole-params"></div>
+                <button id="generate-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md w-full mt-6 transition duration-150 ease-in-out">Gerar Malha</button>
+                <button id="export-btn" class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded-md w-full mt-2 transition duration-150 ease-in-out" disabled>Exportar Malha (JSON)</button>
+                <button id="export-msh-btn" class="bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-6 rounded-md w-full mt-2 transition duration-150 ease-in-out" disabled>Exportar Malha (.msh)</button>
+                <div class="loading text-center mt-4" id="loading" style="display: none;">
+                    <div class="animate-spin rounded-full h-8 w-8 border-t-4 border-blue-500 border-solid mx-auto mb-2"></div>
+                    <p class="text-blue-700">Gerando malha...</p>
+                </div>
+                <div class="status mt-4" id="status" style="display: none;"></div>
+            </div>
+            <!-- Visualização -->
+            <div class="md:col-span-2">
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-4 text-center">Visualização da Malha</h3>
+                    <div id="mesh-plot" class="w-full min-h-[350px] relative"></div>
+                    <div class="bg-blue-50 rounded p-4 mt-6" id="mesh-info" style="display: none;">
+                        <h4 class="font-semibold text-blue-800 mb-2">Informações da Malha</h4>
+                        <p class="text-gray-700"><strong>Número de nós:</strong> <span id="num-nodes">-</span></p>
+                        <p class="text-gray-700"><strong>Número de elementos:</strong> <span id="num-elements">-</span></p>
+                        <p class="text-gray-700"><strong>Tamanho mínimo da malha:</strong> <span id="min-size">-</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="py" src="simulation.py" config="config.toml"></script>
+  <footer class="mt-8 text-center text-gray-500 text-sm opacity-80 w-full pb-6">
+    MinervaMesh &middot; Desenvolvido por Luiz Gustavo Santos Farias &middot;
+    <a href="https://github.com/lgsfarias/minervamesh" class="underline hover:text-gray-700">Código-fonte no GitHub</a>
+    &middot; Licença MIT
+  </footer>
+</body>
+</html>
