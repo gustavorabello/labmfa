@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../../../../favicon.ico" />
+    <title>MinervaMesh - Navier-Stokes</title>
+    <link rel="stylesheet" href="https://pyscript.net/releases/2025.8.1/core.css" integrity="sha384-C7Vo5fjeYiyN27fdJgeiteaUwrLVW0+I9EbpT1kBxsxac8+kxV5zYrLayugNSu1q" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../../../../assets/tailwind.css" />
+    <script type="module" src="https://pyscript.net/releases/2025.8.1/core.js" integrity="sha384-3iTboEo+2h87xDhKzYs49FbFFhi1sOZV/X7TQG7Bf9A0Lo1ZO98j9P0LBbu8GrW4" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" integrity="sha384-wFjoQjtV1y5jVHbt0p35Ui8aV8GVpEZkyF99OXWqP/eNJDU93D3Ugxkoyh6Y2I4A" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha384-06z5D//U/xpvxZHuUz92xBvq3DqBBFi7Up53HRrbV7Jlv7Yvh/MZ7oenfUe9iCEt" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js" integrity="sha384-WJdEkJKrbsqw0evQ4GB6mlsKe5cGTxBOw4KAEIa52ZLB7DDpliGkwdme/HMa5n1m" crossorigin="anonymous"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6/1Nxveei" crossorigin="anonymous"></script>
+    <style>
+        #loading {
+            border: none;
+            background: transparent;
+            padding: 0;
+        }
+
+        #loading::backdrop {
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+        }
+
+        .box {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            width: 300px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .spinner {
+            animation: spin 1s linear infinite;
+            height: 2.5rem;
+            width: 2.5rem;
+            border: 4px solid #3B82F6;
+            border-top-color: transparent;
+            border-radius: 9999px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <script type="module">
+        const loading = document.getElementById('loading');
+        addEventListener('py:ready', () => loading.close());
+        loading.showModal();
+    </script>
+</head>
+
+<body class="bg-gray-100 min-h-screen p-6 md:p-10">
+    <dialog id="loading">
+        <div class="box">
+            <div class="spinner"></div>
+            <p class="text-gray-700 font-medium text-center">Carregando PyScript...</p>
+        </div>
+    </dialog>
+    <div class="max-w-7xl mx-auto relative">
+        <img src="../../../../assets/logo_poli_ufrj.png" alt="Logo Politécnica UFRJ"
+            class="h-12 w-auto absolute top-0 right-0 mt-2 mr-2 opacity-80" />
+
+        <div class="flex items-center mb-8">
+            <a href="../../../../index.html" class="flex items-center text-blue-600 hover:text-blue-800 transition">
+                <i class="fas fa-arrow-left mr-2"></i> <span class="font-medium">Voltar para Menu</span>
+            </a>
+            <span class="mx-4 text-gray-400">|</span>
+            <a href="../escoamento-potencial/index.html"
+                class="flex items-center text-gray-600 hover:text-blue-800 transition">
+                <span class="font-medium">Ir para Escoamento Potencial</span> <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Navier-Stokes 2D (Vorticidade)</h2>
+
+        <!-- Explicação do Problema -->
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8 rounded shadow-sm">
+            <h3 class="text-lg font-bold text-blue-800 mb-2">Sobre o problema</h3>
+            <p class="text-gray-700 mb-2">
+                Resolvemos as equações de Navier-Stokes incompressíveis em 2D usando a formulação Função
+                Corrente-Vorticidade ($\psi$-$\omega$). O sistema acoplado é:
+            </p>
+            <div class="overflow-x-auto my-2">
+                $$ \nabla^2 \psi = -\omega $$
+                $$ \frac{\partial \omega}{\partial t} + \mathbf{u} \cdot \nabla \omega = \frac{1}{Re} \nabla^2 \omega $$
+            </div>
+            <p class="text-gray-700 mb-2">
+                <strong>Método utilizado:</strong> MEF com passo de tempo explícito para o transporte de vorticidade e
+                solucionador linear para a função corrente a cada passo.
+            </p>
+            <p class="text-gray-700">
+                <strong>Parâmetros físicos:</strong>
+            <ul class="list-disc list-inside ml-4">
+                <li>$Re$: Número de Reynolds (adimensional)</li>
+                <li>$dt$: Passo de tempo [s]</li>
+            </ul>
+            </p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Painel de Parâmetros -->
+            <div class="bg-white rounded-lg shadow-md p-6 lg:col-span-1">
+                <h3 class="text-xl font-semibold text-blue-700 mb-4 border-b pb-2">Configuração</h3>
+
+                <!-- Scenario Selection -->
+                <div class="mb-4">
+                    <label class="block text-xs mb-1 font-medium">Cenário:</label>
+                    <select id="scenario" class="w-full rounded border-gray-300 p-2 border text-sm">
+                        <option value="channel">Canal com Obstrução/Geometria</option>
+                        <option value="cavity">Cavidade (Lid-Driven)</option>
+                    </select>
+                </div>
+
+                <!-- Common Params -->
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-xs mb-1 font-medium">Comp. (L) [m]:</label>
+                        <input type="number" id="L" value="2.0" step="0.1"
+                            class="w-full rounded border-gray-300 p-2 border text-sm" />
+                    </div>
+                    <div>
+                        <label class="block text-xs mb-1 font-medium">Altura (H) [m]:</label>
+                        <input type="number" id="H" value="1.0" step="0.1"
+                            class="w-full rounded border-gray-300 p-2 border text-sm" />
+                    </div>
+                    <div>
+                        <label class="block text-xs mb-1 font-medium">Centro X [m]:</label>
+                        <input type="number" id="cx" value="0.5" step="0.1"
+                            class="w-full rounded border-gray-300 p-2 border text-sm" />
+                    </div>
+                    <div>
+                        <label class="block text-xs mb-1 font-medium">Centro Y [m]:</label>
+                        <input type="number" id="cy" value="0.5" step="0.1"
+                            class="w-full rounded border-gray-300 p-2 border text-sm" />
+                    </div>
+                </div>
+
+                <!-- Geometry Selection -->
+                <div id="geo-section" class="mb-4">
+                    <label class="block text-xs mb-1 font-medium">Geometria:</label>
+                    <select id="geo_type" class="w-full rounded border-gray-300 p-2 border text-sm">
+                        <option value="cylinder">Cilindro</option>
+                        <option value="rectangle">Retângulo</option>
+                        <option value="step">Degrau (Backward Step)</option>
+                    </select>
+                </div>
+
+                <!-- Cylinder Params -->
+                <div id="params-cylinder" class="mb-4 geo-params">
+                    <label class="block text-xs mb-1 font-medium">Raio (r) [m]:</label>
+                    <input type="number" id="r" value="0.15" step="0.01"
+                        class="w-full rounded border-gray-300 p-2 border text-sm" />
+                </div>
+
+                <!-- Rectangle Params -->
+                <div id="params-rectangle" class="grid grid-cols-2 gap-4 mb-4 hidden geo-params">
+                    <div>
+                        <label class="block text-xs mb-1 font-medium">Largura (w) [m]:</label>
+                        <input type="number" id="w" value="0.3" step="0.01"
+                            class="w-full rounded border-gray-300 p-2 border text-sm" />
+                    </div>
+                    <div>
+                        <label class="block text-xs mb-1 font-medium">Altura (h) [m]:</label>
+                        <input type="number" id="h" value="0.3" step="0.01"
+                            class="w-full rounded border-gray-300 p-2 border text-sm" />
+                    </div>
+                </div>
+
+                <!-- Step Params -->
+                <div id="params-step" class="grid grid-cols-2 gap-4 mb-4 hidden geo-params">
+                    <div>
+                        <label class="block text-xs mb-1 font-medium">Altura Degrau (h) [m]:</label>
+                        <input type="number" id="step_h" value="0.5" step="0.1"
+                            class="w-full rounded border-gray-300 p-2 border text-sm" />
+                    </div>
+                    <div>
+                        <label class="block text-xs mb-1 font-medium">Comp. Degrau (l) [m]:</label>
+                        <input type="number" id="step_l" value="0.5" step="0.1"
+                            class="w-full rounded border-gray-300 p-2 border text-sm" />
+                    </div>
+                </div>
+
+
+
+                <!-- NS Params -->
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-xs mb-1 font-medium">Reynolds (Re):</label>
+                        <input type="number" id="Re" value="100.0" step="10.0"
+                            class="w-full rounded border-gray-300 p-2 border text-sm" />
+                    </div>
+                    <div>
+                        <label class="block text-xs mb-1 font-medium">Passo Tempo (dt) [s]:</label>
+                        <input type="number" id="dt" value="0.001" step="0.001"
+                            class="w-full rounded border-gray-300 p-2 border text-sm" />
+                    </div>
+                    <div>
+                        <label class="block text-xs mb-1 font-medium">Passos/Frame:</label>
+                        <input type="number" id="steps_per_frame" value="10" step="1"
+                            class="w-full rounded border-gray-300 p-2 border text-sm" />
+                    </div>
+                    <div>
+                        <label class="block text-xs mb-1 font-medium">Total Passos:</label>
+                        <input type="number" id="total_steps" value="500" step="50"
+                            class="w-full rounded border-gray-300 p-2 border text-sm" />
+                    </div>
+                </div>
+
+                <!-- Mesh -->
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div>
+                        <label class="block text-xs mb-1 font-medium">Nós X:</label>
+                        <input type="number" id="nx" value="60" step="5"
+                            class="w-full rounded border-gray-300 p-2 border text-sm" />
+                    </div>
+                    <div>
+                        <label class="block text-xs mb-1 font-medium">Nós Y:</label>
+                        <input type="number" id="ny" value="30" step="5"
+                            class="w-full rounded border-gray-300 p-2 border text-sm" />
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-2 mt-6">
+                    <button id="run-btn"
+                        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded w-full transition shadow flex items-center justify-center">
+                        <i class="fas fa-play mr-2"></i> Iniciar Simulação
+                    </button>
+                    <button id="stop-btn"
+                        class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded w-full transition shadow hidden items-center justify-center">
+                        <i class="fas fa-stop mr-2"></i> Parar
+                    </button>
+                </div>
+
+                <div class="mt-4">
+                    <button id="showCodeBtn"
+                        class="bg-gray-700 hover:bg-gray-800 text-white font-semibold py-2 px-4 rounded w-full transition shadow text-sm">
+                        <i class="fas fa-code mr-2"></i>Ver Código Fonte
+                    </button>
+                </div>
+            </div>
+
+            <!-- Visualização -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-lg shadow-md p-6 min-h-[600px]">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-4 text-center">Resultados</h3>
+                    <div id="plot-output"
+                        class="w-full flex justify-center items-center bg-gray-50 rounded border border-gray-200 min-h-[500px]">
+                        <p class="text-gray-400">Clique em "Iniciar Simulação" para ver os resultados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL CÓDIGO -->
+        <div id="codeModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+            <div class="bg-white rounded-lg p-6 max-w-5xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+                <div class="flex justify-between items-center mb-4 border-b pb-2">
+                    <h3 class="text-xl font-bold text-gray-800">Código Fonte (sim_ns.py)</h3>
+                    <button id="closeModalBtn" class="text-gray-500 hover:text-red-600 transition"><i
+                            class="fas fa-times text-2xl"></i></button>
+                </div>
+                <pre><code class="language-python" id="sourceCode">Carregando...</code></pre>
+            </div>
+        </div>
+    </div>
+
+    <script type="py" src="simulation.py" config="config.toml"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous" />
+
+    <script>
+        // Modal logic
+        async function loadSourceCode() {
+            try {
+                const response = await fetch("simulation.py");
+                const code = await response.text();
+                document.getElementById("sourceCode").textContent = code;
+                if (window.Prism) Prism.highlightElement(document.getElementById("sourceCode"));
+            } catch (error) { console.error(error); }
+        }
+        document.getElementById("showCodeBtn").addEventListener("click", () => {
+            document.getElementById("codeModal").classList.remove("hidden");
+            document.getElementById("codeModal").classList.add("flex");
+            loadSourceCode();
+        });
+        document.getElementById("closeModalBtn").addEventListener("click", () => {
+            document.getElementById("codeModal").classList.add("hidden");
+            document.getElementById("codeModal").classList.remove("flex");
+        });
+
+        // Geometry Toggle Logic
+        function updateUI() {
+            const scenario = document.getElementById("scenario").value;
+            const geoType = document.getElementById("geo_type").value;
+
+            // Scenario Logic
+            if (scenario === "cavity") {
+                document.getElementById("geo-section").classList.add("hidden");
+                // Hide all geo params
+                document.querySelectorAll(".geo-params").forEach(el => el.classList.add("hidden"));
+            } else {
+                document.getElementById("geo-section").classList.remove("hidden");
+
+                // Geometry Logic
+                document.querySelectorAll(".geo-params").forEach(el => el.classList.add("hidden"));
+                document.querySelectorAll(".geo-params").forEach(el => el.classList.remove("grid")); // Cleanup grid
+
+                if (geoType === "cylinder") {
+                    document.getElementById("params-cylinder").classList.remove("hidden");
+                } else if (geoType === "rectangle") {
+                    document.getElementById("params-rectangle").classList.remove("hidden");
+                    document.getElementById("params-rectangle").classList.add("grid");
+                } else if (geoType === "step") {
+                    document.getElementById("params-step").classList.remove("hidden");
+                    document.getElementById("params-step").classList.add("grid");
+                }
+            }
+        }
+
+        document.getElementById("geo_type").addEventListener("change", updateUI);
+        document.getElementById("scenario").addEventListener("change", updateUI);
+
+        // Init
+        updateUI();
+    </script>
+  <footer class="mt-8 text-center text-gray-500 text-sm opacity-80 w-full pb-6">
+    MinervaMesh &middot; Desenvolvido por Luiz Gustavo Santos Farias &middot;
+    <a href="https://github.com/lgsfarias/minervamesh" class="underline hover:text-gray-700">Código-fonte no GitHub</a>
+    &middot; Licença MIT
+  </footer>
+</body>
+
+</html>

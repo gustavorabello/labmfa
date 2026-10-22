@@ -25,10 +25,14 @@ STATIC_PATHS = (
     "images",
     "documents",
     "css",
+    "minervamesh/app",  # MinervaMesh simulation platform (static app)
 )
 
 # Extra CSS customization
 CUSTOM_CSS = "css/custom.css"
+
+# Keep the article generator out of the MinervaMesh static .html files
+ARTICLE_EXCLUDES = ["minervamesh"]
 
 ROBOTS = "index, follow"
 
@@ -61,6 +65,7 @@ LINKS = (
     ('thesis & dissertations', '/thesis'),
     #('research', '/research'),
     ('education', '/education'),
+    ('minervamesh', '/minervamesh'),
     ('facilities', '/facilities'),
     ('aerodesign', '/aerodesign'),
     ('media gallery', '/media'),
