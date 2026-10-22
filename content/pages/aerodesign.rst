@@ -2,7 +2,7 @@ Minerva Aerodesign
 ------------------
 
 :date: 2024-12-22 13:47
-:modified: 2026-08-19 10:00
+:modified: 2026-10-22 10:00
 :slug: aerodesign
 :summary: Minerva Aerodesign
 
@@ -173,6 +173,39 @@ SAE Brasil AeroDesign competition.
 
    The team and the *Jacurutu* aircraft at the SAE Brasil AeroDesign 2025
    competition, in São José dos Campos.
+
+Flight videos
+=============
+
+Official flight videos of the team at the SAE Brasil AeroDesign
+competition, published on the `YouTube channel`_ of Minerva Aerodesign.
+
+.. youtube:: 2x6yqvx8wSg
+    :class: youtube-16x9
+    :allowfullscreen: yes
+    :seamless: yes
+    :align: left
+    :comment: Flight of the 2023 aircraft (team #049, Regular Class) at SAE Brasil AeroDesign 2023.
+
+|
+
+.. youtube:: bLe9kimGu0k?start=8
+    :class: youtube-16x9
+    :allowfullscreen: yes
+    :seamless: yes
+    :align: left
+    :comment: Flight of the <em>Noctua</em> aircraft (team #043) at SAE Brasil AeroDesign 2024.
+
+|
+
+.. youtube:: 9cWlGXCwq-4?start=6
+    :class: youtube-16x9
+    :allowfullscreen: yes
+    :seamless: yes
+    :align: left
+    :comment: Flight of the <em>Jacurutu</em> aircraft (team #030) at SAE Brasil AeroDesign 2025.
+
+|
 
 Competition record
 ==================
@@ -464,3 +497,4 @@ Brasil AeroDesign competition and in VarandaLab.
 .. _PSIM: https://powersimtech.com/products/psim/
 .. _Instagram: https://www.instagram.com/minerva_aerodesign/
 .. _LinkedIn: https://br.linkedin.com/company/minerva-aerodesign-ufrj
+.. _YouTube channel: https://www.youtube.com/@minervaaerodesign
